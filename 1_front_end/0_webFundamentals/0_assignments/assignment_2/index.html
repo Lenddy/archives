@@ -14,11 +14,124 @@
 		<h1>Master Chief</h1>
 		<!-- this is is a picture of master chief -->
 		<!-- this is how we bring in a photo using the url of the picture while it is on the internet -->
+		<!-- we can add a width attribute that take a pixel amount  -->
 		<img
 			src="https://st.ilfattoquotidiano.it/wp-content/uploads/2021/12/27/halocover-690x362.jpg"
 			alt="master chief from halo"
+			width="500"
 		/>
 		<!-- this is how we bring in a photo while is save in your project folder-->
-		<img src="masterChief.jpg" alt="master chief from halo" />
+		<!-- <img
+			src="./images/masterChief.jpg"
+			alt="master chief from halo"
+			width="850"
+		/> -->
+		<h2>About</h2>
+
+		<!-- paragraph -->
+		<p>
+			Master Chief is the protagonist in the Halo series of video games
+			and related media. Also known as Master Chief Petty Officer
+			John-117, the character first appeared in the 2001 video game Halo:
+			Combat Evolved, a military science fiction first-person shooter that
+			became a long-running game series. The character also appears in
+			spin-off Halo media such as the 2012 film Halo 4: Forward Unto Dawn,
+			the 2022 Halo television series, and several graphic novels and
+			books.
+		</p>
+		<!-- word wrap: alt + z -->
+		<p>
+			The Master Chief is a towering supersoldier known as a "Spartan",
+			trained from childhood for combat. The designers intended for
+			players to be able to project their own intentions into the
+			character, and thus reduced his voiced lines and concealed his
+			appearance under his armor. In the video games, the character is
+			voiced by former disc jockey Steve Downes, who based his performance
+			on Bungie's description calling for a man of few words, similar to
+			Clint Eastwood. In spin-off media, he is portrayed by different
+			voice and physical actors, most notably Pablo Schreiber in the 2022
+			live-action Halo TV series. The Master Chief has been seen as a
+			mascot for Halo and the Xbox brand. The character has received a
+			generally positive reception for his character design. While
+			publications have praised how the narrative allows players to
+			inhabit the character, others have criticized him as under
+			characterized.
+		</p>
+		<!-- list -->
+		<!-- this is an un order list  to make an order list you need to so ol instead of ul -->
+		<h2>Favorite Things</h2>
+		<ul>
+			<li>Killing</li>
+			<li>Baking</li>
+			<li>A clean visot</li>
+			<li>Rocket Jumping</li>
+			<li>Sticky Grenades</li>
+			<li>Pina coladas</li>
+		</ul>
+		<h2>All appearances</h2>
+
+		<table border="2">
+			<tr>
+				<th>title</th>
+				<th>year</th>
+			</tr>
+			<tr>
+				<td>Halo: Combat Evolved</td>
+				<td>2004</td>
+			</tr>
+			<tr>
+				<td>Dead or Alive</td>
+				<td>2005</td>
+			</tr>
+			<tr>
+				<td>Halo</td>
+				<td>2001</td>
+			</tr>
+			<tr>
+				<td>Halo 2</td>
+				<td>2003</td>
+			</tr>
+		</table>
+		<h2>Contact me</h2>
+
+		<form action="#">
+			<div>
+				<label for="Name">Your Name</label>
+				<input type="text" name="Name" id="" />
+			</div>
+
+			<div>
+				<label for="DoB">Date Of Birth</label>
+				<input type="date" name="DoB" id="" />
+			</div>
+			<div>
+				<label for="FavoriteAppearance"
+					>what was you Favorite appearance of mine???</label
+				>
+				<select name="FavoriteAppearance" id="">
+					<option value="" selected disabled>
+						Select and appearance
+					</option>
+					<option value="Halo: Combat Evolved">
+						Halo: Combat Evolved
+					</option>
+					<option value="Dead or Alive">Dead or Alive</option>
+					<option value="Halo">Halo</option>
+					<option value="Halo 2">Halo 2</option>
+				</select>
+			</div>
+			<div>
+				<p>do you trust robots ?</p>
+				<input type="radio" name="Robots" />
+				<label for="yes"> Yes</label>
+
+				<input type="radio" name="Robots" />
+				<label for="maybe">Maybe</label>
+
+				<input type="radio" name="Robots" />
+				<label for="no">No</label>
+			</div>
+			<input type="submit" />
+		</form>
 	</body>
 </html>
