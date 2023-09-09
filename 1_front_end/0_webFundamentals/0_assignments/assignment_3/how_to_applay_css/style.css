@@ -1,0 +1,62 @@
+/* body */
+body {
+    background-color: #565656;
+}
+
+
+/* two things to identify to use css */
+/* one : what are we affecting */
+/* we are affecting an h1 tag */
+/* two: what are we doing to it ? */
+/* we are turning the h1 text color to green */
+
+/* h1 */
+/* h1 is a selector */
+h1{
+    /* within these curly braces are all the changes i want to apply */
+    /* i want to change the font(text) color */
+    /* how do i change the color */
+    color: green;/* this is a key value pair */
+    text-align: center;
+    font-size: 50px ;
+}
+
+p{
+    background-color: aquamarine;
+}
+
+
+
+
+/* for the noGreen class */
+/* use a . for clases  */
+/*! clases can be repeatedly use  */
+.noGreen{
+    background-color: pink;
+}
+
+/* for the myTable id */
+/* use a # for ids */
+/*! ids should only be used for one element*/
+/** id is the stronger selector and it has more power that any other selector  but inline styling has more power that any other selector*/
+
+/* todo:  tag < class < id */
+/* todo:  1 < 10 < 100 */
+
+#myTable{
+    background-color: orange;
+}
+
+
+
+/* for the data class */
+
+.data{
+    background-color: aqua;
+}
+
+
+.italics{
+    font-style:italic ;
+
+}
