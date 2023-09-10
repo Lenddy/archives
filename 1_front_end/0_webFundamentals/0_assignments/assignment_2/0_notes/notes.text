@@ -1,0 +1,73 @@
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+There are different different tag that for you need
+
+//
+h1 tags 
+
+they are the header tags  they can go from h1 to h6
+the bigger the number the smaller the text 
+
+they are use to make you eye go to that part in the text 
+they are in bold 
+
+//
+p tags
+
+they are the paragraph tags 
+i them you can put the description of something 
+and this is where most of you text will live
+
+//
+ul and ol and li tags
+
+this tag are to create list 
+ul means un-order list and they display bullet point 
+ol means order list and thy display numbers instead of bullet point 
+
+the li tag goes in between of the ul or ol tag  they are the content that display that is the text/character or items in the list 
+
+
+//
+table , tr, th, td tag
+the table tag creates a table
+
+
+the tr tag create a table row // if you want to create multiple columns  you can put the th or td in one after another
+
+the th tag create a table header
+
+the td tag creates a table table data 
+
+//
+the form tag
+the form tag is use to send information somewhere 
+other tags that can be also use out side of the form tag
+
+// input tag
+you can input information inside of the input tags is most commonly use inside of forms
+
+there are different type of forms 
+
+you can change the type  
+
+from text to number to radio to text are 
+
+//
+img tag
+
+you can link image 
+
+if the image is from the internet the src should be the link of the image from where it is 
+
+if it is on your file  you should locate the file location and put it as the source
+
+//
+a tags
+
+they are use to link two pages together
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+

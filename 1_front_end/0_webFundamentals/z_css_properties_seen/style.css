@@ -1,0 +1,40 @@
+/* learn in assignment 3 */
+.assignment_3{
+    color: red; /* change the color of the text */
+    
+    background-color:blue; /* change the color of the back ground */
+    
+
+    font-style: italic ;/* : change the styling of the text  */
+    font-size: 100px ; /* : change the size of the text  */
+    
+    text-align:center; /* changes where the text will be align */
+    
+}
+
+/* learn in assignment 4  in the box model*/
+.assignment_4{
+    
+    margin: 10px;/* pushes other element away form the element that is ben use on  */
+    
+    padding: 10px;/* padding is filling in making the item appear to be bigger that what it actually is essentially taking more space */
+    
+    border: 10px solid black;/* border is the edge of the ite */
+}
+
+/* learn in assignment 5  in inline-block*/
+.assignment_5{
+
+    display: block;/*block: element always starts on a new line, and the browsers automatically add some space (a margin) before and after the element.  and always takes up the full width available */
+    display: inline;/* inline :element does not start on a new line and only takes up as much width as necessary */
+
+    display: inline-block;/*inline-block :Compared to display: inline, the major difference is that display: inline-block allows to set a width and height on the element. the top and bottom margins/paddings are respected, but with display: inline they are not.Compared to display: block, the major difference is that display: inline-block does not add a line-break after the element, so the element can sit next to other elements.*/
+
+    vertical-align: top; /* The vertical-align property sets the vertical alignment of an element */
+    
+}
+
+
+
+
+

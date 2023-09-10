@@ -1,0 +1,121 @@
+/* this is a general selector that grabs every thing on the screen */
+/* this is the the wild selector */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+/* body */
+body {
+    background-color: #565656;
+}
+
+
+/* two things to identify to use css */
+/* one : what are we affecting */
+/* we are affecting an h1 tag */
+/* two: what are we doing to it ? */
+/* we are turning the h1 text color to green */
+
+/* h1 */
+/* h1 is a selector */
+h1{
+    /* within these curly braces are all the changes i want to apply */
+    /* i want to change the font(text) color */
+    /* how do i change the color */
+    color: green;/* this is a key value pair */
+    text-align: center;
+    font-size: 50px ;
+    margin: 15px;
+}
+
+/* 1: margin is an invisible force that pushes things away form the item */
+/*2:  padding is filling in making the item appear to be bigger that what it actually is essentially taking more space  */
+/* 3: border is the edge of the item  */
+
+p{
+    background-color: aquamarine;
+    padding: 10px;
+    /* margin: 10px; */
+}
+
+
+
+
+/* for the noGreen class */
+/* use a . for clases  */
+/* clases can be repeatedly use  */
+.noGreen{
+    background-color: pink;
+}
+
+/* for the myTable id */
+/* use a # for ids */
+/* ids should only be used for one element*/
+/*id is the stronger selector and it has more power that any other selector  but inline styling has more power that any other selector*/
+
+/* tag < class < id */
+/*   1 < 10 < 100 */
+
+#myTable{
+    background-color: orange;
+    /* margin: 20px; */
+}
+
+
+
+/* for the data class */
+
+.data{
+    background-color: aqua;
+}
+
+
+.italics{
+    font-style:italic ;
+
+}
+
+ol{
+    padding-left: 20px;
+}
+
+/* 1: margin is an invisible force that pushes things away form the item */
+/*2:  padding is filling in making the item appear to be bigger that what it actually is essentially taking more space  */
+/* 3: border is the edge of the item  */
+
+
+td{
+    padding: 10px;/* padding is like you are putting on items of cloth to the point were you became thicker and thicker but you actual body is still the same size */
+    /* margin:20px;  margin pushes things away from the item  */
+} 
+
+table{
+    margin: 20px;
+    
+}
+
+/* for the about section */
+/* !even  if the about section is made into a size that it can fit in the space where the picture is not taking id does not move because it is a block element */
+
+/* ! so we need to make it an inline-block element that way i can fit in the same line as other elements that are in line-block elements */
+.about{
+    width: 800px;
+    display:inline-block; /*! making this item(s) into an inline-block element*/
+    margin-left: 20px;
+    vertical-align: top;/*! aligns the items so it can look better with other items that are beside it*/
+}
+
+
+img{
+    margin-left: 20px;
+    width: 700px;
+}
+
+.list{
+    display: inline-block;
+}
+
+.appearances{
+    display: inline-block;
+    vertical-align: top;/*!The vertical-align property sets the vertical alignment of an element*/
+}

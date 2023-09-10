@@ -1,0 +1,20 @@
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+the box model
+The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content
+
+
+styling with css
+you can style your page with css to make it look better 
+
+property use in this folder
+
+margin:10px; :pushes other element away form the element that is ben use on  
+padding:10px; : padding is filling in making the item appear to be bigger that what it actually is essentially taking more space
+
+border: 10px solid black; : border is the edge of the item 
+ 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+

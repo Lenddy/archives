@@ -1,0 +1,56 @@
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+styling with css
+you can style your page with css to make it look better 
+
+linking(link)
+to make html work with css you have to link it  you have to tell the tag 
+the nave of the css file and where is located you can also link it from the internet 
+
+selectors
+in css you have the the selector which is the thing that tell the css file 
+that it should affect and item 
+
+you have different type of selector  
+tag(element)(h1{}) selector : affects all the tags of the same name
+class(.someName{}) selector : affects all elements that have the same class name
+id(#someName{}) selector: affects all the elements that have the same id name
+universal(*{}) selector: affects all the elements in the html file
+grouping(h1,p,div{}) selector: gives all this element the same styling
+
+
+Decoration
+
+the decoration is where all the code is that make the changes and styling 
+there are two parts of the decoration
+the property and the value
+h1{color:red;}
+property({color:;}): assign a style or behavior to an HTML element
+value({:red;})  changes how the style or behavior will work
+
+there is a leve of importance in css selectors
+tag(element) least importance
+class(.someName) more importance than tag selector
+id(#someName) more importance than class selector
+
+
+
+
+Property
+
+there are different type of property in css
+
+the ones use in this folder are 
+
+color: red; : change the color of the text
+background-color:blue; : change the color of the back ground
+font-style: italic; : change the styling of the text to be italics
+font-size: large or 100px ;  : change the size of the text
+text-align:center; : changes where the text will be align
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
