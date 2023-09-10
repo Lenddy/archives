@@ -1,0 +1,38 @@
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//
+flex box
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/*
+ play flexbox froggy to practice flex box 
+    and flexbox tower defense
+*/
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+//
+all of this property need to be call on the parent that is making the flex-box
+
+justify-content:;
+ align the inside of the flex box horizontally 
+ it has to be call on the parent where the flex-box is been cast
+
+//
+flex-wrap: wrap; 
+ determine if the children  tha are in the flex box of the item can go in to multiline  or not 
+ it has to be call on the parent where the flex-box is been cast
+    
+
+align-items:;
+ align the items inside of the flex box  vertically
+ it has to be call on the parent where the flex-box is been cast
+
+
+
+ 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+

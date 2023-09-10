@@ -1,0 +1,35 @@
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//
+flex box
+
+//
+display: flex;
+ The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure
+
+ /*! think of flex box  as a sandbox where you can place any item where ever you want  */
+
+
+//
+flex:1;
+
+flex is a short hand for 
+flex-grow , shrink and basis
+flex calculate the amount of space that every item in you flex box is going to take
+
+/** Imagine you have a pizza, and you want to share it with your friends. The "flex" property is like a way to decide how big each friend's slice of pizza will be. */
+
+/*! if yo have different flex in side of you flex box the item in which the flex is declare will take that amount of space and leave the rest to the other items that flex was declare on */
+/** for example if you declare that an item has a flex of 1(sidebar) and another has a flex of 3(main)  here you are saying that if  a sidebar would be (one third)1/3 */ of a main bar
+
+/* todo: or you could say that if you want to crea a main you will have to add 3 sidebars together */
+
+/* todo: or if you had a main you would need to divide the main into 3 pieces to create a side bar */
+
+
+
+ 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+

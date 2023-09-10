@@ -1,0 +1,56 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: #565656;
+}
+
+
+
+.navbar{
+    height: 50px;
+    background-color: red;
+
+}
+
+
+/*! if yo have different flex in side of you flex box the item in which the flex is declare will take that amount of space and leave the rest to the other items that flex was declare on */
+/** for example if you declare that an item has a flex of 1(sidebar) and another has a flex of 3(main)  here you are saying that if  a sidebar would be (one fourth)1/4 of a main bar or, if */ 
+
+/* todo: or you could say that if you want to crea a main you will have to add 4 sidebars together */
+
+/* todo: or if you had a main you would need to divide the main into 4 pieces to create a side bar */
+/* todo: of if there is a blank space the side bar would  receive 1/4 of that space and the main would receive 3/4  */
+
+/** Imagine you have a pizza, and you want to share it with your friends. The "flex" property is like a way to decide how big each friend's slice of pizza will be. */
+.sidebar{
+    flex: 1; /*! flex calculates the amount of space that your items inside of your flex-box are going to take  */
+    
+    height: 600px;
+    background-color: darkcyan;
+    
+}
+
+.main{
+    flex: 3;/*! flex calculates the amount of space that your items inside of your flex-box are going to take  */
+    height: 600px;
+    background-color: darkolivegreen;
+    display: flex; /* ! The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure */
+    
+}
+
+
+/*! think of flex box  as a sandbox where you can place any item where ever you want  */
+
+.flexbox{
+    display: flex;  /* ! The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure */
+}
+
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: darkkhaki;
+}

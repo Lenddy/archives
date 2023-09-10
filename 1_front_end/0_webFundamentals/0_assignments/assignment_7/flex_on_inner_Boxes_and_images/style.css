@@ -1,0 +1,86 @@
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* play flexbox froggy to practice flex box */
+/* and flexbox tower defense */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: #565656;
+}
+
+
+
+.navbar{
+    height: 70px;
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /*! align the items inside of the flex box  vertically */
+    
+    /* flex-wrap: wrap; */
+}
+
+
+
+/* Imagine you have a pizza, and you want to share it with your friends. The "flex" property is like a way to decide how big each friend's slice of pizza will be. */
+.sidebar{
+    flex: 1; /* flex calculates the amount of space that your items inside of your flex-box are going to take  */
+    
+    height: 600px;
+    background-color: darkcyan;
+    
+}
+
+.main{
+    flex: 3;/* flex calculates the amount of space that your items inside of your flex-box are going to take  */
+    height: 600px;
+    background-color: darkolivegreen;
+    display: flex; /*  The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure */
+    justify-content: space-around; /*! align the items inside of the flex box  horizontally */
+
+    flex-wrap: wrap; 
+    /*! determine if the children  tha are in the flex box of the item can go in to multiline  or not  */
+
+}
+
+
+/* think of flex box  as a sandbox where you can place any item where ever you want  */
+
+.flexbox{
+    display: flex;  /*  The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure */
+}
+
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: darkkhaki;
+    /* margin-top: 10px; */
+}
+
+
+.otter{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    /* margin-top: 10px; */
+}
+
+
+.nav-left {
+    width: 400px;
+    height: 60px;
+    background-color: beige;
+}
+.nav-right{
+    width: 200px;
+    height: 60px;
+    background-color: purple;
+}
