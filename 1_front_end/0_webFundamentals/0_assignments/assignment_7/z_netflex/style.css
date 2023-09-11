@@ -1,0 +1,123 @@
+/* changing every font and color of the text */
+*{
+    color: ghostwhite;
+    font-family: "Antonio",sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* changing the background color and adding padding  */
+body{
+    background-color: black;
+    padding: 20px;
+}
+
+
+.container{
+    /* background-color:purple; */
+    padding: 10px;
+
+}
+
+/* for the navbar */
+
+.navbar{
+    /* background-color: red; */
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leftNavbar{
+width: 400px;
+/* background-color: yellow; */
+height: 60px;
+flex-wrap: wrap;
+}
+
+.netflex{
+    color: #e50914;
+}
+.leftNavbar_list{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+    flex-wrap: wrap;
+    padding: 3px;
+    
+}
+
+.leftNavbar_list li{
+    /* background-color: red; */
+    cursor:pointer;
+    opacity:0.75;
+}
+.leftNavbar_list li:hover{
+    /* background-color: red; */
+    cursor:pointer;
+    opacity:1;
+}
+
+
+.rightNavbar{
+    width: 300px;
+/* background-color: yellow; */
+height: 60px;
+}
+.search{
+    background-color:transparent;
+    text-align: center;
+    border: solid 2px ghostwhite;
+    width: 150px;
+    /* padding: 2px; */
+    border-radius: 10px;
+}
+
+.profile{
+    height: 35px;
+    border-radius: 50px;
+}
+
+.title{
+    /* margin-left:4px ; */
+    margin: 10px;
+    padding: 2px;
+}
+
+
+/* for the main */
+
+.main{
+    /* background-color: blue; */
+    /* height: 500px; */
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.videos_container {
+    /* background-color: orange; */
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.image{
+    width: 200px;
+    height: 100px;
+    margin: 5px;
+    /* object-fit: cover; */
+}
+
+.imagecontainer{
+    display: inline-block;
+    text-align: center;
+}
+
+
+
+.image:hover{
+    box-shadow: -10px 10px 10px ghostwhite;
+    cursor: pointer;
+}
