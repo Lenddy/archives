@@ -1,0 +1,51 @@
+body{
+    background-color: #565656;
+    height: 3000px;
+}
+
+
+
+.red{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    position:absolute;   /*! defines  a definite place where an item lives on the screen it ,you remove it from the render order and you the item that it is cast on lives on a plane of its own and stops following the normal html rules */
+
+    left: 400px;
+    top: 50px;
+} 
+
+.blue{
+    width: 200px;
+    height: 200px;
+    background-color:blue;
+    position:fixed ;/* ! keeps an items in a fixed position relative to your screen */
+
+}
+
+.green{
+    width: 200px;
+    height: 200px;
+    background-color:green;
+    margin:20px;
+    
+}
+
+.orange{
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    border-radius: 50%;
+    position: relative;/*! place an item in an exact location determinen  relative to it parent */
+    left: 75px;
+    top: 30px;
+}
+
+.pink{
+    width: 50px;
+    height: 50px;
+    background-color: pink;
+    border-radius: 50%;
+    /* left: 75px;
+    top: 30px; */
+}

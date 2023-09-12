@@ -67,6 +67,16 @@
     align-items: center; /*! align the items inside of the flex box  vertically */
 }
 
+/* learn in assignment 8 position*/
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.assignment_8{
+    position:absolute;   /*! defines  a definite place where an item lives on the screen it ,you remove it from the render order and you the item that it is cast on lives on a plane of its own and stops following the normal html rules */
+    position:fixed ;/* ! keeps an items in a fixed position relative to your screen */
+    position: relative;/*! place an item in an exact location determinen  relative to it parent */
+}
+
 
 
 
