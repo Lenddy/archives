@@ -11,7 +11,7 @@ body{
 
 .container{
     background-color: darkgray;
-    width: 100%;
+    /* width: 80%; */
     height: 700px;
     padding: 10px;
 }
@@ -73,11 +73,42 @@ body{
 /* for main */
 
 .main{
-    height: 500px;
+    height: 400px;
     width: 700px;
-    background-color: darkkhaki;
+    background-color: transparent;
     margin: 10px;
+    /* display: flex;
+    flex-direction: column; */
+    border: solid 1px gray;
+}
 
+.mainTOp{
+    width: 100%;
+    height: 100px;
+    background-color: aqua;
+    margin-bottom: 10px;
+    /* display: flex;
+    justify-content: start;
+    align-items: end; */
+}
+
+.profilePic{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: relative;
+    top: 45px;
+    left: 30px;
+}
+
+.main ul{
+    list-style: none;
+    margin:50px 0px 0px 30px ;
+    /* display: flex; */
+}
+
+.main ul li{
+    margin: 20px;
 }
 
 
@@ -90,13 +121,70 @@ body{
 .sidebar-1{
     height: 150px;
     width: 200px;
-    background-color: blanchedalmond;
+    background-color: transparent;
+    border: solid grey 1px;
+/* background-color: blue; */
 }
+
+.sideTop{
+    width: 100%;
+    height: 50px;
+    background-color: dimgray;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.connections{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    /* overflow: hidden; */
+    /* background-color: red; */
+    padding: 0px;
+    margin: 0px;
+}
+/* width */
+
+
+.conenction{
+    margin: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.accept_decline{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.profilePicIcon{
+    height: 30px;
+    border-radius:50% ;
+}
+
 .sidebar-2{
-    height: 300px;
+    height: 250px;
     width: 200px;
-    background-color: blanchedalmond;
-    margin-top: 5px;
+    background-color: transparent;
+    margin-top: 20px;
+    border: solid 1px gray;
+}
+
+.sideBottom{
+    background-color: transparent;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid gray;
+    margin-top: 10px;
+    text-decoration: underline;
 }
 
 /* for the bottom */
@@ -104,13 +192,31 @@ body{
 .bottom{
     height: 150px;
     width: 700px;
-    background-color: blue;
+    background-color: transparent;
+    border: solid 1px gray;
     margin: 10px;
     
 }
 
 
-
-.marker{
-    height: 100px;
+.bottomTop{
+    width: 100%;
+    height: 50px;
+    background-color: dimgray;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+.bottom h3{
+    margin: 20px ;
+    /* padding:0 auto ; */
+    text-decoration: underline;
+}
+
+.white{
+    color: white;
+}
+
+
+
