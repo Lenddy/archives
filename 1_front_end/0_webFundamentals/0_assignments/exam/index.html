@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="navbar">
+			<div class="topNav"></div>
+			<div class="navContainer">
+				<div class="leftnav">
+					<h1>GameStation</h1>
+				</div>
+				<div class="rightNav">
+					<ul>
+						<li>
+							<select name="currency" id="">
+								<option value="" selected disabled>
+									currency
+								</option>
+								<option value="euro">euro</option>
+								<option value="dollar">dollar</option>
+								<option value="peso">peso</option>
+							</select>
+						</li>
+						<li class="cartCounter">
+							<img
+								class="cart"
+								src="./images/cart.png"
+								alt="shopping cart"
+							/>
+							<span id="counter">0</span>
+						</li>
+						<li>
+							<img
+								class="search"
+								src="./images/search.png"
+								alt="search icon"
+							/>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="highlights">
+			<h1 class="text">Highlights</h1>
+		</div>
+
+		<div class="container">
+			<div class="banner">
+				<div class="bannerContainer">
+					<button
+						class="arrows"
+						id="left"
+						onclick="current_banner_left()"
+					>
+						<h1><</h1>
+					</button>
+					<div class="pictures">
+						<img
+							class="current_banner"
+							src="./images/banner_1.jpeg"
+							alt=""
+							id="banner"
+						/>
+					</div>
+					<button
+						class="arrows"
+						id="right"
+						onclick="current_banner_right()"
+					>
+						<h1>></h1>
+					</button>
+				</div>
+
+				<div class="tab">
+					<ul>
+						<li class="bottom" id="0" on></li>
+						<li class="bottom" id="1"></li>
+						<li class="bottom" id="2"></li>
+						<li class="bottom" id="3"></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="sales">
+				<div class="box">
+					<div class="topImg">
+						<img src="./images/banner_1.jpeg" alt="" />
+					</div>
+					<div class="info">
+						<div class="title"><h3>Neko Gold</h3></div>
+
+						<div class="platforms">
+							<img
+								src="./images/windows.png"
+								alt="windows logo"
+							/>
+							<img src="./images/apple.png" alt="apple lo go" />
+						</div>
+						<div class="price">
+							<div class="status">-20%</div>
+							<div>
+								<p>€ 14.94</p>
+								<h3>€10.49</h3>
+							</div>
+							<button class="buy" onclick="add_cart()">
+								<h2>Buy</h2>
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="box">
+					<div class="topImg">
+						<img src="./images/banner_2.jpeg" alt="" />
+					</div>
+					<div class="info">
+						<div class="title"><h3>Ninja frost</h3></div>
+
+						<div class="platforms">
+							<img
+								src="./images/windows.png"
+								alt="windows logo"
+							/>
+							<img src="./images/apple.png" alt="apple lo go" />
+						</div>
+						<div class="price">
+							<div class="status">-10%</div>
+							<div>
+								<p>€ 8.19</p>
+								<h3>€7.39</h3>
+							</div>
+							<button class="buy" onclick="add_cart()">
+								<h2>Buy</h2>
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="box">
+					<div class="topImg">
+						<img src="./images/banner_4.jpeg" alt="" />
+					</div>
+					<div class="info">
+						<div class="title"><h3>punk 1000</h3></div>
+
+						<div class="platforms">
+							<img
+								src="./images/windows.png"
+								alt="windows logo"
+							/>
+							<img src="./images/apple.png" alt="apple lo go" />
+							<img
+								src="./images/linux.png"
+								alt="Linux lo go"
+								onclick="alert('This game is supported by Linux')"
+							/>
+						</div>
+						<div class="price">
+							<div class="status">New</div>
+							<div>
+								<!-- <p>€ 8.19</p> -->
+								<h3>€19.99</h3>
+							</div>
+							<button onclick="add_cart()" class="buy">
+								<h2>Buy</h2>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="./script.js"></script>
+	</body>
+</html>
