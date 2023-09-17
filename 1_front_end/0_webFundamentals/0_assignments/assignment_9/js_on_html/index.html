@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>hello world</h1>
+		<button onclick="alert('hello there')">click</button>
+		<button onclick="counter(this)">1</button>
+		<button
+			onclick="like_counter()"
+			onmouseover="over(this)"
+			onmouseout="out(this)"
+		>
+			<span id="number">1</span> likes
+		</button>
+		<button onclick="counter(this)">1</button>
+		<button onclick="counter(this)">1</button>
+		<!-- we want to bring in js last so that everything renders first -->
+		<script src="./script.js">
+			//you can write you code here
+			// but it would get messy
+		</script>
+	</body>
+</html>
