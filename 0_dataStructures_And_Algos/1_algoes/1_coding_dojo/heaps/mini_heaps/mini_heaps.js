@@ -164,8 +164,7 @@ class MiniHeap {
 		if (heap.length <= 1) return null;
 
 		// swapping the last index with the root element /and then deleting the last element in the heap
-		heap[1] = heap[heap.length - 1];
-		heap.pop();
+		heap[1] = heap.pop();
 
 		//  initializing variables
 		let index = 1; //our index
