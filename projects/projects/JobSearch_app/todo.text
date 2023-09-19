@@ -1,0 +1,10 @@
+create an app that allow you to look for jobs 
+
+link_to_follow={
+    linked_jobs_api_help:{
+        url:"https://youtu.be/YnisNuTiUFY",
+        type:"youTube video  for job search api from google",
+        from:"youTube,
+        doc_Type:"video"
+    }
+}

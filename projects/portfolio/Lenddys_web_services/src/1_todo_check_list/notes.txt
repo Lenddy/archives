@@ -1,0 +1,49 @@
+================================================================
+================================================================
+MVC 
+
+have a nav bar 
+
+have som contend display in the page 
+have color that math the them darkgray red and lightblue 
+
+================================================================
+================================================================
+for the navbar
+the color scheme is darkgray red and lightblue 
+
+1 Make a navbar (done)
+
+2 fixed the navbar to the top of the screen (done)
+
+2 on hover Make the  color of the content inside of the navbar be a different color red for now and also add a border at the bottom  and turn the mouse into a pointer (done)
+
+3 make the background color of the navbar be transparent  on scroll // you can try and use the opacity of the color to make it look like is fading 
+
+4 make the logo make the page scroll to the top of the page //// or have two options change the from dark mode to light and make the page scroll to the top of the page // or make an on hover event that show two sub btns with the scroll to top and the them of the page 
+
+
+
+
+
+5 Make the navbar in to a burger menu that is on the right side of the page 
+
+
+i know this wont be really necessary but make a 3d figure that follows you around as you scroll and gives of emojis  showing its emotions like the impress emoji the anger emoji and the happy emoji 
+
+what i have in min i dont know why is an elf(santas elfs ) riding a sea horse 
+
+================================================================
+================================================================
+for the main content
+
+0 make a button that will be switching form english to Spanish  saying hello there | hola como esta | click on me to make the page english exclusive | as click en me para hacer la pagina español exclusivo |   // make it have an animation  dont know what kind yet
+
+1 on landing(page load) make some items appear  with an animation 
+
+2 animate on scroll   go watch the videos on how to do it  /// https://www.youtube.com/playlist?list=PLOXm45pdpHlVRk8WQjKT1wpg_BkVqyBzP
+
+
+
+================================================================
+================================================================

@@ -1,0 +1,41 @@
+#root {
+  /* max-width: 1280px; */
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+/* for the NavBar component  */
+.navbar{
+  background-color: white;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  margin: 0px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+}
+
+.navbar ul{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #242424;
+  list-style: none;
+  width: 90%;
+  font-size: 40px;
+  border: solid black 1px;
+  border-radius: 50px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.navbar ul li:hover{
+  cursor: pointer;
+  color:red ;
+  border-bottom: red solid 2px;
+}
+
