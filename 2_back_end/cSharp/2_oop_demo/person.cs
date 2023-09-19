@@ -3,11 +3,12 @@ namespace oopDemo;
 
 // creating a class that will be public for every files to be able to make changes
 public class Person{
-    // this is are fields
+    
+    // this is are properties
     public string Fname{get; set;} // get and set is to manipulate the data if you have a db
     public string Lname{get; set;}
 
-// this is the constructor of the the class
+    // this is the constructor of the the class
     public Person(string fName, string lName ){
         Fname = fName;
         Lname = lName;
