@@ -18,30 +18,63 @@ the color scheme is darkgray red and lightblue
 
 2 on hover Make the  color of the content inside of the navbar be a different color red for now and also add a border at the bottom  and turn the mouse into a pointer (done)
 
-3 make the background color of the navbar be transparent  on scroll // you can try and use the opacity of the color to make it look like is fading 
-
 4 make the logo make the page scroll to the top of the page //// or have two options change the from dark mode to light and make the page scroll to the top of the page // or make an on hover event that show two sub btns with the scroll to top and the them of the page 
 
 
+Make that animation on the main top to first appear center left then center( or at the same time ) the top (figure out if you are going to have the top just being the change  language btn)
 
+make the middle of main top be overlap by the main_left and right
+and that on hover make the that item be the main center of attention and put the other 2 to the side of fade in 
+
+and make them be able to be drag so the use can arrange the position of where the items are exclude main top_top
+
+
+3 make the background color of the navbar be transparent  on scroll // you can try and use the opacity of the color to make it look like is fading 
 
 
 5 Make the navbar in to a burger menu that is on the right side of the page 
+
+6 make the log have 2 back ground dark and light 
+
 
 
 i know this wont be really necessary but make a 3d figure that follows you around as you scroll and gives of emojis  showing its emotions like the impress emoji the anger emoji and the happy emoji 
 
 what i have in min i dont know why is an elf(santas elfs ) riding a sea horse 
 
+
+
+
 ================================================================
 ================================================================
 for the main content
 
+================================================================
+================================================================
+for the btn in main
 0 make a button that will be switching form english to Spanish  saying hello there | hola como esta | click on me to make the page english exclusive | as click en me para hacer la pagina español exclusivo |   // make it have an animation  dont know what kind yet
+
+
+thinks if you want to give it an animation that change the color of the back ground from red ,blue grey
+
+================================================================
+================================================================
+
+
+
 
 1 on landing(page load) make some items appear  with an animation 
 
 2 animate on scroll   go watch the videos on how to do it  /// https://www.youtube.com/playlist?list=PLOXm45pdpHlVRk8WQjKT1wpg_BkVqyBzP
+
+
+
+
+put the language cahnge also insie of the logo 
+
+put the language change on its only promp like you have it already 
+
+and also have it as a a btn on the hello there message //https://www.figma.com/file/4vZUKmHGce3G0g61IWp33T/Untitled?type=design&node-id=0-1&mode=design&t=TZp8xmDRMJ3xHxAL-0
 
 
 

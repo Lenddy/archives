@@ -11,12 +11,14 @@
   height: 60px;
   width: 100%;
   position: fixed;
-  margin: 0px;
-  padding: 10px;
+  /* margin: 0px; */
+  top: 0;
+  padding: 10px 0px 10px 0px;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0.8;
+  
 }
 
 .navbar ul{
@@ -35,7 +37,76 @@
 
 .navbar ul li:hover{
   cursor: pointer;
-  color:red ;
+  color:red;
   border-bottom: red solid 2px;
 }
+
+
+/* for the language button component */
+
+.lan_btn{
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;/* this will have an animation that will be moving from right to left and the animation will stop when the mouse is hover over the h1*/
+  width: 100%;
+  background-color: darkgray;
+}
+
+
+.lan_btn h4{
+  margin: 0px;
+  cursor: pointer;
+}
+
+
+
+/* For Main component */
+
+.mainTopContainer{
+  background-color: #5a0009;
+  margin: 20px 0px 0px 0px;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.top_main_top{
+  width: 100%;
+  height: 70px;
+  background-color:darkcyan;
+}
+
+.lcr_container{
+  margin: 0 auto;
+  padding: 0 auto;
+display: flex;
+width: 100%;
+height: 400px;
+justify-content: space-evenly;
+
+}
+
+.top_main_left{
+  width: 500px;
+  height: 100%;
+  background-color:blue;
+  display: inline-block;
+}
+
+.top_main_center{
+  width: 500px;
+  height: 100%;
+  background-color:blue;
+  display: inline-block;
+}
+.top_main_right{
+  width: 500px;
+  height: 100%;
+  background-color:blue;
+  display: inline-block;
+}
+
 
