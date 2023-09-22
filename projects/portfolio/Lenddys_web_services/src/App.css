@@ -60,6 +60,78 @@
 
 
 
+/* for the welcome component */
+
+.welcome{
+  height: 500px;
+  width: 100%;
+  background-color: crimson;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.welcomeLeft {
+  background-color: blue;
+  height: 100%;
+  flex:1;
+}
+.welcomeRight {
+  background-color: gray;
+  height: 100%;
+  flex:1;
+}
+
+
+
+/* for the what i do component */
+.whatIDo{
+  width: 100%;
+  height: 500px;
+  background-color: green;
+  margin:20px 0px  20px 0px ;
+}
+
+
+
+
+
+
+/* for the tools component */
+.tools{
+  width: 100%;
+  height: 500px;
+  background-color: purple;
+  margin:20px 0px  20px 0px ;
+}
+
+
+/* for the projects component */
+.projects{
+  width: 100%;
+  height: 500px;
+  background-color:rgb(165, 165, 127) ;
+  margin:20px 0px  20px 0px ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* For Main component */
 
 .mainTopContainer{
@@ -101,6 +173,13 @@ justify-content: space-evenly;
   height: 100%;
   background-color:blue;
   display: inline-block;
+}
+
+.top_main_center img{
+width: 100%;
+/* height: 400px; */
+/* object-fit: contain; */
+
 }
 .top_main_right{
   width: 500px;
