@@ -31,7 +31,7 @@ and make them be able to be drag so the use can arrange the position of where th
 ================================================================
 ================================================================
 for the btn in main
-0 make a button that will be switching form english to Spanish  saying hello there | hola como esta | click on me to make the page english exclusive | as click en me para hacer la pagina español exclusivo |   // make it have an animation  dont know what kind yet
+0 make a button that will be switching form english to Spanish saying hello there | hola como estas | click on me to make the page english exclusive | as click en me para hacer la pagina español exclusivo |   // make it have an animation  dont know what kind yet
 
 
 thinks if you want to give it an animation that change the color of the back ground from red ,blue grey
@@ -95,6 +95,3 @@ what i have in min i dont know why is an elf(santas elfs ) riding a sea horse
 
 ================================================================
 ================================================================
-
-
-more changes

@@ -1,28 +1,32 @@
-import React from "react";
-
 const Welcome = () => {
 	return (
 		<>
 			<div className="welcome">
 				<div className="welcomeLeft">
-					<ol>
-						<li>
-							welcome message (The place where to turn you ideas
-							into reality welcome to Lenddy's web services)
-						</li>
-						<li>
-							this is for the sub paragraph yo yo the name is
-							Lenddy i like making web sites and apps that will
-							sut your needs using the best technologies so what
-							is your next big idea and when do you want to make
-							it happen ?
-						</li>
-						<li>make 3 btns one to go see my resume</li>
-						<li>one to contact me</li>
-						<li>one to go see my github</li>
-						<li>one to go see the live projects</li>
-					</ol>
+					<h1 className="welcomeMessage">
+						{/* (make the words clickable and
+						have an image on click) */}
+						The place where you turn your ideas into reality welcome
+						to Lenddy's web services
+					</h1>
+
+					<div className="subheader">
+						<p>
+							yo yo the name is Lenddy i like making web sites and
+							apps that will sut your needs using the best
+							technologies so what is your next big idea and when
+							do you want to make it happen ?
+						</p>
+					</div>
+
+					<div className="welcomeBtn">
+						<button>to go see my resume</button>
+						<button>to contact me</button>
+						<button>go see my github</button>
+						<button>go see the live projects</button>
+					</div>
 				</div>
+
 				<div className="welcomeRight">
 					<ol>
 						<li>
