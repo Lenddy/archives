@@ -1,155 +1,187 @@
 #root {
   /* max-width: 1280px; */
-  margin: 0 auto;
-  text-align: center;
+    margin: 0 auto;
+    text-align: center;
 }
 
 
 /* for the NavBar component  */
 .navbar{
-  background-color: white;
-  height: 60px;
-  width: 100%;
-  position: fixed;
+  /* background-color: rgb(0 0 0 / 15%); */
+    height: 60px;
+    width: 100%;
+    position: fixed;
   /* margin: 0px; */
-  top: 0;
-  padding: 10px 0px 10px 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.8;
-  
+    top: 0;
+    padding: 10px 0px 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  /* opacity: 1; */
 }
 
+.navLogo{
+    height: 60px;
+}
+
+.navLogo:hover{
+    cursor: pointer;
+    border-bottom: #ff00ff solid 2px;
+}
+
+
 .navbar ul{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: #242424;
-  list-style: none;
-  width: 90%;
-  font-size: 40px;
-  border: solid black 1px;
-  border-radius: 50px;
-  margin: 0px;
-  padding: 0px;
+    background-color: rgb(0 0 0 / 50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #00ffff;
+    list-style: none;
+    width: 90%;
+    font-size: 40px;
+    border: solid #00ffff 1px;
+    border-radius: 50px;
+    margin: 0px;
+    padding: 0px;
+    opacity: 1;
 }
 
 .navbar ul li:hover{
-  cursor: pointer;
-  color:red;
-  border-bottom: red solid 2px;
+    cursor: pointer;
+    color:#ff00ff;
+    border-bottom: #ff00ff solid 2px;
+    
 }
+
 
 
 /* for the language button component */
 
 .lan_btn{
-  margin-top: 100px;
-  display: flex;
-  justify-content: center;/* this will have an animation that will be moving from right to left and the animation will stop when the mouse is hover over the h1*/
-  width: 100%;
-  background-color: darkgray;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;/* this will have an animation that will be moving from right to left and the animation will stop when the mouse is hover over the h1*/
+    width: 100%;
+    background-color: darkgray;
 }
 
 
 .lan_btn h4{
-  margin: 0px;
-  cursor: pointer;
+    margin: 0px;
+    cursor: pointer;
 }
-
 
 
 /* for the welcome component */
 
 .welcome{
-  height: 500px;
-  width: 100%;
-  background-color: crimson;
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+    height: 500px;
+    width: 100%;
+  /* background-color: crimson; */
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin:0px 0px 30px 0px;
+
 }
 
 .welcomeLeft {
-  background-color: blue;
-  height: 100%;
-}
+  /* background-color:red; */
+    height: 100%;
+    width: 1000px;
+}  
 
 .welcomeMessage{
-  /* width: 70%; */
-  padding: 10px;
-  text-align: left;
-  font-size: 50px;
+    /* width: 70%; */
+    padding: 10px;
+    text-align: left;
+    font-size: 50px;
+    color: #00ffff;
 }
 
 .subheader{
-  font-size:30px;
-  width: 90%;
+    font-size:30px;
+    width: 90%;
+    /* color: ghostwhite; */
+    color: lightblue;
+    
+}
+
+.subheader p{
+
 }
 
 .welcomeBtn{
-  /* width: 200px; */
-  /* display:flex; */
-  /* justify-content: space-between; */
-  /* align-items: center; */
+    width: 100%;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
+.welcomeBtn button{
+height: 50px;
+font-size: large;
+color: #ff00ff;
+background-color: transparent;
+border: solid 2px #ff00ff;
+border-radius: 50px;
+}
+
+.welcomeBtn button:hover{
+color: black;
+background-color: #ff00ff;
+}
 
 
 
 .welcomeRight {
-  background-color: gray;
-  height: 100%;
+  /* background-color: gray; */
+    height: 100%;
+    width: 500px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: column;
 }
 
+.logo{
+    height: 90%;
+}
+
+.welcomeRight p {
+    margin: 0px;
+    font-size: small;
+}
 
 
 /* for the what i do component */
 .whatIDo{
-  width: 100%;
-  height: 500px;
-  background-color: green;
-  margin:20px 0px  20px 0px ;
+    width: 100%;
+    height: 500px;
+    background-color: green;
+    margin:20px 0px  20px 0px ;
 }
-
-
 
 
 
 
 /* for the tools component */
 .tools{
-  width: 100%;
-  height: 500px;
-  background-color: purple;
-  margin:20px 0px  20px 0px ;
+    width: 100%;
+    height: 500px;
+    background-color: purple;
+    margin:20px 0px  20px 0px ;
 }
 
 
 /* for the projects component */
 .projects{
-  width: 100%;
-  height: 500px;
-  background-color:rgb(165, 165, 127) ;
-  margin:20px 0px  20px 0px ;
+    width: 100%;
+    height: 500px;
+    background-color:rgb(165, 165, 127) ;
+    margin:20px 0px  20px 0px ;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -208,5 +240,3 @@ width: 100%;
   background-color:blue;
   display: inline-block;
 }
-
-
