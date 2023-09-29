@@ -5,7 +5,8 @@
 }
 
 
-/* for the NavBar component  */
+
+/*?  for the NavBar component  */
 .navbar{
   /* background-color: rgb(0 0 0 / 15%); */
     height: 60px;
@@ -55,7 +56,7 @@
 
 
 
-/* for the language button component */
+/*? for the language button component */
 
 .lan_btn{
     margin-top: 100px;
@@ -72,10 +73,10 @@
 }
 
 
-/* for the welcome component */
+/*? for the welcome component */
 
 .welcome{
-    height: 500px;
+    height: 550px;
     width: 100%;
   /* background-color: crimson; */
     margin-top: 20px;
@@ -155,7 +156,7 @@ background-color: #ff00ff;
 }
 
 
-/* for the what i do component */
+/*?> for the what i do component */
 .whatIDo{
     width: 100%;
     height: 500px;
@@ -163,10 +164,49 @@ background-color: #ff00ff;
     margin:20px 0px  20px 0px ;
 }
 
+.whatIDo_top{
+    width: 100%;
+    height: 70px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.whatIDo_middle{
+    /* background-color: blue; */
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10px;
+    grid-template-rows:minmax(150px auto);
+    /* justify-content: center;
+    justify-items:center;
+    align-content: center;
+    align-items: center; */
+}
+
+.whatIDo_left{
+    /* grid-column: 1/3; */
+    /* this is a short hand for grid-column-start and  grid-column-end  */
+    /* you can also use  span 2(this spans the grid items 2 columns)  instead of 1/2*/
+    background-color: purple;
+}
+.whatIDo_right{
+    /* grid-column-: 2/3; */
+    background-color:yellow;
+
+}
+
+.whatIDo_bottom{
+    background-color: red;
+    grid-column: 1/-1;
+} 
 
 
 
-/* for the tools component */
+
+/*? for the tools component */
 .tools{
     width: 100%;
     height: 500px;
@@ -175,7 +215,7 @@ background-color: #ff00ff;
 }
 
 
-/* for the projects component */
+/*? for the projects component */
 .projects{
     width: 100%;
     height: 500px;
@@ -185,7 +225,7 @@ background-color: #ff00ff;
 
 
 
-/* For Main component */
+/*? For Main component */
 
 .mainTopContainer{
   background-color: #5a0009;
