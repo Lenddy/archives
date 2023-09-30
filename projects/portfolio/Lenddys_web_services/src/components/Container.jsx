@@ -11,7 +11,6 @@ function Container() {
 		<>
 			<NavBar />
 			<Change_language />
-
 			<Welcome />
 			<What_I_Do />
 			<Tools />
