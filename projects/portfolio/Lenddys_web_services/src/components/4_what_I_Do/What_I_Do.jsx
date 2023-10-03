@@ -13,7 +13,7 @@ const What_I_Do = () => {
 					{/* make this have a banner on top that changes from What do i
 					do --
 					{">"} full-stack engineer --{">"} pc building --{">"}{" "}
-					instructor (have a blur effect that follow the words and
+					Tutor (have a blur effect that follow the words and
 					make the word appear from the left go past the middle of the
 					screen then come back the blur effect should also do the
 					same but delayed ) */}
@@ -75,11 +75,26 @@ const What_I_Do = () => {
 					</div>
 				</div>
 				<div className="whatIDo_bottom">
-					<h1>Instructor</h1>
+					<h1>Tutor</h1>
 					<p>
-						i will be able to help you get a basic understanding of
+						{/* i will be able to help you get a basic understanding of
 						wed development and pc building to the point where you
-						can doit on your own
+						can doit on your own */}
+						As a tutor, my focus is to guide you to have a
+						fundamentals understanding of web development. Together,
+						we will embark on a journey that equips you with the
+						knowledge and skills to confidently navigate the world
+						of web development at its core. Through hands-on
+						learning , you'll build a solid foundation, enabling you
+						to master the essentials of web development. We'll start
+						with HTML and CSS, the building blocks of the web, and
+						them move into JavaScript and other key technologies,
+						giving you the proficiency needed to create captivating
+						websites and dynamic web applications. By the end of our
+						journey, you will possess the confidence and know-how to
+						tackle web development projects independently, setting
+						you on a path to explore endless opportunities for
+						innovation and self-reliance in this field.
 					</p>
 				</div>
 

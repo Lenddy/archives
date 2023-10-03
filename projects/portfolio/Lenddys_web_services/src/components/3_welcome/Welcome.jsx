@@ -8,8 +8,8 @@ const Welcome = () => {
 					<h1 className="welcomeMessage">
 						{/* (make the words clickable and
 						have an image on click) */}
-						The Place Where You Turn Your Ideas Into Reality Welcome
-						To Lenddy's Web Services
+						The Place To Turn Your Ideas Into Reality Welcome To
+						Lenddy's Web Services
 					</h1>
 
 					<div className="subheader">
@@ -35,7 +35,11 @@ const Welcome = () => {
 					<p>
 						Like the logo{" "}
 						<span>
-							<a href="#" target="_blank" rel="noreferrer">
+							<a
+								href="https://instagram.com/merv_agency?igshid=OGQ5ZDc2ODk2ZA=="
+								target="_blank"
+								rel="noreferrer"
+							>
 								click here
 							</a>
 						</span>{" "}

@@ -165,7 +165,7 @@ background-color: #ff00ff;
 /*? for the what i do component */
 .whatIDo{
     width: 100%;
-    height: 700px;
+    height: 800px;
     /* background-color: green; */
     /* margin:20px 0px  20px 0px ; */
 }
@@ -245,7 +245,7 @@ background-color: #ff00ff;
     /* background-color: red;
     height:100% ;
     flex: 1; */
-    margin: 0px;
+    margin-top: 0px;
     font-size:35px;
     color: #00ffff;
 } 
@@ -257,19 +257,73 @@ background-color: #ff00ff;
     flex: 1; */
     margin: 0px;
     color: lightblue;
-    f
+    /* f */
 } 
 
 
 
 
 /*? for the tools component */
-.tools{
-    width: 100%;
-    height: 500px;
-    background-color: purple;
-    margin:20px 0px  20px 0px ;
+.tool_container{
+  width: 100%;
+  height: 600px;
+  /* background-color: purple; */
+  margin:20px 0px  40px 0px ;
 }
+
+.tool_container h1{
+  color: #00ffff;
+  font-size:60px;
+}
+.tool_container a{
+  color: white;
+  text-decoration: none;
+}
+
+
+
+.tools{
+  width: 100%;
+  height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.tech_logos{
+  width: 100px;
+  height: 100px;
+  /* background-color: yellow; */
+}
+
+.languages{
+  width: 80%;
+  display: inherit;
+  justify-content: space-around;
+    align-items: center;
+}
+
+.frameworks_libraries{
+  width: 80%;
+
+  display: inherit;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.databases{
+  width: 80%;
+
+  display: inherit;
+  justify-content: space-around;
+    align-items: center;
+}
+
+
+
+
 
 
 /*? for the projects component */
@@ -277,7 +331,7 @@ background-color: #ff00ff;
     width: 100%;
     height: 500px;
     background-color:rgb(165, 165, 127) ;
-    margin:20px 0px  20px 0px ;
+    margin:40px 0px  40px 0px ;
 }
 
 
