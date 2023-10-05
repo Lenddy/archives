@@ -60,7 +60,9 @@ make this have a banner on top that changes from What do i do -- {">"} full-stac
 ================================================================
 purple for the Tools component
 
-make a grid with the technologies that you know make an animation that will make the picture items appear in random order if you want you can have a description of them make a like to tell the use what every technology is so you might want to make a link to their home page
+ animation that will make the picture items appear in random order
+ 
+   make a like to tell the use what every technology is so you might want to make a link to their home page
 
 ================================================================
 ================================================================
@@ -82,12 +84,18 @@ purple for the main content
 ================================================================
 purple for the profile component
 
-Make that animation on the main top to first appear center left then center( or at the same time ) the top (figure out if you are going to have the top just being the change  language btn)
+Make that animation on the main top to first appear center left then center( or at the same time ) the top
 
 make the middle of main top be overlap by the main_left and right
 and that on hover make the that item be the main center of attention and put the other 2 to the side of fade in 
 
 and make them be able to be drag so the use can arrange the position of where the items are exclude main top_top
+
+
+if you want to make the user able to draw on your face
+
+and also have a like system that let the other users like the picture of other users 
+a comment section too maybe
 
 ================================================================
 ================================================================
@@ -100,3 +108,9 @@ what i have in min i dont know why is an elf(santas elfs ) riding a sea horse
 
 ================================================================
 ================================================================
+
+
+
+
+
+this is for Dominicans that are base on dajabon they can take the money if they decide to hire me to inversiones ruben y estevez  or they can transfer it to my  can account  //and also make a link to inversiones ruben y estevez

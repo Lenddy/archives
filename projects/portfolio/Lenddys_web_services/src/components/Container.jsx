@@ -9,13 +9,27 @@ import What_I_Do from "./4_what_I_Do/What_I_Do";
 function Container() {
 	return (
 		<>
-			<NavBar />
-			<Change_language />
-			<Welcome />
-			<What_I_Do />
-			<Tools />
-			<Projects />
-			<Profile />
+			<div className="components_container">
+				<NavBar />
+			</div>
+			<div className="components_container">
+				<Change_language />
+			</div>
+			<div className="components_container">
+				<Welcome />
+			</div>
+			<div className="components_container">
+				<What_I_Do />
+			</div>
+			<div className="components_container">
+				<Tools />
+			</div>
+			<div className="components_container">
+				<Projects />
+			</div>
+			<div className="components_container">
+				<Profile />
+			</div>
 		</>
 	);
 }

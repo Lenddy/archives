@@ -9,6 +9,13 @@ body::-webkit-scrollbar{
 }
 
 
+/*? for all components */
+
+.components_container{
+  padding: 5px;
+  /* margin: 30px; */
+}
+
 
 /*?  for the NavBar component  */
 
@@ -266,7 +273,7 @@ background-color: #ff00ff;
 /*? for the tools component */
 .tool_container{
   width: 100%;
-  height: 600px;
+  height: 700px;
   /* background-color: purple; */
   margin:20px 0px  40px 0px ;
 }
@@ -284,7 +291,7 @@ background-color: #ff00ff;
 
 .tools{
   width: 100%;
-  height: 100%;
+  height: 90%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -323,71 +330,139 @@ background-color: #ff00ff;
 
 
 
-
-
-
 /*? for the projects component */
-.projects{
-    width: 100%;
-    height: 500px;
-    background-color:rgb(165, 165, 127) ;
-    margin:40px 0px  40px 0px ;
+.project{
+  width: 100%;
+  height: 700px;
+  /* background-color:rgb(165, 165, 127) ; */
+  margin:40px 0px  40px 0px ;
+}
+.header{
+  color: #00ffff;
+  font-size:60px;
+  margin:60px 0px  0px 0px;
+}
+
+
+.projects_container{
+  width: 100%;
+  height: 90%;
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.card_project{
+  background-color: darkgray;
+  height: 500px;
+  width: 400px;
+  border-radius: 60px;
+  border: black solid 2px;
+  margin: 0px;
+}
+
+
+.card_project img{
+  margin-top: 20px;
+  width: 80%;
+  height: 150px;
+  /* border-radius: 30px; */
+  border: 2px solid black;
+  
+}
+
+.card_project h1{
+  /* color: #00ffff; */
+  /* font-size:60px; */
+  /* margin:60px 0px  0px 0px; */
 }
 
 
 
-/*? For Main component */
 
-.mainTopContainer{
-  background-color: #5a0009;
-  margin: 20px 0px 0px 0px;
+
+
+/*? For Main component */
+.profile{
+  /* background-color: #5a0009; */
+  /* margin: 20px 0px 0px 0px; */
   width: 100%;
-  height: 500px;
+  height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
 
-.top_main_top{
+.profileContainer{
+
   width: 100%;
-  height: 70px;
-  background-color:darkcyan;
+  /* height: 700px; */
+  /* padding: 0%; */
 }
 
-.lcr_container{
+.profile_top{
+  width: 100%;
+  height: 100px;
+  /* background-color:darkcyan; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #00ffff;
+  font-size:30px;
+  /* margin-bottom: 30px; */
+}
+
+.profile_top h1{
+  border: #00ffff solid 2px;
+  border-radius: 50px;
+  padding: 10px;
+  margin: 0px;
+}
+
+
+.content_container{
   margin: 0 auto;
   padding: 0 auto;
-display: flex;
-width: 100%;
-height: 400px;
-justify-content: space-evenly;
-
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.top_main_left{
+
+.profile_left{
   width: 500px;
-  height: 100%;
+  height: 450px;
   background-color:blue;
-  display: inline-block;
+  /* display: inline-block; */
+  /* border-radius: 50px; */
 }
 
-.top_main_center{
+.profile_center{
   width: 500px;
-  height: 100%;
+  height: 450px;
   background-color:blue;
-  display: inline-block;
+  /* display: inline-block; */
 }
 
-.top_main_center img{
+.profile_center img{
 width: 100%;
 /* height: 400px; */
 /* object-fit: contain; */
 
 }
-.top_main_right{
+.profile_right{
   width: 500px;
-  height: 100%;
+  height: 450px;
   background-color:blue;
-  display: inline-block;
+  /* display: inline-block; */
+}
+
+
+
+.profile_left ,.profile_center, .profile_right , .profile_center img{
+  border-radius: 50px;
 }
