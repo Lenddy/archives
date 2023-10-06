@@ -4,7 +4,7 @@ purple MVC
 
 have a nav bar 
 
-have som contend display in the page 
+have some contend display in the page 
 have color that math the them darkgray red and lightblue 
 
 ================================================================
@@ -12,7 +12,7 @@ have color that math the them darkgray red and lightblue
 purple for the navbar
 the color scheme is darkgray red and lightblue 
 
-make the nave bar desaper untuill it is hover over with the mouse  and this happens when the use scrolls   only for pc 
+make the nave bar desaper until it is hover over with the mouse  and this happens when the use scrolls   only for pc 
 
 3 make the background color of the navbar be transparent  on scroll // you can try and use the opacity of the color to make it look like is fading 
 
