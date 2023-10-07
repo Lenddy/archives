@@ -1,9 +1,20 @@
 import { useState } from "react";
 import Lenddy from "../../assets/Lenddy.jpg";
 
+// ?
+// ?
+// ?
+// ?
+// ?
+// ?
+// ?
+// ?
+// ?
+
+// make the containers align
+
 const Profile = () => {
 	const [showMore, setShowMore] = useState(false);
-	const [showReadMoreBtn, setShowReadMoreBtn] = useState(false);
 
 	const fullParagraphStyles = {
 		WebkitLineClamp: 12,
