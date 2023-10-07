@@ -1,6 +1,17 @@
 import Logo from "../../assets/LM.png";
 
 function NavBar() {
+	// ?????
+	// ?????
+	// ?????
+	// ?????
+	// ?????
+	// ?????
+
+	// the navbar will disappear of fade out  on scroll  and will appear on scroll up and on hover at the top of the page
+
+	// the logo is going to make appear  3 btns   change language  scroll to the top and change theme   there was a 4th one but i dont remember what it was at the moment   jump to a section maybe ????
+
 	return (
 		<>
 			<div className="navbar">
