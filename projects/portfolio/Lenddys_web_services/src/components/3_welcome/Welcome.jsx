@@ -23,10 +23,10 @@ const Welcome = () => {
 
 					<div className="welcomeBtn">
 						{/*  */}
-						<button>View Resume</button>
-						<button>Github</button>
-						<button>Projects</button>
-						<button>Contact Me</button>
+						<button className="btn">View Resume</button>
+						<button className="btn">Github</button>
+						<button className="btn">Projects</button>
+						<button className="btn">Contact Me</button>
 					</div>
 				</div>
 

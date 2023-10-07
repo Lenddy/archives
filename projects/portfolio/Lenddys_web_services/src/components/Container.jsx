@@ -5,6 +5,7 @@ import Tools from "./5_Tools/Tools";
 import Projects from "./6_projects/Projects";
 import Welcome from "./3_welcome/Welcome";
 import What_I_Do from "./4_what_I_Do/What_I_Do";
+import Test from "./Test";
 
 function Container() {
 	return (
@@ -30,6 +31,7 @@ function Container() {
 			<div className="components_container">
 				<Profile />
 			</div>
+			{/* <Test></Test> */}
 		</>
 	);
 }
