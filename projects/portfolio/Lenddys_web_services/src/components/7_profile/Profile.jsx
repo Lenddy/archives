@@ -11,7 +11,7 @@ import Lenddy from "../../assets/Lenddy.jpg";
 // ?
 // ?
 
-// make the containers align
+// make the containers align    and make the show more be slower not instant with ease in and out maybe ?????
 
 const Profile = () => {
 	const [showMore, setShowMore] = useState(false);
