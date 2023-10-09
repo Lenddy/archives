@@ -1,6 +1,9 @@
 import Logo from "../../assets/LM.png";
 
 const Welcome = () => {
+	//? use th blink animation from anima.net to show your logo and the blink to the new logo
+	// ? give the component of the logo a horizontal scroll bar  on scroll you can change the logo  and a line below that show in with logo you are one
+
 	return (
 		<>
 			<div className="welcome">

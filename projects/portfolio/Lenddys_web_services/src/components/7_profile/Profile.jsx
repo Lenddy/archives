@@ -12,6 +12,7 @@ import Lenddy from "../../assets/Lenddy.jpg";
 // ?
 
 // make the containers align    and make the show more be slower not instant with ease in and out maybe ?????
+// use the animation of the rocket that is at the end of thi video when sending the message in the profile
 
 const Profile = () => {
 	const [showMore, setShowMore] = useState(false);

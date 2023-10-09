@@ -21,6 +21,8 @@ const Tools = () => {
 			every technology is so you might want to make a link to their home
 			page get the icons from https://simpleicons.org/ */}
 
+				{/*!!!! use the blinc effect from anima.net */}
+
 				{/* languages */}
 				<div className="languages">
 					<a
@@ -30,18 +32,31 @@ const Tools = () => {
 					>
 						<div className="tech_logos">
 							<img src={html} alt="" />
-
 							<p>HTML</p>
 						</div>
 					</a>
-					<div className="tech_logos">
-						<img src={css} alt="" />
-						<p>CSS</p>
-					</div>
-					<div className="tech_logos">
-						<img src={js} alt="" />
-						<p>JAVASCRIPT</p>
-					</div>
+
+					<a
+						href="https://www.w3schools.com/html/html_intro.asp"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<div className="tech_logos">
+							<img src={css} alt="" />
+							<p>CSS</p>
+						</div>
+					</a>
+
+					<a
+						href="https://www.w3schools.com/html/html_intro.asp"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<div className="tech_logos">
+							<img src={js} alt="" />
+							<p>JAVASCRIPT</p>
+						</div>
+					</a>
 					<div className="tech_logos">
 						<img src={py} alt="" />
 						<p>PYTHON</p>
