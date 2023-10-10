@@ -1,7 +1,9 @@
 import Logo from "../../assets/LM.png";
 import { useRef, useEffect, useState } from "react";
-
+import CircularMenu from "./CircularMenu";
+// import { useNavigate } from "react-router-dom";
 function NavBar() {
+	// const navigate = useNavigate();
 	// ?????
 	// ?????
 	// ?????
@@ -15,9 +17,9 @@ function NavBar() {
 
 	// ? have the 2 logos be on the nav bar and keep switching between the 2
 
-	const navBarRef = useRef();
+	// !!!!! maybe add the go to in side of the circular menu and maybe rename it jump to
+
 	const [hideNavBar, setHideNavBar] = useState("");
-	const [notHover, setNotHover] = useState(false);
 	let hoverTimeout;
 
 	useEffect(() => {
@@ -38,14 +40,20 @@ function NavBar() {
 	}, []);
 	const onHover = () => {
 		setHideNavBar("");
-		clearTimeout(hoverTimeout); // Clear the previous timeout if it exists
+		clearTimeout(hoverTimeout);
 	};
 
 	const onMouseLeave = () => {
-		// Set a timeout to apply the hideNavBar class after a delay
-		hoverTimeout = setTimeout(() => {
-			setHideNavBar("hideNavBar");
-		}, 1000); // Adjust the delay (in milliseconds) as needed
+		if (window.scrollY > 150) {
+			hoverTimeout = setTimeout(() => {
+				setHideNavBar("hideNavBar");
+			}, 1000);
+		} else {
+			setHideNavBar("");
+		}
+		// hoverTimeout = setTimeout(() => {
+		// 	navigate("/#0");
+		// }, 1000);
 	};
 
 	return (
@@ -56,10 +64,22 @@ function NavBar() {
 				onMouseLeave={() => onMouseLeave()}
 			>
 				<ul>
-					<li>What I DO</li>
-					<li>Resume</li>
-					<img className="navLogo" src={Logo} alt="logo" />
-					<li>Projects</li>
+					<li>Go To</li>
+					<li>
+						<a
+							href="https://docs.google.com/document/d/12vkzj7Zjqu1vzWEcVHD0i0UKJ1PYsvx41-QtacLm0os/edit?usp=sharing"
+							target="_blank"
+							rel="noreferrer"
+						>
+							Resume
+						</a>
+					</li>
+					<li>
+						<CircularMenu />
+					</li>
+
+					{/* <img className="navLogo" src={Logo} alt="logo" /> */}
+					<li>Message</li>
 					<li>Socials</li>
 				</ul>
 			</div>
@@ -68,18 +88,3 @@ function NavBar() {
 }
 
 export default NavBar;
-
-// <div id="circularMenu1" class="circular-menu circular-menu-left active">
-
-// <a class="floating-btn" onclick="document.getElementById('circularMenu1').classList.toggle('active');">
-//   <i class="fa fa-bars"></i>
-// </a>
-
-// <menu class="items-wrapper">
-//   <a href="#" class="menu-item fa fa-home"></a>
-//   <a href="#" class="menu-item fa fa-user"></a>
-//   <a href="#" class="menu-item fa fa-pie-chart"></a>
-//   <a href="#" class="menu-item fa fa-cog"></a>
-// </menu>
-
-// </div>

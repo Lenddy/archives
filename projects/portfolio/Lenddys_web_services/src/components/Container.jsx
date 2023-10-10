@@ -31,7 +31,9 @@ function Container() {
 			<div className="components_container">
 				<Profile />
 			</div>
-			{/* <Test></Test> */}
+			{/* <div>
+				<Test></Test>
+			</div> */}
 		</>
 	);
 }
