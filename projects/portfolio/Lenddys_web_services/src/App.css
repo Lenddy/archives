@@ -38,6 +38,12 @@ body::-webkit-scrollbar{
     height: 60px;
 } */
 
+.resume_a{
+  text-decoration: none;
+  color: #00ffff;
+}
+
+
 .navLogo:hover{
     cursor: pointer;
     border-bottom: #ff00ff solid 2px;
@@ -60,7 +66,7 @@ body::-webkit-scrollbar{
     opacity: 1;
 }
 
-.navbar ul li:hover{
+.navbar ul li:hover , .resume_a:hover{
     cursor: pointer;
     color:#ff00ff;
     border-bottom: #ff00ff solid 2px;
@@ -246,6 +252,52 @@ body::-webkit-scrollbar{
   transition-delay: 0.3s;
 }
 
+
+.goTo_ul{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  height: 300px;
+
+}
+
+.goTo_ul li p{
+  border: 0px none transparent;
+  font-size: 30px;
+  margin: 0px;
+}
+
+
+.dropDownGoTo{
+  position: absolute;
+  /* top:10px; */
+  left: 5%;
+  width: 200px;
+  padding: 10px;
+/* border-radius: 8px; */
+/* background-color: rgb(0 0 0 / 50%); */
+
+/* border: 1px solid #00ffff; */
+  /* transition:rotate(45deg); */
+  /* border-left: 1px solid gray; */
+  /* border-top: 1px solid gray; */
+}
+
+
+/* this is fot he top part when the dropt dow is shown */
+/* .dropDownGoTo::before{
+  content: "";
+  position: absolute;
+  top:10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  transition:rotate(45deg);
+  background-color: white;
+  border-left: 1px solid gray;
+  border-top: 1px solid gray;
+} */
 
 
 

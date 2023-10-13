@@ -71,6 +71,7 @@ const NavBar = (props) => {
 	// const tools = useRef();
 	// const projects = useRef();
 	// const profile = useRef();
+	const [openGoto, setOpenGoTo] = useState(false);
 
 	return (
 		<>
@@ -79,55 +80,52 @@ const NavBar = (props) => {
 				onMouseOver={() => onHover()}
 				onMouseLeave={() => onMouseLeave()}
 			>
-				<ul>
-					<li>
-						<select name="" id="">
-							<option selected value="">
-								{" "}
-								Go to{" "}
-							</option>
-							<option
-								value="welcome"
-								onClick={() => scrollToSection(welcome)}
-							>
-								{" "}
-								welcome{" "}
-							</option>
-							<option
-								value="what_I_Do"
-								onClick={() => scrollToSection(what_I_Do)}
-							>
-								{" "}
-								what_I_Do{" "}
-							</option>
-							<option
-								value="tools"
-								onClick={() => scrollToSection(tools)}
-							>
-								{" "}
-								tools{" "}
-							</option>
-							<option
-								value="projects"
-								onClick={() => scrollToSection(projects)}
-							>
-								{" "}
-								projects{" "}
-							</option>
-							<option
-								value="profile"
-								onClick={() => scrollToSection(profile)}
-							>
-								{" "}
-								profile{" "}
-							</option>
-						</select>
+				<ul className="">
+					<li onClick={() => setOpenGoTo((prev) => !prev)}>
+						Go To
+						{openGoto && (
+							<div className=" dropDownGoTo ">
+								{/* flex flex-col */}
+								<ul className=" goTo_ul">
+									{/* flex flex-col gap-4 */}
+									<li
+										onClick={() => scrollToSection(welcome)}
+									>
+										<p>Welcome</p>
+									</li>
+									<li
+										onClick={() =>
+											scrollToSection(what_I_Do)
+										}
+									>
+										<p>What I Do</p>
+									</li>
+									<li onClick={() => scrollToSection(tools)}>
+										<p>Tools</p>
+									</li>
+									<li
+										onClick={() =>
+											scrollToSection(projects)
+										}
+									>
+										<p>Projects</p>
+									</li>
+									<li
+										onClick={() => scrollToSection(profile)}
+									>
+										<p>Profile</p>
+									</li>
+								</ul>
+							</div>
+						)}
 					</li>
+
 					<li>
 						<a
 							href="https://docs.google.com/document/d/12vkzj7Zjqu1vzWEcVHD0i0UKJ1PYsvx41-QtacLm0os/edit?usp=sharing"
 							target="_blank"
 							rel="noreferrer"
+							className="resume_a"
 						>
 							Resume
 						</a>
@@ -139,20 +137,6 @@ const NavBar = (props) => {
 					{/* <img className="navLogo" src={Logo} alt="logo" /> */}
 					<li>Message</li>
 					<li>Socials</li>
-				</ul>
-
-				<ul>
-					<li onClick={() => scrollToSection(welcome)}> welcome </li>
-					<li onClick={() => scrollToSection(what_I_Do)}>
-						{" "}
-						what_I_Do{" "}
-					</li>
-					<li onClick={() => scrollToSection(tools)}> tools </li>
-					<li onClick={() => scrollToSection(projects)}>
-						{" "}
-						projects{" "}
-					</li>
-					<li onClick={() => scrollToSection(profile)}> profile </li>
 				</ul>
 			</div>
 		</>
