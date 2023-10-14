@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Lenddy from "../../assets/Lenddy.jpg";
 
 // ?
@@ -106,5 +106,6 @@ const Profile = () => {
 		</div>
 	);
 };
+// const Profile = React.forwardRef(Profile_container);
 
 export default Profile;

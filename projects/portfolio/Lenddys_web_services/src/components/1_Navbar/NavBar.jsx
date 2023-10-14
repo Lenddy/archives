@@ -1,25 +1,30 @@
-import Logo from "../../assets/LM.png";
-import { useRef, useEffect, useState, forwardRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import CircularMenu from "./CircularMenu";
-// import { useNavigate } from "react-router-dom";
+import Welcome from "../3_welcome/Welcome";
+import Change_language from "../2_language_btn/Change_language";
+import Tools from "../5_Tools/Tools";
+import Projects from "../6_projects/Projects";
+import What_I_Do from "../4_what_I_Do/What_I_Do";
+import Profile from "../7_profile/Profile";
 
-const NavBar = (props) => {
-	// const navigate = useNavigate();
-	const { welcome, what_I_Do, tools, projects, profile } = props;
-	// ?????
-	// ?????
-	// ?????
-	// ?????
-	// ?????
-	// ?????
+const NavBar = () => {
+	const welcomeRef = useRef(null);
+	const what_I_DoRef = useRef(null);
+	const toolsRef = useRef(null);
+	const projectsRef = useRef(null);
+	const profileRef = useRef(null);
 
-	// the navbar will disappear of fade out  on scroll  and will appear on scroll up and on hover at the top of the page
+	const scrollToSection = (elementRef) => {
+		window.scrollTo({
+			top: elementRef.current.offsetTop,
+			behavior: "smooth",
+		});
+		console.log(elementRef);
+	};
 
 	// the logo is going to make appear  3 btns   change language  scroll to the top and change theme   there was a 4th one but i dont remember what it was at the moment   jump to a section maybe ????
 
 	// ? have the 2 logos be on the nav bar and keep switching between the 2
-
-	// !!!!! maybe add the go to in side of the circular menu and maybe rename it jump to
 
 	const [hideNavBar, setHideNavBar] = useState("");
 	let hoverTimeout;
@@ -34,12 +39,12 @@ const NavBar = (props) => {
 		};
 
 		window.addEventListener("scroll", handleScroll);
-
 		return () => {
 			// Remove the event listener using the same function reference
 			window.removeEventListener("scroll", handleScroll);
 		};
 	}, []);
+
 	const onHover = () => {
 		setHideNavBar("");
 		clearTimeout(hoverTimeout);
@@ -53,24 +58,8 @@ const NavBar = (props) => {
 		} else {
 			setHideNavBar("");
 		}
-		// hoverTimeout = setTimeout(() => {
-		// 	navigate("/#0");
-		// }, 1000);
 	};
 
-	const scrollToSection = (refElement) => {
-		window.scrollTo({
-			top: refElement.current.offsetTop,
-			behavior: "smooth",
-		});
-		console(refElement, "was click");
-	};
-
-	// const welcome = useRef();
-	// const what_I_Do = useRef();
-	// const tools = useRef();
-	// const projects = useRef();
-	// const profile = useRef();
 	const [openGoto, setOpenGoTo] = useState(false);
 
 	return (
@@ -85,33 +74,43 @@ const NavBar = (props) => {
 						Go To
 						{openGoto && (
 							<div className=" dropDownGoTo ">
-								{/* flex flex-col */}
-								<ul className=" goTo_ul">
-									{/* flex flex-col gap-4 */}
+								<ul
+									className={`goTo_ul ${
+										openGoto ? "Go_to_animation" : ""
+									}`}
+								>
 									<li
-										onClick={() => scrollToSection(welcome)}
+										onClick={() =>
+											scrollToSection(welcomeRef)
+										}
 									>
 										<p>Welcome</p>
 									</li>
 									<li
 										onClick={() =>
-											scrollToSection(what_I_Do)
+											scrollToSection(what_I_DoRef)
 										}
 									>
 										<p>What I Do</p>
 									</li>
-									<li onClick={() => scrollToSection(tools)}>
+									<li
+										onClick={() =>
+											scrollToSection(toolsRef)
+										}
+									>
 										<p>Tools</p>
 									</li>
 									<li
 										onClick={() =>
-											scrollToSection(projects)
+											scrollToSection(projectsRef)
 										}
 									>
 										<p>Projects</p>
 									</li>
 									<li
-										onClick={() => scrollToSection(profile)}
+										onClick={() =>
+											scrollToSection(profileRef)
+										}
 									>
 										<p>Profile</p>
 									</li>
@@ -134,10 +133,35 @@ const NavBar = (props) => {
 						<CircularMenu />
 					</li>
 
-					{/* <img className="navLogo" src={Logo} alt="logo" /> */}
 					<li>Message</li>
 					<li>Socials</li>
 				</ul>
+			</div>
+
+			<div className="components_container ">
+				<div>
+					<Change_language />
+				</div>
+
+				<div ref={welcomeRef}>
+					<Welcome />
+				</div>
+
+				<div ref={what_I_DoRef}>
+					<What_I_Do />
+				</div>
+
+				<div ref={toolsRef}>
+					<Tools />
+				</div>
+
+				<div ref={projectsRef}>
+					<Projects />
+				</div>
+
+				<div ref={profileRef}>
+					<Profile />
+				</div>
 			</div>
 		</>
 	);

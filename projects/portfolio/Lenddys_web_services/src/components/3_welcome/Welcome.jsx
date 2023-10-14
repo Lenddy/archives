@@ -1,12 +1,15 @@
 import Logo from "../../assets/LM.png";
+import React, { useRef } from "react";
 
-const Welcome = () => {
+const Welcome = (ref) => {
 	//? use th blink animation from anima.net to show your logo and the blink to the new logo
 	// ? give the component of the logo a horizontal scroll bar  on scroll you can change the logo  and a line below that show in with logo you are one
+	// const welcomeRef = useRef();
 
 	return (
 		<>
 			<div className="welcome">
+				{/* ref={welcomeRef} */}
 				<div className="welcomeLeft">
 					<h1 className="welcomeMessage">
 						{/* (make the words clickable and
@@ -66,5 +69,7 @@ const Welcome = () => {
 		</>
 	);
 };
+
+// const forwardWelcome = React.forwardRef(Welcome);
 
 export default Welcome;
