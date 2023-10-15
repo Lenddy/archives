@@ -1,7 +1,6 @@
 import { useRef, useEffect, useState } from "react";
-import CircularMenu from "./CircularMenu";
+import CircularMenu from "./2_Circular_menu/CircularMenu";
 import Welcome from "../3_welcome/Welcome";
-import Change_language from "../2_language_btn/Change_language";
 import Tools from "../5_Tools/Tools";
 import Projects from "../6_projects/Projects";
 import What_I_Do from "../4_what_I_Do/What_I_Do";
@@ -21,8 +20,6 @@ const NavBar = () => {
 		});
 		console.log(elementRef);
 	};
-
-	// the logo is going to make appear  3 btns   change language  scroll to the top and change theme   there was a 4th one but i dont remember what it was at the moment   jump to a section maybe ????
 
 	// ? have the 2 logos be on the nav bar and keep switching between the 2
 
@@ -61,6 +58,9 @@ const NavBar = () => {
 	};
 
 	const [openGoto, setOpenGoTo] = useState(false);
+	const [darkMode, setDarkMode] = useState(false);
+
+	// the logo is going to make appear  3 btns   change language  scroll to the top and change theme   there was a 4th one but i dont remember what it was at the moment   jump to a section maybe ????
 
 	return (
 		<>
@@ -139,10 +139,6 @@ const NavBar = () => {
 			</div>
 
 			<div className="components_container ">
-				<div>
-					<Change_language />
-				</div>
-
 				<div ref={welcomeRef}>
 					<Welcome />
 				</div>

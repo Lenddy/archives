@@ -1,11 +1,16 @@
 import React, { useState } from "react";
-import Logo from "../../assets/LM.png";
+// import Logo from "../../assets/LM.png";
+import Logo from "../../../assets/LM.png";
+import Change_language from "./Change_language";
+import DarkMode from "./DarkMode";
+// import Change_language from "../../2_language_btn/Change_language";
 
 const CircularMenu = () => {
 	const [fade, setFade] = useState(true);
-	const preventDefault = (e) => {
+	const [changeMode, setChangeMode] = useState(fade);
+	const darkMode = (e) => {
 		e.preventDefault();
-		console.log("onclick..");
+		setChangeMode(!changeMode);
 	};
 
 	const showCircles = () => {
@@ -19,14 +24,6 @@ const CircularMenu = () => {
 	return (
 		<div className="circleContainer">
 			<ul id="menu">
-				{/* <img
-        className="navLogo"
-        src={Logo}
-        alt="logo"
-        onClick={showMenu}
-    /> */}
-
-				{/* <!-- open-menu id for click event --> */}
 				<a
 					className="menu-button icon-plus"
 					id="open-menu"
@@ -47,35 +44,37 @@ const CircularMenu = () => {
 					title="Hide navigation"
 					onClick={() => hideCircles()}
 				>
-					<img
-						className="navLogo"
-						src={Logo}
-						alt="logo"
-						// onClick={showMenu}
-					/>
+					<img className="navLogo" src={Logo} alt="logo" />
 				</a>
 
 				<li
 					className={`menu-item  ${fade ? "fade" : ""}`}
 					// {show ? "menu-item" : ""}
 				>
-					<a href="#menu" onClick={(e) => preventDefault(e)}>
+					<a href="#menu" onClick={(e) => darkMode(e)}>
+						{/* <span className="fa fa-twitter"></span> */}
+					</a>
+				</li>
+				<li className={`menu-item  ${fade ? "fade" : ""}`}>
+					<a href="#menu" onClick={(e) => darkMode(e)}>
+						{/* <span className="fa fa-twitter"></span> */}
+						<DarkMode changeMode={changeMode} />
+					</a>
+				</li>
+				<li className={`menu-item  ${fade ? "fade" : ""}`}>
+					<a href="#menu" onClick={(e) => darkMode(e)}>
 						<span className="fa fa-twitter"></span>
 					</a>
 				</li>
 				<li className={`menu-item  ${fade ? "fade" : ""}`}>
-					<a href="#menu" onClick={(e) => preventDefault(e)}>
-						<span className="fa fa-twitter"></span>
-					</a>
-				</li>
-				<li className={`menu-item  ${fade ? "fade" : ""}`}>
-					<a href="#menu" onClick={(e) => preventDefault(e)}>
-						<span className="fa fa-twitter"></span>
-					</a>
-				</li>
-				<li className={`menu-item  ${fade ? "fade" : ""}`}>
-					<a href="#menu" onClick={(e) => preventDefault(e)}>
-						<span className="fa fa-twitter"></span>
+					<a
+						href="#menu"
+						onClick={(e) => darkMode(e)}
+						// className="lan_btn"
+					>
+						<Change_language
+							className={`menu-item  ${fade ? "fade" : ""}`}
+						/>
 					</a>
 				</li>
 			</ul>
