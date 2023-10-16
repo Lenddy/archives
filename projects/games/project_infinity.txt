@@ -63,7 +63,7 @@ hands => push-pull  (you can have an ability that allows you to push the ground 
 body passive slow down
 
 
-legs super jump no damage/stun on landing   (leap to enemy/dash to place )
+legs super jump no damage/stun on landing   (leap(in the air like sanji????) to enemy/dash to place )
 
 
 
