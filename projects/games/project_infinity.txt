@@ -1,3 +1,71 @@
-make a character that can push objects away  attract them  and  objects slow down if they are about to hit the character 
+the game most likely is going to be an RPG and have puzzles
+  
+code name dome world
 
-think    pain , gojo , or even a jedi powers 
+
+Based on of Under the Dome series 
+
+2 world merge and for the dome ??????
+the only way to separate then is to find all the missing pieces of the armor  no one now if the armor would even work?????
+mix the world of Under the Dome and sort art only????????
+
+
+
+make a character that can push objects away  to attract them  and  objects slow down if they are about to hit the character and combine push and pull to make an ability
+
+object slow down near contact passive(armor?????)
+push, pull activation ability
+
+push pull ult 
+
+think    pain, Gojo, or even a Jedi powers 
+
+class Abilitys{
+  abilitys{
+          pasive{ slow down near contact }
+          onActivation{
+              push, pull
+          }
+          ultimate{
+            pull push(code name black hole)
+          }
+        
+  }
+}
+
+
+class Armor{
+  head????
+  body
+  hand/arms
+  legs
+  
+}
+
+
+
+
+
+
+if it is Armor   
+
+some cooldown must happen for balance 
+character can learn to master one ability over the others if they want however it will decrease the use cases of the others
+
+
+make the different parts of the armor have different ability  
+
+head => give the ability to control the direction of push and pull ()
+
+hands => push-pull  (you can have an ability that allows you to push the ground and that makes you jump high but, the character will receive damage/stun) (with the pull character will be able to pull itself to the ground or the enemy  however a drawback must happen for balance )
+
+body passive slow down
+
+
+legs super jump no damage/stun on landing   (leap to enemy/dash to place )
+
+
+
+
+
+have a system that shows how evil/good(not good or evil just  a scale) the character is  and the character is able to use different abilities loot depending on that 
