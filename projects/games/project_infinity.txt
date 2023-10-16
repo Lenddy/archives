@@ -1,0 +1,3 @@
+make a character that can push objects away  attract them  and  objects slow down if they are about to hit the character 
+
+think    pain , gojo , or even a jedi powers 
