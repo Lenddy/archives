@@ -1,5 +1,5 @@
 import Logo from "../../assets/LM.png";
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 
 const Welcome = () => {
 	//? use th blink animation from anima.net to show your logo and the blink to the new logo
