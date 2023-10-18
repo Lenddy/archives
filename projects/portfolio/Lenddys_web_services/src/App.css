@@ -14,14 +14,19 @@ body::-webkit-scrollbar{
 
 /*? for all components */
 
+
 .components_container{
   /* padding: -5px; */
   /* padding-left: -5; */
   /* margin: 30px; */
+  /* height: 2000px; */
   width: 99.69%;
   margin-top: 100px ;
 }
 
+.all_component{
+  margin-bottom: 300px;
+}
 
 /*?  for the NavBar component  */
 
@@ -262,6 +267,31 @@ body::-webkit-scrollbar{
             animation-timing-function: ease-out;
   }
 }
+@keyframes rotate{
+  from{
+    transform: rotate(0deg);
+  }
+
+  to{
+    transform: rotate(360deg);
+
+  }
+}
+
+.navLogo{
+  animation:rotate 10s ;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  border-bottom: none;
+}
+
+
+
+
+
+
+
+
 
 /*exit */
 .Go_to_animationExit {
@@ -649,10 +679,11 @@ body::-webkit-scrollbar{
 /*? for the welcome component */
 
 .welcome{
-    height: 550px;
+    height: 600px;
     width: 100%;
   /* background-color: crimson; */
     margin-top: 20px;
+    margin-bottom: 50px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -670,7 +701,7 @@ body::-webkit-scrollbar{
     /* width: 70%; */
     padding: 10px;
     text-align: left;
-    font-size: 50px;
+    font-size: 60px;
     color: #00ffff;
 }
 
@@ -693,19 +724,131 @@ body::-webkit-scrollbar{
     align-items: center;
 }
 
+@keyframes pop {
+  0% {
+    transform: scale(0); /* Start with no scale (hidden) */
+  }
+  50% {
+    transform: scale(1.2); /* Grow to slightly larger than normal size */
+  }
+  100% {
+    transform: scale(1); /* Return to normal size */
+  }
+}
+
+.logo {
+  animation: pop 2.5s ease; /* Apply the pop animation */
+}
+
+
+@keyframes slideFromLeft {
+     from{
+      transform: translateX(-200px);
+     }
+
+     to{
+      transform: translateX(0);
+     }
+}
+
+
+
+.subheader{
+  animation: slideFromLeft 2s linear  ;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+
+}
+
+.btn{
+  /* animation: slideFromLeft 2s linear ; */
+  
+
+}
+.btnHidden{
+  opacity: 0;
+  transition: all 2s;
+  filter: blur(5px);
+  transform: translateX(-50%);
+}
+
+@media(prefers-reduced-motion){
+  .btnHidden{
+    transition: none;
+  }
+  
+}
+
+
+.show{
+  opacity: 1;
+  filter: blur();
+  transform: translateX(0);
+  animation-delay:2s ;
+
+}
+
+
+.btn:nth-child(1){
+  /* border-bottom-left-radius:0px ;
+  border-top-right-radius:0px ; */
+  border-top-right-radius:0px ;
+  border-top-left-radius:50px ;
+
+  border-bottom-left-radius:50px ;
+  border-bottom-right-radius:0px ;
+  
+  border-right: 0px;
+  /* width: 200px; */
+  transition-delay:200ms ;
+}
+.btn:nth-child(2){
+  /* border-bottom-left-radius:0px ;
+  border-top-right-radius:0px ; */
+  /* border-radius: 0px; */
+  border-left: 0px;
+  border-right:  0px;
+  transition-delay:400ms ;
+
+}
+
+.btn:nth-child(3){
+  /* border-top-left-radius:0px ;
+  border-bottom-right-radius:0px ; */
+  /* border-radius: 0px; */
+  border-left: 0px;
+  border-right:  0px;
+  transition-delay:600ms ;
+}
+.btn:nth-child(4){
+  border-top-left-radius:0px ;
+  border-top-right-radius:50px ;
+  border-bottom-left-radius:0px ;
+  border-left: 0px;
+  /* border-bottom-right-radius:30px ; 
+  /* border-right:  0px; */ 
+  /* border-left:0px ; */
+  /* border-radius: 0px; */
+  transition-delay:800ms ;
+}
+
+/* .btn:nth-child(1){
+    transition: border-bottom-left-radius 1s, ;
+} */
+
 
 /* color: #f43c71; 
 /* border: solid 2px #ff00ff; 
 /* background-color: #f8d3e1; */
 .btn{
-height: 50px;
-font-size: large;
+height: 70px;
+width: 200px;
+font-size: 25px;
 /* font-weight: 600; */
 color: #ff00ff;
 background-color: transparent;
 border: solid 2px #ff00ff;
 /* border: solid 2px #ff00ff; */
-border-radius: 50px;
+/* border-radius: 50px; */
 
 
 /*
@@ -757,6 +900,41 @@ transform: translateY(-10px);
     margin: 0px;
     font-size: small;
 }
+
+/* ! animations for the welcome component */
+
+@keyframes slideFromTop {
+  from{
+    transform: translateY(-300px);
+
+  }
+
+  to{
+    transform: translateY(0);
+  }
+}
+
+.welcome_animation{
+  /* background-color: red; */
+  animation-name: slideFromTop ;/* uses a keyframe name to use  */
+  animation-duration: 2s;/*   sets the time that i take to complete one lap(how long it take to animate form 0% to 100%)   default is 0s*/
+  
+  animation-timing-function: ease;/* define the acceleration of the animation  default is ease */
+  
+  animation-delay: 0s;/*add a delay before running the animation  default is 0s*/
+  
+  animation-iteration-count: 1;/* define how many time you want the animation to run default is 1  
+  highest is infinite
+  */
+
+  animation-direction:normal;/* define if the animation will run normally or in reverse default i normal*/
+
+  animation-fill-mode: none;
+  animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+
+
+
 
 
 /*? for the what i do component */
@@ -1161,7 +1339,7 @@ textarea::placeholder{
   opacity: 0;
   transition: all 2s;
   filter: blur(5px);
-  transform: translateY(-50%);
+  transform: translateX(-50%);
 }
 
 @media(prefers-reduced-motion){
@@ -1175,6 +1353,6 @@ textarea::placeholder{
 .show{
   opacity: 1;
   filter: blur();
-  transform: translateY(0);
+  transform: translateX(0);
 
 } */

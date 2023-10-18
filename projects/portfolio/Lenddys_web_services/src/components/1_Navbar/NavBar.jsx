@@ -28,45 +28,50 @@ const NavBar = ({ changeMode, setChangeMode }) => {
 	// console.log("this is welcome ref", welcomeRef.current.className);
 	// console.log("this is myRefs", myRefs);
 	// myRefs.forEach((el) => console.log("this is myRefs", el));
-	useEffect(() => {
-		const observer = new IntersectionObserver((entries) => {
-			console.log("entries", entries);
-			// const entry = entries[0];
-			// setWhat_I_Do(entry.isIntersecting);
-			entries.forEach((entry) => {
-				console.log(entry);
-				if (entry.isIntersecting) entry.target.classList.add("show");
-				else entry.target.classList.remove("show");
-			});
-		});
+	// useEffect(() => {
+	// 	// const observer = new IntersectionObserver((entries) => {
+	// 	// 	console.log("entries", entries);
 
-		const hiddenElements = document.querySelectorAll(".hidden");
-		hiddenElements.forEach((el) => observer.observe(el));
-		// myRefs.forEach(el => {
-		// 	console.log("this is el", el);
-		// 	observer.observe(el);
-		// });
+	// 	// 	entries.forEach((entry) => {
+	// 	// 		console.log(entry);
+	// 	// 		if (entry.isIntersecting) entry.target.classList.add("show");
+	// 	// 		else entry.target.classList.remove("show");
+	// 	// 	});
+	// 	// });
 
-		// const observer = new IntersectionObserver((entries) => {
-		// 	console.log("entries", entries);
-		// 	const entry = entries[0];
-		// 	setWhat_I_Do(entry.isIntersecting);
-		// });
-		// observer.observe(what_I_DoRef.current);
+	// 	// const hiddenElements = document.querySelectorAll(".hidden");
+	// 	// hiddenElements.forEach((el) => observer.observe(el));
+	// 	// myRefs.forEach(el => {
+	// 	// 	console.log("this is el", el);
+	// 	// 	observer.observe(el);
+	// 	// });
 
-		// console.log(" welcomeRef", welcomeRef.current);
-		// 	const observer = new IntersectionObserver((...entries) => {
-		// 		console.log("entries", entries);
-		// 	});
-		// 	observer.observe(
-		// 		welcomeRef.current,
-		// 		what_I_DoRef.current,
-		// 		toolsRef.current,
-		// 		projectsRef.current,
-		// 		profileRef.current
-		// 	);
-		// }, []);
-	}, []);
+	// 	const observer = new IntersectionObserver((entries) => {
+	// 		console.log("entries", entries);
+	// 		// const entry = entries[0];
+	// 		setIntersecting(entries.isIntersecting);
+	// 	});
+	// 	observer.observe(
+	// 		welcomeRef.current,
+	// 		what_I_DoRef.current,
+	// 		toolsRef.current,
+	// 		projectsRef.current,
+	// 		profileRef.current
+	// 	);
+
+	// 	// console.log(" welcomeRef", welcomeRef.current);
+	// 	// 	const observer = new IntersectionObserver((...entries) => {
+	// 	// 		console.log("entries", entries);
+	// 	// 	});
+	// 	// 	observer.observe(
+	// 	// 		welcomeRef.current,
+	// 	// 		what_I_DoRef.current,
+	// 	// 		toolsRef.current,
+	// 	// 		projectsRef.current,
+	// 	// 		profileRef.current
+	// 	// 	);
+	// 	// }, []);
+	// }, []);
 	// ?? this is for the scroll animations with interception observer
 
 	// 1 create ref for the elements
@@ -119,6 +124,71 @@ const NavBar = ({ changeMode, setChangeMode }) => {
 	};
 
 	const [openGoto, setOpenGoTo] = useState(false);
+	//? use this to toggle the animation on and off
+	const [intersecting_welcome, setIntersecting_welcome] = useState();
+	const [Intersecting_what_i_do, setIntersecting_what_i_do] = useState();
+	const [Intersecting_tools, setIntersecting_tools] = useState();
+	const [Intersecting_projects, setIntersecting_projects] = useState();
+	const [Intersecting_profile, setIntersecting_profile] = useState();
+
+	useEffect(() => {
+		const observer_welcome = new IntersectionObserver((entries) => {
+			const entry = entries[0];
+			console.log(entry);
+			if (entry.isIntersecting) {
+				setIntersecting_welcome(entry.isIntersecting);
+				entry.target.classList.add("welcome_animation");
+			} else {
+				entry.target.classList.remove("welcome_animation");
+			}
+		});
+		const observer_what_i_do = new IntersectionObserver((entries) => {
+			const entry = entries[0];
+			console.log(entry);
+			if (entry.isIntersecting) {
+				setIntersecting_what_i_do(entry.isIntersecting);
+				entry.target.classList.add("what_i_do_animation");
+			} else {
+				entry.target.classList.remove("what_i_do_animation");
+			}
+		});
+		const observer_tools = new IntersectionObserver((entries) => {
+			const entry = entries[0];
+			console.log(entry);
+			if (entry.isIntersecting) {
+				setIntersecting_tools(entry.isIntersecting);
+				entry.target.classList.add("tools_animation");
+			} else {
+				entry.target.classList.remove("tools_animation");
+			}
+		});
+		const observer_projects = new IntersectionObserver((entries) => {
+			const entry = entries[0];
+			console.log(entry);
+			if (entry.isIntersecting) {
+				setIntersecting_projects(entry.isIntersecting);
+				entry.target.classList.add("projects_animation");
+			} else {
+				entry.target.classList.remove("projects_animation");
+			}
+		});
+		const observer_profile = new IntersectionObserver((entries) => {
+			const entry = entries[0];
+			console.log(entry);
+			if (entry.isIntersecting) {
+				setIntersecting_profile(entry.isIntersecting);
+				entry.target.classList.add("profile_animation");
+			} else {
+				entry.target.classList.remove("profile_animation");
+			}
+		});
+
+		// observer_welcome.observe(welcomeRef.current);
+		// observer_what_i_do.observe(what_I_DoRef.current);
+		// observer_tools.observe(toolsRef.current);
+		// observer_projects.observe(projectsRef.current);
+		// observer_profile.observe(profileRef.current);
+	}, [welcomeRef, what_I_DoRef, toolsRef, projectsRef, profileRef]);
 
 	//? the logo is going to make appear  3 btns  change language  change dark mode , change animation reload/stop animations
 
@@ -202,24 +272,40 @@ const NavBar = ({ changeMode, setChangeMode }) => {
 			</div>
 
 			<div className="components_container ">
-				<div ref={welcomeRef} className="hidden">
+				<div
+					ref={welcomeRef}
+					className={`hidden all_component `}
+					id="welcome"
+				>
 					<Welcome />
 				</div>
 
-				<div ref={what_I_DoRef} className="hidden">
+				<div
+					ref={what_I_DoRef}
+					className={`hidden all_component `}
+					id="What_I_Do"
+				>
 					<What_I_Do />
 				</div>
 
-				<div ref={toolsRef} className="hidden">
+				<div
+					ref={toolsRef}
+					className={`hidden all_component `}
+					id="Tools"
+				>
 					<Tools />
 				</div>
 
-				<div ref={projectsRef} className="">
+				<div ref={projectsRef} className={`hidden all_component `}>
 					{/* hidden */}
 					<Projects />
 				</div>
 
-				<div ref={profileRef} className="hidden">
+				<div
+					ref={profileRef}
+					className={`hidden all_component `}
+					id="Profile"
+				>
 					<Profile />
 				</div>
 			</div>

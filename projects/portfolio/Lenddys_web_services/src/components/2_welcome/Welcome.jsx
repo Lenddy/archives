@@ -1,5 +1,6 @@
 import Logo from "../../assets/LM.png";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
+// import pencilTip from "../../assets/pencilTip.svg";
 
 const Welcome = () => {
 	//? use th blink animation from anima.net to show your logo and the blink to the new logo
@@ -12,27 +13,44 @@ const Welcome = () => {
 	// ? also put 1 btns that takes you to the person social
 
 	//! make use of this video https://www.youtube.com/watch?v=q9tpBtvTTz8&list=PLFsfg2xP7cbL-kmqydheUCbhkHeNq-zZ_&index=11
+
+	//* make use of the scroll function to determine how far has the user scroll to then show the other components
+	const welcomeRef = useRef(null);
+	const [intersecting_welcome, setIntersecting_welcome] = useState();
+	// const what_I_DoRef = useRef(null);
+	// const toolsRef = useRef(null);
+	// const projectsRef = useRef(null);
+	// const profileRef = useRef(null);
 	useEffect(() => {
-		const observer = new IntersectionObserver((entries) => {
-			// console.log("entries", entries);
-			// const entry = entries[0];
-			// setWhat_I_Do(entry.isIntersecting);
-			// entries.forEach((entry) => {
-			// 	console.log(entry);
-			// 	if (entry.isIntersecting) entry.target.classList.add("show");
-			// 	else entry.target.classList.remove("show");
-			// });
+		const observer_welcome = new IntersectionObserver((entries) => {
+			const entry = entries[0];
+			console.log(entry);
+			if (entry.isIntersecting) {
+				setIntersecting_welcome(entry.isIntersecting);
+
+				const childElement =
+					entry.target.querySelector(".welcomeMessage");
+				if (childElement) {
+					childElement.classList.add("welcome_animation");
+				}
+			} else {
+				const childElement =
+					entry.target.querySelector(".welcomeMessage");
+				if (childElement) {
+					childElement.classList.remove("welcome_animation");
+				}
+			}
 		});
-		// const hiddenElements = document.querySelectorAll(".hidden");
-		// hiddenElements.forEach((el) => observer.observe(el));
+		observer_welcome.observe(welcomeRef.current);
 	}, []);
 
 	return (
 		<>
-			<div className="welcome hidden">
+			{/* welcome_animation */}
+			<div className="welcome " ref={welcomeRef}>
 				{/* ref={welcomeRef} */}
-				<div className="welcomeLeft">
-					<h1 className="welcomeMessage">
+				<div className="welcomeLeft ">
+					<h1 className="welcomeMessage ">
 						{/* (make the words clickable and
 						have an image on click) */}
 						The Place To Turn Your Ideas Into Reality Welcome To
@@ -49,10 +67,16 @@ const Welcome = () => {
 					</div>
 
 					<div className="welcomeBtn">
-						<button className="btn">View Resume</button>
-						<button className="btn">View Github</button>
-						<button className="btn">Projects</button>
-						<button className="btn">Contact Me</button>
+						<button className="btn btnHidden show">
+							View Resume
+						</button>
+						<button className="btn btnHidden show">
+							View Github
+						</button>
+						<button className="btn btnHidden show">Projects</button>
+						<button className="btn btnHidden show">
+							Contact Me
+						</button>
 					</div>
 				</div>
 

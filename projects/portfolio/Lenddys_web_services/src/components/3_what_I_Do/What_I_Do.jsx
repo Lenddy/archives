@@ -5,7 +5,7 @@ const What_I_Do = () => {
 				<div className="whatIDo_top">
 					<div className="text">
 						<h1>
-							What I Do
+							My Experience
 							{/* {what_I_Do ? "is visible" : "not visible"} */}
 						</h1>
 						{/* make this appear with a animation read bellow */}
