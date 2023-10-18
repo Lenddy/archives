@@ -11,8 +11,17 @@ import mysql from "../../assets/tech_logos/mysql-color.svg";
 import mongodb from "../../assets/tech_logos/mongodb-color.svg";
 
 const Tools = () => {
+	// ? make use of framer motion to make the elements pop out when hover
+	//? and try to make a pop out info content show on hover and have generic info fo the tool and have a part that says chick to know more
+
+	//? also make the other icons smaller  when one item is begin hover over
+
+	//? maybe add it to the logo too ????
+	//! make use of this video https://www.youtube.com/watch?v=q9tpBtvTTz8&list=PLFsfg2xP7cbL-kmqydheUCbhkHeNq-zZ_&index=11
+
+	//! also use this effect https://www.youtube.com/watch?v=Sb00VR5N-fw
 	return (
-		<div className="tool_container">
+		<div className="tool_container hidden">
 			<h1>Tools</h1>
 			<div className="tools">
 				{/* make a grid with the technologies that you know make an animation
@@ -21,7 +30,7 @@ const Tools = () => {
 			every technology is so you might want to make a link to their home
 			page get the icons from https://simpleicons.org/ */}
 
-				{/*!!!! use the blinc effect from anima.net */}
+				{/*!!!! use the blink effect from anima.net */}
 
 				{/* languages */}
 				<div className="languages">

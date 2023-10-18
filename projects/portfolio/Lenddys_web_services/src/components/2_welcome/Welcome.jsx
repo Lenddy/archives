@@ -1,14 +1,35 @@
 import Logo from "../../assets/LM.png";
 import React, { useRef } from "react";
 
-const Welcome = (ref) => {
+const Welcome = () => {
 	//? use th blink animation from anima.net to show your logo and the blink to the new logo
 	// ? give the component of the logo a horizontal scroll bar  on scroll you can change the logo  and a line below that show in with logo you are one
 	// const welcomeRef = useRef();
 
+	// ? make use of framer motion to make the logo pop out when hover
+	// ? and try to make a pop out info content show on hover and make it have a profile picture some info of the person that create it and on click redirect to their socials
+
+	// ? also put 1 btns that takes you to the person social
+
+	//! make use of this video https://www.youtube.com/watch?v=q9tpBtvTTz8&list=PLFsfg2xP7cbL-kmqydheUCbhkHeNq-zZ_&index=11
+	useEffect(() => {
+		const observer = new IntersectionObserver((entries) => {
+			// console.log("entries", entries);
+			// const entry = entries[0];
+			// setWhat_I_Do(entry.isIntersecting);
+			// entries.forEach((entry) => {
+			// 	console.log(entry);
+			// 	if (entry.isIntersecting) entry.target.classList.add("show");
+			// 	else entry.target.classList.remove("show");
+			// });
+		});
+		// const hiddenElements = document.querySelectorAll(".hidden");
+		// hiddenElements.forEach((el) => observer.observe(el));
+	}, []);
+
 	return (
 		<>
-			<div className="welcome">
+			<div className="welcome hidden">
 				{/* ref={welcomeRef} */}
 				<div className="welcomeLeft">
 					<h1 className="welcomeMessage">
@@ -28,9 +49,8 @@ const Welcome = (ref) => {
 					</div>
 
 					<div className="welcomeBtn">
-						{/*  */}
 						<button className="btn">View Resume</button>
-						<button className="btn">Github</button>
+						<button className="btn">View Github</button>
 						<button className="btn">Projects</button>
 						<button className="btn">Contact Me</button>
 					</div>

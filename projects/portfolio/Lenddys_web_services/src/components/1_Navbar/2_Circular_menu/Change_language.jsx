@@ -3,6 +3,8 @@
 const Change_language = () => {
 	/* make the btn say the words in Spanish if the site is in english and english is the page is on Spanish */
 
+	// make the page language render base on the persons device
+
 	return (
 		<>
 			<svg

@@ -1,10 +1,13 @@
 const What_I_Do = () => {
 	return (
 		<div>
-			<div className="whatIDo">
+			<div className="whatIDo hidden">
 				<div className="whatIDo_top">
 					<div className="text">
-						<h1>What I Do</h1>
+						<h1>
+							What I Do
+							{/* {what_I_Do ? "is visible" : "not visible"} */}
+						</h1>
 						{/* make this appear with a animation read bellow */}
 						{/* <h1>full-stack engineer</h1>
 						<h1>pc building</h1> */}

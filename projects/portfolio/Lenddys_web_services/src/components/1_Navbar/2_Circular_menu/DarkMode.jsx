@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
+import App from "../../../App";
 
-const DarkMode = (props) => {
-	const { changeMode } = props;
+const DarkMode = ({ changeMode }) => {
+	// const  = props;
 	// console.log(changeMode);
-	useEffect(() => {
-		console.log(changeMode);
-	}, [changeMode]);
 
 	const mode = () => {
 		changeMode ? (

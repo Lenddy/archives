@@ -1,15 +1,15 @@
-import Profile from "./7_profile/Profile";
+import Profile from "./6_profile/Profile";
 // import NavBar from "./1_Navbar/NavBar";
 import NavBar from "./1_Navbar/NavBar";
 import Change_language from "./1_Navbar/2_Circular_menu/Change_language";
-import Tools from "./5_Tools/Tools";
-import Projects from "./6_projects/Projects";
-import Welcome from "./3_welcome/Welcome";
-import What_I_Do from "./4_what_I_Do/What_I_Do";
+import Tools from "./4_Tools/Tools";
+import Projects from "./5_projects/Projects";
+import Welcome from "./2_welcome/Welcome";
+import What_I_Do from "./3_what_I_Do/What_I_Do";
 // import Test from "./Test";
 import React, { useRef } from "react";
 
-const Container = (props) => {
+const Container = ({ changeMode, setChangeMode }) => {
 	// const { welcomeRef, what_I_DoRef, toolsRef, projectsRef, profileRef } =
 	// 	props;
 	// const welcomeRef = useRef();
@@ -20,7 +20,7 @@ const Container = (props) => {
 
 	return (
 		<>
-			<NavBar />
+			<NavBar changeMode={changeMode} setChangeMode={setChangeMode} />
 
 			{/* <div className="components_container">
 				<Change_language />

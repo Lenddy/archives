@@ -18,6 +18,8 @@ the color scheme is darkgray red and lightblue
 
 6 make the log have 2 back ground dark and light 
 
+
+make the scroll bar be thin and hover over the content like in this video https://www.youtube.com/watch?v=r1auJEf9ISo&list=PLOXm45pdpHlVRk8WQjKT1wpg_BkVqyBzP&index=3
 ================================================================
 ================================================================
 

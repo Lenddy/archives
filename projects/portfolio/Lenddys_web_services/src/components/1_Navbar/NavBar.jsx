@@ -1,17 +1,78 @@
 import { useRef, useEffect, useState } from "react";
 import CircularMenu from "./2_Circular_menu/CircularMenu";
-import Welcome from "../3_welcome/Welcome";
-import Tools from "../5_Tools/Tools";
-import Projects from "../6_projects/Projects";
-import What_I_Do from "../4_what_I_Do/What_I_Do";
-import Profile from "../7_profile/Profile";
+import Welcome from "../2_welcome/Welcome";
+import Tools from "../4_Tools/Tools";
+import Projects from "../5_projects/Projects";
+import What_I_Do from "../3_what_I_Do/What_I_Do";
+import Profile from "../6_profile/Profile";
 
-const NavBar = () => {
+const NavBar = ({ changeMode, setChangeMode }) => {
+	// const { ref: welcomeRef, InView: welcome } = useInView();
+	// const { ref: what_I_DoRef, InView: what_I_Do } = useInView();
+	// const { ref: toolsRef, InView: tools } = useInView();
+	// const { ref: projectsRef, InView: projects } = useInView();
+	// const { ref: profileRef, InView: profile } = useInView();
+
+	// const [welcome, setWelcome] = useState();
+	// const [what_I_Do, setWhat_I_Do] = useState();
+	// const [tools, setTools] = useState();
+	// const [projects, setProjects] = useState();
+	// const [profile, setProfile] = useState();
+
 	const welcomeRef = useRef(null);
 	const what_I_DoRef = useRef(null);
 	const toolsRef = useRef(null);
 	const projectsRef = useRef(null);
 	const profileRef = useRef(null);
+	// console.log("this is welcome ref", welcomeRef.current.classList);
+	// console.log("this is welcome ref", welcomeRef.current.className);
+	// console.log("this is myRefs", myRefs);
+	// myRefs.forEach((el) => console.log("this is myRefs", el));
+	useEffect(() => {
+		const observer = new IntersectionObserver((entries) => {
+			console.log("entries", entries);
+			// const entry = entries[0];
+			// setWhat_I_Do(entry.isIntersecting);
+			entries.forEach((entry) => {
+				console.log(entry);
+				if (entry.isIntersecting) entry.target.classList.add("show");
+				else entry.target.classList.remove("show");
+			});
+		});
+
+		const hiddenElements = document.querySelectorAll(".hidden");
+		hiddenElements.forEach((el) => observer.observe(el));
+		// myRefs.forEach(el => {
+		// 	console.log("this is el", el);
+		// 	observer.observe(el);
+		// });
+
+		// const observer = new IntersectionObserver((entries) => {
+		// 	console.log("entries", entries);
+		// 	const entry = entries[0];
+		// 	setWhat_I_Do(entry.isIntersecting);
+		// });
+		// observer.observe(what_I_DoRef.current);
+
+		// console.log(" welcomeRef", welcomeRef.current);
+		// 	const observer = new IntersectionObserver((...entries) => {
+		// 		console.log("entries", entries);
+		// 	});
+		// 	observer.observe(
+		// 		welcomeRef.current,
+		// 		what_I_DoRef.current,
+		// 		toolsRef.current,
+		// 		projectsRef.current,
+		// 		profileRef.current
+		// 	);
+		// }, []);
+	}, []);
+	// ?? this is for the scroll animations with interception observer
+
+	// 1 create ref for the elements
+	// 2 acces the ref  and make use of useEffect to make a new intersectionObserver instance
+
+	// 3 make a state to store the visibility of the items being observer
 
 	const scrollToSection = (elementRef) => {
 		window.scrollTo({
@@ -58,9 +119,8 @@ const NavBar = () => {
 	};
 
 	const [openGoto, setOpenGoTo] = useState(false);
-	const [darkMode, setDarkMode] = useState(false);
 
-	// the logo is going to make appear  3 btns   change language  scroll to the top and change theme   there was a 4th one but i dont remember what it was at the moment   jump to a section maybe ????
+	//? the logo is going to make appear  3 btns  change language  change dark mode , change animation reload/stop animations
 
 	return (
 		<>
@@ -130,7 +190,10 @@ const NavBar = () => {
 						</a>
 					</li>
 					<li>
-						<CircularMenu />
+						<CircularMenu
+							changeMode={changeMode}
+							setChangeMode={setChangeMode}
+						/>
 					</li>
 
 					<li>Message</li>
@@ -139,23 +202,24 @@ const NavBar = () => {
 			</div>
 
 			<div className="components_container ">
-				<div ref={welcomeRef}>
+				<div ref={welcomeRef} className="hidden">
 					<Welcome />
 				</div>
 
-				<div ref={what_I_DoRef}>
+				<div ref={what_I_DoRef} className="hidden">
 					<What_I_Do />
 				</div>
 
-				<div ref={toolsRef}>
+				<div ref={toolsRef} className="hidden">
 					<Tools />
 				</div>
 
-				<div ref={projectsRef}>
+				<div ref={projectsRef} className="">
+					{/* hidden */}
 					<Projects />
 				</div>
 
-				<div ref={profileRef}>
+				<div ref={profileRef} className="hidden">
 					<Profile />
 				</div>
 			</div>

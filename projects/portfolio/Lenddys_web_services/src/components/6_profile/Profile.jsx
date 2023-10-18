@@ -24,7 +24,7 @@ const Profile = () => {
 		display: "-webkit-box",
 	};
 	return (
-		<div className="profile">
+		<div className="profile hidden">
 			<div className="profile_top">
 				<h1>Hello There 👋🏼</h1>
 			</div>
