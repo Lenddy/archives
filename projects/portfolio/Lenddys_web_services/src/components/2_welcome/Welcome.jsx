@@ -25,21 +25,21 @@ const Welcome = () => {
 		const observer_welcome = new IntersectionObserver((entries) => {
 			const entry = entries[0];
 			console.log(entry);
-			if (entry.isIntersecting) {
-				setIntersecting_welcome(entry.isIntersecting);
+			setIntersecting_welcome(entry.isIntersecting);
+			// if (entry.isIntersecting) {
 
-				const childElement =
-					entry.target.querySelector(".welcomeMessage");
-				if (childElement) {
-					childElement.classList.add("welcome_animation");
-				}
-			} else {
-				const childElement =
-					entry.target.querySelector(".welcomeMessage");
-				if (childElement) {
-					childElement.classList.remove("welcome_animation");
-				}
-			}
+			// 	const childElement =
+			// 		entry.target.querySelector(".welcomeMessage");
+			// 	if (childElement) {
+			// 		childElement.classList.add("welcome_animation");
+			// 	}
+			// } else {
+			// 	const childElement =
+			// 		entry.target.querySelector(".welcomeMessage");
+			// 	if (childElement) {
+			// 		childElement.classList.remove("welcome_animation");
+			// 	}
+			// }
 		});
 		observer_welcome.observe(welcomeRef.current);
 	}, []);
@@ -50,14 +50,24 @@ const Welcome = () => {
 			<div className="welcome " ref={welcomeRef}>
 				{/* ref={welcomeRef} */}
 				<div className="welcomeLeft ">
-					<h1 className="welcomeMessage ">
+					<h1
+						className={`welcomeMessage ${
+							intersecting_welcome
+								? "welcomeMessage_animation"
+								: ""
+						} `}
+					>
 						{/* (make the words clickable and
 						have an image on click) */}
 						The Place To Turn Your Ideas Into Reality Welcome To
 						Lenddy's Web Services
 					</h1>
 
-					<div className="subheader">
+					<div
+						className={`subheader subheader_hidden ${
+							intersecting_welcome ? "subheader_animation" : ""
+						} `}
+					>
 						<p>
 							Yo Yo the name is Lenddy I like making web sites and
 							apps that will sut your needs using the best
@@ -67,14 +77,40 @@ const Welcome = () => {
 					</div>
 
 					<div className="welcomeBtn">
-						<button className="btn btnHidden show">
+						<button
+							className={`btn btn_hidden ${
+								intersecting_welcome
+									? "btn_animation  btn_show"
+									: ""
+							} `}
+						>
 							View Resume
 						</button>
-						<button className="btn btnHidden show">
+						<button
+							className={`btn btn_hidden ${
+								intersecting_welcome
+									? "btn_animation btn_show"
+									: ""
+							} `}
+						>
 							View Github
 						</button>
-						<button className="btn btnHidden show">Projects</button>
-						<button className="btn btnHidden show">
+						<button
+							className={`btn btn_hidden ${
+								intersecting_welcome
+									? "btn_animation btn_show"
+									: ""
+							} `}
+						>
+							Projects
+						</button>
+						<button
+							className={`btn btn_hidden  ${
+								intersecting_welcome
+									? "btn_animation btn_show"
+									: ""
+							} `}
+						>
 							Contact Me
 						</button>
 					</div>

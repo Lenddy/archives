@@ -1,0 +1,26 @@
+.subheader_animation {
+    animation-name: slideFromLeft; /* Set the animation name here */
+    animation-duration: 2s; /* Set the same duration as slideFromLeft animation */
+    animation-timing-function: ease;
+    animation-delay: 2s; /* Delay the start of the animation by 2 seconds */
+    animation-fill-mode: forwards; /* Keep the final state of the animation */
+    opacity: 0; /* Initially, set opacity to 0 */
+} 
+.welcomeMessage_animation{
+    /* background-color: red; */
+    animation-name: slideFromTop ;/* uses a keyframe name to use  */
+    animation-duration: 2s;/*   sets the time that i take to complete one lap(how long it take to animate form 0% to 100%)   default is 0s*/
+    
+    animation-timing-function: ease;/* define the acceleration of the animation  default is ease */
+    
+    animation-delay: 0s;/*add a delay before running the animation  default is 0s*/
+    
+    animation-iteration-count: 1;/* define how many time you want the animation to run default is 1  
+    highest is infinite
+    */
+  
+    animation-direction:normal;/* define if the animation will run normally or in reverse default i normal*/
+  
+    animation-fill-mode: none;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+  }

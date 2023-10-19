@@ -1,7 +1,7 @@
 const What_I_Do = () => {
 	return (
 		<div>
-			<div className="whatIDo hidden">
+			<div className="whatIDo ">
 				<div className="whatIDo_top">
 					<div className="text">
 						<h1>

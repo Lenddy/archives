@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import placeholder from "../../assets/placeholder.png";
-import { useInView } from "react-intersection-observer";
 
 const Projects = () => {
 	// const welcomeRef = useRef(null);
 	// const what_I_DoRef = useRef(null);
-	// const toolsRef = useRef(null);
+	// const toolsRef = useRef(null)
 	// const projectsRef = useRef(null);
 	// const profileRef = useRef(null);
 

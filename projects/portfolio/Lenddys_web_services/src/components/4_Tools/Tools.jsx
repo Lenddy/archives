@@ -21,7 +21,7 @@ const Tools = () => {
 
 	//! also use this effect https://www.youtube.com/watch?v=Sb00VR5N-fw
 	return (
-		<div className="tool_container hidden">
+		<div className="tool_container ">
 			<h1>Tools</h1>
 			<div className="tools">
 				{/* make a grid with the technologies that you know make an animation

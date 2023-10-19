@@ -274,7 +274,7 @@ const NavBar = ({ changeMode, setChangeMode }) => {
 			<div className="components_container ">
 				<div
 					ref={welcomeRef}
-					className={`hidden all_component `}
+					className={` all_component `}
 					id="welcome"
 				>
 					<Welcome />
@@ -282,28 +282,24 @@ const NavBar = ({ changeMode, setChangeMode }) => {
 
 				<div
 					ref={what_I_DoRef}
-					className={`hidden all_component `}
+					className={` all_component `}
 					id="What_I_Do"
 				>
 					<What_I_Do />
 				</div>
 
-				<div
-					ref={toolsRef}
-					className={`hidden all_component `}
-					id="Tools"
-				>
+				<div ref={toolsRef} className={` all_component `} id="Tools">
 					<Tools />
 				</div>
 
-				<div ref={projectsRef} className={`hidden all_component `}>
+				<div ref={projectsRef} className={` all_component `}>
 					{/* hidden */}
 					<Projects />
 				</div>
 
 				<div
 					ref={profileRef}
-					className={`hidden all_component `}
+					className={` all_component `}
 					id="Profile"
 				>
 					<Profile />
