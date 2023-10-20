@@ -9,7 +9,12 @@ import What_I_Do from "./3_what_I_Do/What_I_Do";
 // import Test from "./Test";
 import React, { useRef } from "react";
 
-const Container = ({ changeMode, setChangeMode }) => {
+const Container = ({
+	changeMode,
+	setChangeMode,
+	AnimationsRepetitionMode,
+	setAnimationsRepetitionMode,
+}) => {
 	// const { welcomeRef, what_I_DoRef, toolsRef, projectsRef, profileRef } =
 	// 	props;
 	// const welcomeRef = useRef();
@@ -20,7 +25,12 @@ const Container = ({ changeMode, setChangeMode }) => {
 
 	return (
 		<>
-			<NavBar changeMode={changeMode} setChangeMode={setChangeMode} />
+			<NavBar
+				changeMode={changeMode}
+				setChangeMode={setChangeMode}
+				AnimationsRepetitionMode={AnimationsRepetitionMode}
+				setAnimationsRepetitionMode={setAnimationsRepetitionMode}
+			/>
 
 			{/* <div className="components_container">
 				<Change_language />

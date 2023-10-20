@@ -478,7 +478,6 @@ body::-webkit-scrollbar{
   margin-top:5px;
 }
 .circleContainer{
-  /* background-color: red; */
   width: 60px;
   height: 60px;
 }
@@ -487,11 +486,8 @@ body::-webkit-scrollbar{
   width: 60px;
   height: 60px;
   position: absolute;
-  /* left: 50%;
-  top: 50%; */
-  /* margin: -75px 0 0 -75px; */
+
   list-style: none;
-  /* font-size: 200%; */
 }
 
 .menu-button {
@@ -503,11 +499,8 @@ body::-webkit-scrollbar{
   width: 60px;
   height: 60px;
   position: absolute;
-  /* left: 50%;
-  top: 50%; */
-  /* margin: -75px 0 0 -75px; */
+
   border-radius: 50%;
-  /* background: #424242; */
   background-size: 100%;
   overflow: hidden;
   text-decoration: none;
@@ -534,13 +527,6 @@ body::-webkit-scrollbar{
   margin: -50px 0 0 -50px;
   border-radius: 50%;
   border: solid white 2px;
-  /* border: solid #00ffff 2px; */
-  /*border-top: solid #00ffff57 2px;
-  border-left: solid #00ffff57 2px;
-  border-right: solid #00ffff57 2px;
-   border-top: solid white 2px;
-  border-left: solid white 2px;
-  border-right: solid white 2px; */
   background-color: #424242;
   transform: translate(0px, 0px);
   transition: transform 500ms;
@@ -597,8 +583,6 @@ body::-webkit-scrollbar{
 .goTo_ul{
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
   height: 300px;
 
 }
@@ -612,60 +596,28 @@ body::-webkit-scrollbar{
 
 .dropDownGoTo{
   position: absolute;
-  /* top:10px; */
   left: 5%;
   width: 200px;
   padding: 10px;
-/* border-radius: 8px; */
-/* background-color: rgb(0 0 0 / 50%); */
-
-/* border: 1px solid #00ffff; */
-  /* transition:rotate(45deg); */
-  /* border-left: 1px solid gray; */
-  /* border-top: 1px solid gray; */
 }
 
 
-/* this is fot he top part when the dropt dow is shown */
-/* .dropDownGoTo::before{
-  content: "";
-  position: absolute;
-  top:10px;
-  right: 10px;
-  width: 20px;
-  height: 20px;
-  transition:rotate(45deg);
-  background-color: white;
-  border-left: 1px solid gray;
-  border-top: 1px solid gray;
-} */
 
 
 
 /*? for the language button component  for the navbar*/
 
 .circleItems{
-  /* width: 10px; */
-  /* position:absolute;
-  top: 10; */
-  /* margin-top: 100px; */
     height: 46px;
-    /* display: flex;
-    justify-content: center; */
-    /* this will have an animation that will be moving from right to left and the animation will stop when the mouse is hover over the h1*/
-    /* width: 100%; */
-    /* background-color: darkgray; */
-    /* background-color: red; */
-    /* color: red; */
     margin-bottom: 60px;
-  }
-  
-/* 
-.lan_btn h4{
-    margin: 0px;
-    cursor: pointer;
-} */
+}
 
+
+
+/* for the animation btn */
+/* .animation_Mode{
+
+} */
 
 /*? for the welcome component */
 
@@ -679,7 +631,6 @@ body::-webkit-scrollbar{
     justify-content: space-around;
     align-items: center;
     margin:0px 0px 30px 0px;
-
 }
 
 .welcomeLeft {
@@ -701,12 +652,8 @@ body::-webkit-scrollbar{
     width: 90%;
     /* color: ghostwhite; */
     color: lightblue;
-    
+    opacity: 0;
 }
-
-/* .subheader p{
-
-} */
 
 .welcomeBtn{
     width: 100%;
@@ -716,47 +663,26 @@ body::-webkit-scrollbar{
 }
 
 
-/*  */
-
 /* color: #f43c71; 
 /* border: solid 2px #ff00ff; 
 /* background-color: #f8d3e1; */
-
-.btn{
+.btn_welcome{
 height: 70px;
 width: 200px;
 font-size: 25px;
-/* font-weight: 600; */
 color: #ff00ff;
 background-color: transparent;
 border: solid 2px #ff00ff;
-/* border: solid 2px #ff00ff; */
-/* border-radius: 50px; */
-
-/*
-transition-property:transform ; defines what property the transition effect will be apply to  */
-
-/* 
-transition-duration: 1s;defines how long the transition effect should take to complete */
-/*
-transition-timing-function: ease; defines the acceleration of the transition (how fast it happens)   common key words: ease(default) ease-in,ease-in-out ease-out linear */
-
-/*
-transition-delay:0 ; defines delay before the transition should take effect (the transition happens after a set period of time )  0 is default*/
-
-/* if default they dont have to be added
-
-ease is default 
-0s is default  */
-/*?if you want more than one property to be affected by different transition you can add it to the same transition coma  separated  
-if all the property are going to have the same effect you can use the all key word at the beginning 
-*/  
+opacity: 0;
+filter: blur(5px);
+ 
 }
 
-.btn:hover{
+.btn_welcome:hover{
 color: #f43c71;
 background-color: #f8d3e1;
 transform: translateY(-10px);
+/* transition-delay:0ms ; */
 }
 
 .welcomeRight {
@@ -771,6 +697,7 @@ transform: translateY(-10px);
 
 .logo{
     height: 90%;
+    opacity: 0;
 }
 
 .welcomeRight p {
@@ -780,8 +707,14 @@ transform: translateY(-10px);
 
 /* ! animations for the welcome component */
 
-
-
+.logo {
+    animation: popIn 3s ease 4s forwards; /* Apply the pop animation */
+}
+.subtext{
+    opacity: 0;
+    animation: show;
+    animation: show 1s ease 6.5s normal forwards;
+}
 
 .welcomeMessage_animation {
     animation-name: slideFromTop;
@@ -793,40 +726,15 @@ transform: translateY(-10px);
     animation-fill-mode: none;
 }
 
-.subheader_hidden {
-    /* opacity: 0; */
-}
-
 .subheader_animation {
-    animation-name: slideFromLeft;
-    animation-duration: 2s;
-    animation-timing-function: ease;
-    animation-delay: 2s;
-    animation-fill-mode: forwards; /* Keep the final state of the animation */
-     /* Initially, set opacity to 0 */
-}
-.btn_animation{}
-
-.btn{
-      /* animation: slideFromLeft 2s linear ; */
-       /* transition: transform 1s ease 0s,background-color 2s,color 3s; */
-       /* shorthand for transition you put  the property to be affected , duration, acceleration ,delay */
+    animation: slideFromLeft  3s ease 1.5s forwards;
 }
 
-.btn_hidden{
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateX(-100px);
-    transition: all 1s;
+.subheader_no_animation{
+opacity: 1;
 }
 
-.btn_show{
-    opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
-}
-
-.btn:nth-child(1){
+.btn_welcome:nth-child(1){
     /* border-bottom-left-radius:0px ;
     border-top-right-radius:0px ; */
     border-top-right-radius:0px ;
@@ -836,28 +744,32 @@ transform: translateY(-10px);
     
     border-right: 0px;
     /* width: 200px; */
-    transition-delay:200ms ;
+    /* transition-delay:0.5s; */
+    animation: show 1s ease 1.5s normal forwards;
 }
 
-.btn:nth-child(2){
+.btn_welcome:nth-child(2){
     /* border-bottom-left-radius:0px ;
     border-top-right-radius:0px ; */
     /* border-radius: 0px; */
     border-left: 0px;
     border-right:  0px;
-    transition-delay:400ms ;
+    /* transition-delay:1s ; */
+    animation: show 1s ease 2s normal forwards;
 }
 
-.btn:nth-child(3){
+.btn_welcome:nth-child(3){
     /* border-top-left-radius:0px ;
     border-bottom-right-radius:0px ; */
     /* border-radius: 0px; */
     border-left: 0px;
     border-right:  0px;
-    transition-delay:600ms ;
+    /* transition-delay:1.5s ; */
+
+    animation: show 1s ease 2.5s normal forwards;
 }
 
-.btn:nth-child(4){
+.btn_welcome:nth-child(4){
     border-top-left-radius:0px ;
     border-top-right-radius:50px ;
     border-bottom-left-radius:0px ;
@@ -866,8 +778,26 @@ transform: translateY(-10px);
     /* border-right:  0px; */ 
     /* border-left:0px ; */
     /* border-radius: 0px; */
-    transition-delay:800ms ;
+    /* transition-delay:2s ; */
+ 
+    animation: show 1s ease 3s normal forwards;
 }
+
+
+
+.subheader_no_animation{
+    opacity: 1;
+    height: 70px;
+    width: 200px;
+    font-size: 25px;
+    color: #ff00ff;
+    background-color: transparent;
+    border: solid 2px #ff00ff;
+    }
+
+
+
+/*  */
 
 
 
@@ -1267,15 +1197,18 @@ textarea::placeholder{
 
 /* all animations */
 
-@keyframes pop {
+@keyframes popIn {
     0% {
         transform: scale(0); /* Start with no scale (hidden) */
+        opacity: 1;
     }
     50% {
         transform: scale(1.2); /* Grow to slightly larger than normal size */
+        opacity: 1;
     }
     100% {
         transform: scale(1); /* Return to normal size */
+        opacity: 1;
     }
 }
 
@@ -1302,14 +1235,23 @@ textarea::placeholder{
 
 @keyframes slideFromLeft {
     from{
-        transform: translateX(-200px);
-        opacity: 0;
+        transform: translateX(-900px);
+        /* opacity: 0; */
     }
 
     to{
         transform: translateX(0);
         opacity: 1;
     }
+}
+
+@keyframes show {
+
+    to{
+        opacity: 1;
+        filter: blur(0);
+    }
+    
 }
 
 

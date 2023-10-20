@@ -1,29 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // import Logo from "../../assets/LM.png";
 import Logo from "../../../assets/LM.png";
 import Change_language from "./Change_language";
 import DarkMode from "./DarkMode";
+import Animation_Mode_icons from "./Animation_Mode_icons";
 // import Change_language from "../../2_language_btn/Change_language";
-
-//? make the btn say the words in Spanish if the site is in english and english is the page is on Spanish
-
-//? make the page language render base on the persons device
-
-//? one of the btns will be prevent animations this btns will have 3 stages repeat animations , show animations once , not animations
-
-// ! make a queue(circular) that gets in what btn press the animation toggle is on
-const queuePosition = () => {
-	// make a queue that has 3 elements
-	// 1 recurrent animations //this tells the app to run the aminations every time the observer function sees an object it will show the animation of the object
-	// 2 true  stops the animation completely
-	// 2 fase  //show the animation one time
-	// you should pop the queue first index and add it to the back
-	// every time the animation btn is click
-};
 
 //* use the 3 new sgvs in the assets folder
 
-const CircularMenu = ({ changeMode, setChangeMode }) => {
+const CircularMenu = ({
+	changeMode,
+	setChangeMode,
+	AnimationsRepetitionMode,
+	setAnimationsRepetitionMode,
+}) => {
+	const local_storage = window.localStorage.getItem(
+		"Portfolio_page_animation_toggle"
+	);
+
+	//? make the btn say the words in Spanish if the site is in english and english is the page is on Spanish
+
+	//? make the page language render base on the persons device
+
 	const [fade, setFade] = useState(true);
 	const darkMode = (e) => {
 		e.preventDefault();
@@ -38,6 +36,52 @@ const CircularMenu = ({ changeMode, setChangeMode }) => {
 		setFade(true);
 		console.log("hide circle");
 	};
+
+	const [animation, setAnimation] = useState(local_storage);
+
+	useEffect(() => {
+		window.localStorage.setItem(
+			"Portfolio_page_animation_toggle",
+			animation
+		);
+	}, [animation]);
+	setAnimationsRepetitionMode(animation);
+
+	const animationMode = (e) => {
+		e.preventDefault();
+		if (
+			animation === true ||
+			animation === "true" ||
+			animation === "/*true*/"
+		) {
+			window.localStorage.setItem(
+				"Portfolio_page_animation_toggle",
+				JSON.stringify(animation)
+			);
+			setAnimation(false);
+
+			return;
+		} else if (
+			animation === false ||
+			animation === "false" ||
+			animation === "/*false*/"
+		) {
+			window.localStorage.setItem(
+				"Portfolio_page_animation_toggle",
+				JSON.stringify(animation)
+			);
+			setAnimation(null);
+			return;
+		} else {
+			window.localStorage.setItem(
+				"Portfolio_page_animation_toggle",
+				JSON.stringify(animation)
+			);
+			setAnimation(true);
+			return;
+		}
+	};
+
 	return (
 		<div className="circleContainer">
 			<ul id="menu">
@@ -66,13 +110,20 @@ const CircularMenu = ({ changeMode, setChangeMode }) => {
 
 				<li
 					className={`menu-item  ${fade ? "fade" : ""}`}
+					onClick={(e) => animationMode(e)}
 					// {show ? "menu-item" : ""}
 				>
 					<a
 						href="#menu"
 						// onClick={(e) => darkMode(e)}
 					>
-						{/* <span className="fa fa-twitter"></span> */}
+						<Animation_Mode_icons
+							AnimationsRepetitionMode={AnimationsRepetitionMode}
+							setAnimationsRepetitionMode={
+								setAnimationsRepetitionMode
+							}
+							animation={animation}
+						/>
 					</a>
 				</li>
 				<li

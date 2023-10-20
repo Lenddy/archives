@@ -17,32 +17,102 @@ const Welcome = () => {
 	//* make use of the scroll function to determine how far has the user scroll to then show the other components
 	const welcomeRef = useRef(null);
 	const [intersecting_welcome, setIntersecting_welcome] = useState();
-	// const what_I_DoRef = useRef(null);
-	// const toolsRef = useRef(null);
-	// const projectsRef = useRef(null);
-	// const profileRef = useRef(null);
+	const local_storage = JSON.parse(
+		window.localStorage.getItem("Portfolio_page_animation_toggle")
+	);
+
 	useEffect(() => {
 		const observer_welcome = new IntersectionObserver((entries) => {
 			const entry = entries[0];
 			console.log(entry);
 			setIntersecting_welcome(entry.isIntersecting);
-			// if (entry.isIntersecting) {
-
-			// 	const childElement =
-			// 		entry.target.querySelector(".welcomeMessage");
-			// 	if (childElement) {
-			// 		childElement.classList.add("welcome_animation");
-			// 	}
-			// } else {
-			// 	const childElement =
-			// 		entry.target.querySelector(".welcomeMessage");
-			// 	if (childElement) {
-			// 		childElement.classList.remove("welcome_animation");
-			// 	}
-			// }
 		});
+
 		observer_welcome.observe(welcomeRef.current);
-	}, []);
+
+		console.log("storage in welcome", local_storage);
+	}, [local_storage]);
+
+	// local_storage === true || local_storage === "true"
+	// 	? intersecting_welcome
+	// 		? "subheader_animation"
+	// 		: ""
+	// 	: local_storage === false ||
+	// 	  local_storage === "false"
+	// 	? "subheader_animation"
+	// 	: local_storage === null ||
+	// 	  local_storage === "null"
+	// 	? ""
+	// 	: local_storage !== true ||
+	// 	  local_storage !== "true" ||
+	// 	  local_storage !== false ||
+	// 	  local_storage !== "false" ||
+	// 	  local_storage !== null ||
+	// 	  local_storage !== "null"
+	// 	? "subheader_animation"
+	// 	: ""
+	// ! i brock my mind trying to do this  with ternary operator so i ask chat gpt to help me with it i know that there is a wayyyyyy better why of doing it but this is what i got
+	const isLocalStorageTrue =
+		local_storage === true || local_storage === "true";
+	const isLocalStorageFalse =
+		local_storage === false || local_storage === "false";
+	const isLocalStorageNull =
+		local_storage === null || local_storage === "null";
+	const isIntersectingTrue =
+		intersecting_welcome === true || intersecting_welcome === "true";
+	const shouldRunAnimation = isLocalStorageTrue && isIntersectingTrue;
+
+	const welcome_message_className = {
+		true: {
+			welcome_className: shouldRunAnimation
+				? "welcomeMessage_animation"
+				: "",
+		},
+		false: {
+			welcome_className: isLocalStorageFalse
+				? "welcomeMessage_animation"
+				: "",
+		},
+		null: {
+			welcome_className: isLocalStorageNull
+				? ""
+				: "welcomeMessage_animation",
+		},
+	};
+
+	const sub_header_className = {
+		true: {
+			sub_className: shouldRunAnimation ? "subheader_animation" : "",
+		},
+		false: {
+			sub_className: isLocalStorageFalse ? "subheader_animation" : "",
+		},
+		null: {
+			sub_className: isLocalStorageNull
+				? "subheader_no_animation"
+				: "subheader_animation",
+		},
+	};
+
+	const btn_welcome_function = {
+		true: {
+			btn_className: shouldRunAnimation ? "btn_welcome" : "",
+		},
+		false: {
+			btn_className: isLocalStorageFalse ? "btn_welcome" : "",
+		},
+		null: {
+			btn_className: isLocalStorageNull
+				? "btn_welcome_no_animation "
+				: "btn_welcome",
+		},
+	};
+
+	const { welcome_className } =
+		welcome_message_className[local_storage] || {};
+	const { sub_className } = sub_header_className[local_storage] || {};
+
+	const { btn_className } = btn_welcome_function[local_storage] || {};
 
 	return (
 		<>
@@ -50,25 +120,15 @@ const Welcome = () => {
 			<div className="welcome " ref={welcomeRef}>
 				{/* ref={welcomeRef} */}
 				<div className="welcomeLeft ">
-					<h1
-						className={`welcomeMessage ${
-							intersecting_welcome
-								? "welcomeMessage_animation"
-								: ""
-						} `}
-					>
+					<h1 className={`welcomeMessage ${welcome_className} `}>
 						{/* (make the words clickable and
 						have an image on click) */}
 						The Place To Turn Your Ideas Into Reality Welcome To
 						Lenddy's Web Services
 					</h1>
 
-					<div
-						className={`subheader subheader_hidden ${
-							intersecting_welcome ? "subheader_animation" : ""
-						} `}
-					>
-						<p>
+					<div>
+						<p className={`subheader  ${sub_className} `}>
 							Yo Yo the name is Lenddy I like making web sites and
 							apps that will sut your needs using the best
 							technologies , so what is your next big idea and
@@ -78,37 +138,30 @@ const Welcome = () => {
 
 					<div className="welcomeBtn">
 						<button
-							className={`btn btn_hidden ${
-								intersecting_welcome
-									? "btn_animation  btn_show"
-									: ""
+							// btn_animation  btn_show
+							className={` ${
+								intersecting_welcome ? "btn_welcome" : ""
 							} `}
 						>
 							View Resume
 						</button>
 						<button
-							className={`btn btn_hidden ${
-								intersecting_welcome
-									? "btn_animation btn_show"
-									: ""
+							className={` ${
+								intersecting_welcome ? "btn_welcome" : ""
 							} `}
 						>
 							View Github
 						</button>
 						<button
-							className={`btn btn_hidden ${
-								intersecting_welcome
-									? "btn_animation btn_show"
-									: ""
+							className={` ${
+								intersecting_welcome ? " btn_welcome" : ""
 							} `}
 						>
 							Projects
 						</button>
 						<button
-							className={`btn btn_hidden  ${
-								intersecting_welcome
-									? "btn_animation btn_show"
-									: ""
+							className={`  ${
+								intersecting_welcome ? "btn_welcome" : ""
 							} `}
 						>
 							Contact Me
@@ -117,8 +170,12 @@ const Welcome = () => {
 				</div>
 
 				<div className="welcomeRight">
-					<img className="logo" src={Logo} alt="logo" />
-					<p>
+					<img
+						src={Logo}
+						alt="logo"
+						className={` ${intersecting_welcome ? "logo" : ""} `}
+					/>
+					<p className={` ${intersecting_welcome ? "subtext" : ""} `}>
 						Like the logo{" "}
 						<span>
 							<a

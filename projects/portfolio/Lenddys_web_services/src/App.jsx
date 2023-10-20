@@ -9,31 +9,36 @@ import Container from "./components/Container";
 function App() {
 	// const { changeMode } = props;
 	const [changeMode, setChangeMode] = useState(false);
-	const [AnimationsOof, setAnimationsOof] = useState(false);
+	const [AnimationsRepetitionMode, setAnimationsRepetitionMode] = useState(
+		[]
+	);
 	// const [isIntersecting, setIsIntersecting] = useState(false);
 	useEffect(() => {
-		if (AnimationsOof == false) {
-		}
-		// document.querySelectorAll(".hidden");
-		if (AnimationsOof == true) {
-		}
-		if (AnimationsOof == "recurrent_animations") {
-		}
-	}, []);
+		// if (AnimationsOof == false) {
+		// }
+		// // document.querySelectorAll(".hidden");
+		// if (AnimationsOof == true) {
+		// }
+		// if (AnimationsOof == "recurrent_animations") {
+		// }
+		console.log("from the app  component");
+	}, [AnimationsRepetitionMode]);
 
-	useEffect(() => {
-		console.log("change mode is now ", changeMode);
-	}, [changeMode]);
-
-	useEffect(() => {
-		console.log("change from the app component", changeMode);
-	}, [changeMode]);
+	// useEffect(() => {
+	// 	console.log("change mode is now ", changeMode);
+	// 	console.log(
+	// 		"local storage from app  ",
+	// 		window.localStorage.getItem("Portfolio_page_animation_toggle")
+	// 	);
+	// }, [changeMode]);
 
 	return (
 		<div className={changeMode ? "lightMode" : "darkMode"}>
 			<Container
 				changeMode={changeMode}
 				setChangeMode={setChangeMode}
+				AnimationsRepetitionMode={AnimationsRepetitionMode}
+				setAnimationsRepetitionMode={setAnimationsRepetitionMode}
 			></Container>
 		</div>
 	);

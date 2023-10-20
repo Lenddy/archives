@@ -6,7 +6,12 @@ import Projects from "../5_projects/Projects";
 import What_I_Do from "../3_what_I_Do/What_I_Do";
 import Profile from "../6_profile/Profile";
 
-const NavBar = ({ changeMode, setChangeMode }) => {
+const NavBar = ({
+	changeMode,
+	setChangeMode,
+	AnimationsRepetitionMode,
+	setAnimationsRepetitionMode,
+}) => {
 	// const { ref: welcomeRef, InView: welcome } = useInView();
 	// const { ref: what_I_DoRef, InView: what_I_Do } = useInView();
 	// const { ref: toolsRef, InView: tools } = useInView();
@@ -188,7 +193,8 @@ const NavBar = ({ changeMode, setChangeMode }) => {
 		// observer_tools.observe(toolsRef.current);
 		// observer_projects.observe(projectsRef.current);
 		// observer_profile.observe(profileRef.current);
-	}, [welcomeRef, what_I_DoRef, toolsRef, projectsRef, profileRef]);
+	}, []);
+	// welcomeRef, what_I_DoRef, toolsRef, projectsRef, profileRef
 
 	//? the logo is going to make appear  3 btns  change language  change dark mode , change animation reload/stop animations
 
@@ -263,6 +269,10 @@ const NavBar = ({ changeMode, setChangeMode }) => {
 						<CircularMenu
 							changeMode={changeMode}
 							setChangeMode={setChangeMode}
+							AnimationsRepetitionMode={AnimationsRepetitionMode}
+							setAnimationsRepetitionMode={
+								setAnimationsRepetitionMode
+							}
 						/>
 					</li>
 
