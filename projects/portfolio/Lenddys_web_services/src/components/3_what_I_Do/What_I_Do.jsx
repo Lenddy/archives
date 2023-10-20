@@ -1,13 +1,88 @@
+import { useRef, useEffect, useState } from "react";
+
 const What_I_Do = () => {
+	const what_i_doRef = useRef(null);
+	const [intersecting_welcome, setIntersecting_welcome] = useState();
+	const local_storage = JSON.parse(
+		window.localStorage.getItem("Portfolio_page_animation_toggle")
+	);
+
+	useEffect(() => {
+		const observer_welcome = new IntersectionObserver((entries) => {
+			const entry = entries[0];
+			console.log(entry);
+			setIntersecting_welcome(entry.isIntersecting);
+		});
+
+		observer_welcome.observe(what_i_doRef.current);
+
+		console.log("storage in welcome", local_storage);
+	}, [local_storage]);
+
+	// ! i brock my mind trying to do this  with ternary operator so i ask chat gpt to help me with it i know that there is a wayyyyyy better why of doing it but this is what i got
+
+	const isLocalStorageTrue =
+		local_storage === true || local_storage === "true";
+	const isLocalStorageFalse =
+		local_storage === false || local_storage === "false";
+	const isLocalStorageNull =
+		local_storage === null || local_storage === "null";
+	const isIntersectingTrue =
+		intersecting_welcome === true || intersecting_welcome === "true";
+	const shouldRunAnimation = isLocalStorageTrue && isIntersectingTrue;
+
+	const getClassNames = (value, animationClass, noAnimationClass) => {
+		return {
+			true: shouldRunAnimation ? animationClass : "",
+			false: isLocalStorageFalse ? animationClass : "",
+			null: isLocalStorageNull ? noAnimationClass : animationClass,
+		}[value];
+	};
+
+	const whatIDo_top_text_animation = getClassNames(
+		local_storage,
+		"welcomeMessage_animation",
+		""
+	);
+	const sub_className = getClassNames(
+		local_storage,
+		"subheader_animation",
+		"subheader_no_animation"
+	);
+	const btn_className = getClassNames(
+		local_storage,
+		"btn_welcome",
+		"btn_welcome_no_animation"
+	);
+	const logo_className = getClassNames(
+		local_storage,
+		"logo",
+		"logo_no_animation"
+	);
+	const subtext_className = getClassNames(
+		local_storage,
+		"subtext",
+		"subtext_no_animation"
+	);
+
+	//! for the animation for the left right and bottom
+	//? make them appear in a zigzag  left  title , right  p tag  , bottom title , left p tag , right title , bottom p tag
 	return (
-		<div>
-			<div className="whatIDo ">
+		<>
+			<div className="whatIDo " ref={what_i_doRef}>
 				<div className="whatIDo_top">
-					<div className="text">
-						<h1>
-							My Experience
-							{/* {what_I_Do ? "is visible" : "not visible"} */}
+					<div className="whatIDo_top_text">
+						<h1 className="infinite_carousel">My Experience</h1>
+						{/* <h1 className="infinite_carousel">
+							full-stack Developer
+						</h1> */}
+						{/*<h1 className="infinite_carousel">PC Builder</h1>
+						<h1 className="infinite_carousel">Tutor</h1> */}
+						{/* <h1 className="infinite_carousel">
+							full-stack Developer
 						</h1>
+						<h1 className="infinite_carousel"> PC Builder</h1>
+						<h1 className="infinite_carousel">Tutor</h1> */}
 						{/* make this appear with a animation read bellow */}
 						{/* <h1>full-stack engineer</h1>
 						<h1>pc building</h1> */}
@@ -113,7 +188,7 @@ const What_I_Do = () => {
 					</li>
 				</ol> */}
 			</div>
-		</div>
+		</>
 	);
 };
 

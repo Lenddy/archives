@@ -4,9 +4,8 @@ import Logo from "../../../assets/LM.png";
 import Change_language from "./Change_language";
 import DarkMode from "./DarkMode";
 import Animation_Mode_icons from "./Animation_Mode_icons";
+import Lock_navbar_animations from "./Lock_navbar_animations";
 // import Change_language from "../../2_language_btn/Change_language";
-
-//* use the 3 new sgvs in the assets folder
 
 const CircularMenu = ({
 	changeMode,
@@ -17,10 +16,15 @@ const CircularMenu = ({
 	const local_storage = window.localStorage.getItem(
 		"Portfolio_page_animation_toggle"
 	);
+	const local_storage_navBar = window.localStorage.getItem(
+		"Portfolio_page_animation_toggle_for_lock_navBar"
+	);
 
 	//? make the btn say the words in Spanish if the site is in english and english is the page is on Spanish
 
 	//? make the page language render base on the persons device
+
+	// lock the animations of the navbar  the fading/(and diapering on scroll) and the dropdowns
 
 	const [fade, setFade] = useState(true);
 	const darkMode = (e) => {
@@ -38,13 +42,19 @@ const CircularMenu = ({
 	};
 
 	const [animation, setAnimation] = useState(local_storage);
+	const [navbarLock, setNavbarLock] = useState(local_storage_navBar);
 
 	useEffect(() => {
 		window.localStorage.setItem(
 			"Portfolio_page_animation_toggle",
 			animation
 		);
-	}, [animation]);
+
+		window.localStorage.setItem(
+			"Portfolio_page_animation_toggle_for_lock_navBar",
+			navbarLock
+		);
+	}, [animation, navbarLock]);
 	setAnimationsRepetitionMode(animation);
 
 	const animationMode = (e) => {
@@ -62,22 +72,57 @@ const CircularMenu = ({
 
 			return;
 		} else if (
-			animation === false ||
-			animation === "false" ||
-			animation === "/*false*/"
+			navbarLock === false ||
+			navbarLock === "false" ||
+			navbarLock === "/*false*/"
 		) {
 			window.localStorage.setItem(
 				"Portfolio_page_animation_toggle",
-				JSON.stringify(animation)
+				JSON.stringify(navbarLock)
 			);
 			setAnimation(null);
 			return;
 		} else {
 			window.localStorage.setItem(
 				"Portfolio_page_animation_toggle",
-				JSON.stringify(animation)
+				JSON.stringify(navbarLock)
 			);
 			setAnimation(true);
+			return;
+		}
+	};
+
+	const lockNavbar = (e) => {
+		e.preventDefault();
+		if (
+			navbarLock === true ||
+			navbarLock === "true" ||
+			navbarLock === "/*true*/"
+		) {
+			window.localStorage.setItem(
+				"Portfolio_page_animation_toggle_for_lock_navBar",
+				JSON.stringify(navbarLock)
+			);
+			setNavbarLock(false);
+
+			return;
+		} else if (
+			navbarLock === false ||
+			navbarLock === "false" ||
+			navbarLock === "/*false*/"
+		) {
+			window.localStorage.setItem(
+				"Portfolio_page_animation_toggle_for_lock_navBar",
+				JSON.stringify(animation)
+			);
+			setNavbarLock(true);
+			return;
+		} else {
+			window.localStorage.setItem(
+				"Portfolio_page_animation_toggle_for_lock_navBar",
+				JSON.stringify(navbarLock)
+			);
+			setNavbarLock(false);
 			return;
 		}
 	};
@@ -135,11 +180,15 @@ const CircularMenu = ({
 						<DarkMode changeMode={changeMode} />
 					</a>
 				</li>
-				<li className={`menu-item  ${fade ? "fade" : ""}`}>
+				<li
+					className={`menu-item  ${fade ? "fade" : ""}`}
+					onClick={(e) => lockNavbar(e)}
+				>
 					<a
 						href="#menu" // onClick={(e) => darkMode(e)}
 					>
-						<span className="fa fa-twitter"></span>
+						{/* for the lock animations  */}
+						<Lock_navbar_animations navbarLock={navbarLock} />
 					</a>
 				</li>
 				<li className={`menu-item  ${fade ? "fade" : ""}`}>

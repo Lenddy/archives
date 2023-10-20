@@ -1,5 +1,5 @@
 import Logo from "../../assets/LM.png";
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 // import pencilTip from "../../assets/pencilTip.svg";
 
 const Welcome = () => {
@@ -33,25 +33,8 @@ const Welcome = () => {
 		console.log("storage in welcome", local_storage);
 	}, [local_storage]);
 
-	// local_storage === true || local_storage === "true"
-	// 	? intersecting_welcome
-	// 		? "subheader_animation"
-	// 		: ""
-	// 	: local_storage === false ||
-	// 	  local_storage === "false"
-	// 	? "subheader_animation"
-	// 	: local_storage === null ||
-	// 	  local_storage === "null"
-	// 	? ""
-	// 	: local_storage !== true ||
-	// 	  local_storage !== "true" ||
-	// 	  local_storage !== false ||
-	// 	  local_storage !== "false" ||
-	// 	  local_storage !== null ||
-	// 	  local_storage !== "null"
-	// 	? "subheader_animation"
-	// 	: ""
 	// ! i brock my mind trying to do this  with ternary operator so i ask chat gpt to help me with it i know that there is a wayyyyyy better why of doing it but this is what i got
+
 	const isLocalStorageTrue =
 		local_storage === true || local_storage === "true";
 	const isLocalStorageFalse =
@@ -62,57 +45,39 @@ const Welcome = () => {
 		intersecting_welcome === true || intersecting_welcome === "true";
 	const shouldRunAnimation = isLocalStorageTrue && isIntersectingTrue;
 
-	const welcome_message_className = {
-		true: {
-			welcome_className: shouldRunAnimation
-				? "welcomeMessage_animation"
-				: "",
-		},
-		false: {
-			welcome_className: isLocalStorageFalse
-				? "welcomeMessage_animation"
-				: "",
-		},
-		null: {
-			welcome_className: isLocalStorageNull
-				? ""
-				: "welcomeMessage_animation",
-		},
+	const getClassNames = (value, animationClass, noAnimationClass) => {
+		return {
+			true: shouldRunAnimation ? animationClass : "",
+			false: isLocalStorageFalse ? animationClass : "",
+			null: isLocalStorageNull ? noAnimationClass : animationClass,
+		}[value];
 	};
 
-	const sub_header_className = {
-		true: {
-			sub_className: shouldRunAnimation ? "subheader_animation" : "",
-		},
-		false: {
-			sub_className: isLocalStorageFalse ? "subheader_animation" : "",
-		},
-		null: {
-			sub_className: isLocalStorageNull
-				? "subheader_no_animation"
-				: "subheader_animation",
-		},
-	};
-
-	const btn_welcome_function = {
-		true: {
-			btn_className: shouldRunAnimation ? "btn_welcome" : "",
-		},
-		false: {
-			btn_className: isLocalStorageFalse ? "btn_welcome" : "",
-		},
-		null: {
-			btn_className: isLocalStorageNull
-				? "btn_welcome_no_animation "
-				: "btn_welcome",
-		},
-	};
-
-	const { welcome_className } =
-		welcome_message_className[local_storage] || {};
-	const { sub_className } = sub_header_className[local_storage] || {};
-
-	const { btn_className } = btn_welcome_function[local_storage] || {};
+	const welcome_className = getClassNames(
+		local_storage,
+		"welcomeMessage_animation",
+		""
+	);
+	const sub_className = getClassNames(
+		local_storage,
+		"subheader_animation",
+		"subheader_no_animation"
+	);
+	const btn_className = getClassNames(
+		local_storage,
+		"btn_welcome",
+		"btn_welcome_no_animation"
+	);
+	const logo_className = getClassNames(
+		local_storage,
+		"logo",
+		"logo_no_animation"
+	);
+	const subtext_className = getClassNames(
+		local_storage,
+		"subtext",
+		"subtext_no_animation"
+	);
 
 	return (
 		<>
@@ -127,8 +92,8 @@ const Welcome = () => {
 						Lenddy's Web Services
 					</h1>
 
-					<div>
-						<p className={`subheader  ${sub_className} `}>
+					<div className="subheader">
+						<p className={` subheader_message ${sub_className}`}>
 							Yo Yo the name is Lenddy I like making web sites and
 							apps that will sut your needs using the best
 							technologies , so what is your next big idea and
@@ -139,31 +104,17 @@ const Welcome = () => {
 					<div className="welcomeBtn">
 						<button
 							// btn_animation  btn_show
-							className={` ${
-								intersecting_welcome ? "btn_welcome" : ""
-							} `}
+							className={` ${btn_className} `}
 						>
 							View Resume
 						</button>
-						<button
-							className={` ${
-								intersecting_welcome ? "btn_welcome" : ""
-							} `}
-						>
+						<button className={` ${btn_className} `}>
 							View Github
 						</button>
-						<button
-							className={` ${
-								intersecting_welcome ? " btn_welcome" : ""
-							} `}
-						>
+						<button className={` ${btn_className} `}>
 							Projects
 						</button>
-						<button
-							className={`  ${
-								intersecting_welcome ? "btn_welcome" : ""
-							} `}
-						>
+						<button className={`  ${btn_className} `}>
 							Contact Me
 						</button>
 					</div>
@@ -173,9 +124,11 @@ const Welcome = () => {
 					<img
 						src={Logo}
 						alt="logo"
-						className={` ${intersecting_welcome ? "logo" : ""} `}
+						className={` ${
+							(intersecting_welcome ? "logo" : "", logo_className)
+						} `}
 					/>
-					<p className={` ${intersecting_welcome ? "subtext" : ""} `}>
+					<p className={` ${subtext_className}`}>
 						Like the logo{" "}
 						<span>
 							<a
