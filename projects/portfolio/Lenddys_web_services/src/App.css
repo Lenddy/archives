@@ -1095,8 +1095,7 @@ opacity: 1;
   /* transform: scale(1.3); 
   filter: blur(0px);
   opacity: 1; */
-/* animation: popOut 1s ease forwards ; */
-transform: scale(1.5);
+animation: popOut 1s ease forwards ;
 cursor: pointer;
 }
 
@@ -1575,11 +1574,13 @@ textarea::placeholder{
     0% {
       transform: scale(1); /* Start with no scale (hidden) */
       filter: blur(0px);
+      opacity: 1;
     }
   
     100% {
-      transform: scale(1.2); /* Slightly larger on hover */
+      transform: scale(1.4); /* Slightly larger on hover */
       filter: blur(0px);
+      opacity: 1;
     }
   }
 
