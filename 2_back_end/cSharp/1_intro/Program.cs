@@ -20,7 +20,7 @@ void fizzBuzz( int range = 100){
     }
 }
 
-fizzBuzz(0);
+// fizzBuzz(0);
 // Console.WriteLine();
 
 // //! list 
