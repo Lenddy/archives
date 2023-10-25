@@ -17,67 +17,26 @@ const Welcome = () => {
 	//* make use of the scroll function to determine how far has the user scroll to then show the other components
 	const welcomeRef = useRef(null);
 	const [intersecting_welcome, setIntersecting_welcome] = useState();
-	const local_storage = JSON.parse(
-		window.localStorage.getItem("Portfolio_page_animation_toggle")
-	);
+	const [noAnimation, setNoAnimation] = useState(false);
+	// const local_storage = JSON.parse(
+	// 	window.localStorage.getItem("Portfolio_page_animation_toggle")
+	// );
 
 	useEffect(() => {
 		const observer_welcome = new IntersectionObserver((entries) => {
 			const entry = entries[0];
-			console.log(entry);
+			// console.log(entry);
 			setIntersecting_welcome(entry.isIntersecting);
 		});
-
 		observer_welcome.observe(welcomeRef.current);
+		if (intersecting_welcome === false) {
+			setNoAnimation(true);
+		}
 
-		console.log("storage in welcome", local_storage);
-	}, [local_storage]);
+		// console.log()
+	}, [intersecting_welcome]);
 
 	// ! i brock my mind trying to do this  with ternary operator so i ask chat gpt to help me with it i know that there is a wayyyyyy better why of doing it but this is what i got
-
-	const isLocalStorageTrue =
-		local_storage === true || local_storage === "true";
-	const isLocalStorageFalse =
-		local_storage === false || local_storage === "false";
-	const isLocalStorageNull =
-		local_storage === null || local_storage === "null";
-	const isIntersectingTrue =
-		intersecting_welcome === true || intersecting_welcome === "true";
-	const shouldRunAnimation = isLocalStorageTrue && isIntersectingTrue;
-
-	const getClassNames = (value, animationClass, noAnimationClass) => {
-		return {
-			true: shouldRunAnimation ? animationClass : "",
-			false: isLocalStorageFalse ? animationClass : "",
-			null: isLocalStorageNull ? noAnimationClass : animationClass,
-		}[value];
-	};
-
-	const welcome_className = getClassNames(
-		local_storage,
-		"welcomeMessage_animation",
-		""
-	);
-	const sub_className = getClassNames(
-		local_storage,
-		"subheader_animation",
-		"subheader_no_animation"
-	);
-	const btn_className = getClassNames(
-		local_storage,
-		"btn_welcome",
-		"btn_welcome_no_animation"
-	);
-	const logo_className = getClassNames(
-		local_storage,
-		"logo",
-		"logo_no_animation"
-	);
-	const subtext_className = getClassNames(
-		local_storage,
-		"subtext",
-		"subtext_no_animation"
-	);
 
 	return (
 		<>
@@ -85,7 +44,17 @@ const Welcome = () => {
 			<div className="welcome " ref={welcomeRef}>
 				{/* ref={welcomeRef} */}
 				<div className="welcomeLeft ">
-					<h1 className={`welcomeMessage ${welcome_className} `}>
+					{/* welcome_className */}
+					<h1
+						className={`welcomeMessage ${
+							intersecting_welcome === true &&
+							noAnimation === true
+								? ""
+								: intersecting_welcome === true
+								? "welcomeMessage_animation"
+								: ""
+						} `}
+					>
 						{/* (make the words clickable and
 						have an image on click) */}
 						The Place To Turn Your Ideas Into Reality Welcome To
@@ -93,7 +62,17 @@ const Welcome = () => {
 					</h1>
 
 					<div className="subheader">
-						<p className={` subheader_message ${sub_className}`}>
+						{/* sub_className */}
+						<p
+							className={` subheader_message ${
+								intersecting_welcome === true &&
+								noAnimation === true
+									? "subheader_no_animation"
+									: intersecting_welcome
+									? "subheader_animation"
+									: "subheader_no_animation"
+							}`}
+						>
 							Yo Yo the name is Lenddy I like making web sites and
 							apps that will sut your needs using the best
 							technologies , so what is your next big idea and
@@ -104,31 +83,86 @@ const Welcome = () => {
 					<div className="welcomeBtn">
 						<button
 							// btn_animation  btn_show
-							className={` ${btn_className} `}
+							// 							btn_className
+							// btn_className
+							// btn_className
+							// btn_className
+							className={`  ${
+								intersecting_welcome === true &&
+								noAnimation === true
+									? "btn_welcome_no_animation"
+									: intersecting_welcome
+									? "btn_welcome"
+									: ""
+							} `}
 						>
 							View Resume
 						</button>
-						<button className={` ${btn_className} `}>
+						<button
+							className={` ${
+								intersecting_welcome === true &&
+								noAnimation === true
+									? "btn_welcome_no_animation"
+									: intersecting_welcome
+									? "btn_welcome"
+									: ""
+							}`}
+						>
 							View Github
 						</button>
-						<button className={` ${btn_className} `}>
+						<button
+							className={` ${
+								intersecting_welcome === true &&
+								noAnimation === true
+									? "btn_welcome_no_animation"
+									: intersecting_welcome
+									? "btn_welcome"
+									: ""
+							} `}
+						>
 							Projects
 						</button>
-						<button className={`  ${btn_className} `}>
+						<button
+							className={`  ${
+								intersecting_welcome === true &&
+								noAnimation === true
+									? "btn_welcome_no_animation"
+									: intersecting_welcome
+									? "btn_welcome"
+									: ""
+							} `}
+						>
 							Contact Me
 						</button>
 					</div>
 				</div>
 
 				<div className="welcomeRight">
+					{/* (intersecting_welcome ? "logo" : "", logo_className) */}
+
 					<img
 						src={Logo}
 						alt="logo"
 						className={` ${
-							(intersecting_welcome ? "logo" : "", logo_className)
+							intersecting_welcome === true &&
+							noAnimation === true
+								? "logo_no_animation"
+								: intersecting_welcome
+								? "logo"
+								: "logo_no_animation"
 						} `}
 					/>
-					<p className={` ${subtext_className}`}>
+					{/* subtext_className */}
+					<p
+						className={` ${
+							intersecting_welcome === true &&
+							noAnimation === true
+								? "subtext_no_animation"
+								: intersecting_welcome
+								? "subtext"
+								: "subtext_no_animation"
+						} `}
+					>
 						Like the logo{" "}
 						<span>
 							<a
@@ -163,3 +197,47 @@ const Welcome = () => {
 // const forwardWelcome = React.forwardRef(Welcome);
 
 export default Welcome;
+
+// const isLocalStorageTrue =
+// 	local_storage === true || local_storage === "true";
+// const isLocalStorageFalse =
+// 	local_storage === false || local_storage === "false";
+// const isLocalStorageNull =
+// 	local_storage === null || local_storage === "null";
+// const isIntersectingTrue =
+// 	intersecting_welcome === true || intersecting_welcome === "true";
+// const shouldRunAnimation = isLocalStorageTrue && isIntersectingTrue;
+
+// const getClassNames = (value, animationClass, noAnimationClass) => {
+// 	return {
+// 		true: shouldRunAnimation ? animationClass : "",
+// 		false: isLocalStorageFalse ? animationClass : "",
+// 		null: isLocalStorageNull ? noAnimationClass : animationClass,
+// 	}[value];
+// };
+
+// const welcome_className = getClassNames(
+// 	local_storage,
+// 	"welcomeMessage_animation",
+// 	""
+// );
+// const sub_className = getClassNames(
+// 	local_storage,
+// 	"subheader_animation",
+// 	"subheader_no_animation"
+// );
+// const btn_className = getClassNames(
+// 	local_storage,
+// 	"btn_welcome",
+// 	"btn_welcome_no_animation"
+// );
+// const logo_className = getClassNames(
+// 	local_storage,
+// 	"logo",
+// 	"logo_no_animation"
+// );
+// const subtext_className = getClassNames(
+// 	local_storage,
+// 	"subtext",
+// 	"subtext_no_animation"
+// );

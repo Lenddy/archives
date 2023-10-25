@@ -3,7 +3,7 @@ import React from "react";
 const Lock_navbar_animations = ({ navbarLock }) => {
 	return (
 		<div>
-			{navbarLock ? (
+			{/* {navbarLock ? (
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="circleItems"
@@ -59,7 +59,7 @@ const Lock_navbar_animations = ({ navbarLock }) => {
 						stroke-width="32"
 					/>
 				</svg>
-			)}
+			)} */}
 		</div>
 	);
 };

@@ -6,31 +6,59 @@ import DarkMode from "./DarkMode";
 import Animation_Mode_icons from "./Animation_Mode_icons";
 import Lock_navbar_animations from "./Lock_navbar_animations";
 // import Change_language from "../../2_language_btn/Change_language";
+//? make the page language render base on the persons device
+const CircularMenu = ({ changeMode, setChangeMode }) => {
+	const gls = (key) => window.localStorage.getItem(key); //!gets the key
+	const sls = (key, value) => window.localStorage.setItem(key, value); //!sets the key
+	// const [language, setLanguage] = useState(Boolean);
+	// const [hideNabar, setHideNabar] = useState(Boolean);
+	// const [darkMode, setDarkMode] = useState(Boolean);
+	// const [navBarAnimations, setNavBarAnimations] = useState(Boolean);
+	const [change_animations, setChange_animations] = useState(true);
+	// window.localStorage.clear();
 
-const CircularMenu = ({
-	changeMode,
-	setChangeMode,
-	AnimationsRepetitionMode,
-	setAnimationsRepetitionMode,
-}) => {
-	const local_storage = window.localStorage.getItem(
-		"Portfolio_page_animation_toggle"
+	//! finds out if there is a given key if not it creates one an sets it to be a value
+	const Local_Storage = (getKey, setValue) => {
+		if (gls(getKey) === null || gls(getKey) === undefined) {
+			return sls(getKey, setValue);
+		} else {
+			return gls(getKey);
+		}
+	};
+
+	useEffect(
+		() => {
+			//? checks for local storage
+			// setLanguage(items_In_Local_Storage("DarkMode",true))
+			// setHideNabar(Local_Storage("DarkMode", true));
+			// setDarkMode(Local_Storage("Language", true));
+			// setNavBarAnimations(Local_Storage("NavBar_Animations", true));
+			// Local_Storage("Animations", true);
+			// setAnimations(gls("Animations"));
+			// console.log("animations is ", animations);
+		},
+		[
+			// animations,
+			// hideNabar, darkMode,  navBarAnimations
+		]
 	);
-	const local_storage_navBar = window.localStorage.getItem(
-		"Portfolio_page_animation_toggle_for_lock_navBar"
-	);
 
-	//? make the btn say the words in Spanish if the site is in english and english is the page is on Spanish
+	// const animationMode = (key) => {
+	// 	// Get the current value from local storage
 
-	//? make the page language render base on the persons device
+	// 	const currentValue = gls(key) === "true";
+	// 	// Toggle the value (if it's a string, convert it to a boolean first)
 
-	// lock the animations of the navbar  the fading/(and diapering on scroll) and the dropdowns
+	// 	const newValue = currentValue === true ? false : true;
+
+	// 	// Update local storage
+	// 	sls(key, newValue);
+
+	// 	// Set the state based on the new value
+	// 	setAnimations(newValue === "true");
+	// };
 
 	const [fade, setFade] = useState(true);
-	const darkMode = (e) => {
-		e.preventDefault();
-		setChangeMode(!changeMode);
-	};
 
 	const showCircles = () => {
 		setFade(false);
@@ -39,92 +67,6 @@ const CircularMenu = ({
 	const hideCircles = () => {
 		setFade(true);
 		console.log("hide circle");
-	};
-
-	const [animation, setAnimation] = useState(local_storage);
-	const [navbarLock, setNavbarLock] = useState(local_storage_navBar);
-
-	useEffect(() => {
-		window.localStorage.setItem(
-			"Portfolio_page_animation_toggle",
-			animation
-		);
-
-		window.localStorage.setItem(
-			"Portfolio_page_animation_toggle_for_lock_navBar",
-			navbarLock
-		);
-	}, [animation, navbarLock]);
-	setAnimationsRepetitionMode(animation);
-
-	const animationMode = (e) => {
-		e.preventDefault();
-		if (
-			animation === true ||
-			animation === "true" ||
-			animation === "/*true*/"
-		) {
-			window.localStorage.setItem(
-				"Portfolio_page_animation_toggle",
-				JSON.stringify(animation)
-			);
-			setAnimation(false);
-
-			return;
-		} else if (
-			navbarLock === false ||
-			navbarLock === "false" ||
-			navbarLock === "/*false*/"
-		) {
-			window.localStorage.setItem(
-				"Portfolio_page_animation_toggle",
-				JSON.stringify(navbarLock)
-			);
-			setAnimation(null);
-			return;
-		} else {
-			window.localStorage.setItem(
-				"Portfolio_page_animation_toggle",
-				JSON.stringify(navbarLock)
-			);
-			setAnimation(true);
-			return;
-		}
-	};
-
-	const lockNavbar = (e) => {
-		e.preventDefault();
-		if (
-			navbarLock === true ||
-			navbarLock === "true" ||
-			navbarLock === "/*true*/"
-		) {
-			window.localStorage.setItem(
-				"Portfolio_page_animation_toggle_for_lock_navBar",
-				JSON.stringify(navbarLock)
-			);
-			setNavbarLock(false);
-
-			return;
-		} else if (
-			navbarLock === false ||
-			navbarLock === "false" ||
-			navbarLock === "/*false*/"
-		) {
-			window.localStorage.setItem(
-				"Portfolio_page_animation_toggle_for_lock_navBar",
-				JSON.stringify(animation)
-			);
-			setNavbarLock(true);
-			return;
-		} else {
-			window.localStorage.setItem(
-				"Portfolio_page_animation_toggle_for_lock_navBar",
-				JSON.stringify(navbarLock)
-			);
-			setNavbarLock(false);
-			return;
-		}
 	};
 
 	return (
@@ -155,7 +97,7 @@ const CircularMenu = ({
 
 				<li
 					className={`menu-item  ${fade ? "fade" : ""}`}
-					onClick={(e) => animationMode(e)}
+					onClick={() => setChange_animations((prev) => !prev)}
 					// {show ? "menu-item" : ""}
 				>
 					<a
@@ -163,11 +105,11 @@ const CircularMenu = ({
 						// onClick={(e) => darkMode(e)}
 					>
 						<Animation_Mode_icons
-							AnimationsRepetitionMode={AnimationsRepetitionMode}
-							setAnimationsRepetitionMode={
-								setAnimationsRepetitionMode
-							}
-							animation={animation}
+							// AnimationsRepetitionMode={AnimationsRepetitionMode}
+							// setAnimationsRepetitionMode={
+							// 	setAnimationsRepetitionMode
+							// }
+							change_animations={change_animations}
 						/>
 					</a>
 				</li>
@@ -182,13 +124,13 @@ const CircularMenu = ({
 				</li>
 				<li
 					className={`menu-item  ${fade ? "fade" : ""}`}
-					onClick={(e) => lockNavbar(e)}
+					// onClick={(e) => lockNavbar(e)}
 				>
 					<a
 						href="#menu" // onClick={(e) => darkMode(e)}
 					>
 						{/* for the lock animations  */}
-						<Lock_navbar_animations navbarLock={navbarLock} />
+						<Lock_navbar_animations />
 					</a>
 				</li>
 				<li className={`menu-item  ${fade ? "fade" : ""}`}>
@@ -208,3 +150,37 @@ const CircularMenu = ({
 };
 
 export default CircularMenu;
+// const lockNavbar = (e) => {
+// 	e.preventDefault();
+// 	if (
+// 		navbarLock === true ||
+// 		navbarLock === "true" ||
+// 		navbarLock === "/*true*/"
+// 	) {
+// 		window.localStorage.setItem(
+// 			"Portfolio_page_animation_toggle_for_lock_navBar",
+// 			navbarLock
+// 		);
+// 		setNavbarLock(false);
+
+// 		return;
+// 	} else if (
+// 		navbarLock === false ||
+// 		navbarLock === "false" ||
+// 		navbarLock === "/*false*/"
+// 	) {
+// 		window.localStorage.setItem(
+// 			"Portfolio_page_animation_toggle_for_lock_navBar",
+// 			animation
+// 		);
+// 		setNavbarLock(true);
+// 		return;
+// 	} else {
+// 		window.localStorage.setItem(
+// 			"Portfolio_page_animation_toggle_for_lock_navBar",
+// 			navbarLock
+// 		);
+// 		setNavbarLock(false);
+// 		return;
+// 	}
+// };

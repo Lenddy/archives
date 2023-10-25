@@ -5,6 +5,7 @@ import Tools from "../4_Tools/Tools";
 import Projects from "../5_projects/Projects";
 import What_I_Do from "../3_what_I_Do/What_I_Do";
 import Profile from "../6_profile/Profile";
+import Logo from "../../assets/LM.png";
 
 const NavBar = ({
 	changeMode,
@@ -12,71 +13,17 @@ const NavBar = ({
 	AnimationsRepetitionMode,
 	setAnimationsRepetitionMode,
 }) => {
-	// const { ref: welcomeRef, InView: welcome } = useInView();
-	// const { ref: what_I_DoRef, InView: what_I_Do } = useInView();
-	// const { ref: toolsRef, InView: tools } = useInView();
-	// const { ref: projectsRef, InView: projects } = useInView();
-	// const { ref: profileRef, InView: profile } = useInView();
-
-	// const [welcome, setWelcome] = useState();
-	// const [what_I_Do, setWhat_I_Do] = useState();
-	// const [tools, setTools] = useState();
-	// const [projects, setProjects] = useState();
-	// const [profile, setProfile] = useState();
-
 	const welcomeRef = useRef(null);
 	const what_I_DoRef = useRef(null);
 	const toolsRef = useRef(null);
 	const projectsRef = useRef(null);
 	const profileRef = useRef(null);
-	// console.log("this is welcome ref", welcomeRef.current.classList);
-	// console.log("this is welcome ref", welcomeRef.current.className);
-	// console.log("this is myRefs", myRefs);
-	// myRefs.forEach((el) => console.log("this is myRefs", el));
-	// useEffect(() => {
-	// 	// const observer = new IntersectionObserver((entries) => {
-	// 	// 	console.log("entries", entries);
 
-	// 	// 	entries.forEach((entry) => {
-	// 	// 		console.log(entry);
-	// 	// 		if (entry.isIntersecting) entry.target.classList.add("show");
-	// 	// 		else entry.target.classList.remove("show");
-	// 	// 	});
-	// 	// });
+	// const [what_I_DoPosition, setWhat_I_DoPosition] = useState(null);
+	// const toolsRefPosition = useRef(null);
+	// const projectsRefPosition = useRef(null);
+	// const profileRefPosition = useRef(null);
 
-	// 	// const hiddenElements = document.querySelectorAll(".hidden");
-	// 	// hiddenElements.forEach((el) => observer.observe(el));
-	// 	// myRefs.forEach(el => {
-	// 	// 	console.log("this is el", el);
-	// 	// 	observer.observe(el);
-	// 	// });
-
-	// 	const observer = new IntersectionObserver((entries) => {
-	// 		console.log("entries", entries);
-	// 		// const entry = entries[0];
-	// 		setIntersecting(entries.isIntersecting);
-	// 	});
-	// 	observer.observe(
-	// 		welcomeRef.current,
-	// 		what_I_DoRef.current,
-	// 		toolsRef.current,
-	// 		projectsRef.current,
-	// 		profileRef.current
-	// 	);
-
-	// 	// console.log(" welcomeRef", welcomeRef.current);
-	// 	// 	const observer = new IntersectionObserver((...entries) => {
-	// 	// 		console.log("entries", entries);
-	// 	// 	});
-	// 	// 	observer.observe(
-	// 	// 		welcomeRef.current,
-	// 	// 		what_I_DoRef.current,
-	// 	// 		toolsRef.current,
-	// 	// 		projectsRef.current,
-	// 	// 		profileRef.current
-	// 	// 	);
-	// 	// }, []);
-	// }, []);
 	// ?? this is for the scroll animations with interception observer
 
 	// 1 create ref for the elements
@@ -105,11 +52,27 @@ const NavBar = ({
 				setHideNavBar("");
 			}
 		};
+		// const startAnimation = (pixels = 0, state) => {
+		// 	if (window.scrollY > parseInt(pixels)) {
+		// 		state(true);
+		// 	}
+		// 	// } else {
+		// 	// 	setHideNavBar("");
+		// 	// }
+		// };
 
 		window.addEventListener("scroll", handleScroll);
+		// window.addEventListener(
+		// 	"scroll",
+		// 	startAnimation(100, setWhat_I_DoPosition),
+		// 	console.log(what_I_DoPosition)
+		// );
+		// window.addEventListener("scroll", startAnimation);
+		// window.addEventListener("scroll", startAnimation);
 		return () => {
 			// Remove the event listener using the same function reference
 			window.removeEventListener("scroll", handleScroll);
+			// window.removeEventListener("scroll", startAnimation);
 		};
 	}, []);
 
@@ -136,64 +99,7 @@ const NavBar = ({
 	const [Intersecting_projects, setIntersecting_projects] = useState();
 	const [Intersecting_profile, setIntersecting_profile] = useState();
 
-	useEffect(() => {
-		const observer_welcome = new IntersectionObserver((entries) => {
-			const entry = entries[0];
-			console.log(entry);
-			if (entry.isIntersecting) {
-				setIntersecting_welcome(entry.isIntersecting);
-				entry.target.classList.add("welcome_animation");
-			} else {
-				entry.target.classList.remove("welcome_animation");
-			}
-		});
-		const observer_what_i_do = new IntersectionObserver((entries) => {
-			const entry = entries[0];
-			console.log(entry);
-			if (entry.isIntersecting) {
-				setIntersecting_what_i_do(entry.isIntersecting);
-				entry.target.classList.add("what_i_do_animation");
-			} else {
-				entry.target.classList.remove("what_i_do_animation");
-			}
-		});
-		const observer_tools = new IntersectionObserver((entries) => {
-			const entry = entries[0];
-			console.log(entry);
-			if (entry.isIntersecting) {
-				setIntersecting_tools(entry.isIntersecting);
-				entry.target.classList.add("tools_animation");
-			} else {
-				entry.target.classList.remove("tools_animation");
-			}
-		});
-		const observer_projects = new IntersectionObserver((entries) => {
-			const entry = entries[0];
-			console.log(entry);
-			if (entry.isIntersecting) {
-				setIntersecting_projects(entry.isIntersecting);
-				entry.target.classList.add("projects_animation");
-			} else {
-				entry.target.classList.remove("projects_animation");
-			}
-		});
-		const observer_profile = new IntersectionObserver((entries) => {
-			const entry = entries[0];
-			console.log(entry);
-			if (entry.isIntersecting) {
-				setIntersecting_profile(entry.isIntersecting);
-				entry.target.classList.add("profile_animation");
-			} else {
-				entry.target.classList.remove("profile_animation");
-			}
-		});
-
-		// observer_welcome.observe(welcomeRef.current);
-		// observer_what_i_do.observe(what_I_DoRef.current);
-		// observer_tools.observe(toolsRef.current);
-		// observer_projects.observe(projectsRef.current);
-		// observer_profile.observe(profileRef.current);
-	}, []);
+	useEffect(() => {}, []);
 	// welcomeRef, what_I_DoRef, toolsRef, projectsRef, profileRef
 
 	//? the logo is going to make appear  3 btns  change language  change dark mode , change animation reload/stop animations
@@ -265,15 +171,21 @@ const NavBar = ({
 							Resume
 						</a>
 					</li>
-					<li>
-						<CircularMenu
+					<li className="li_logo">
+						<img
+							className="navLogo"
+							src={Logo}
+							alt="logo"
+							// onClick={showMenu}
+						/>
+						{/* <CircularMenu
 							changeMode={changeMode}
 							setChangeMode={setChangeMode}
 							AnimationsRepetitionMode={AnimationsRepetitionMode}
 							setAnimationsRepetitionMode={
 								setAnimationsRepetitionMode
 							}
-						/>
+						/> */}
 					</li>
 
 					<li>Message</li>

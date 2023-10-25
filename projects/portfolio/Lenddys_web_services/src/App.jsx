@@ -9,9 +9,6 @@ import Container from "./components/Container";
 function App() {
 	// const { changeMode } = props;
 	const [changeMode, setChangeMode] = useState(false);
-	const [AnimationsRepetitionMode, setAnimationsRepetitionMode] = useState(
-		[]
-	);
 	// const [isIntersecting, setIsIntersecting] = useState(false);
 	useEffect(() => {
 		// if (AnimationsOof == false) {
@@ -21,8 +18,11 @@ function App() {
 		// }
 		// if (AnimationsOof == "recurrent_animations") {
 		// }
-		console.log("from the app  component");
-	}, [AnimationsRepetitionMode]);
+		// console.log("from the app  component");
+		// for (let i = 1; i <= 100; i++) {
+		// 	console.log(i);
+		// }
+	}, []);
 
 	// useEffect(() => {
 	// 	console.log("change mode is now ", changeMode);
@@ -37,8 +37,6 @@ function App() {
 			<Container
 				changeMode={changeMode}
 				setChangeMode={setChangeMode}
-				AnimationsRepetitionMode={AnimationsRepetitionMode}
-				setAnimationsRepetitionMode={setAnimationsRepetitionMode}
 			></Container>
 		</div>
 	);
