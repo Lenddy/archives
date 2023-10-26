@@ -9,28 +9,6 @@ import Container from "./components/Container";
 function App() {
 	// const { changeMode } = props;
 	const [changeMode, setChangeMode] = useState(false);
-	// const [isIntersecting, setIsIntersecting] = useState(false);
-	useEffect(() => {
-		// if (AnimationsOof == false) {
-		// }
-		// // document.querySelectorAll(".hidden");
-		// if (AnimationsOof == true) {
-		// }
-		// if (AnimationsOof == "recurrent_animations") {
-		// }
-		// console.log("from the app  component");
-		// for (let i = 1; i <= 100; i++) {
-		// 	console.log(i);
-		// }
-	}, []);
-
-	// useEffect(() => {
-	// 	console.log("change mode is now ", changeMode);
-	// 	console.log(
-	// 		"local storage from app  ",
-	// 		window.localStorage.getItem("Portfolio_page_animation_toggle")
-	// 	);
-	// }, [changeMode]);
 
 	return (
 		<div className={changeMode ? "lightMode" : "darkMode"}>

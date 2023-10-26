@@ -1,80 +1,83 @@
 import { useRef, useEffect, useState } from "react";
-
+import gsap from "gsap";
 const What_I_Do = () => {
-	const what_i_doRef = useRef(null);
-	const [intersecting_whatIDo, setIntersecting_whatIDo] = useState();
-	const [noAnimation, setNoAnimation] = useState(false);
-	const [show, setShow] = useState(false);
+	const titleRef = useRef(null);
+	const contentRef = useRef(null);
+	const [isTitleVisible, setIsTitleVisible] = useState(false);
+	const [isContentVisible, setIsContentVisible] = useState(false);
 
 	useEffect(() => {
-		const observer = new IntersectionObserver((entries) => {
-			const entry = entries[0];
-			setIntersecting_whatIDo(entry.isIntersecting);
-		});
+		const title = titleRef.current;
+		const content = contentRef.current;
 
-		observer.observe(what_i_doRef.current);
-		// if (intersecting_whatIDo === false) {
-		// 	setNoAnimation(true);
-		// }
-	}, []);
+		const onScroll = () => {
+			// Calculate the scroll position to determine when to make the element visible
+			const scrollY = window.scrollY;
+			const scrollThreshold = 350; // Adjust the threshold as needed
 
-	// useEffect(() => {
-	// 	const handleScroll = () => {
-	// 		const position = window.scrollY;
-	// 		if (position >= 300 && position <= 1000) {
-	// 			setShow(true);
-	// 		}
-	// 	};
+			if (!isTitleVisible && scrollY >= scrollThreshold) {
+				// Trigger your GSAP animation here
+				gsap.to(title, { opacity: 1, y: 0, duration: 1 });
 
-	// 	window.addEventListener("scroll", handleScroll);
+				setIsTitleVisible(true); // Update the state to prevent repeated animations
+			}
+		};
+		const onScroll2 = () => {
+			// Calculate the scroll position to determine when to make the element visible
+			const scrollY = window.scrollY;
+			const scrollThreshold = 400; // Adjust the threshold as needed
 
-	// 	return () => {
-	// 		window.removeEventListener("scroll", handleScroll);
-	// 	};
-	// }, []);
+			if (!isContentVisible && scrollY >= scrollThreshold) {
+				// Trigger your GSAP animation here
+				gsap.to(content, { opacity: 1, y: 0, duration: 1 });
+
+				setIsContentVisible(true); // Update the state to prevent repeated animations
+			}
+		};
+
+		// Add a scroll event listener
+		window.addEventListener("scroll", onScroll);
+		window.addEventListener("scroll", onScroll2);
+
+		// Call the onScroll function when the component mounts to check initial visibility
+		onScroll();
+		onScroll2();
+
+		// Clean up the event listener when the component unmounts
+		return () => {
+			window.removeEventListener("scroll", onScroll);
+			window.removeEventListener("scroll", onScroll2);
+		};
+	}, [isTitleVisible, isContentVisible]);
 
 	//! for the animation for the left right and bottom
 	//? make them appear in a zigzag  left  title , right  p tag  , bottom title , left p tag , right title , bottom p tag
 
 	return (
 		<>
-			<div className="whatIDo " ref={what_i_doRef}>
+			<div
+				className="whatIDo "
+				//  ref={what_i_doRef}
+			>
 				<div
 					className={`whatIDo_top ${
-						intersecting_whatIDo ? "whatIDo_top_animation" : ""
+						isTitleVisible ? "whatIDo_top_animation" : ""
 					} `}
+					ref={titleRef}
 				>
-					{/*   ${
-							intersecting_whatIDo === true &&
-							noAnimation === true
-								? "whatIDo_top_text_opacity"
-								: intersecting_whatIDo === true
-								? "whatIDo_top_tex_animation"
-								: "whatIDo_top_text_opacity"
-						}*/}
 					<div
 						className={`whatIDo_top_text ${
-							intersecting_whatIDo
-								? "whatIDo_top_tex_animation"
-								: ""
+							isTitleVisible ? "whatIDo_top_tex_animation" : ""
 						} `}
 					>
 						<h1>My Experience</h1>
 					</div>
-
-					{/* make this have a banner on top that changes from What do i
-					do --
-					{">"} full-stack engineer --{">"} pc building --{">"}{" "}
-					Tutor (have a blur effect that follow the words and
-					make the word appear from the left go past the middle of the
-					screen then come back the blur effect should also do the
-					same but delayed ) */}
 				</div>
 
-				<div className="whatIDo_middle">
+				<div className="whatIDo_middle" ref={contentRef}>
 					<div
 						className={`whatIDo_left ${
-							intersecting_whatIDo ? "whatIDo_left_animation" : ""
+							isContentVisible ? "whatIDo_left_animation" : ""
 						} `}
 					>
 						<h1 className="blink">full-stack Developer</h1>
@@ -109,9 +112,7 @@ const What_I_Do = () => {
 					</div>
 					<div
 						className={`whatIDo_right ${
-							intersecting_whatIDo
-								? "whatIDo_right_animation"
-								: ""
+							isContentVisible ? "whatIDo_right_animation" : ""
 						} `}
 					>
 						<div>
@@ -138,7 +139,7 @@ const What_I_Do = () => {
 				</div>
 				<div
 					className={`whatIDo_bottom ${
-						intersecting_whatIDo ? "whatIDo_bottom_animation" : ""
+						isContentVisible ? "whatIDo_bottom_animation" : ""
 					} `}
 				>
 					<h1 className="blink ">Tutor</h1>
@@ -178,6 +179,33 @@ const What_I_Do = () => {
 			</div>
 		</>
 	);
+
+	// useEffect(() => {
+	// 	const observer = new IntersectionObserver((entries) => {
+	// 		const entry = entries[0];
+	// 		setIntersecting_whatIDo(entry.isIntersecting);
+	// 	});
+
+	// 	observer.observe(what_i_doRef.current);
+	// 	// if (intersecting_whatIDo === false) {
+	// 	// 	setNoAnimation(true);
+	// 	// }
+	// }, []);
+
+	// useEffect(() => {
+	// 	const handleScroll = () => {
+	// 		const position = window.scrollY;
+	// 		if (position >= 300 && position <= 1000) {
+	// 			setShow(true);
+	// 		}
+	// 	};
+
+	// 	window.addEventListener("scroll", handleScroll);
+
+	// 	return () => {
+	// 		window.removeEventListener("scroll", handleScroll);
+	// 	};
+	// }, []);
 };
 
 export default What_I_Do;

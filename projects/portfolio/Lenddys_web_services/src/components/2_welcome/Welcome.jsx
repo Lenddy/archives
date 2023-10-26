@@ -15,6 +15,7 @@ const Welcome = () => {
 	//! make use of this video https://www.youtube.com/watch?v=q9tpBtvTTz8&list=PLFsfg2xP7cbL-kmqydheUCbhkHeNq-zZ_&index=11
 
 	//* make use of the scroll function to determine how far has the user scroll to then show the other components
+
 	const welcomeRef = useRef(null);
 	const [intersecting_welcome, setIntersecting_welcome] = useState();
 	const [noAnimation, setNoAnimation] = useState(false);

@@ -6,6 +6,7 @@ import Projects from "../5_projects/Projects";
 import What_I_Do from "../3_what_I_Do/What_I_Do";
 import Profile from "../6_profile/Profile";
 import Logo from "../../assets/LM.png";
+import GsapShow from "../animations/GsapShow";
 
 const NavBar = ({
 	changeMode,
@@ -201,6 +202,7 @@ const NavBar = ({
 				>
 					<Welcome />
 				</div>
+				<hr />
 
 				<div
 					ref={what_I_DoRef}
@@ -209,15 +211,18 @@ const NavBar = ({
 				>
 					<What_I_Do />
 				</div>
+				<hr />
 
 				<div ref={toolsRef} className={` all_component `} id="Tools">
 					<Tools />
 				</div>
+				<hr />
 
 				<div ref={projectsRef} className={` all_component `}>
 					{/* hidden */}
 					<Projects />
 				</div>
+				<hr />
 
 				<div
 					ref={profileRef}
@@ -226,6 +231,9 @@ const NavBar = ({
 				>
 					<Profile />
 				</div>
+				{/* <div>
+					<GsapShow />
+				</div> */}
 			</div>
 		</>
 	);
