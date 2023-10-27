@@ -6,6 +6,7 @@ import Projects from "../5_projects/Projects";
 import What_I_Do from "../3_what_I_Do/What_I_Do";
 import Profile from "../6_profile/Profile";
 import Logo from "../../assets/LM.png";
+// import Test from "../ProfilePicture";
 import GsapShow from "../animations/GsapShow";
 
 const NavBar = ({
@@ -233,6 +234,9 @@ const NavBar = ({
 				</div>
 				{/* <div>
 					<GsapShow />
+				</div> */}
+				{/* <div>
+					<Test />
 				</div> */}
 			</div>
 		</>

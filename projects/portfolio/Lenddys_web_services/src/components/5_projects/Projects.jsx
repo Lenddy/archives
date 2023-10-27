@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import placeholder from "../../assets/placeholder.png";
 import gsap from "gsap";
+import project1 from "../../assets/Escobar_Cleaning_service.png";
 
 const Projects = () => {
 	const titleRef = useRef(null);
@@ -28,7 +29,7 @@ const Projects = () => {
 		const onScroll2 = () => {
 			// Calculate the scroll position to determine when to make the element visible
 			const scrollY = window.scrollY;
-			const scrollThreshold = 400; // Adjust the threshold as needed
+			const scrollThreshold = 2800; // Adjust the threshold as needed
 
 			if (!isContentVisible && scrollY >= scrollThreshold) {
 				// Trigger your GSAP animation here
@@ -139,30 +140,86 @@ const Projects = () => {
 
 				{/* also make 2 btns one that will take you to the code and one that will take you to YouTube  showing of the page  */}
 				<div
-					className={`card_project show_card_project 
-						
-					}`}
+					className={`card_project ${
+						isContentVisible ? "card_project_animate" : ""
+					} `}
+					// ${isContentVisible} card_projectTest
 					// ref={projectItems}
 				>
-					<img src={placeholder} alt="" />
+					<img
+						src={project1}
+						alt=""
+						className={`${
+							isContentVisible ? "project_image1" : ""
+						} `}
+					/>
 					<hr />
-					<h1>project name</h1>
+					<h1>Escobar cleaning services</h1>
 					<hr />
-					<p>description</p>
+					<div
+						className={`description ${
+							isContentVisible ? "description1" : ""
+						} `}
+					>
+						<p>
+							{" "}
+							website for a small cleaning company in Little Rock
+							Arkansas using: react and MaterialUI, AWS, Amazon
+							EC2
+						</p>
+					</div>
 				</div>
-				<div className="card_project">
-					<img src={placeholder} alt="" />
+				<div
+					className={`card_project ${
+						isContentVisible ? "card_project_animate" : ""
+					} `}
+				>
+					<img
+						src={project1}
+						alt=""
+						className={`${
+							isContentVisible ? "project_image2" : ""
+						} `}
+					/>
 					<hr />
-					<h1>project name</h1>
+					<h1>IRS</h1>
 					<hr />
-					<p>description</p>
+					<div
+						className={`description ${
+							isContentVisible ? "description2" : ""
+						} `}
+					>
+						<p>
+							A loans management system using: React, MongoDB,
+							MaterialUI, NodeJs, and Socket.io.
+						</p>
+					</div>
 				</div>
-				<div className="card_project">
-					<img src={placeholder} alt="" />
+				<div
+					className={`card_project ${
+						isContentVisible ? "card_project_animate" : ""
+					} `}
+				>
+					<img
+						src={project1}
+						alt=""
+						className={`${
+							isContentVisible ? "project_image3" : ""
+						} `}
+					/>
 					<hr />
-					<h1>project name</h1>
+					<h1>Flappy CUBE</h1>
 					<hr />
-					<p>description</p>
+					<div
+						className={`description description_border ${
+							isContentVisible ? "description3" : ""
+						} `}
+					>
+						<p>
+							A basic flappy bird clone , instead of a bird it is
+							a cube made using unity and c#{" "}
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
