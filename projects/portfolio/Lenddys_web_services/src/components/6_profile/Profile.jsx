@@ -14,7 +14,7 @@ const Profile = () => {
 		const onScroll = () => {
 			// Calculate the scroll position to determine when to make the element visible
 			const scrollY = window.scrollY;
-			const scrollThreshold = 350; // Adjust the threshold as needed
+			const scrollThreshold = 3500; // Adjust the threshold as needed
 
 			if (!isTitleVisible && scrollY >= scrollThreshold) {
 				// Trigger your GSAP animation here
@@ -26,7 +26,7 @@ const Profile = () => {
 		const onScroll2 = () => {
 			// Calculate the scroll position to determine when to make the element visible
 			const scrollY = window.scrollY;
-			const scrollThreshold = 400; // Adjust the threshold as needed
+			const scrollThreshold = 3500; // Adjust the threshold as needed
 
 			if (!isContentVisible && scrollY >= scrollThreshold) {
 				// Trigger your GSAP animation here
@@ -61,9 +61,14 @@ const Profile = () => {
 	// };
 
 	const [isFlipped, setIsFlipped] = useState(false);
+	const [isFlipped2, setIsFlipped2] = useState(false);
 
 	const handleCardInteract = () => {
 		setIsFlipped(!isFlipped);
+	};
+
+	const handleCardInteract2 = () => {
+		setIsFlipped2(!isFlipped2);
 	};
 
 	// !make use of this video https://www.youtube.com/watch?v=FeJEEE3zc4U
@@ -74,19 +79,37 @@ const Profile = () => {
 
 	//todo Make the a tags  #ff00ff
 	// todo make the p tas have different translateZ()
+
+	// make the title have fade in (0 opacity to 1)  make the title be flip meaning that i am seeing the back side of the title them flip it to make it  in the right way
+
+	//todo initialy they will be in the middle but wen they are click the card
+	// *todo  make them appear out side of the card(not fully in the card (half way))  and when the card is click us the transform and bring them to the middle  */
 	return (
-		<div className="profile ">
-			<div className="profile_top">
-				<h1>Hello There 👋🏼</h1>
+		<div
+			// flip_position ${isTitleVisible ? "turn_page" : ""}
+			className={`profile `}
+		>
+			<div
+				className={`profile_top flip_position ${
+					isTitleVisible ? "turn_title" : ""
+				}`}
+				ref={titleRef}
+			>
+				<h1>About Me</h1>
 			</div>
-			<div className="profileContainer">
-				<div className="content_container">
+			{/* ${isContentVisible ? "show_content" : ""} */}
+			<div className={`profileContainer `}>
+				<div
+					className={`profile_content_container ${
+						isContentVisible ? "turn_content" : ""
+					}`}
+				>
 					<div className="profile_left">
 						{/* <img src={Lenddy} alt=" profile picture" /> */}
 						<div
 							className="c_comp"
 							onClick={handleCardInteract}
-							onTouchStart={handleCardInteract}
+							// onTouchStart={handleCardInteract}
 						>
 							<div className="card">
 								<div
@@ -103,90 +126,103 @@ const Profile = () => {
 										{/* <p className="card__subtitle">
 											Time for some fun
 										</p> */}
-										<h4 className="card__title">
+										<h2
+											className={`card__title1 ${
+												isFlipped
+													? "change_opacity"
+													: ""
+											}`}
+										>
+											Hello
+										</h2>
+										<h4 className="card__title2">There</h4>
+										<h4
+											className={`card__title3 ${
+												isFlipped
+													? "change_opacity"
+													: ""
+											}`}
+										>
+											👋🏼
+										</h4>
+										<h4 className="card__title4">
 											click me
 										</h4>
 									</div>
 
 									<div className="card__back">
+										{/* initialy they will be in the middle but wen they are click the acrd  */}
+										{/*todo  make them appear out side of the card(not fully in the card (half way))  and when the card is click us the transform and bring them to the middle  */}
 										<h1 className="card__back_title">
 											i am Lenddy Morales
 										</h1>
 										{/* style={showMore? null: fullParagraphStyles} */}
-
-										<div className="card__body">
-											<p>
-												I'm a 19-year-old Dominican boy
-												who can barly dance bachata I
-												reside in the United States and
-												some day might move to Puerto
-												rico. I embarked on my journey
-												into higher education at the age
-												of 17 with a major in computer
-												engineering. However, I soon
-												realized that the traditional
-												college teaching approach didn't
-												align with my learning style.
-											</p>{" "}
-											<p>
-												{" "}
-												I made the bold decision to drop
-												out and seek alternative paths
-												to gain knowledge. Just a month
-												later, I joined a coding boot
-												camp called{""}
-												<a href="https://www.codingdojo.com/">
-													Coding Dojo
-												</a>
-												{""}. This intensive four-month
-												program pushed me to my limits
-												as I strived to keep up with the
-												fast-paced learning environment.
-												Many nights were spent burning
-												the midnight oil, often going to
-												bed at 4 am and waking up at 11
-												am. Through laughter, tears, and
-												forming strong friendships, I
-												persevered, and it has paid off.
-												I am now proud to call myself a
-												full-stack developer.
-											</p>
-											<p>
-												<a href="https://www.codingdojo.com/">
-													Coding Dojo
-												</a>{" "}
-												taught me invaluable skills,
-												including thriving in
-												high-pressure situations, both
-												individually and as part of a
-												cohort. I learned the importance
-												of seeking help when needed and
-												offering assistance to others.
-												It ingrained in me the habit of
-												learning from my mistakes and
-												continually expanding my
-												knowledge.
-											</p>
-											<p>
-												My ultimate goal is to return to
-												college one day and resume my
-												computer engineering studies,
-												with a possible focus on also
-												becoming a game developer or
-												even exploring carpentry.
-											</p>
-											<p>
-												In my free time, I indulge in my
-												passion for video Games,
-												Basketball, Baseball, Anime,
-												Manga , Rock ,Pop and Salsa . If
-												any of this resonates with you
-												or piques your interest, feel
-												free to send me a message. Don't
-												hesitate
-											</p>
-										</div>
-
+										{/* <div className="card__body"> */}
+										<p className="card__body_part1">
+											I'm a 19-year-old Dominican boy who
+											can barly dance bachata I reside in
+											the United States and some day might
+											move to Puerto rico. I embarked on
+											my journey into higher education at
+											the age of 17 with a major in
+											computer engineering. However, I
+											soon realized that the traditional
+											college teaching approach didn't
+											align with my learning style.
+										</p>{" "}
+										<p className="card__body_part2">
+											{" "}
+											I made the bold decision to drop out
+											and seek alternative paths to gain
+											knowledge. Just a month later, I
+											joined a coding bootcamp called{" "}
+											<a href="https://www.codingdojo.com/">
+												Coding Dojo
+											</a>
+											{""}. This intensive four-month
+											programming course pushed me to my
+											limits as I strived to keep up with
+											the fast-paced learning environment.
+											Many nights were spent burning the
+											midnight oil, often going to bed at
+											4 am and waking up at 11 am. Through
+											laughter, tears, and forming strong
+											friendships, I persevered, and it
+											has paid off. I am now proud to call
+											myself a full-stack developer.
+										</p>
+										<p className="card__body_part3">
+											<a href="https://www.codingdojo.com/">
+												Coding Dojo
+											</a>{" "}
+											taught me invaluable skills,
+											including thriving in high-pressure
+											situations, both individually and as
+											part of a cohort. I learned the
+											importance of seeking help when
+											needed and offering assistance to
+											others. It ingrained in me the habit
+											of learning from my mistakes and
+											continually expanding my knowledge.
+										</p>
+										<p className="card__body_part4">
+											My ultimate goal is to return to
+											college one day and resume my
+											computer engineering studies, with a
+											possible focus on also becoming a
+											game developer or even exploring
+											carpentry.
+										</p>
+										<p className="card__body_part5">
+											In my free time, I indulge in my
+											passion for video Games, Basketball,
+											Baseball, Anime, Manga listening to
+											Rock ,Pop and Salsa . If any of this
+											resonates with you or piques your
+											interest, feel free to send me a
+											message. Don't hesitate
+										</p>
+										{/* </div> */}
 										{/* <button
 											className="profile_btn"
 											onClick={() =>
@@ -204,16 +240,48 @@ const Profile = () => {
 					</div>
 					{/*make use of the resize attribute in css to be able to make the picture smaller or bigger*/}
 					<div className="profile_right">
-						<h1>Contact Me</h1>
+						<div
+							className="c_comp"
 
-						<textarea
-							name=""
-							id=""
-							cols="65"
-							rows="20"
-							placeholder="Insert Your Message Here"
-						></textarea>
-						<button className="btn"> Send Message</button>
+							// onTouchStart={handleCardInteract}
+						>
+							<div className="card">
+								<div
+									className={`card__content ${
+										isFlipped2 ? "flip_card2" : ""
+									}`}
+								>
+									<div className="card__front">
+										<h1>Contact Me</h1>
+										<input
+											type="text"
+											name=""
+											id=""
+											placeholder="Name"
+										/>
+										<textarea
+											name=""
+											id=""
+											cols="75"
+											rows="30"
+											placeholder="Insert Your Message Here"
+										></textarea>
+										<button
+											className="btn"
+											onClick={handleCardInteract2}
+										>
+											{" "}
+											Send Message
+										</button>
+									</div>
+
+									<div className="card__back">
+										{/* put  the rock and put some clouds  at the top that move  */}
+										<button>send another message</button>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
