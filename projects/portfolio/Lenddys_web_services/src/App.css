@@ -1392,6 +1392,7 @@ opacity: 0;
   display: flex;
   justify-content:space-around;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .profile_top{
@@ -1450,7 +1451,7 @@ height: 100%;
   height: 750px;
   /* background-color:blue; */
   /* display: inline-block; */
-  display: flex;
+  /* display: flex; */
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
@@ -1583,7 +1584,7 @@ height: 650px; */
   left:10px;
   right: 10px;
   border: 5px solid currentColor;
-  transform: translateZ(150px);
+  transform: translateZ(100px);
   border-radius: 50px;
 }
 
@@ -1600,7 +1601,7 @@ height: 650px; */
 
 
 .card__title1{ 
-  transform: translateZ(200px);
+  transform: translateZ(250px);
   left:100%;
   top: 3%;
   /* transform: rotateY(30%); */
@@ -1617,7 +1618,7 @@ height: 650px; */
   -webkit-text-stroke: #242424;
 }
 .card__title3{ 
-  transform: translateZ(200px);
+  transform: translateZ(100px);
   left:100%;
   top: 60%;
   font-size: 50px;
@@ -1626,7 +1627,7 @@ height: 650px; */
   animation: wave 4s infinite;
 }
 .card__title4 {
-  transform: translateZ(200px);
+  transform: translateZ(300px);
   left:35%;
   top: 80%;
     /* transform: rotate(45deg) ; */
@@ -1675,7 +1676,7 @@ height: 650px; */
   transform: translateZ(100px)
 }
 .card__body_part3{
-  transform: translateZ(100px)
+  transform: translateZ(50px)
 }
 .card__body_part4{
   transform: translateZ(200px)
@@ -1780,16 +1781,157 @@ height: 650px; */
 
 
 
+.c_comp2{
+  width: 100%;
+  height: 100%;
+  /* background-color: purple; */
+}
+
+/* width: 500px;
+height: 650px; */
+/** this is for the size of the cart */
+.card2 {
+  /* width: 400px; */
+  width: 100%;
+  height: 100%;
+  /* background-color: green; */
+}
+
+
+/** for all the content front an back  */
+.card__content2 {
+  text-align: center;
+  position: relative;
+  /* padding: 15em 5em; */
+  transition: transform 3s;
+   /* background: pink; */
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+}
+
+.flip_card2{
+  transform: rotateY(-.5turn);
+}
+
+.card__front2,
+.card__back2 {
+  position: absolute;
+  /* top: 100px; */
+  /* bottom: 0; */
+  /* left: 0;
+  right: 0; */
+  /* padding: 5em 3em; */
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  width: 100%;
+  height: 100%;
+  /* background-color: red; */
+}
+
+.card__front2 {
+  /* background-image: url("../src/assets/Lenddy.jpg"); */
+  /* background-size: cover; */
+  /* background-blend-mode: overlay; */
+  color: #333;
+  width: 100%;
+  height: 100%;
+  /* border-radius: 10px; */
+}
+
+/* this is the edge */
+
+/* .card__front2::before {
+  content: '';
+  position: absolute;
+  top: 2%;
+  bottom: 2%;
+  left:10px;
+  right: 10px;
+  border: 5px solid currentColor;
+  transform: translateZ(150px);
+  border-radius: 50px;
+} */
+
+/* .card__title12,.card__title2,.card__title3,.card__title4 {
+  font-size: 30px;
+  transform: translateZ(50px);
+  order: 2;
+  text-transform: uppercase;
+  position: absolute;
+  color: lightblue;
+  letter-spacing: 4px;
+}
+ */
+
+
+.card__back_title2 {
+  transform:  translateZ(300px);
+  text-transform: uppercase;
+  /* font-size: 30px; */
+  margin: 0px;
+}
+
+.card__back2 {
+  transform: rotateY(-.5turn);
+  /* color: var(--clr); */
+  color: lightblue;
+  background: #333;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
 
 
 
+.information_form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 90%;
+  height: 80%;
+}
 
+.profile_input{
+  margin-bottom: 10px;
+  transform: translateZ(250px);
+  
+}
+textarea{
+  transform: translateZ(300px);
 
+}
 
+/* .card__front2::after {
+  content: '';
+  position: absolute;
+  top: 3%;
+  bottom: 3%;
+  left:10px;
+  right: 10px;
+  border: 5px solid currentColor;
+  transform: translateZ(150px);
+  border-radius: 50px;
+} */
 
+.front_title_c2{
+  transform: translateZ(200px);
+}
 
+.front_title2_c2{ 
+  transform: translateZ(100px);
 
-
+}
 
 
 /* all animations */

@@ -84,6 +84,10 @@ const Profile = () => {
 
 	//todo initialy they will be in the middle but wen they are click the card
 	// *todo  make them appear out side of the card(not fully in the card (half way))  and when the card is click us the transform and bring them to the middle  */
+
+	const handleSubmit = (e) => {
+		e.preventDefault;
+	};
 	return (
 		<div
 			// flip_position ${isTitleVisible ? "turn_page" : ""}
@@ -239,33 +243,51 @@ const Profile = () => {
 						</div>
 					</div>
 					{/*make use of the resize attribute in css to be able to make the picture smaller or bigger*/}
+					{/* finith the flip and fin a way to send messages to the email */}
+
+					{/* and make the site all divide friendly */}
 					<div className="profile_right">
 						<div
-							className="c_comp"
+							className="c_comp2"
 
 							// onTouchStart={handleCardInteract}
 						>
-							<div className="card">
+							<div className="card2">
 								<div
-									className={`card__content ${
+									className={`card__content2 ${
 										isFlipped2 ? "flip_card2" : ""
 									}`}
 								>
-									<div className="card__front">
-										<h1>Contact Me</h1>
-										<input
-											type="text"
-											name=""
-											id=""
-											placeholder="Name"
-										/>
-										<textarea
-											name=""
-											id=""
-											cols="75"
-											rows="30"
-											placeholder="Insert Your Message Here"
-										></textarea>
+									<div className="card__front2">
+										<h1 className="front_title_c2">
+											Contact Me
+										</h1>
+										<h2 className="front_title2_c2">
+											Cel:(347)964-3348
+										</h2>
+										<form
+											onSubmit={handleSubmit}
+											// action="#"
+											// method="post"
+											className="information_form"
+										>
+											<input
+												type="text"
+												name=""
+												id=""
+												placeholder="Name"
+												className="profile_input"
+											/>
+											<textarea
+												name=""
+												id=""
+												cols="75"
+												rows="30"
+												placeholder="Insert Your Message Here"
+											></textarea>
+											<div></div>
+										</form>
+										<button>test lunch</button>
 										<button
 											className="btn"
 											onClick={handleCardInteract2}
@@ -275,9 +297,13 @@ const Profile = () => {
 										</button>
 									</div>
 
-									<div className="card__back">
+									<div className="card__back2">
 										{/* put  the rock and put some clouds  at the top that move  */}
-										<button>send another message</button>
+										<button
+											onClick={() => setIsFlipped2(false)}
+										>
+											send another message
+										</button>
 									</div>
 								</div>
 							</div>
