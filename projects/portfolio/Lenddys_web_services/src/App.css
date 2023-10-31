@@ -1912,6 +1912,7 @@ height: 650px; */
   transform: translateZ(200px);
   color: #00ffff;
   margin: 0px;
+  
 }
 
 .front_title2_c2{ 
@@ -1929,13 +1930,24 @@ height: 650px; */
   transform: translateZ(300px);
 }
 
+
+.contact_info{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0px;
+  width: 100%;
+  transform: translateZ(400px);
+}
+
 .profile_input{
   margin-bottom: 10px;
   transform: translateZ(150px);
+  /* margin: 0px; */
 }
 
 textarea{
-  margin:0px ;
+  margin:0px;
 }
 
 .form_btn{
@@ -1962,7 +1974,8 @@ textarea{
 .submit_Btn{
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  /* margin-top: 10px; */
+  margin-bottom: 10px;
 }
 
 

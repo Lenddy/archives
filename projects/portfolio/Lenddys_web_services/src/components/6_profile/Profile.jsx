@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Lenddy from "../../assets/Lenddy.jpg";
 import gsap from "gsap";
 import ProfilePicture from "../ProfilePicture";
+import Contact from "./Contact";
 const Profile = () => {
 	const titleRef = useRef(null);
 	const contentRef = useRef(null);
@@ -61,14 +62,9 @@ const Profile = () => {
 	// };
 
 	const [isFlipped, setIsFlipped] = useState(false);
-	const [isFlipped2, setIsFlipped2] = useState(false);
 
 	const handleCardInteract = () => {
 		setIsFlipped(!isFlipped);
-	};
-
-	const handleCardInteract2 = () => {
-		setIsFlipped2(!isFlipped2);
 	};
 
 	// const [lift, setLift] = useState(false);
@@ -257,156 +253,7 @@ const Profile = () => {
 
 					{/* and make the site all device friendly */}
 					<div className="profile_right">
-						<div
-							className="c_comp2"
-
-							// onTouchStart={handleCardInteract}
-						>
-							<div className="card2">
-								<div
-									className={`card__content2 ${
-										isFlipped2 ? "flip_card2" : ""
-									}`}
-								>
-									<div className="card__front2">
-										<h1 className="front_title_c2">
-											Contact Me
-										</h1>
-										<h2 className="front_title2_c2">
-											Cel:(347)964-3348
-										</h2>
-										<form
-											onSubmit={handleSubmit}
-											// action="#"
-											// method="post"
-											className="information_form"
-										>
-											<input
-												type="text"
-												name=""
-												id=""
-												placeholder="Name"
-												className="profile_input"
-											/>
-											<textarea
-												name=""
-												id=""
-												cols="75"
-												rows="30"
-												placeholder="Insert Your Message Here"
-											></textarea>
-
-											{/* <div className="submit_Btn">
-												<button
-													className="form_btn"
-													onClick={
-														handleCardInteract2
-													}
-												>
-													{" "}
-													Send Message
-												</button>
-											</div> */}
-										</form>
-										<div className="submit_Btn">
-											<button
-												className="form_btn"
-												onClick={() => {
-													handleCardInteract2();
-													// lift_oof();
-												}}
-											>
-												{" "}
-												Send Message
-											</button>
-										</div>
-										{/* <div>
-										<button className="form_btn">
-											test lunch
-										</button>
-										</div> */}
-									</div>
-
-									<div className="card__back2 ">
-										{/* put  the rock and put some clouds  at the top that move  */}
-										<h1
-											className={` back_item_size cloud1 ${
-												isFlipped2 ? " " : ""
-											}`}
-										>
-											☁️
-										</h1>
-										<h1
-											className={` back_item_size cloud2 ${
-												isFlipped2
-													? "cloud_animation2"
-													: ""
-											}`}
-										>
-											☁️
-										</h1>
-										<h1
-											className={` back_item_size cloud3 ${
-												isFlipped2
-													? "cloud_animation3"
-													: ""
-											}`}
-										>
-											☁️
-										</h1>
-										<h1
-											className={` back_item_size cloud4 ${
-												isFlipped2
-													? "cloud_animation4"
-													: ""
-											}`}
-										>
-											☁️
-										</h1>
-										<h1
-											className={` back_item_size cloud5 ${
-												isFlipped2
-													? "cloud_animation5"
-													: ""
-											}`}
-										>
-											☁️
-										</h1>
-										<h1
-											className={` back_item_size cloud6 ${
-												isFlipped2
-													? "cloud_animation6"
-													: ""
-											}`}
-										>
-											☁️
-										</h1>
-										<h1
-											className={` back_item_size cloud7 ${
-												isFlipped2
-													? "cloud_animation7"
-													: ""
-											}`}
-										>
-											☁️
-										</h1>
-
-										<div
-											className={`back_item_size rocket ${
-												isFlipped2 ? "lunch" : ""
-											}`}
-										>
-											🚀
-										</div>
-										<button
-											onClick={() => setIsFlipped2(false)}
-										>
-											send another message
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
+						<Contact />
 					</div>
 				</div>
 			</div>
