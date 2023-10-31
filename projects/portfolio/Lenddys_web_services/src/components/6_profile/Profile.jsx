@@ -71,6 +71,16 @@ const Profile = () => {
 		setIsFlipped2(!isFlipped2);
 	};
 
+	// const [lift, setLift] = useState(false);
+
+	// const lift_oof = () => {
+	// 	setLift(true);
+	// };
+
+	// const cancel_lift_oof = () => {
+	// 	setLift(false);
+	// };
+
 	// !make use of this video https://www.youtube.com/watch?v=FeJEEE3zc4U
 
 	//todo make the aniamtion come in like a page turning
@@ -245,7 +255,7 @@ const Profile = () => {
 					{/*make use of the resize attribute in css to be able to make the picture smaller or bigger*/}
 					{/* finith the flip and fin a way to send messages to the email */}
 
-					{/* and make the site all divide friendly */}
+					{/* and make the site all device friendly */}
 					<div className="profile_right">
 						<div
 							className="c_comp2"
@@ -285,20 +295,109 @@ const Profile = () => {
 												rows="30"
 												placeholder="Insert Your Message Here"
 											></textarea>
-											<div></div>
+
+											{/* <div className="submit_Btn">
+												<button
+													className="form_btn"
+													onClick={
+														handleCardInteract2
+													}
+												>
+													{" "}
+													Send Message
+												</button>
+											</div> */}
 										</form>
-										<button>test lunch</button>
-										<button
-											className="btn"
-											onClick={handleCardInteract2}
-										>
-											{" "}
-											Send Message
+										<div className="submit_Btn">
+											<button
+												className="form_btn"
+												onClick={() => {
+													handleCardInteract2();
+													// lift_oof();
+												}}
+											>
+												{" "}
+												Send Message
+											</button>
+										</div>
+										{/* <div>
+										<button className="form_btn">
+											test lunch
 										</button>
+										</div> */}
 									</div>
 
-									<div className="card__back2">
+									<div className="card__back2 ">
 										{/* put  the rock and put some clouds  at the top that move  */}
+										<h1
+											className={` back_item_size cloud1 ${
+												isFlipped2 ? " " : ""
+											}`}
+										>
+											☁️
+										</h1>
+										<h1
+											className={` back_item_size cloud2 ${
+												isFlipped2
+													? "cloud_animation2"
+													: ""
+											}`}
+										>
+											☁️
+										</h1>
+										<h1
+											className={` back_item_size cloud3 ${
+												isFlipped2
+													? "cloud_animation3"
+													: ""
+											}`}
+										>
+											☁️
+										</h1>
+										<h1
+											className={` back_item_size cloud4 ${
+												isFlipped2
+													? "cloud_animation4"
+													: ""
+											}`}
+										>
+											☁️
+										</h1>
+										<h1
+											className={` back_item_size cloud5 ${
+												isFlipped2
+													? "cloud_animation5"
+													: ""
+											}`}
+										>
+											☁️
+										</h1>
+										<h1
+											className={` back_item_size cloud6 ${
+												isFlipped2
+													? "cloud_animation6"
+													: ""
+											}`}
+										>
+											☁️
+										</h1>
+										<h1
+											className={` back_item_size cloud7 ${
+												isFlipped2
+													? "cloud_animation7"
+													: ""
+											}`}
+										>
+											☁️
+										</h1>
+
+										<div
+											className={`back_item_size rocket ${
+												isFlipped2 ? "lunch" : ""
+											}`}
+										>
+											🚀
+										</div>
 										<button
 											onClick={() => setIsFlipped2(false)}
 										>
