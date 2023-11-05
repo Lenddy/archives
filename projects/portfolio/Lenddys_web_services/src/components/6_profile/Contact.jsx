@@ -5,6 +5,23 @@ const Contact = () => {
 	const form = useRef();
 	const buttonRef = useRef(null);
 	const [isFlipped, setIsFlipped] = useState(false);
+	const [messageSent, SetMessageSent] = useState({});
+	const [formInfo, setFormInfo] = useState({});
+	const [validation, setValidation] = useState(false);
+	const [secondValidation, setSecondValidation] = useState(false);
+	const [nameValidation, setNameValidation] = useState(false);
+	const [emailValidation, setEmailValidation] = useState(false);
+	const [messageValidation, setMessageValidation] = useState(false);
+
+	// const allInfo = (e) => {
+	// 	setFormInfo({
+	// 		...formInfo,
+	// 		[e.target.name]: e.target.value,
+	// 		// [e.target.name]:e.target.value,
+	// 		// [e.target.name]:e.target.value,
+	// 	});
+	// };
+	// const [name, setName] = useState()
 
 	// useEffect(() => {
 	// 	const keyDownHandler = (e) => {
@@ -20,8 +37,30 @@ const Contact = () => {
 
 	const sendEmail = (e) => {
 		e.preventDefault();
+		// console.log("1 if");
+		// if (formInfo?.name?.length < 2 || formInfo?.name == undefined) {
+		// 	console.log("check 1");
+		// 	setNameValidation(true);
+		// }
+		// console.log("if 2");
+		// if (formInfo?.email?.length < 5 || formInfo?.email === undefined) {
+		// 	console.log("check 2");
+		// 	setEmailValidation(true);
+		// }
+		// console.log("if 3 ");
+		// if (formInfo?.message?.length < 5 || formInfo?.message === undefined) {
+		// 	console.log("check 1");
+		// 	setMessageValidation(true);
+		// }
+		// if (
+		// 	nameValidation === true ||
+		// 	emailValidation === true ||9
+		// 	messageValidation === true
+		// ) {
+		// 	return console.log("at lest one og them is true");
+		// }
 		setIsFlipped(!isFlipped);
-
+		// ["field can not be empty","field must be at lest"
 		emailjs
 			.sendForm(
 				"service_yxdnctm",
@@ -31,14 +70,82 @@ const Contact = () => {
 			)
 			.then(
 				(result) => {
-					console.log(result);
-					console.log("message sent", result.text);
+					// ! log text and status to see if that  helps
+					// ! and make it into an object put the names of status and text in the object and slso do the same for the error handle
+					SetMessageSent({
+						status: result.status,
+						text: result.text,
+					});
+					console.log(messageSent);
+					// console.log(result);
+					// console.log("message sent", result.text);
 				},
 				(error) => {
+					SetMessageSent({
+						status: error.status,
+						text: error.text,
+					});
 					console.log("error sending the message", error.text);
 				}
 			);
 	};
+
+	// {formInfo?.name?.length > 0 &&
+	// 	formInfo?.name?.length < 2 ? (
+	// 		<p
+	// 			style={{
+	// 				color: "#ff00ff",
+	// 				margin: "0px",
+	// 			}}
+	// 		>
+	// 			name must be at lest 2 characters
+	// 			long
+	// 		</p>
+	// 	) : nameValidation ? (
+	// 		<p
+	// 			style={{
+	// 				color: "#ff00ff",
+	// 				margin: "0px",
+	// 			}}
+	// 		>
+	// 			name must be at lest 2 characters
+	// 			long{" "}
+	// 		</p>
+	// 	) : null}
+
+	// {  formInfo?.email?.length > 0 &&
+	// 	formInfo?.email?.length < 2 ? (
+	// 		<p
+	// 			style={{
+	// 				color: "#ff00ff",
+	// 				margin: "0px",
+	// 			}}
+	// 		>
+	// 			name must be at lest 2 characters
+	// 			long{" "}
+	// 		</p>
+	// 	) : emailValidation ? (
+	// 		<p
+	// 			style={{
+	// 				color: "#ff00ff",
+	// 				margin: "0px",
+	// 			}}
+	// 		>
+	// 			email must be at lest 5 characters
+	// 			long{" "}
+	// 		</p>
+	// 	) : null}
+
+	// {formInfo?.message?.length > 0 &&
+	// 	formInfo?.message?.length < 5 ? (
+	// 		<p style={{ color: "#ff00ff", margin: "0px" }}>
+	// 			message must be at lest 5 characters long{" "}
+	// 		</p>
+	// 	) : messageValidation ? (
+	// 		<p style={{ color: "#ff00ff", margin: "0px" }}>
+	// 			message must not be empty{" "}
+	// 		</p>
+	// 	) : null}
 
 	return (
 		<div
@@ -52,8 +159,8 @@ const Contact = () => {
 						isFlipped ? "flip_card2" : ""
 					}`}
 				>
-					<h2 className="front_title_c2">Contact Me</h2>
 					<div className="card__front2">
+						<h2 className="front_title_c2">Contact Me</h2>
 						<div className="contact_info">
 							<h3 className="front_title2_c2">(347)964-3348</h3>
 							<h3 className="front_title2_c2">
@@ -67,54 +174,62 @@ const Contact = () => {
 							// method="post"
 							className="information_form"
 						>
-							<input
-								type="text"
-								id=""
-								placeholder="Your Name"
-								className="profile_input"
-								name="name"
-							/>
-							<input
-								type="text"
-								name="email"
-								id=""
-								placeholder="Your Email"
-								className="profile_input"
-							/>
+							<div className="span_div">
+								<div className="span_left">
+									<input
+										type="text"
+										id=""
+										placeholder="Your Name"
+										className="profile_input"
+										name="name"
+										// onChange={(e) => {
+										// 	allInfo(e);
+										// 	setNameValidation(false);
+										// }}
+									/>
+								</div>
+								<div className="span_right">
+									<input
+										type="email"
+										name="email"
+										id=""
+										placeholder="Your Email"
+										className="profile_input"
+										// onChange={(e) => {
+										// 	allInfo(e);
+										// 	setEmailValidation(false);
+										// }}
+									/>
+								</div>
+							</div>
+
 							<textarea
 								name="message"
 								id=""
 								cols="75"
-								rows="30"
+								rows="20"
 								placeholder="Insert Your Message Here"
+								// onChange={(e) => {
+								// 	allInfo(e);
+								// 	setMessageValidation(false);
+								// }}
 							></textarea>
 
-							{/* <div className="submit_Btn">
-                    <button
-                        className="form_btn"
-                        onClick={
-                            handleCardInteract2
-                        }
-                    >
-                        {" "}
-                        Send Message
-                    </button>
-                </div> */}
+							<div className="submit_Btn">
+								<button
+									ref={buttonRef}
+									value="Send"
+									className="form_btn"
+									onClick={(e) => {
+										sendEmail(e);
+									}}
+								>
+									{" "}
+									Send Message
+								</button>
+							</div>
 						</form>
-						<div className="submit_Btn">
-							<button
-								ref={buttonRef}
-								value="Send"
-								className="form_btn"
-								onClick={(e) => {
-									sendEmail(e);
-									// lift_oof();
-								}}
-							>
-								{" "}
-								Send Message
-							</button>
-						</div>
+
 						{/* <div>
             <button className="form_btn">
                 test lunch
@@ -179,11 +294,28 @@ const Contact = () => {
 								isFlipped ? "lunch" : ""
 							}`}
 						>
+							{/* 
+							if flip is true    messagesent.status is === 200 and  if messagesent.text == ok   
+							*/}
 							🚀
 						</div>
-						<button onClick={() => setIsFlipped(false)}>
-							send another message
-						</button>
+
+						<div
+							className={`back_btn_section ${
+								isFlipped ? "fade_in" : ""
+							} `}
+						>
+							<h1>message sent!!!</h1>
+							<button
+								className="back_btn"
+								onClick={() => {
+									setIsFlipped(false);
+									SetMessageSent({});
+								}}
+							>
+								send another message
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -192,3 +324,4 @@ const Contact = () => {
 };
 
 export default Contact;
+// ${messageSent.status === 200 && messageSent.text === "OK" ? "lunch" : ""}

@@ -153,7 +153,7 @@ const Projects = () => {
 							isContentVisible ? "project_image1" : ""
 						} `}
 					/>
-					<hr />
+
 					<h1>Escobar cleaning services</h1>
 					<hr />
 					<div
@@ -181,7 +181,7 @@ const Projects = () => {
 							isContentVisible ? "project_image2" : ""
 						} `}
 					/>
-					<hr />
+
 					<h1>IRS</h1>
 					<hr />
 					<div
@@ -207,11 +207,11 @@ const Projects = () => {
 							isContentVisible ? "project_image3" : ""
 						} `}
 					/>
-					<hr />
+
 					<h1>Flappy CUBE</h1>
 					<hr />
 					<div
-						className={`description description_border ${
+						className={`description  ${
 							isContentVisible ? "description3" : ""
 						} `}
 					>

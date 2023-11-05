@@ -1030,11 +1030,11 @@ opacity: 1;
 } */
 
 .whatIDo_top_animation{
-  animation: slideFromLeft  2s ease  forwards;
+  animation: slideFromLeft  1.5s ease  forwards;
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 .whatIDo_top_tex_animation{
-  animation: slideFromRight  2.5s ease 1.5s forwards; 
+  animation: slideFromRight  1.5s ease 1s forwards; 
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 
@@ -1048,13 +1048,13 @@ opacity: 1;
 
 
 .whatIDo_left_animation{
-  animation: show 3s ease 2.5s forwards;
+  animation: show 2s ease 2s forwards;
 }
 .whatIDo_right_animation{
-  animation: show 3s ease 3s forwards;
+  animation: show 2s ease 2.5s forwards;
 }
 .whatIDo_bottom_animation{
-  animation: show 3s ease 3.5s forwards;
+  animation: show 2s ease 3s forwards;
 }
 
 /* .whatIDo_left_animation{
@@ -1141,17 +1141,17 @@ cursor: pointer;
   animation: scaleDown 3s ease forwards;
 } */
 .title_animation{
-  animation: scaleDown 3s ease  forwards;
+  animation: scaleDown 2s ease  forwards;
 }
 
 .logo_animation_1{
   animation: scaleDown2 2s linear 2s forwards;
 }
 .logo_animation_2{
-  animation: scaleDown2 2s linear 3.5s forwards;
+  animation: scaleDown2 2s linear 2.5s forwards;
 }
 .logo_animation_3{
-  animation: scaleDown2 2s linear 4.5s forwards;
+  animation: scaleDown2 2s linear 3s forwards;
 }
 
 
@@ -1166,7 +1166,7 @@ cursor: pointer;
 .header{
   color: #00ffff;
   font-size:60px;
-  margin:60px 0px  0px 0px;
+  /* margin:60px 0px  0px 0px; */
 }
 
 
@@ -1193,13 +1193,13 @@ cursor: pointer;
   /* Keep your existing styles */
   height: 500px;
   width: 400px;
-border-radius: 50px 50px 20px 20px;
-  /* border-top-left-radius:  50px ;
+  /* border-radius: 50px 50px 20px 20px;
+  border-top-left-radius:  50px ;
   border-top-right-radius: 50px ;
   border-bottom-left-radius:  20px;
   border-bottom-right-radius: 20px ; */
   margin: 0px;
-  /* border: #00ffff solid; */
+  border: lightblue solid 2px ;
 
   /* Add the gradient border styles */
   /* border: 2px solid transparent;
@@ -1211,21 +1211,21 @@ border-radius: 50px 50px 20px 20px;
 
 .card_project img{
   /* margin-top: 20px; */
-  width: 98%;
-  height: 200px;
+  width: 100%;
+  height: 300px;
   /* border-radius: 30px; */
-  border: 2px solid black;
+  /* border: 2px solid black; */
 
 }
-.project_image1{
-  border-radius:50px 50px 40% 0px;
+/* .project_image1{
+  border-radius:50px 50px 0px 0px;
 }
 .project_image2{
-  border-radius:50px 50px 40% 40%;
+  border-radius:50px 50px 0px 0px;
 }
 .project_image3{
-  border-radius:50px 50px 0px 40%   ;
-}
+  border-radius:50px 50px 0px 0px   ;
+} */
 
 /* .card_project img{
   margin-top: 20px;
@@ -1337,33 +1337,33 @@ opacity: 0;
 
 
 .card_project_animate:nth-child(1){
-  animation: slideFromRight_short 2s 0.5s forwards;
+  animation: slideFromRight_short 1.5s 0.5s forwards;
 }
 .card_project_animate:nth-child(2){
-  animation: slideFromRight_short 2s 1s forwards;
+  animation: slideFromRight_short 1.5s 1s forwards;
 }
 .card_project_animate:nth-child(3){
-  animation: slideFromRight_short 2s 1.5s forwards;
+  animation: slideFromRight_short 1.5s 1.5s forwards;
 
 }
 .project_image1{
-  animation: slideFromLeft_short 2s 2s forwards ;
+  animation: slideFromLeft_short 1.5s 2s forwards ;
 }
 .project_image2{
-  animation: slideFromLeft_short 2s 2.5s forwards ;
+  animation: slideFromLeft_short 1.5s 2.5s forwards ;
 }
 .project_image3{
-  animation: slideFromLeft_short 2s 3s forwards ;
+  animation: slideFromLeft_short 1.5s 3s forwards ;
 }
 
 .description1{
-  animation: slideFromBottom 2s 3.5s forwards ;
+  animation: slideFromBottom 1.5s 3.5s forwards ;
 }
 .description2{
-  animation: slideFromBottom 2s 4s forwards ;
+  animation: slideFromBottom 1.5s 4s forwards ;
 }
 .description3{
-  animation: slideFromBottom 2s 4.5s forwards ;
+  animation: slideFromBottom 1.5s 4.5s forwards ;
 }
 
 
@@ -1378,7 +1378,7 @@ opacity: 0;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 100px;
+  /* margin-top: 100px; */
 }
 
 .profileContainer{
@@ -1388,7 +1388,7 @@ opacity: 0;
   width: 100%;
   height: 100%;
   /* padding: 0%; */
-  margin-top: 200px;
+  margin-top: 100px;
   display: flex;
   justify-content:space-around;
   align-items: center;
@@ -1405,6 +1405,7 @@ opacity: 0;
   color: #00ffff;
   font-size:30px;
   /* margin-bottom: 30px; */
+  opacity: 0;
 }
 
 .profile_top h1{
@@ -1465,10 +1466,10 @@ height: 100%;
 }
 
 textarea ,input{
-    background-color: gray;
+    background-color: #333;
     color: white;
     text-align: center;
-    border:solid black 3px;
+    border:solid lightblue 1px;
     /* font-size:20px; */
 }
 /* textarea */
@@ -1754,6 +1755,17 @@ height: 650px; */
 }
 
 
+.span_div{
+  width:100%;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+
+.span_left.span_right{
+  display: flex;
+  width: 100%;
+}
 
 @keyframes page-turn {
   0% {
@@ -1842,6 +1854,8 @@ height: 650px; */
   color: #333;
   width: 100%;
   height: 100%;
+  /* background-color: #333; */
+  border-radius: 50px;
   /* border-radius: 10px; */
 }
 
@@ -1870,15 +1884,7 @@ height: 650px; */
 }
  */
 
-
-.card__back_title2 {
-  transform:  translateZ(300px);
-  text-transform: uppercase;
-  /* font-size: 30px; */
-  margin: 0px;
-}
-
-.card__back2 {
+ .card__back2 {
   transform: rotateY(-.5turn);
   /* color: var(--clr); */
   color: lightblue;
@@ -1890,10 +1896,55 @@ height: 650px; */
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  /* margin-bottom: 100px; */
+}
+
+.card__back_title2 {
+  transform:  translateZ(300px);
+  text-transform: uppercase;
+  /* font-size: 30px; */
+  margin: 0px;
 }
 
 
+.back_btn_section{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction: column;
+  opacity: 0;
+  margin-top: 100px;
+}
 
+.back_btn{
+  height: 60px;
+  width: 300px;
+  font-size: 25px;
+  color: #ff00ff;
+  background-color: transparent;
+  border: solid 2px #ff00ff;
+  /* opacity: 0; */
+  /* filter: blur(5px); */
+  
+}
+.back_btn:hover{
+  border: #f43c71 solid 2px;
+  background-color: #f8d3e1;
+}
+
+.fade_in{
+  animation: showBtn 6s forwards ;
+}
+
+@keyframes showBtn {
+  from{
+    opacity: 1;
+  }
+  to{opacity: 1;}
+  
+}
 
 
 /* .card__front2::after {
@@ -1911,8 +1962,8 @@ height: 650px; */
 .front_title_c2{
   transform: translateZ(200px);
   color: #00ffff;
-  margin: 0px;
-  
+  /* margin: 10px 0px 0px 0px; */
+  margin:0px;
 }
 
 .front_title2_c2{ 
@@ -1923,11 +1974,12 @@ height: 650px; */
 
 .information_form{
   display: flex;
-  justify-content: center;
+  justify-content:space-evenly;
   flex-direction: column;
   width: 90%;
-  height: 80%;
+  height: 85%;
   transform: translateZ(300px);
+  margin: 0px;
 }
 
 
@@ -1937,17 +1989,26 @@ height: 650px; */
   align-items: center;
   margin: 0px;
   width: 100%;
+  height: 0px;
   transform: translateZ(400px);
 }
 
 .profile_input{
   margin-bottom: 10px;
   transform: translateZ(150px);
-  /* margin: 0px; */
+  width: 300px;
+  height: 40px;
+  margin: 0px;
+  font-size: 20px;
+}
+.profile_input::placeholder , textarea::placeholder{
+  font-size: 20px;
+ 
 }
 
 textarea{
   margin:0px;
+  font-size: 20px;
 }
 
 .form_btn{
@@ -2073,21 +2134,18 @@ textarea{
 }
 
 
-.lunch{
-  animation: animate-rocket 8s 1s forwards;
-}
 
 @keyframes cloudAnimation1 {
   from{
     transform: translateX(250px);
     opacity: 1;
-     transform: translateZ(50px);
+    transform: translateZ(50px);
 
   }
   to{
     transform: translateX(0);
     opacity: 1;
-     transform: translateZ(50px);
+    transform: translateZ(50px);
 
   }
 }
@@ -2197,6 +2255,32 @@ transform: translateZ(150px);
 }
 
 
+
+@keyframes scale-rocket {
+  0%{
+    transform: scale(1);
+  }
+  5%{
+    transform: scale(1.5);
+  }
+  10%{
+    transform: scale(1.5) ;
+  }
+  15%{
+    transform: scale(1.75) ;
+  }
+  20%{
+    transform: scale(2) ;
+  }
+  100%{
+    transform:  translate3d(100vw,-100vw,0) scale(3);
+  }
+}
+
+.lunch{
+  animation: animate-rocket 6s 1s ;
+}
+
 @keyframes animate-rocket {
   0%{
     transform: scale(1) rotate(10deg);
@@ -2217,7 +2301,9 @@ transform: translateZ(150px);
     transform: scale(5)  translate3d(100vw,-100vw,0)  rotate(0);
   }
 }
-
+.bigger{
+  animation: animate-rocket 4s 2s forwards ;
+}
 /* cloud 2 */
 
 
@@ -2557,34 +2643,3 @@ transform: translateZ(150px);
 
 
 
-
-/* .content_container{
-overflow: hidden;
-resize: vertical;
-} */
-
-
-
-
-/* make all the animations */
-/* .hidden{
-opacity: 0;
-transition: all 2s;
-filter: blur(5px);
-transform: translateX(-50%);
-}
-
-@media(prefers-reduced-motion){
-.hidden{
-    transition: none;
-}
-
-}
-
-
-.show{
-opacity: 1;
-filter: blur();
-transform: translateX(0);
-
-} */

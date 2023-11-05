@@ -203,7 +203,7 @@ const NavBar = ({
 				>
 					<Welcome />
 				</div>
-				<hr />
+				{/* <hr /> */}
 
 				<div
 					ref={what_I_DoRef}
@@ -212,18 +212,18 @@ const NavBar = ({
 				>
 					<What_I_Do />
 				</div>
-				<hr />
+				{/* <hr /> */}
 
 				<div ref={toolsRef} className={` all_component `} id="Tools">
 					<Tools />
 				</div>
-				<hr />
+				{/* <hr /> */}
 
 				<div ref={projectsRef} className={` all_component `}>
 					{/* hidden */}
 					<Projects />
 				</div>
-				<hr />
+				{/* <hr /> */}
 
 				<div
 					ref={profileRef}
