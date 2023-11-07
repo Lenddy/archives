@@ -12,6 +12,7 @@ import mongodb from "../../assets/tech_logos/mongodb-color.svg";
 import { useState, useEffect, useRef } from "react";
 import GsapMagnetic from "../animations/GsapMagnetic";
 import gsap from "gsap";
+import { useTranslation } from "react-i18next";
 
 const Tools = () => {
 	// ? figure out if you want to add sound effects
@@ -70,6 +71,7 @@ const Tools = () => {
 			window.removeEventListener("scroll", onScroll2);
 		};
 	}, [isTitleVisible, isContentVisible]);
+	const { t } = useTranslation();
 
 	return (
 		<div className="tool_container" ref={titleRef}>
@@ -80,7 +82,7 @@ const Tools = () => {
 							isTitleVisible ? "title_animation" : ""
 						}`}
 					>
-						Tools
+						{t("tools")}{" "}
 					</h1>
 				</div>
 			</GsapMagnetic>

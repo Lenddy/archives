@@ -1,0 +1,21 @@
+{
+    "Welcome_to_React": "Welcome to React and react-i18next",
+
+    "welcome_title": "The Place To Turn Your Ideas Into Reality Welcome To Lenddy's Web Services",
+    "welcome_sub_title": "Hello the name is Lenddy I like making web sites and apps that will sut your needs using the best technologies , so what is your next big idea and when do you want to make it happen ?",
+    "welcome_btns":["View Resume","View Github","Projects","Contact Me"],
+    "welcome_a_tag":["Like the logo","click here","to see who made it"],
+    
+
+    
+    "whatIDo_title":"My Experience",
+    "whatIDo_left_title":"full-stack Developer",
+    "whatIDo_left":"As a full-stack developer,my role is to craft websites that adapt to your preferences, starting from the front-end visual interface, progressing through back-end functionalities, and extending to robust database management. my key responsibilities involve designing visually appealing and user-friendly front-end interfaces, developing the back-end logic, including server-side processes and APIs, and ensuring efficient and secure data storage in databases. Additionally, i create and maintain web services to facilitate seamless communication between these components. My work extends to adding new features, rigorous testing, bug fixing, and collaborating with cross-functional teams on diverse projects. In essence, i am the architect of digital solutions, ensuring they align with clients' needs and deliver top-notch user experiences while maintaining functionality and data integrity",
+    "whatIDo_right_title":"PC Builder",
+    "whatIDo_right":"As a PC builder enthusiast who makes custom personal computers (PCs) tailored to you specifications. my expertise spans to component selection, assembly, and system optimization. PC builders begin by meticulously choosing CPU, GPU, motherboard, RAM, storage, and other components based on performance, compatibility, and budget considerations.I will install the operating system and drivers, rigorously test each aspect to confirm flawless functionality. In addition to building new PCs, i also provide upgrade and repair services, staying updated with the latest hardware and software trends. delivering systems optimized for gaming, content creation, professional work, and more.",
+    "whatIDo_bottom_title":"Tutor",
+    "whatIDo_bottom":"As a tutor, my focus is to guide you to have a fundamentals understanding of web development. Together, we will embark on a journey that equips you with the knowledge and skills to confidently navigate the world of web development at its core. Through hands-on learning , you'll build a solid foundation, enabling you to master the essentials of web development. We'll start with HTML and CSS, the building blocks of the web, and them move into JavaScript and other key technologies, giving you the proficiency needed to create captivating websites and dynamic web applications. By the end of our journey, you will possess the confidence and know-how to tackle web development projects independently, setting you on a path to explore endless opportunities for innovation and self-reliance in this field.",
+    
+    "tools":"Tools"
+
+}   

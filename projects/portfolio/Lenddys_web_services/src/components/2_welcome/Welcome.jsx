@@ -1,6 +1,7 @@
 import Logo from "../../assets/LM.png";
 import { useRef, useEffect, useState } from "react";
 // import pencilTip from "../../assets/pencilTip.svg";
+import { useTranslation } from "react-i18next";
 
 const Welcome = () => {
 	//? use th blink animation from anima.net to show your logo and the blink to the new logo
@@ -39,47 +40,66 @@ const Welcome = () => {
 
 	// ! i brock my mind trying to do this  with ternary operator so i ask chat gpt to help me with it i know that there is a wayyyyyy better why of doing it but this is what i got
 
+	const { t } = useTranslation();
+
 	return (
 		<>
 			<div className="welcome " ref={welcomeRef}>
 				<div className="welcomeLeft ">
 					<h1 className="welcomeMessage welcomeMessage_animation">
-						The Place To Turn Your Ideas Into Reality Welcome To
-						Lenddy's Web Services
+						{t("welcome_title")}
+						{/* The Place To Turn Your Ideas Into Reality Welcome To
+						Lenddy's Web Services */}
 					</h1>
 
 					<div className="subheader">
 						{/* sub_className */}
 						<p className=" subheader_message subheader_animation">
-							Yo Yo the name is Lenddy I like making web sites and
+							{t("welcome_sub_title")}
+							{/* Yo Yo the name is Lenddy I like making web sites and
 							apps that will sut your needs using the best
 							technologies , so what is your next big idea and
-							when do you want to make it happen ?
+							when do you want to make it happen ? */}
 						</p>
 					</div>
 
 					<div className="welcomeBtn">
-						<button className="btn_welcome">View Resume</button>
-						<button className="btn_welcome">View Github</button>
-						<button className="btn_welcome">Projects</button>
-						<button className="btn_welcome">Contact Me</button>
+						<button className="btn_welcome">
+							{" "}
+							{t("welcome_btns.0")}
+							{/* View Resume */}
+						</button>
+						<button className="btn_welcome">
+							{t("welcome_btns.1")}
+							{/* View Github */}
+						</button>
+						<button className="btn_welcome">
+							{t("welcome_btns.2")}
+							{/* Projects */}
+						</button>
+						<button className="btn_welcome">
+							{t("welcome_btns.3")}
+							{/* Contact Me */}
+						</button>
 					</div>
 				</div>
 
 				<div className="welcomeRight">
 					<img src={Logo} alt="logo" className="logo" />
 					<p className="subtext">
-						Like the logo{" "}
+						{t("welcome_a_tag.0")} {/* Like the logo */}
 						<span>
 							<a
 								href="https://instagram.com/merv_agency?igshid=OGQ5ZDc2ODk2ZA=="
 								target="_blank"
 								rel="noreferrer"
 							>
-								click here
+								{t("welcome_a_tag.1")}
+								{/* click here */}
 							</a>
 						</span>{" "}
-						to see who made it
+						{t("welcome_a_tag.2")}
+						{/* to see who made it */}
 					</p>
 				</div>
 			</div>

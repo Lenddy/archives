@@ -1,5 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
+import { useTranslation } from "react-i18next";
+
 const What_I_Do = () => {
 	const titleRef = useRef(null);
 	const contentRef = useRef(null);
@@ -52,7 +54,7 @@ const What_I_Do = () => {
 
 	//! for the animation for the left right and bottom
 	//? make them appear in a zigzag  left  title , right  p tag  , bottom title , left p tag , right title , bottom p tag
-
+	const { t } = useTranslation();
 	return (
 		<>
 			<div
@@ -70,7 +72,8 @@ const What_I_Do = () => {
 							isTitleVisible ? "whatIDo_top_tex_animation" : ""
 						} `}
 					>
-						<h1>My Experience</h1>
+						{/* My Experience */}
+						<h1>{t("whatIDo_title")}</h1>
 					</div>
 				</div>
 
@@ -80,7 +83,7 @@ const What_I_Do = () => {
 							isContentVisible ? "whatIDo_left_animation" : ""
 						} `}
 					>
-						<h1 className="blink">full-stack Developer</h1>
+						<h1 className="blink">{t("whatIDo_left_title")}</h1>
 						{/* <p>
 							i am a full stack web developer my job is to make
 							websites the will adapt to your wants and needs
@@ -89,8 +92,8 @@ const What_I_Do = () => {
 							stored(data base)
 						</p> */}
 						<p className="blink ">
-							{" "}
-							As a full-stack developer,my role is to craft
+							{t("whatIDo_left")}{" "}
+							{/* As a full-stack developer,my role is to craft
 							websites that adapt to your preferences, starting
 							from the front-end visual interface, progressing
 							through back-end functionalities, and extending to
@@ -107,7 +110,7 @@ const What_I_Do = () => {
 							projects. In essence, i am the architect of digital
 							solutions, ensuring they align with clients' needs
 							and deliver top-notch user experiences while
-							maintaining functionality and data integrity.
+							maintaining functionality and data integrity. */}
 						</p>
 					</div>
 					<div
@@ -116,9 +119,12 @@ const What_I_Do = () => {
 						} `}
 					>
 						<div>
-							<h1 className="blink ">PC Builder</h1>
+							<h1 className="blink ">
+								{t("whatIDo_right_title")}{" "}
+							</h1>
 							<p className="blink ">
-								As a PC builder enthusiast who makes custom
+								{t("whatIDo_right")}{" "}
+								{/* As a PC builder enthusiast who makes custom
 								personal computers (PCs) tailored to you
 								specifications. my expertise spans to component
 								selection, assembly, and system optimization. PC
@@ -132,7 +138,7 @@ const What_I_Do = () => {
 								upgrade and repair services, staying updated
 								with the latest hardware and software trends.
 								delivering systems optimized for gaming, content
-								creation, professional work, and more.
+								creation, professional work, and more. */}
 							</p>
 						</div>
 					</div>
@@ -142,12 +148,13 @@ const What_I_Do = () => {
 						isContentVisible ? "whatIDo_bottom_animation" : ""
 					} `}
 				>
-					<h1 className="blink ">Tutor</h1>
+					<h1 className="blink ">{t("whatIDo_bottom_title")} </h1>
 					<p className="blink ">
 						{/* i will be able to help you get a basic understanding of
 						wed development and pc building to the point where you
 						can doit on your own */}
-						As a tutor, my focus is to guide you to have a
+						{t("whatIDo_bottom")}{" "}
+						{/* As a tutor, my focus is to guide you to have a
 						fundamentals understanding of web development. Together,
 						we will embark on a journey that equips you with the
 						knowledge and skills to confidently navigate the world
@@ -161,7 +168,7 @@ const What_I_Do = () => {
 						journey, you will possess the confidence and know-how to
 						tackle web development projects independently, setting
 						you on a path to explore endless opportunities for
-						innovation and self-reliance in this field.
+						innovation and self-reliance in this field. */}
 					</p>
 				</div>
 

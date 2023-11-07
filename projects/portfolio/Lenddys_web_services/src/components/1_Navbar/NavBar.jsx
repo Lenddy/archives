@@ -9,6 +9,8 @@ import Logo from "../../assets/LM.png";
 // import Test from "../ProfilePicture";
 import GsapShow from "../animations/GsapShow";
 
+function App() {}
+
 const NavBar = ({
 	changeMode,
 	setChangeMode,
@@ -162,7 +164,6 @@ const NavBar = ({
 							</div>
 						)}
 					</li>
-
 					<li>
 						<a
 							href="https://docs.google.com/document/d/12vkzj7Zjqu1vzWEcVHD0i0UKJ1PYsvx41-QtacLm0os/edit?usp=sharing"
@@ -190,11 +191,10 @@ const NavBar = ({
 						/> */}
 					</li>
 
-					<li>Message</li>
+					<li>language</li>
 					<li>Socials</li>
 				</ul>
 			</div>
-
 			<div className="components_container ">
 				<div
 					ref={welcomeRef}
