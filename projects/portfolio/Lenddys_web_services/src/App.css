@@ -1303,6 +1303,10 @@ cursor: pointer;
     animation: show 0.5s forwards;
   /* transition-delay:100ms ; */
 }
+   .project_tittle:nth-child(9){
+    animation: show 0.01s forwards;
+  /* transition-delay:100ms ; */
+}
 
 
 .card_project h1{

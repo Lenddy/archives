@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
 	const form = useRef();
@@ -146,6 +147,7 @@ const Contact = () => {
 	// 			message must not be empty{" "}
 	// 		</p>
 	// 	) : null}
+	const { t } = useTranslation();
 
 	return (
 		<div
@@ -160,7 +162,7 @@ const Contact = () => {
 					}`}
 				>
 					<div className="card__front2">
-						<h2 className="front_title_c2">Contact Me</h2>
+						<h2 className="front_title_c2">{t("contact_title")}</h2>
 						<div className="contact_info">
 							<h3 className="front_title2_c2">(347)964-3348</h3>
 							<h3 className="front_title2_c2">
@@ -179,7 +181,7 @@ const Contact = () => {
 									<input
 										type="text"
 										id=""
-										placeholder="Your Name"
+										placeholder={t("input_1")}
 										className="profile_input"
 										name="name"
 										// onChange={(e) => {
@@ -193,7 +195,7 @@ const Contact = () => {
 										type="email"
 										name="email"
 										id=""
-										placeholder="Your Email"
+										placeholder={t("input_2")}
 										className="profile_input"
 										// onChange={(e) => {
 										// 	allInfo(e);
@@ -208,7 +210,7 @@ const Contact = () => {
 								id=""
 								cols="75"
 								rows="20"
-								placeholder="Insert Your Message Here"
+								placeholder={t("text_area")}
 								// onChange={(e) => {
 								// 	allInfo(e);
 								// 	setMessageValidation(false);
@@ -225,7 +227,8 @@ const Contact = () => {
 									}}
 								>
 									{" "}
-									Send Message
+									{t("contact_send")}
+									{/* Send Message */}
 								</button>
 							</div>
 						</form>
@@ -305,7 +308,7 @@ const Contact = () => {
 								isFlipped ? "fade_in" : ""
 							} `}
 						>
-							<h1>message sent!!!</h1>
+							<h1>{t("contact_message_sent")}</h1>
 							<button
 								className="back_btn"
 								onClick={() => {
@@ -313,7 +316,8 @@ const Contact = () => {
 									SetMessageSent({});
 								}}
 							>
-								send another message
+								{t("contact_send_back")}
+								{/* send another message */}
 							</button>
 						</div>
 					</div>

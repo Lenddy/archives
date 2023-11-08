@@ -2,12 +2,16 @@ import { useState, useEffect, useRef } from "react";
 import placeholder from "../../assets/placeholder.png";
 import gsap from "gsap";
 import project1 from "../../assets/Escobar_Cleaning_service.png";
+import { useTranslation } from "react-i18next";
+import Cookies from "js-cookie";
 
 const Projects = () => {
 	const titleRef = useRef(null);
 	const contentRef = useRef(null);
 	const [isTitleVisible, setIsTitleVisible] = useState(false);
 	const [isContentVisible, setIsContentVisible] = useState(false);
+	// const[myCookies,setMyCookies] = useState()
+	const cookieValue = Cookies.get("i18next");
 
 	useEffect(() => {
 		const title = titleRef.current;
@@ -52,7 +56,10 @@ const Projects = () => {
 			window.removeEventListener("scroll", onScroll);
 			window.removeEventListener("scroll", onScroll2);
 		};
-	}, [isTitleVisible, isContentVisible]);
+	}, [isTitleVisible, isContentVisible, cookieValue]);
+	const { t } = useTranslation();
+	console.log(cookieValue);
+
 	return (
 		// hidden
 		<div className="project">
@@ -63,56 +70,76 @@ const Projects = () => {
 							isTitleVisible ? "project_tittle" : ""
 						}`}
 					>
-						P
+						{t("project_title.0")}
+						{/* P */}
 					</span>
 					<span
 						className={`project_tittle_hide   ${
 							isTitleVisible ? "project_tittle" : ""
 						}`}
 					>
-						r
+						{t("project_title.1")}
+						{/* r */}
 					</span>
 					<span
 						className={`project_tittle_hide   ${
 							isTitleVisible ? "project_tittle" : ""
 						}`}
 					>
-						o
+						{t("project_title.2")}
+						{/* o */}
 					</span>
 					<span
 						className={`project_tittle_hide   ${
 							isTitleVisible ? "project_tittle" : ""
 						}`}
 					>
-						j
+						{t("project_title.3")}
+						{/* j */}
 					</span>
 					<span
 						className={`project_tittle_hide   ${
 							isTitleVisible ? "project_tittle" : ""
 						}`}
 					>
-						e
+						{t("project_title.4")}
+						{/* e */}
 					</span>
 					<span
 						className={`project_tittle_hide   ${
 							isTitleVisible ? "project_tittle" : ""
 						}`}
 					>
-						c
+						{t("project_title.5")}
+						{/* c */}
 					</span>
 					<span
 						className={`project_tittle_hide   ${
 							isTitleVisible ? "project_tittle" : ""
 						}`}
 					>
-						t
+						{t("project_title.6")}
+						{/* t */}
 					</span>
 					<span
 						className={`project_tittle_hide   ${
 							isTitleVisible ? "project_tittle" : ""
 						}`}
 					>
-						s
+						{t("project_title.7")}
+						{/* t */}
+					</span>
+					<span
+						className={`project_tittle_hide ${
+							isTitleVisible ? "project_tittle" : ""
+						}`}
+					>
+						{/* {t("project_title.8") === undefined
+							? null
+							: t("project_title.8")} */}
+						{/* t */}
+						{/* {t("project_title.8")} */}
+						{cookieValue === "es" ? "s" : null}
 					</span>
 				</h1>
 			</div>
@@ -163,9 +190,10 @@ const Projects = () => {
 					>
 						<p>
 							{" "}
-							website for a small cleaning company in Little Rock
+							{t("projects_left")}
+							{/* website for a small cleaning company in Little Rock
 							Arkansas using: react and MaterialUI, AWS, Amazon
-							EC2
+							EC2 */}
 						</p>
 					</div>
 				</div>
@@ -189,10 +217,7 @@ const Projects = () => {
 							isContentVisible ? "description2" : ""
 						} `}
 					>
-						<p>
-							A loans management system using: React, MongoDB,
-							MaterialUI, NodeJs, and Socket.io.
-						</p>
+						<p>{t("projects_middle")}</p>
 					</div>
 				</div>
 				<div
@@ -216,8 +241,9 @@ const Projects = () => {
 						} `}
 					>
 						<p>
-							A basic flappy bird clone , instead of a bird it is
-							a cube made using unity and c#{" "}
+							{t("projects_right")}
+							{/* A basic flappy bird clone , instead of a bird it is
+							a cube made using unity and c#{" "} */}
 						</p>
 					</div>
 				</div>

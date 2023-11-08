@@ -120,7 +120,7 @@ const What_I_Do = () => {
 					>
 						<div>
 							<h1 className="blink ">
-								{t("whatIDo_right_title")}{" "}
+								{t("whatIDo_right_title")}
 							</h1>
 							<p className="blink ">
 								{t("whatIDo_right")}{" "}

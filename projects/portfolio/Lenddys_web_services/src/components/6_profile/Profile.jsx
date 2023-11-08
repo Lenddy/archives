@@ -3,6 +3,7 @@ import Lenddy from "../../assets/Lenddy.jpg";
 import gsap from "gsap";
 import ProfilePicture from "../ProfilePicture";
 import Contact from "./Contact";
+import { useTranslation } from "react-i18next";
 const Profile = () => {
 	const titleRef = useRef(null);
 	const contentRef = useRef(null);
@@ -94,6 +95,8 @@ const Profile = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault;
 	};
+	const { t } = useTranslation();
+
 	return (
 		<div
 			// flip_position ${isTitleVisible ? "turn_page" : ""}
@@ -105,7 +108,7 @@ const Profile = () => {
 				}`}
 				ref={titleRef}
 			>
-				<h1>About Me</h1>
+				<h1>{t("profile_title")}</h1>
 			</div>
 			{/* ${isContentVisible ? "show_content" : ""} */}
 			<div className={`profileContainer `}>
@@ -143,9 +146,13 @@ const Profile = () => {
 													: ""
 											}`}
 										>
-											Hello
+											{t("profile_hello")}
+											{/* Hello */}
 										</h2>
-										<h4 className="card__title2">There</h4>
+										<h4 className="card__title2">
+											{t("profile_there")}
+											{/* There */}
+										</h4>
 										<h4
 											className={`card__title3 ${
 												isFlipped
@@ -156,7 +163,9 @@ const Profile = () => {
 											👋🏼
 										</h4>
 										<h4 className="card__title4">
-											click me
+											{t("profile_click")}
+
+											{/* click me */}
 										</h4>
 									</div>
 
@@ -164,12 +173,14 @@ const Profile = () => {
 										{/* initialy they will be in the middle but wen they are click the acrd  */}
 										{/*todo  make them appear out side of the card(not fully in the card (half way))  and when the card is click us the transform and bring them to the middle  */}
 										<h1 className="card__back_title">
-											i am Lenddy Morales
+											{/* i am Lenddy Morales */}
+											{t("card__body_title")}
 										</h1>
 										{/* style={showMore? null: fullParagraphStyles} */}
 										{/* <div className="card__body"> */}
 										<p className="card__body_part1">
-											I'm a 19-year-old Dominican boy who
+											{t("card__body_part1")}
+											{/* I'm a 19-year-old Dominican boy who
 											can barly dance bachata I reside in
 											the United States and some day might
 											move to Puerto rico. I embarked on
@@ -178,18 +189,21 @@ const Profile = () => {
 											computer engineering. However, I
 											soon realized that the traditional
 											college teaching approach didn't
-											align with my learning style.
+											align with my learning style. */}
 										</p>{" "}
 										<p className="card__body_part2">
-											{" "}
+											{t("card__body_part2")}{" "}
+											{/* {" "}
 											I made the bold decision to drop out
 											and seek alternative paths to gain
 											knowledge. Just a month later, I
-											joined a coding bootcamp called{" "}
+											joined a coding bootcamp called */}
 											<a href="https://www.codingdojo.com/">
-												Coding Dojo
-											</a>
-											{""}. This intensive four-month
+												{/* Coding Dojo */}
+												{t("card_a_tag")}
+											</a>{" "}
+											{t("card__body_part2_2")}
+											{/* {""}. This intensive four-month
 											programming course pushed me to my
 											limits as I strived to keep up with
 											the fast-paced learning environment.
@@ -199,13 +213,15 @@ const Profile = () => {
 											laughter, tears, and forming strong
 											friendships, I persevered, and it
 											has paid off. I am now proud to call
-											myself a full-stack developer.
+											myself a full-stack developer. */}
 										</p>
 										<p className="card__body_part3">
 											<a href="https://www.codingdojo.com/">
-												Coding Dojo
+												{/* Coding Dojo */}
+												{t("card_a_tag")}
 											</a>{" "}
-											taught me invaluable skills,
+											{t("card__body_part3")}
+											{/* taught me invaluable skills,
 											including thriving in high-pressure
 											situations, both individually and as
 											part of a cohort. I learned the
@@ -213,24 +229,28 @@ const Profile = () => {
 											needed and offering assistance to
 											others. It ingrained in me the habit
 											of learning from my mistakes and
-											continually expanding my knowledge.
+											continually expanding my knowledge. */}
 										</p>
 										<p className="card__body_part4">
-											My ultimate goal is to return to
+											{t("card__body_part4")}
+
+											{/* My ultimate goal is to return to
 											college one day and resume my
 											computer engineering studies, with a
 											possible focus on also becoming a
 											game developer or even exploring
-											carpentry.
+											carpentry. */}
 										</p>
 										<p className="card__body_part5">
-											In my free time, I indulge in my
+											{t("card__body_part5")}
+
+											{/* In my free time, I indulge in my
 											passion for video Games, Basketball,
 											Baseball, Anime, Manga listening to
 											Rock ,Pop and Salsa . If any of this
 											resonates with you or piques your
 											interest, feel free to send me a
-											message. Don't hesitate
+											message. Don't hesitate. */}
 										</p>
 										{/* </div> */}
 										{/* <button

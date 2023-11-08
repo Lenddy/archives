@@ -9,8 +9,6 @@ import Logo from "../../assets/LM.png";
 // import Test from "../ProfilePicture";
 import GsapShow from "../animations/GsapShow";
 
-function App() {}
-
 const NavBar = ({
 	changeMode,
 	setChangeMode,
