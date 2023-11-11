@@ -8,6 +8,7 @@ import Profile from "../6_profile/Profile";
 import Logo from "../../assets/LM.png";
 // import Test from "../ProfilePicture";
 import GsapShow from "../animations/GsapShow";
+import { useTranslation } from "react-i18next";
 
 const NavBar = ({
 	changeMode,
@@ -105,6 +106,7 @@ const NavBar = ({
 	// welcomeRef, what_I_DoRef, toolsRef, projectsRef, profileRef
 
 	//? the logo is going to make appear  3 btns  change language  change dark mode , change animation reload/stop animations
+	const { t } = useTranslation();
 
 	return (
 		<>
@@ -115,7 +117,7 @@ const NavBar = ({
 			>
 				<ul className="">
 					<li onClick={() => setOpenGoTo((prev) => !prev)}>
-						Go To
+						{t("navBar_go_to")}
 						{openGoto && (
 							<div className=" dropDownGoTo ">
 								<ul
@@ -128,35 +130,35 @@ const NavBar = ({
 											scrollToSection(welcomeRef)
 										}
 									>
-										<p>Welcome</p>
+										<p>{t("navBar_welcome")}</p>
 									</li>
 									<li
 										onClick={() =>
 											scrollToSection(what_I_DoRef)
 										}
 									>
-										<p>What I Do</p>
+										<p>{t("navBar_My_Experience")}</p>
 									</li>
 									<li
 										onClick={() =>
 											scrollToSection(toolsRef)
 										}
 									>
-										<p>Tools</p>
+										<p>{t("navBar_Tools")}</p>
 									</li>
 									<li
 										onClick={() =>
 											scrollToSection(projectsRef)
 										}
 									>
-										<p>Projects</p>
+										<p>{t("navBar_projects")}</p>
 									</li>
 									<li
 										onClick={() =>
 											scrollToSection(profileRef)
 										}
 									>
-										<p>Profile</p>
+										<p>{t("navBar_about_me")}</p>
 									</li>
 								</ul>
 							</div>
@@ -169,7 +171,7 @@ const NavBar = ({
 							rel="noreferrer"
 							className="resume_a"
 						>
-							Resume
+							{t("navBar_resume")}
 						</a>
 					</li>
 					<li className="li_logo">
@@ -190,7 +192,7 @@ const NavBar = ({
 					</li>
 
 					<li>language</li>
-					<li>Socials</li>
+					<li>{t("navBar_socials")}</li>
 				</ul>
 			</div>
 			<div className="components_container ">

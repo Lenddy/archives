@@ -148,6 +148,10 @@ const Contact = () => {
 	// 		</p>
 	// 	) : null}
 	const { t } = useTranslation();
+	const handleSubmit = (e) => {
+		e.preventDefault;
+		setIsFlipped(true);
+	};
 
 	return (
 		<div
@@ -230,14 +234,16 @@ const Contact = () => {
 									{t("contact_send")}
 									{/* Send Message */}
 								</button>
+								<button
+									className="form_btn"
+									onClick={(e) => handleSubmit(e)}
+								>
+									{t("contact_test_send")}
+								</button>
 							</div>
 						</form>
 
-						{/* <div>
-            <button className="form_btn">
-                test lunch
-            </button>
-            </div> */}
+						<div></div>
 					</div>
 
 					<div className="card__back2 ">
@@ -305,7 +311,7 @@ const Contact = () => {
 
 						<div
 							className={`back_btn_section ${
-								isFlipped ? "fade_in" : ""
+								isFlipped === true ? "fade_in" : ""
 							} `}
 						>
 							<h1>{t("contact_message_sent")}</h1>

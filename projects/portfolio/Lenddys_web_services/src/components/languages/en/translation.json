@@ -1,10 +1,23 @@
 {
     "Welcome_to_React": "Welcome to React and react-i18next",
 
+    "navBar_go_to":"Go To",
+    "navBar_welcome":"welcome",
+    "navBar_My_Experience":"What I Do",
+    "navBar_Tools":"My Tools",
+    "navBar_projects":"Projects",
+    "navBar_about_me":"About Me",
+    "navBar_resume":"Resume",
+    "navBar_socials":"Socials",
+    
+
+
+
     "welcome_title": "The Place To Turn Your Ideas Into Reality Welcome To Lenddy's Web Services",
     "welcome_sub_title": "Hello the name is Lenddy I like making web sites and apps that will sut your needs using the best technologies , so what is your next big idea and when do you want to make it happen ?",
     "welcome_btns":["View Resume","View Github","Projects","Contact Me"],
     "welcome_a_tag":["Like the logo","click here","to see who made it"],
+
     "whatIDo_title":"My Experience",
     "whatIDo_left_title":"full-stack Developer",
     "whatIDo_left":"As a full-stack developer,my role is to craft websites that adapt to your preferences, starting from the front-end visual interface, progressing through back-end functionalities, and extending to robust database management. my key responsibilities involve designing visually appealing and user-friendly front-end interfaces, developing the back-end logic, including server-side processes and APIs, and ensuring efficient and secure data storage in databases. Additionally, i create and maintain web services to facilitate seamless communication between these components. My work extends to adding new features, rigorous testing, bug fixing, and collaborating with cross-functional teams on diverse projects. In essence, i am the architect of digital solutions, ensuring they align with clients' needs and deliver top-notch user experiences while maintaining functionality and data integrity",
@@ -19,7 +32,6 @@
     "projects_left":"website for a small cleaning company in Little Rock Arkansas using: react and MaterialUI, AWS, Amazon EC2",
     "projects_middle":"A loans management system using: React, MongoDB, MaterialUI, NodeJs, and Socket.io.",
     "projects_right":"A basic flappy bird clone , instead of a bird it is a cube made using: unity and c#",
-
     "profile_title":"About Me",
     "profile_hello":"Hello",
     "profile_there":"There",
@@ -30,16 +42,14 @@
     "card__body_part2":"I made the bold decision to drop out and seek alternative paths to gain knowledge. Just a month later, I joined a coding bootcamp called",
     "card__body_part2_2":". This intensive four-month programming course pushed me to my limits as I strived to keep up with the fast-paced learning environment. Many nights were spent burning the midnight oil, often going to bed at 4 am and waking up at 11 am. Through laughter, tears, and forming strong friendships, I persevered, and it has paid off. I am now proud to call myself a full-stack developer.",
     "card__body_part3":"taught me invaluable skills, including thriving in high-pressure situations, both individually and as part of a cohort. I learned the importance of seeking help when needed and offering assistance to others. It ingrained in me the habit of learning from my mistakes and continually expanding my knowledge.",
-    "card__body_part4":"My ultimate goal is to return to college one day and resume my computer engineering studies, with a possible focus on also becoming a game developer or even exploring carpentry..",
+    "card__body_part4":"My ultimate goal is to return to college one day and resume my computer engineering studies, with a possible focus on also becoming a game developer or even exploring carpentry.",
     "card__body_part5":"In my free time, I indulge in my passion for video Games, Basketball, Baseball, Anime, Manga listening to Rock ,Pop and Salsa . If any of this resonates with you or piques your interest, feel free to send me a message. Don't hesitate",
-
     "card_a_tag":"Coding Dojo",
 
     "contact_title":"Contact Me",
     "contact_send":"Send Message",
-    "contact_message_sent":"message sent!!!",
-    "contact_send_back":"Send another message",
-
+    "contact_message_sent":"Message Sent!!!",
+    "contact_send_back":"Send Another Message",
     "input_1":"Your Name",
     "input_2":"Your Email",
     "text_area":"Insert Your Message Here"

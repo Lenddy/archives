@@ -598,7 +598,6 @@ align-items: center;
   display: flex;
   flex-direction: column;
   height: 300px;
-
 }
 
 .goTo_ul li p{
@@ -611,7 +610,7 @@ align-items: center;
 .dropDownGoTo{
   position: absolute;
   left: 5%;
-  width: 200px;
+  width: 250px;
   padding: 10px;
 }
 
@@ -1939,14 +1938,17 @@ height: 650px; */
 }
 
 .fade_in{
-  animation: showBtn 6s forwards ;
+  opacity: 0;
+  animation: showBtn 1s 6s forwards ;
 }
 
 @keyframes showBtn {
   from{
     opacity: 1;
   }
-  to{opacity: 1;}
+  to{
+    opacity: 1;
+  }
   
 }
 
@@ -2038,7 +2040,7 @@ textarea{
 
 .submit_Btn{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   /* margin-top: 10px; */
   margin-bottom: 10px;
 }
