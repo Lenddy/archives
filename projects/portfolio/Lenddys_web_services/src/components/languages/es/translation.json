@@ -13,10 +13,9 @@
     "welcome_title": "El lugar para convertir tus ideas en realidad Bienvenido a Lenddy's Web Services",
     "welcome_sub_title": "Que tal, el nombre es Lenddy. Me gusta crear sitios web y aplicaciones que se adapten a tus necesidades, utilizando las mejores tecnologías. Entonces, ¿cuál es tu próxima gran idea y cuándo quieres hacerla realidad?",
     "welcome_btns":["Ver Resumen","Ver Github","Projectos","Contactame"],
-    "welcome_a_tag":["Te gusta El Logo as","click aqui","para ver quien lo hizo"],
+    "welcome_a_tag":["Te gusta El Logo as","click aqui","para ver quien lo hizo."],
 
     "whatIDo_title":"Mis Especialidades",
-    "whatIDo_left_title":"full-stack Developer",
     "whatIDo_left_title":"Desarrolladora full-stack",
 
     "whatIDo_left":"Como desarrollador full-stack, mi función es crear sitios web que se adapten a sus preferencias, comenzando desde la interfaz visual de front-end, avanzando a través de las funcionalidades de back-end y extendiéndose hasta una sólida gestión de bases de datos. Mis responsabilidades clave implican diseñar interfaces de usuario visualmente atractivas y fáciles de usar, desarrollar la lógica de back-end, incluidos los procesos del lado del servidor y las API, y garantizar el almacenamiento de datos eficiente y seguro en bases de datos. Además, creo y mantengo servicios web para facilitar la comunicación fluida entre estos componentes. Mi trabajo se extiende a agregar nuevas funciones, realizar pruebas rigurosas, corregir errores y colaborar con equipos multifuncionales en diversos proyectos. En esencia, soy el arquitecto de soluciones digitales, asegurándome de que se alineen con las necesidades de los clientes y brinden experiencias de usuario de primer nivel mientras mantengo la funcionalidad y la integridad de los datos.",

@@ -12,6 +12,11 @@ body::-webkit-scrollbar{
   background-color: lightgray;
 }
 
+.hidden_a_tag{
+  text-decoration: none;
+  color: #ff00ff;
+}
+
 
 /*? for all components */
 /* a{
@@ -25,7 +30,7 @@ body::-webkit-scrollbar{
   /* padding-left: -5; */
   /* margin: 30px; */
   /* height: 2000px; */
-  width: 99.69%;
+  width:100%;
   margin-top: 100px ;
 }
 
@@ -85,7 +90,7 @@ body::-webkit-scrollbar{
   height: 100%;
   display: flex;
   justify-content: center;
-align-items: center;
+  align-items: center;
 }
 .navLogo{
   height: 60px;
@@ -167,14 +172,25 @@ align-items: center;
 }
 
 
+.language{
+  fill: white;
+  color: white;
+  height: 60px;
+  margin: 0px;
+}
+.language_div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 60px; */
+}
+
 
  /*? for the Go to menu  */
   .Go_to_animation {
 	-webkit-animation: Go_to_animation 1s both;
 	        animation: Go_to_animation 1s both;
 }
-
-
 
 
 @-webkit-keyframes Go_to_animation {
@@ -609,13 +625,52 @@ align-items: center;
 
 .dropDownGoTo{
   position: absolute;
-  left: 5%;
+  left: 9%;
   width: 250px;
   padding: 10px;
 }
 
+.dropDownLanguage{
+  position: absolute;
+  left: 60.5%;;
+  width: 250px;
+  padding: 10px;
+}
+
+.dropDownSocials{
+  position: absolute;
+  left: 80.5%;;
+  width: 250px;
+  padding: 10px;
+}
+
+.disabled {
+  pointer-events:none; 
+  opacity:0.1;         
+}
 
 
+.github_logo , .instagram_logo , .linkedIn_logo{
+  height: 50px;
+  /* width: 50px; */
+  opacity: 1;
+
+}
+
+.github_logo{
+  background-color: white;
+  border-radius: 45%;
+}
+
+.instagram_logo {
+  /* background-color: white; */
+  border-radius: 40%;
+}
+
+.linkedIn_logo{
+  /* background-color: white; */
+  border-radius: 50%;
+}
 
 
 /*? for the language button component  for the navbar*/
@@ -687,6 +742,9 @@ background-color: transparent;
 border: solid 2px #ff00ff;
 opacity: 0;
 filter: blur(5px);
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 .btn_welcome:hover{

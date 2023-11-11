@@ -14,54 +14,9 @@ const Contact = () => {
 	const [emailValidation, setEmailValidation] = useState(false);
 	const [messageValidation, setMessageValidation] = useState(false);
 
-	// const allInfo = (e) => {
-	// 	setFormInfo({
-	// 		...formInfo,
-	// 		[e.target.name]: e.target.value,
-	// 		// [e.target.name]:e.target.value,
-	// 		// [e.target.name]:e.target.value,
-	// 	});
-	// };
-	// const [name, setName] = useState()
-
-	// useEffect(() => {
-	// 	const keyDownHandler = (e) => {
-	// 		if (e.key === "Enter") {
-	// 			buttonRef.current.click();
-	// 		}
-	// 	};
-	// 	window.addEventListener("keyDown", keyDownHandler);
-	// 	return () => {
-	// 		window.removeEventListener("keyDown", keyDownHandler);
-	// 	};
-	// }, []);
-
 	const sendEmail = (e) => {
 		e.preventDefault();
-		// console.log("1 if");
-		// if (formInfo?.name?.length < 2 || formInfo?.name == undefined) {
-		// 	console.log("check 1");
-		// 	setNameValidation(true);
-		// }
-		// console.log("if 2");
-		// if (formInfo?.email?.length < 5 || formInfo?.email === undefined) {
-		// 	console.log("check 2");
-		// 	setEmailValidation(true);
-		// }
-		// console.log("if 3 ");
-		// if (formInfo?.message?.length < 5 || formInfo?.message === undefined) {
-		// 	console.log("check 1");
-		// 	setMessageValidation(true);
-		// }
-		// if (
-		// 	nameValidation === true ||
-		// 	emailValidation === true ||9
-		// 	messageValidation === true
-		// ) {
-		// 	return console.log("at lest one og them is true");
-		// }
 		setIsFlipped(!isFlipped);
-		// ["field can not be empty","field must be at lest"
 		emailjs
 			.sendForm(
 				"service_yxdnctm",
@@ -71,8 +26,6 @@ const Contact = () => {
 			)
 			.then(
 				(result) => {
-					// ! log text and status to see if that  helps
-					// ! and make it into an object put the names of status and text in the object and slso do the same for the error handle
 					SetMessageSent({
 						status: result.status,
 						text: result.text,
@@ -91,62 +44,6 @@ const Contact = () => {
 			);
 	};
 
-	// {formInfo?.name?.length > 0 &&
-	// 	formInfo?.name?.length < 2 ? (
-	// 		<p
-	// 			style={{
-	// 				color: "#ff00ff",
-	// 				margin: "0px",
-	// 			}}
-	// 		>
-	// 			name must be at lest 2 characters
-	// 			long
-	// 		</p>
-	// 	) : nameValidation ? (
-	// 		<p
-	// 			style={{
-	// 				color: "#ff00ff",
-	// 				margin: "0px",
-	// 			}}
-	// 		>
-	// 			name must be at lest 2 characters
-	// 			long{" "}
-	// 		</p>
-	// 	) : null}
-
-	// {  formInfo?.email?.length > 0 &&
-	// 	formInfo?.email?.length < 2 ? (
-	// 		<p
-	// 			style={{
-	// 				color: "#ff00ff",
-	// 				margin: "0px",
-	// 			}}
-	// 		>
-	// 			name must be at lest 2 characters
-	// 			long{" "}
-	// 		</p>
-	// 	) : emailValidation ? (
-	// 		<p
-	// 			style={{
-	// 				color: "#ff00ff",
-	// 				margin: "0px",
-	// 			}}
-	// 		>
-	// 			email must be at lest 5 characters
-	// 			long{" "}
-	// 		</p>
-	// 	) : null}
-
-	// {formInfo?.message?.length > 0 &&
-	// 	formInfo?.message?.length < 5 ? (
-	// 		<p style={{ color: "#ff00ff", margin: "0px" }}>
-	// 			message must be at lest 5 characters long{" "}
-	// 		</p>
-	// 	) : messageValidation ? (
-	// 		<p style={{ color: "#ff00ff", margin: "0px" }}>
-	// 			message must not be empty{" "}
-	// 		</p>
-	// 	) : null}
 	const { t } = useTranslation();
 	const handleSubmit = (e) => {
 		e.preventDefault;
@@ -226,24 +123,24 @@ const Contact = () => {
 									ref={buttonRef}
 									value="Send"
 									className="form_btn"
-									onClick={(e) => {
-										sendEmail(e);
-									}}
+									// onClick={(e) => {
+									// 	sendEmail(e);
+									// }}
 								>
 									{" "}
 									{t("contact_send")}
-									{/* Send Message */}
-								</button>
-								<button
-									className="form_btn"
-									onClick={(e) => handleSubmit(e)}
-								>
-									{t("contact_test_send")}
 								</button>
 							</div>
 						</form>
 
-						<div></div>
+						<div>
+							<button
+								className="form_btn"
+								onClick={(e) => handleSubmit(e)}
+							>
+								{t("contact_test_send")}
+							</button>
+						</div>
 					</div>
 
 					<div className="card__back2 ">

@@ -6,9 +6,16 @@ import Projects from "../5_projects/Projects";
 import What_I_Do from "../3_what_I_Do/What_I_Do";
 import Profile from "../6_profile/Profile";
 import Logo from "../../assets/LM.png";
+// import language from "../../assets/circular_menu_items/language-outline.svg";
 // import Test from "../ProfilePicture";
 import GsapShow from "../animations/GsapShow";
 import { useTranslation } from "react-i18next";
+import i18next from "i18next";
+
+import Github from "./social_dropdown/Github";
+import LinkedIn from "./social_dropdown/LinkedIn";
+import Instagram from "./social_dropdown/Instagram";
+import Language from "./social_dropdown/Language";
 
 const NavBar = ({
 	changeMode,
@@ -21,18 +28,6 @@ const NavBar = ({
 	const toolsRef = useRef(null);
 	const projectsRef = useRef(null);
 	const profileRef = useRef(null);
-
-	// const [what_I_DoPosition, setWhat_I_DoPosition] = useState(null);
-	// const toolsRefPosition = useRef(null);
-	// const projectsRefPosition = useRef(null);
-	// const profileRefPosition = useRef(null);
-
-	// ?? this is for the scroll animations with interception observer
-
-	// 1 create ref for the elements
-	// 2 acces the ref  and make use of useEffect to make a new intersectionObserver instance
-
-	// 3 make a state to store the visibility of the items being observer
 
 	const scrollToSection = (elementRef) => {
 		window.scrollTo({
@@ -55,27 +50,10 @@ const NavBar = ({
 				setHideNavBar("");
 			}
 		};
-		// const startAnimation = (pixels = 0, state) => {
-		// 	if (window.scrollY > parseInt(pixels)) {
-		// 		state(true);
-		// 	}
-		// 	// } else {
-		// 	// 	setHideNavBar("");
-		// 	// }
-		// };
 
 		window.addEventListener("scroll", handleScroll);
-		// window.addEventListener(
-		// 	"scroll",
-		// 	startAnimation(100, setWhat_I_DoPosition),
-		// 	console.log(what_I_DoPosition)
-		// );
-		// window.addEventListener("scroll", startAnimation);
-		// window.addEventListener("scroll", startAnimation);
 		return () => {
-			// Remove the event listener using the same function reference
 			window.removeEventListener("scroll", handleScroll);
-			// window.removeEventListener("scroll", startAnimation);
 		};
 	}, []);
 
@@ -95,6 +73,8 @@ const NavBar = ({
 	};
 
 	const [openGoto, setOpenGoTo] = useState(false);
+	const [openLanguage, setOpenLanguage] = useState(false);
+	const [socials, setSocials] = useState(false);
 	//? use this to toggle the animation on and off
 	const [intersecting_welcome, setIntersecting_welcome] = useState();
 	const [Intersecting_what_i_do, setIntersecting_what_i_do] = useState();
@@ -191,8 +171,86 @@ const NavBar = ({
 						/> */}
 					</li>
 
-					<li>language</li>
-					<li>{t("navBar_socials")}</li>
+					<li onClick={() => setOpenLanguage((prev) => !prev)}>
+						<div className="language_div">
+							<Language />
+						</div>
+						{openLanguage && (
+							<div className="dropDownLanguage">
+								<ul
+									className={`goTo_ul ${
+										openLanguage ? "Go_to_animation" : ""
+									}`}
+								>
+									<li
+										onClick={() =>
+											i18next.changeLanguage("es")
+										}
+										className={
+											i18next.language === "es"
+												? "disabled"
+												: ""
+										}
+									>
+										<p>Español</p>
+									</li>
+									<li
+										onClick={() =>
+											i18next.changeLanguage("en")
+										}
+										className={
+											i18next.language === "en"
+												? "disabled"
+												: ""
+										}
+									>
+										<p>English</p>
+									</li>
+								</ul>
+							</div>
+						)}
+					</li>
+
+					<li onClick={() => setSocials((prev) => !prev)}>
+						{t("navBar_socials")}
+						{socials && (
+							<div className="dropDownSocials">
+								<ul
+									className={`goTo_ul ${
+										socials ? "Go_to_animation" : ""
+									}`}
+								>
+									<li>
+										<a
+											href="https://github.com/Lenddy"
+											target="_blank"
+											rel="noreferrer"
+										>
+											<Github />
+										</a>
+									</li>
+									<li>
+										<a
+											href="https://www.linkedin.com/in/lenddy/"
+											target="_blank"
+											rel="noreferrer"
+										>
+											<LinkedIn />
+										</a>
+									</li>
+									<li>
+										<a
+											href="https://www.instagram.com/lenddys_web_services/"
+											target="_blank"
+											rel="noreferrer"
+										>
+											<Instagram />
+										</a>
+									</li>
+								</ul>
+							</div>
+						)}
+					</li>
 				</ul>
 			</div>
 			<div className="components_container ">
@@ -203,7 +261,6 @@ const NavBar = ({
 				>
 					<Welcome />
 				</div>
-				{/* <hr /> */}
 
 				<div
 					ref={what_I_DoRef}
@@ -212,18 +269,13 @@ const NavBar = ({
 				>
 					<What_I_Do />
 				</div>
-				{/* <hr /> */}
-
 				<div ref={toolsRef} className={` all_component `} id="Tools">
 					<Tools />
 				</div>
-				{/* <hr /> */}
 
 				<div ref={projectsRef} className={` all_component `}>
-					{/* hidden */}
 					<Projects />
 				</div>
-				{/* <hr /> */}
 
 				<div
 					ref={profileRef}
@@ -232,12 +284,6 @@ const NavBar = ({
 				>
 					<Profile />
 				</div>
-				{/* <div>
-					<GsapShow />
-				</div> */}
-				{/* <div>
-					<Test />
-				</div> */}
 			</div>
 		</>
 	);

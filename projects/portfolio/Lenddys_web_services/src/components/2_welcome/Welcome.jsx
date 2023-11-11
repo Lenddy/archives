@@ -39,6 +39,12 @@ const Welcome = () => {
 	// }, [intersecting_welcome]);
 
 	// ! i brock my mind trying to do this  with ternary operator so i ask chat gpt to help me with it i know that there is a wayyyyyy better why of doing it but this is what i got
+	const scrollToSection = (top_section) => {
+		window.scrollTo({
+			top: top_section,
+			behavior: "smooth",
+		});
+	};
 
 	const { t } = useTranslation();
 
@@ -64,20 +70,39 @@ const Welcome = () => {
 					</div>
 
 					<div className="welcomeBtn">
-						<button className="btn_welcome">
-							{" "}
+						<a
+							className="hidden_a_tag btn_welcome"
+							href="https://docs.google.com/document/d/12vkzj7Zjqu1vzWEcVHD0i0UKJ1PYsvx41-QtacLm0os/edit?usp=sharing"
+							target="_blank"
+							rel="noreferrer"
+						>
 							{t("welcome_btns.0")}
-							{/* View Resume */}
-						</button>
-						<button className="btn_welcome">
+						</a>
+
+						{/* View Resume */}
+
+						<a
+							className="hidden_a_tag btn_welcome"
+							href="https://github.com/Lenddy"
+							target="_blank"
+							rel="noreferrer"
+						>
+							{/* className="btn_welcome" */}
 							{t("welcome_btns.1")}
-							{/* View Github */}
-						</button>
-						<button className="btn_welcome">
+						</a>
+
+						{/* View Github */}
+						<button
+							className="btn_welcome"
+							onClick={() => scrollToSection(2900)}
+						>
 							{t("welcome_btns.2")}
 							{/* Projects */}
 						</button>
-						<button className="btn_welcome">
+						<button
+							className="btn_welcome"
+							onClick={() => scrollToSection(3900)}
+						>
 							{t("welcome_btns.3")}
 							{/* Contact Me */}
 						</button>
