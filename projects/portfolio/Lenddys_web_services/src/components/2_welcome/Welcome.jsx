@@ -56,6 +56,9 @@ const Welcome = () => {
 						{t("welcome_title")}
 						{/* The Place To Turn Your Ideas Into Reality Welcome To
 						Lenddy's Web Services */}
+						<a href="" className="welcome_a_tag">
+							Lenddy's Web Services{" "}
+						</a>
 					</h1>
 
 					<div className="subheader">

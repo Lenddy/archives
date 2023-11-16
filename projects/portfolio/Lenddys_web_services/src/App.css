@@ -1,14 +1,19 @@
 /*! make use of the @media selector        go see this video to help  https://www.youtube.com/watch?v=yU7jJ3NbPdA  */
 
 #root {
-/* max-width: 1280px; */
-  margin: 0 auto;
+  margin: 0px auto;
   text-align: center;
-  /* width: 1000px; */
+  padding: 0px;
 }
+
+
 
 body::-webkit-scrollbar{
   display: none;
+  padding: 0px;
+  width: 0px;
+  /* width: 1px; */
+  /* scroll-behavior: smooth; */
 }
 
 .lightMode{
@@ -192,15 +197,17 @@ border-radius: 50%;
 /*? for the welcome component */
 /* container for the welcome component items */
 .welcome{
-max-height: 600px;
-width: 100%;
+/* max-height: 1000px; */
+max-width:100%;
 /* background-color: crimson; */
 margin-top: 20px;
 margin-bottom: 50px;
 display: flex;
 justify-content: space-around;
 align-items: center;
+flex-wrap: wrap;
 margin:0px 0px 30px 0px;
+
 }
 
 /** left side of the welcome container */
@@ -212,7 +219,7 @@ max-width: 1000px;
 }  
 
 /* for title of the left side */
-.welcomeMessage{
+.welcomeMessage ,.welcome_a_tag{
 /* width: 70%; */
 padding: 10px;
 text-align: left;
@@ -226,6 +233,11 @@ animation: slideFromTop 2s ease 0s 1 normal none;
 }
 
 /** for the paragraph in the left side  */
+.subheader{
+  width: 100%;
+  color: lightblue;
+  }
+
 .subheader_message{
 font-size:30px;
 width: 90%;
@@ -233,11 +245,8 @@ color: lightblue;
 opacity: 0;
 }
 
-.subheader{
-font-size:30px;
-width: 100%;
-color: lightblue;
-}
+
+
 
 /* calls the slideFromLeft animation  */
 .subheader_animation {
@@ -299,9 +308,9 @@ animation: show 1s ease 1.5s normal forwards;
 }
 
 .btn_welcome:nth-child(4){
-border-top-left-radius:0px ;
-border-top-right-radius:50px ;
-border-bottom-left-radius:0px ;
+  border-top-right-radius:50px ;
+  border-bottom-right-radius:50px ;
+  border-bottom-right-radius:50px ;
 border-left: 0px;
 animation: show 1s ease 3s normal forwards;
 }
@@ -346,7 +355,7 @@ opacity: 0;
 /*? for the what i do component */
 .whatIDo{
 width: 100%;
-height: 800px;
+/* height: 800px; */
 /* background-color: green; */
 }
 
@@ -360,10 +369,8 @@ justify-content: center;
 align-items: center;
 border: #00ffff solid 2px;
 background-color:#00ffff ;
-/* border-radius: 40px; */
-font-size:30px;
-/* transform: translateX(-100%); */
 opacity: 0;
+margin-bottom:50px;
 }
 
 /* for the text in the top section */
@@ -376,6 +383,8 @@ justify-content: center;
 align-items: center;
   opacity: 0;
   filter: blur(5px);
+  font-size: 60px;
+  margin: 0px;
 }
 
 /* calls the slideFromLeft animation */
@@ -395,7 +404,7 @@ width: 100%;
 height: 50%;
 justify-content: center;
 align-content: center;
-margin: 0px;
+/* margin-bottom: 30px; */
 }
 
 /* changes the h1 in the middle section */
@@ -407,21 +416,24 @@ color: #00ffff;
 /* changes the p in the middle section */
 .whatIDo_middle p{
 display: inline-block;
-width: 90%;
+max-width: 800px;
 text-align: center;
 color: lightblue;
+
+
 }
 
 /* targets the left section of the middle */
 .whatIDo_left{
 flex: 1;
 opacity: 0;
+margin:30px ;
 }
 
 /* targets the right section of the middle */
 .whatIDo_right{
 flex:1;
-margin:0px;
+margin:30px ;
 opacity: 0;
 }
 
@@ -438,10 +450,13 @@ animation: show 2s ease 2.5s forwards;
 /** bottom section on the what i do component */
 .whatIDo_bottom{
 /* background-color: red; */
-margin: 0px;
-width: 50%;
-margin:0 auto ;
+/* margin: 0px; */
+max-width:100%;
+margin-top: 30px;
 opacity: 0;
+display: flex;
+justify-content: center;
+flex-direction: column;
 } 
 
 /* changes the h1 in the bottom section */
@@ -452,9 +467,15 @@ color: #00ffff;
 } 
 
 /* changes the p in the bottom section */
+.whatIDo_bottom div{ 
+  display: flex;
+  justify-content: center;
+  } 
 .whatIDo_bottom p{ 
-margin: 0px;
+/* margin: 0px; */
 color: lightblue;
+max-width: 800px;
+/* text-align: center; */
 } 
 
 /* calls the show animation */
@@ -494,6 +515,7 @@ animation: scaleDown 2s ease  forwards;
 color: white;
 text-decoration: none;
 }
+reactivnes
 
 /** targets all the tool container */
 .tools{
@@ -558,7 +580,7 @@ cursor: pointer;
 /*? for the projects component */
 .project{
   width: 100%;
-  height: 700px;
+  /* height: 700px; */
   /* background-color:rgb(165, 165, 127) ; */
   margin:40px 0px  40px 0px ;
 }
@@ -692,28 +714,18 @@ animation: show 2s forwards;
 .profile{
   /* background-color: #5a0009; */
   width: 100%;
-  height: 1200px;
+  /* height: 1200px; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
 
-/* targets the profileContainer */
-.profileContainer{
-width: 100%;
-height: 100%;
-margin-top: 100px;
-display: flex;
-justify-content:space-around;
-align-items: center;
-flex-wrap: wrap;
-}
-
 /* *targets the title of the profile component */
 .profile_top{
 width: 100%;
-height: 100px;
+margin-bottom: 50px;
+/* height: 100px; */
 display: flex;
 justify-content: center;
 align-items: center;
@@ -723,7 +735,7 @@ opacity: 0;
 /* target the h1 in the profile component */
 .profile_top h1{
 color: #00ffff;
-font-size:30px;
+font-size:60px;
 /* transform: rotateY(360deg); */
 border: #00ffff solid 2px;
 border-radius: 50px;
@@ -740,6 +752,19 @@ transform-style: preserve-3d;
 }
 
 /* *targets the profile_content_container */
+
+/* targets the profileContainer */
+.profileContainer{
+  width: 100%;
+  /* height: 100%; */
+  /* margin-top: 100px; */
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  }
+
+
 .profile_content_container{
 /* background-color: rgba(173, 216, 230, 0.602);
 border:solid #00ffff 3px ; */
@@ -748,7 +773,7 @@ opacity: 0;
 margin: 0 auto;
 padding: 0 auto;
 width: 100%;
-height: 90%;
+/* height: 90%; */
 display: flex;
 justify-content: space-evenly;
 align-items: center;
@@ -765,10 +790,15 @@ transform-style: preserve-3d;
 border-radius: 50px;
 }
 
+/** targets the left and right side of the profile_content_container*/
+.profile_left , .profile_right{
+  margin:50px 40px;
+}
+
 /** makes the left side of the profile_content_container*/
 .profile_left{
-width: 550px;
-height: 750px;
+  max-width: 550px;
+  max-height:750px;
 /* background-color:blue; */
 /* display: inline-block; */
 }
@@ -783,8 +813,8 @@ height: 100%;
 
 /* this makes the skeleton of the card */
 .c_comp{
-  width: 550px;
-  height: 750px;
+  /* width: 100%;
+  height: 100%; */
 }
 
 /* adds a hover event to the card */
@@ -794,8 +824,8 @@ cursor: pointer;
 
 /*this is for the size of the cart */
 .card {
-  width: 550px;
-  height: 750px;
+  /* width: 100%; */
+  /* height: 100%; */
   /* background-color: green; */
 }
 
@@ -806,8 +836,8 @@ position: relative;
 transition: transform 3s;
   /* background: pink; */
 transform-style: preserve-3d;
-width: 550px;
-height: 750px;
+min-width: 550px;
+min-height: 750px;
 }
 
 /* flips the card */
@@ -832,6 +862,7 @@ width: 550px;
 height: 750px;
 /* background-color: red; */
 }
+
 
 
 /* *for the front  */
@@ -965,8 +996,8 @@ height: 100%;
 
 /** makes the right side of the profile_content_container*/
 .profile_right{
-  width: 700px;
-  height: 750px;
+  min-width: 550px;
+  min-height: 750px;
   /* background-color:blue; */
   /* display: inline-block; */
   /* display: flex; */
@@ -980,15 +1011,17 @@ height: 100%;
 
 /* ? for the contact component */
 .c_comp2{
-  width: 100%;
-  height: 100%;
+  /* width: 100%; */
+  /* height: 100%; */
+  max-width: 550px;
+  max-height:750px;
   /* background-color: purple; */
 }
 
   /*this is for the size of the cart */
 .card2 {
   /* width: 400px; */
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   /* background-color: green; */
 }
@@ -1001,8 +1034,8 @@ height: 100%;
   transition: transform 3s;
     /* background: pink; */
   transform-style: preserve-3d;
-  width: 100%;
-  height: 100%;
+  min-width: 550px;
+  min-height: 750px;
 }
 
 /* flips the card */
@@ -1047,7 +1080,7 @@ height: 100%;
 
 /* target the title of the contact card */
 .front_title_c2{
-  transform: translateZ(200px);
+  transform: translateZ(50px);
   color: #00ffff;
   /* margin: 10px 0px 0px 0px; */
   margin:0px;
@@ -1069,7 +1102,7 @@ align-items: center;
 margin: 0px;
 width: 100%;
 height: 0px;
-transform: translateZ(200px);
+transform: translateZ(150px);
 }
 
 /* targets the form in the contact card*/
@@ -1079,7 +1112,7 @@ justify-content:space-evenly;
 flex-direction: column;
 width: 90%;
 height: 85%;
-transform: translateZ(300px);
+transform: translateZ(150px);
 margin: 0px;
 }
 
@@ -1117,10 +1150,10 @@ font-size: 20px;
 input{
 margin-bottom: 10px;
 transform: translateZ(150px);
-width: 300px;
+width: 200px;
 height: 40px;
 margin: 0px;
-font-size: 20px;
+font-size: 15px;
 }
 
 
@@ -1298,6 +1331,212 @@ animation: animate-rocket 4s 2s forwards ;
 
 
 
+/* @medias  */
+  
+/* todo  width is a fix width */
+
+
+/*todo       min-width = it can be as big as the container that is holding it but it cant be smaller that the given width */
+
+/*todo  max-width  =  it cant be bigger that the given width but it can be any width below it   */
+
+
+/* !   get the with of the page i put some code on how to do it on what i do component */
+@media (max-width:1500px) {
+  /*? for all components */
+  .all_component {
+    margin-bottom: 200px;
+}
+  /*? for the welcome component */
+  .welcome{
+      flex-direction: row;
+      margin-bottom: 0px;
+    }
+
+    .welcomeRight {
+      /* background-color: gray; */
+      margin-top : 50px;
+      
+    }
+
+  /* ? for the what i do  component */
+  .whatIDo_middle{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  /*? projects */
+  .projects_container{
+    flex-wrap: wrap;
+  }
+  .card_project{
+    margin: 40px;
+  }
+
+
+  /*? for the profile component */
+
+  .profile_content_container{
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+  }
+
+  .profile_left {
+    margin-right:30px;
+  }
+
+  .profile_right{
+    margin-left:30px;
+  }
+}
+
+
+
+@media (max-width:1000px) {
+  /*? for all components */
+  .all_component {
+    margin-bottom: 100px;
+}
+
+
+   /*? for the welcome component */
+
+  /* todo welcome left  */
+  .welcomeMessage,.welcome_a_tag{
+    text-align: center;
+    font-size: 55px;
+  }
+
+  .subheader{
+    display: flex;
+    justify-content: center;
+  }
+
+  .subheader_message{
+    text-align: center;
+    font-size:25px;
+  }
+
+
+  .btn_welcome{
+    width: 170px;
+    font-size: 20px;
+  }
+
+  /* todo welcome right */
+/* for the logo img in the right side */
+/* calls the animation for the logo */
+.logo{
+  /* height: 90%; */
+    height: 400px;
+} 
+
+/* ? for the what i do  component */
+.whatIDo_top{
+    height: 90px;
+  }
+
+  .whatIDo_top_text{
+    font-size: 55px;
+  }
+
+
+/*? tools  */
+
+.tool_container h1{
+
+  }
+
+
+
+
+/*? projects */
+.projects_container{
+
+}
+.card_project{
+}
+
+
+/*? for the profile component */
+
+.profile_content_container{
+
+}
+
+.profile_left {
+
+}
+
+.profile_right{
+
+}
+
+
+}
+
+
+@media (max-width:850px) {
+  .welcomeMessage ,.welcome_a_tag{
+    font-size: 50px;
+  }
+
+  .subheader{
+    
+  }
+
+  .subheader_message{
+    
+  }
+
+
+  .btn_welcome{
+
+  }
+
+}
+
+
+
+
+@media (max-width:720px) {
+  .welcomeMessage ,.welcome_a_tag{
+    /* font-size: clamp(); */
+  }
+
+  .subheader{
+    
+  }
+
+  .subheader_message{
+    
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*? animations */
 
 /** animation for the navbar */
@@ -1397,10 +1636,6 @@ animation: animate-rocket 4s 2s forwards ;
 }
 
 /* all animations */
-
-
-
-
 
 
 @keyframes popIn {

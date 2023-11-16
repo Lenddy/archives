@@ -52,6 +52,45 @@ const What_I_Do = () => {
 		};
 	}, [isTitleVisible, isContentVisible]);
 
+	// !
+	// !
+	// !
+	// !
+	// !
+	// !
+	// !this si how you get the width of the page
+	//import React, { useState, useEffect } from 'react';
+
+	// const PageWidthComponent = () => {
+	// 	const [pageWidth, setPageWidth] = useState(window.innerWidth);
+
+	// 	const updatePageWidth = () => {
+	// 	  setPageWidth(window.innerWidth);
+	// 	};
+
+	// 	useEffect(() => {
+	// 	  const handleResize = () => {
+	// 		updatePageWidth();
+	// 	  };
+
+	// 	  window.addEventListener('resize', handleResize);
+
+	// 	  // Clean up the event listener on component unmount
+	// 	  return () => {
+	// 		window.removeEventListener('resize', handleResize);
+	// 	  };
+	// 	}, []); // Empty dependency array ensures this effect runs only on mount and unmount
+
+	// 	return (
+	// 	  <div>
+	// 		<p>Width of the page is: {pageWidth}px</p>
+	// 		{/* You can use pageWidth in your component as needed */}
+	// 	  </div>
+	// 	);
+	//   };
+
+	//   export default PageWidthComponent;
+
 	//! for the animation for the left right and bottom
 	//? make them appear in a zigzag  left  title , right  p tag  , bottom title , left p tag , right title , bottom p tag
 	const { t } = useTranslation();
@@ -67,14 +106,19 @@ const What_I_Do = () => {
 					} `}
 					ref={titleRef}
 				>
-					<div
+					{/* My Experience */}
+					<h1
 						className={`whatIDo_top_text ${
 							isTitleVisible ? "whatIDo_top_tex_animation" : ""
 						} `}
 					>
-						{/* My Experience */}
-						<h1>{t("whatIDo_title")}</h1>
-					</div>
+						{t("whatIDo_title")}
+					</h1>
+					{/* <div
+						
+					>
+						
+					</div> */}
 				</div>
 
 				<div className="whatIDo_middle" ref={contentRef}>
@@ -149,27 +193,9 @@ const What_I_Do = () => {
 					} `}
 				>
 					<h1 className="blink ">{t("whatIDo_bottom_title")} </h1>
-					<p className="blink ">
-						{/* i will be able to help you get a basic understanding of
-						wed development and pc building to the point where you
-						can doit on your own */}
-						{t("whatIDo_bottom")}{" "}
-						{/* As a tutor, my focus is to guide you to have a
-						fundamentals understanding of web development. Together,
-						we will embark on a journey that equips you with the
-						knowledge and skills to confidently navigate the world
-						of web development at its core. Through hands-on
-						learning , you'll build a solid foundation, enabling you
-						to master the essentials of web development. We'll start
-						with HTML and CSS, the building blocks of the web, and
-						them move into JavaScript and other key technologies,
-						giving you the proficiency needed to create captivating
-						websites and dynamic web applications. By the end of our
-						journey, you will possess the confidence and know-how to
-						tackle web development projects independently, setting
-						you on a path to explore endless opportunities for
-						innovation and self-reliance in this field. */}
-					</p>
+					<div className="whatIDo_bottom_h1_tag">
+						<p className="blink ">{t("whatIDo_bottom")} </p>
+					</div>
 				</div>
 
 				{/* <ol>
