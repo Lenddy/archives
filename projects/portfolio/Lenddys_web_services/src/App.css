@@ -1387,8 +1387,47 @@ animation: animate-rocket 4s 2s forwards ;
   .profile_right{
     margin-left:30px;
   }
+
+  /*? profile */
+  .profile_content_container{
+    flex-wrap: wrap;
+  }
 }
 
+
+/* todo 
+
+ todo :  for 1500 px make the profile compoent be the same size that they are in 1000px  and add margin so that they wrap  and dotn touch 
+ 
+ 
+
+
+ todo: for the 1000px 
+
+ todo make all the fonts of every compoent be 5px smaller  , make the project card componets smaller  and fix how they look 
+
+
+ todo: for the 800px 
+
+ todo make all fonts smaller  and make the contend smaller 
+
+
+
+  todo: for the 600px 
+
+ todo make all fonts smaller  and make the contend smaller 
+
+
+
+*/
+
+
+
+
+
+
+
+ 
 
 
 @media (max-width:1000px) {
@@ -1414,7 +1453,6 @@ animation: animate-rocket 4s 2s forwards ;
     font-size:25px;
   }
 
-
   .btn_welcome{
     width: 170px;
     font-size: 20px;
@@ -1438,22 +1476,12 @@ animation: animate-rocket 4s 2s forwards ;
   }
 
 
-/*? tools  */
-
-.tool_container h1{
-
-  }
-
-
-
-
 /*? projects */
 .projects_container{
 
 }
 .card_project{
 }
-
 
 /*? For Main component */
 /** makes the left side of the profile_content_container*/
@@ -1512,7 +1540,6 @@ animation: animate-rocket 4s 2s forwards ;
 
 
 /* ? for the contact component */
-
 /* for all the content front an back  */
 .card__content2 {
   min-width: 450px;
@@ -1530,12 +1557,10 @@ animation: animate-rocket 4s 2s forwards ;
 }
 
 /* * for the form */
-
 /* adds placeholder to the right side f the profile_content_container  inputs*/
 textarea::placeholder,input::placeholder{
   font-size:15px;
 }
-
 
 /* targets the inputs of the the right side f the profile_content_container */
 textarea ,input{
@@ -1553,94 +1578,6 @@ input{
   height: 50px;
   width: 170px;
 }
-
-.form_btn:hover{
-
-}
-
-.submit_Btn{
-
-}
-
-  /* * for the back of the card */
-.card__back2 {
-
-}
-
-/* targets the title */
-.card__back_title2 {
-
-}
-
-
-/** targets the section of the btns in the back of the contact card */
-.back_btn_section{
-
-}
-
-/* target the btns in the back of the card */
-.back_btn{
-
-}
-
-/* adds a hover event in the btns in the back of the card */
-.back_btn:hover{
-
-}
-  /* show the btns that are in the back  */
-  /* calls the showBtn */
-.fade_in{
-
-}
-
-.back_item_size{
-
-}
-
-.cloud2,.cloud3,.cloud4,.cloud5,.cloud6,.cloud7,.cloud8{
-
-}
-
-.cloud1{
-
-}
-.cloud2{
-
-}
-.cloud3{
-
-}
-.cloud4{
-
-}
-
-.cloud5{
-
-}
-.cloud6{
-
-}
-.cloud7{
-
-}
-
-
-
-.rocket{
-
-}
-
-.lunch{
-
-}
-
-.bigger{
-
-}
-
-
-
-
 
 }
 
