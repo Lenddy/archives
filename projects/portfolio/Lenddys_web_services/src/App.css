@@ -857,12 +857,10 @@ backface-visibility: hidden;
 transform-style: preserve-3d;
 display: grid;
 align-content: center;
-width: 550px;
-height: 750px;
+width:100%;
+height: 100%;
 /* background-color: red; */
 }
-
-
 
 /* *for the front  */
 .card__front {
@@ -961,7 +959,7 @@ height: 100%;
 .card__back_title {
   transform:  translateZ(300px);
   text-transform: uppercase;
-  /* font-size: 30px; */
+  font-size: 30px;
   margin: 0px;
 }
 
@@ -1127,6 +1125,14 @@ display: flex;
 width: 100%;
 }
 
+/* adds placeholder to the right side f the profile_content_container  inputs*/
+textarea::placeholder,input::placeholder{
+  color:lightblue;
+  text-align: center;
+  font-size: 20px;
+  }
+
+
 /* targets the inputs of the the right side f the profile_content_container */
 textarea ,input{
 background-color: #333;
@@ -1138,13 +1144,6 @@ margin:0px;
 font-size: 20px;
 }
 
-/* adds placeholder to the right side f the profile_content_container  inputs*/
-textarea::placeholder,input::placeholder{
-color:lightblue;
-text-align: center;
-font-size:15px;
-font-size: 20px;
-}
 
 input{
 margin-bottom: 10px;
@@ -1152,7 +1151,7 @@ transform: translateZ(150px);
 width: 200px;
 height: 40px;
 margin: 0px;
-font-size: 15px;
+/* font-size: 15px; */
 }
 
 
@@ -1166,6 +1165,7 @@ border: solid 2px #ff00ff;
 /* opacity: 0; */
 /* filter: blur(5px); */
 }
+
 .form_btn:hover{
 border: #f43c71 solid 2px;
 background-color: #f8d3e1;
@@ -1397,9 +1397,7 @@ animation: animate-rocket 4s 2s forwards ;
     margin-bottom: 100px;
 }
 
-
    /*? for the welcome component */
-
   /* todo welcome left  */
   .welcomeMessage,.welcome_a_tag{
     text-align: center;
@@ -1457,19 +1455,191 @@ animation: animate-rocket 4s 2s forwards ;
 }
 
 
-/*? for the profile component */
-
-.profile_content_container{
-
+/*? For Main component */
+/** makes the left side of the profile_content_container*/
+/* for all the content front an back  */
+.card__content {
+  min-width: 450px;
+  min-height: 600px;
 }
 
-.profile_left {
-
+/* this is the border  */
+.card__front::before {
+  top: 1%;
+  bottom: 1%;
 }
 
+/* for all the word on the front  */
+/* ,.card__title3 */
+.card__title1,.card__title2,.card__title4 {
+  font-size: 25px;
+}
+
+/* targets title1 */
+.card__title1{ 
+  top: 4%;
+  transform: rotateX(25deg) rotateY(-35deg );
+}
+
+/* targets title2 */
+.card__title2{
+  left:0.9%;
+  top: 50%;
+}
+
+/* * for the back of the card */
+
+.card__back {
+  /* min-width: ; */
+  min-height: 600px;
+}
+
+/* targets the title */
+.card__back_title {
+  font-size: 25px;
+}
+/* ! heeeeere */
+/* target all the words in the back of the card */
+.card__body_part1,.card__body_part2,.card__body_part3,.card__body_part4,.card__body_part5{
+  font-size:13px;
+}
+
+/** makes the right side of the profile_content_container*/
 .profile_right{
+  min-width: 450px;
+  min-height: 600px;
+}
+
+
+/* ? for the contact component */
+
+/* for all the content front an back  */
+.card__content2 {
+  min-width: 450px;
+  min-height: 600px;
+  /* background-color: red; */
+}
+
+/* target the title of the contact card */
+.front_title_c2{
+  font-size: 25px;
+}
+/* target the title of the contact card */
+.front_title2_c2{ 
+  font-size: 13px;
+}
+
+/* * for the form */
+
+/* adds placeholder to the right side f the profile_content_container  inputs*/
+textarea::placeholder,input::placeholder{
+  font-size:15px;
+}
+
+
+/* targets the inputs of the the right side f the profile_content_container */
+textarea ,input{
+  font-size:15px;
+}
+
+input{
+  width: 170px;
+  height: 25px;
+}
+
+
+.form_btn{
+  font-size: 15px;
+  height: 50px;
+  width: 170px;
+}
+
+.form_btn:hover{
 
 }
+
+.submit_Btn{
+
+}
+
+  /* * for the back of the card */
+.card__back2 {
+
+}
+
+/* targets the title */
+.card__back_title2 {
+
+}
+
+
+/** targets the section of the btns in the back of the contact card */
+.back_btn_section{
+
+}
+
+/* target the btns in the back of the card */
+.back_btn{
+
+}
+
+/* adds a hover event in the btns in the back of the card */
+.back_btn:hover{
+
+}
+  /* show the btns that are in the back  */
+  /* calls the showBtn */
+.fade_in{
+
+}
+
+.back_item_size{
+
+}
+
+.cloud2,.cloud3,.cloud4,.cloud5,.cloud6,.cloud7,.cloud8{
+
+}
+
+.cloud1{
+
+}
+.cloud2{
+
+}
+.cloud3{
+
+}
+.cloud4{
+
+}
+
+.cloud5{
+
+}
+.cloud6{
+
+}
+.cloud7{
+
+}
+
+
+
+.rocket{
+
+}
+
+.lunch{
+
+}
+
+.bigger{
+
+}
+
+
+
 
 
 }
