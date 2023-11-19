@@ -34,6 +34,9 @@ margin-top: 100px ;
 margin-bottom: 300px;
 }
 
+.all_component:last-child{
+  margin-bottom: 100px;
+  }
 
 
 /*?  for the NavBar component  */
@@ -419,8 +422,6 @@ display: inline-block;
 max-width: 800px;
 text-align: center;
 color: lightblue;
-
-
 }
 
 /* targets the left section of the middle */
@@ -492,23 +493,18 @@ height: 700px;
 margin:20px 0px  40px 0px ;
 }
 /* * title for the tools component */
-/* targets the h1 in the tool component */
-.tool_container h1{
-color: #00ffff;
-font-size:60px;
-}
-
 /* targets the title of the tools component */
 .title{
 opacity: 0;
 filter: blur(5px);
+color: #00ffff;
+font-size:60px;
 }
 
 /* calls the scaleDown animation */
 .title_animation{
 animation: scaleDown 2s ease  forwards;
 }
-
 
 /* targets the a in the tool component */
 .tool_container a{
@@ -646,12 +642,27 @@ animation: show 2s forwards;
   opacity: 0;
 }
 
+/* changes the size of the images in the project component */
+.card_project img{
+  width: 100%;
+  height: 300px;
+  opacity: 0;
+}
+
+
 /* target the h1 in the card project container */
 .card_project h1{
-  color: #00ffff;
+  color: #333;
+  background-color:#00ffff;
   font-size:25px;
   
 }
+
+/* target the p in the card project container */
+.card_project p{
+  color: lightblue;
+}
+
 
 /* adds a border to the bottom of the card project */
 .description_border{
@@ -664,17 +675,7 @@ animation: show 2s forwards;
   opacity: 0;
 }
 
-/* target the p in the card project container */
-.card_project p{
-  color: lightblue;
-}
 
-/* changes the size of the images in the project component */
-.card_project img{
-  width: 100%;
-  height: 300px;
-  opacity: 0;
-}
 
 /* calls the slideFromRight_short animation in a given order */
 .card_project_animate:nth-child(1){
@@ -755,8 +756,6 @@ transform-style: preserve-3d;
 /* targets the profileContainer */
 .profileContainer{
   width: 100%;
-  /* height: 100%; */
-  /* margin-top: 100px; */
   display: flex;
   justify-content:space-around;
   align-items: center;
@@ -765,17 +764,15 @@ transform-style: preserve-3d;
 
 
 .profile_content_container{
-/* background-color: rgba(173, 216, 230, 0.602);
-border:solid #00ffff 3px ; */
 opacity: 0;
 /* background-color: red; */
 margin: 0 auto;
 padding: 0 auto;
-width: 100%;
-/* height: 90%; */
+width: 100%;  
 display: flex;
 justify-content: space-evenly;
 align-items: center;
+/*perspective: 1000px;  Or any suitable value */
 }
 
 /* make the content in the profile component rotate */
@@ -859,6 +856,7 @@ display: grid;
 align-content: center;
 width:100%;
 height: 100%;
+/* transform-style: preserve-3d; */
 /* background-color: red; */
 }
 
@@ -943,6 +941,7 @@ height: 100%;
 
 .card__back {
   transform: rotateY(.5turn);
+  /* transform-style: preserve-3d; */
   /* color: var(--clr); */
   color: lightblue;
   background: #333;
@@ -961,6 +960,7 @@ height: 100%;
   text-transform: uppercase;
   font-size: 30px;
   margin: 0px;
+  z-index: 999; /* Set a high z-index */
 }
 
 /* target all the words in the back of the card */
@@ -1286,7 +1286,8 @@ margin-bottom: 10px;
 .cloud7{
   bottom:40%;
   right:15%;
-  transform: translateZ(250px);}
+  transform: translateZ(250px);
+}
 
 .cloud_animation1{
 animation: cloudAnimation1 10s forwards;
@@ -1353,7 +1354,6 @@ animation: animate-rocket 4s 2s forwards ;
     }
 
     .welcomeRight {
-      /* background-color: gray; */
       margin-top : 50px;
       
     }
@@ -1380,54 +1380,41 @@ animation: animate-rocket 4s 2s forwards ;
     flex-wrap: wrap;
   }
 
-  .profile_left {
-    margin-right:30px;
-  }
-
-  .profile_right{
-    margin-left:30px;
+  .profile_left ,.profile_right{
+    margin:50px 60px;
   }
 
   /*? profile */
   .profile_content_container{
     flex-wrap: wrap;
   }
+  .card__back_title {
+    transform:  translateZ(250px);
+  }
+/* targets the card__body_part1 */
+.card__body_part1{
+  transform: translateZ(150px)
+}
+/* targets the card__body_part2 */
+.card__body_part2{
+  transform: translateZ(50px)
 }
 
+/* targets the card__body_part3 */
+.card__body_part3{
+  transform: translateZ(25px)
+}
 
-/* todo 
+/* targets the card__body_part4 */
+.card__body_part4{
+  transform: translateZ(150px)
+}
+/* targets the card__body_part5 */
+.card__body_part5{
+  transform: translateZ(250px)
+}
+}
 
- todo :  for 1500 px make the profile compoent be the same size that they are in 1000px  and add margin so that they wrap  and dotn touch 
- 
- 
-
-
- todo: for the 1000px 
-
- todo make all the fonts of every compoent be 5px smaller  , make the project card componets smaller  and fix how they look 
-
-
- todo: for the 800px 
-
- todo make all fonts smaller  and make the contend smaller 
-
-
-
-  todo: for the 600px 
-
- todo make all fonts smaller  and make the contend smaller 
-
-
-
-*/
-
-
-
-
-
-
-
- 
 
 
 @media (max-width:1000px) {
@@ -1475,15 +1462,59 @@ animation: animate-rocket 4s 2s forwards ;
     font-size: 55px;
   }
 
+  .whatIDo_middle h1 ,.whatIDo_bottom h1{ 
+    font-size:30px;
+    } 
+    
+
+  .whatIDo_middle p, .whatIDo_bottom p{
+    font-size: 13px;
+    max-width: 700px;
+    }
+
+  /*?  tools component */
+  .title{
+    font-size: 55px;
+  }
+
+  .tech_logos{
+    width: 80px;
+    height: 80px;
+  }
+
+  .tool_container p{
+    font-size:13px ;
+  }
+
 
 /*? projects */
-.projects_container{
+.header{
+  font-size:55px;
+}
 
+.card_project {
+  /* Keep your existing styles */
+  height: 350px;
+  width: 300px;
 }
-.card_project{
+.card_project img{
+  height: 200px;
 }
+
+.card_project h1{
+  font-size:20px;
+  
+}
+
+.card_project p{
+  font-size: 13px;
+}
+
 
 /*? For Main component */
+.profile_top h1{
+  font-size:55px;
+  }
 /** makes the left side of the profile_content_container*/
 /* for all the content front an back  */
 .card__content {
@@ -1526,7 +1557,7 @@ animation: animate-rocket 4s 2s forwards ;
 .card__back_title {
   font-size: 25px;
 }
-/* ! heeeeere */
+
 /* target all the words in the back of the card */
 .card__body_part1,.card__body_part2,.card__body_part3,.card__body_part4,.card__body_part5{
   font-size:13px;
@@ -1579,65 +1610,484 @@ input{
   width: 170px;
 }
 
+.cloud1,.cloud2,.cloud3,.cloud4,.cloud5,.cloud6,.cloud7,.cloud8,.rocket{
+  font-size:75px ;
+}
+
 }
 
 
 @media (max-width:850px) {
-  .welcomeMessage ,.welcome_a_tag{
-    font-size: 50px;
+/*? for all components */
+.all_component {
+  /* margin-bottom: 50px; */
+}
+
+ /*? for the welcome component */
+/* todo welcome left  */
+.welcomeMessage,.welcome_a_tag{
+  text-align: center;
+  font-size: 50px;
+}
+
+.subheader_message{
+  text-align: center;
+  font-size:20px;
+}
+
+.btn_welcome{
+  width: 150px;
+  font-size: 15px;
+}
+
+/* for the logo img in the right side */
+/* calls the animation for the logo */
+.logo{
+/* height: 90%; */
+  height: 300px;
+} 
+
+/* ? for the what i do  component */
+.whatIDo_top{
+  height: 80px;
+}
+
+.whatIDo_top_text{
+  font-size: 50px;
+}
+
+.whatIDo_middle h1 ,.whatIDo_bottom h1{ 
+  font-size:25px;
+  } 
+  
+.whatIDo_middle p, .whatIDo_bottom p{
+  font-size: 12px;
+  max-width: 600px;
   }
 
-  .subheader{
-    
-  }
+/*?  tools component */
+.title{
+  font-size: 50px;
+}
 
-  .subheader_message{
-    
-  }
+.tech_logos{
+  width: 70px;
+  height: 70px;
+}
 
-
-  .btn_welcome{
-
-  }
-
+.tool_container p{
+  font-size:12px ;
 }
 
 
+/*? projects */
+.header{
+font-size:50px;
+}
 
+.card_project {
+/* Keep your existing styles */
+/* height: 400px;
+width: 300px; */
+}
+.card_project{
+margin:60px ;
+}
 
-@media (max-width:720px) {
-  .welcomeMessage ,.welcome_a_tag{
-    /* font-size: clamp(); */
-  }
-
-  .subheader{
-    
-  }
-
-  .subheader_message{
-    
-  }
+.card_project h1{
+font-size:20px;
 
 }
 
+.card_project p{
+font-size: 12px;
+}
 
 
+/*? For Main component */
+.profile_top h1{
+font-size:50px;
+}
+/** makes the left side of the profile_content_container*/
+/* for all the content front an back  */
+.card__content {
+min-width: 400px;
+min-height: 500px;
+}
+
+/* this is the border  */
+.card__front::before {
+top: 0.1px;
+bottom: 0.1px;
+}
+
+/* for all the word on the front  */
+/* ,.card__title3 */
+.card__title1,.card__title2,.card__title4 {
+font-size: 20px;
+}
+
+/* targets title1 */
+.card__title1{ 
+}
+
+/* targets title2 */
+.card__title2{
+left:1.43%;
+top: 50%;
+}
+
+/* * for the back of the card */
+
+.card__back {
+/* min-width: ; */
+min-height: 500px;
+}
+
+/* targets the title */
+.card__back_title {
+font-size: 20px;
+}
+
+/* target all the words in the back of the card */
+.card__body_part1,.card__body_part2,.card__body_part3,.card__body_part4,.card__body_part5{
+font-size:11px;
+}
+
+/** makes the right side of the profile_content_container*/
+/* come here */
+.profile_right{
+min-width: 400px;
+min-height: 500px;
+}
 
 
+/* ? for the contact component */
+/* for all the content front an back  */
+.card__content2 {
+  min-width: 400px;
+  min-height: 500px;
+/* background-color: red; */
+}
+
+/* target the title of the contact card */
+.front_title_c2{
+font-size: 20px;
+}
+/* target the title of the contact card */
+.front_title2_c2{ 
+font-size: 11px;
+}
+
+/* * for the form */
+/* adds placeholder to the right side f the profile_content_container  inputs*/
+textarea::placeholder,input::placeholder{
+font-size:10px;
+}
+
+/* targets the inputs of the the right side f the profile_content_container */
+textarea ,input{
+font-size:10px;
+}
+
+input{
+width: 140px;
+height: 20px;
+}
 
 
+.form_btn{
+font-size: 13px;
+height: 40px;
+width: 140px;
+}
+
+.cloud1,.cloud2,.cloud3,.cloud4,.cloud5,.cloud6,.cloud7,.cloud8,.rocket{
+font-size:65px ;
+}
+}
 
 
+@media (max-width:750px) {
+/*? for all components */
+.all_component {
+  /* margin-bottom: 50px; */
+}
+
+ /*? for the welcome component */
+/* todo welcome left  */
+.welcomeMessage,.welcome_a_tag{
+  text-align: center;
+  font-size: 45px;
+}
+
+.subheader_message{
+  text-align: center;
+  font-size:15px;
+}
+
+.btn_welcome{
+  width: 100px;
+  height: 50px;
+  font-size: 10px;
+}
+
+/* for the logo img in the right side */
+/* calls the animation for the logo */
+.logo{
+/* height: 90%; */
+  height: 200px;
+} 
+
+/* ? for the what i do  component */
+.whatIDo_top{
+  height: 70px;
+}
+
+.whatIDo_top_text{
+  font-size: 45px;
+}
+
+.whatIDo_middle h1 ,.whatIDo_bottom h1{ 
+  font-size:20px;
+  } 
+  
+.whatIDo_middle p, .whatIDo_bottom p{
+  font-size: 11px;
+  max-width: 500px;
+  }
+
+/*?  tools component */
+.title{
+  font-size: 45px;
+}
+
+.tech_logos{
+  width: 60px;
+  height: 60px;
+}
+
+.tool_container p{
+  font-size:11px ;
+}
 
 
+/*? projects */
+.header{
+font-size:45px;
+}
+
+.card_project {
+/* Keep your existing styles */
+/* height: 400px;
+width: 300px; */
+}
+.card_project{
+margin:40px ;
+}
+.card_project {
+  /* Keep your existing styles */
+  height: 250px;
+  width: 200px;
+}
+.card_project img{
+  height: 150px;
+}
+
+.card_project h1{
+font-size:13px;
+
+}
+
+.card_project p{
+font-size: 10px;
+}
 
 
+/*? For Main component */
+.profile_top h1{
+font-size:45px;
+}
+/** makes the left side of the profile_content_container*/
+/* for all the content front an back  */
+.card__content {
+min-width: 350px;
+min-height: 450px;
+}
+
+/* this is the border  */
+.card__front::before {
+top: 0.1%;
+bottom: 0.1%;
+}
+
+/* for all the word on the front  */
+/* ,.card__title3 */
+.card__title1,.card__title2,.card__title4 {
+font-size: 15px;
+}
 
 
+/* targets title1 */
+.card__title1{ 
+  top:8% ;
+  /* transform: translateZ(250px); */
+}
+
+/* targets title2 */
+.card__title2{
+left:2.15%;
+top: 50%;
+}
+.card__title3 {
+  font-size: 40px;
+  left: 95%;
+  top: 63%;
+  transform: translateZ(100px);
+  }
+
+.card__title4 {
+  transform: translateZ(200px);
+  }
+
+/* * for the back of the card */
+
+.card__back {
+/* min-width: ; */
+/* min-width: 300px; */
+min-height: 450px;
+/* min-width: 450px;
+min-height: 600px; */
+backface-visibility: hidden;
+}
+
+/* targets the title */
+.card__back_title {
+font-size: 15px;
+}
+
+/* target all the words in the back of the card */
+.card__body_part1,.card__body_part2,.card__body_part3,.card__body_part4,.card__body_part5{
+font-size:9px;
+}
+
+/** makes the right side of the profile_content_container*/
+.profile_right{
+  min-width: 350px;
+  min-height: 450px;
+}
+
+/** for the back side of the profile component */
+/* targets the title */
+.card__back_title {
+  transform:  translateZ(200px);
+}
+
+/* targets the card__body_part1 */
+.card__body_part1{
+  transform: translateZ(100px)
+}
+/* targets the card__body_part2 */
+.card__body_part2{
+  transform: translateZ(50px)
+}
+
+/* targets the card__body_part3 */
+.card__body_part3{
+  transform: translateZ(25px)
+}
+
+/* targets the card__body_part4 */
+.card__body_part4{
+  transform: translateZ(100px)
+}
+/* targets the card__body_part5 */
+.card__body_part5{
+  transform: translateZ(200px)
+}
 
 
+/* !use the code pen circle to make the nav bar into burger menu when the width is  1000px  and decide if you want to keep the fade animation on it   */
+
+/* ? for the contact component */
+/* for all the content front an back  */
+/* come here */
+
+.card__content2 {
+  min-width: 350px;
+  min-height: 450px;
+}
+
+/* target the title of the contact card */
+.front_title_c2{
+font-size: 15px;
+}
+/* target the title of the contact card */
+.front_title2_c2{ 
+font-size: 11px;
+}
+
+/* * for the form */
+/* adds placeholder to the right side f the profile_content_container  inputs*/
+textarea::placeholder,input::placeholder{
+font-size:11px;
+}
+
+/* targets the inputs of the the right side f the profile_content_container */
+textarea ,input{
+font-size:11px;
+}
+
+input{
+width: 140px;
+height: 30px;
+}
 
 
+.form_btn{
+font-size: 11px;
+height: 40px;
+width: 140px;
+}
+
+.cloud1,.cloud2,.cloud3,.cloud4,.cloud5,.cloud6,.cloud7,.cloud8,.rocket{
+font-size:50px ;
+}
+
+.cloud2{
+  transform: translateZ(25px);
+}
+.cloud2{
+  transform: translateZ(100px);
+}
+.cloud3{
+  bottom:70%;
+  right:60%;
+  transform: translateZ(100px);
+}
+.cloud4{
+  top:10%;
+  right:40%;
+  transform: translateZ(25px);
+}
+
+.cloud5{
+  bottom:75%;
+  right:20%;
+  transform: translateZ(50px);
+}
+.cloud6{
+  top:5%;
+  right:1%;
+  transform: translateZ(150px);
+}
+.cloud7{
+  bottom:40%;
+  right:15%;
+  transform: translateZ(100px);
+}
+
+}
 
 
 

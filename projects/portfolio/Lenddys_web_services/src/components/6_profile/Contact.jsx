@@ -163,6 +163,7 @@ const Contact = () => {
 							className={` back_item_size cloud3 ${
 								isFlipped ? "cloud_animation3" : ""
 							}`}
+							necessary
 						>
 							☁️
 						</h1>

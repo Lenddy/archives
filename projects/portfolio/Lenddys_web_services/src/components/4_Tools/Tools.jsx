@@ -88,14 +88,6 @@ const Tools = () => {
 			</GsapMagnetic>
 
 			<div className="tools" ref={contentRef}>
-				{/* make a grid with the technologies that you know make an animation
-			that will make the picture items appear in random order if you want
-			you can have a description of them make a like to tell the use what
-			every technology is so you might want to make a link to their home
-			page get the icons from https://simpleicons.org/ */}
-
-				{/*!!!! use the blink effect from anima.net */}
-
 				{/* languages */}
 
 				<div className="languages">
