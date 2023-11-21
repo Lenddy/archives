@@ -16,6 +16,7 @@ import Github from "./social_dropdown/Github";
 import LinkedIn from "./social_dropdown/LinkedIn";
 import Instagram from "./social_dropdown/Instagram";
 import Language from "./social_dropdown/Language";
+import Alt_navbar from "../2Alt_navbar/Alt_navbar";
 
 const NavBar = ({
 	changeMode,
@@ -88,80 +89,95 @@ const NavBar = ({
 	//? the logo is going to make appear  3 btns  change language  change dark mode , change animation reload/stop animations
 	const { t } = useTranslation();
 
+	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+	const handleWindowResize = () => {
+		setWindowWidth(window.innerWidth);
+	};
+
+	useEffect(() => {
+		window.addEventListener("resize", handleWindowResize);
+
+		return () => {
+			window.removeEventListener("resize", handleWindowResize);
+		};
+	}, []);
+
 	return (
 		<>
-			<div
-				className={`navbar ${hideNavBar}`}
-				onMouseOver={() => onHover()}
-				onMouseLeave={() => onMouseLeave()}
-			>
-				<ul className="">
-					<li onClick={() => setOpenGoTo((prev) => !prev)}>
-						{t("navBar_go_to")}
-						{openGoto && (
-							<div className=" dropDownGoTo ">
-								<ul
-									className={`goTo_ul ${
-										openGoto ? "Go_to_animation" : ""
-									}`}
-								>
-									<li
-										onClick={() =>
-											scrollToSection(welcomeRef)
-										}
+			{windowWidth >= 1000 ? (
+				<div
+					className={`navbar ${hideNavBar}`}
+					onMouseOver={() => onHover()}
+					onMouseLeave={() => onMouseLeave()}
+				>
+					<ul className="">
+						<li onClick={() => setOpenGoTo((prev) => !prev)}>
+							{t("navBar_go_to")}
+							{openGoto && (
+								<div className=" dropDownGoTo ">
+									<ul
+										className={`goTo_ul ${
+											openGoto ? "Go_to_animation" : ""
+										}`}
 									>
-										<p>{t("navBar_welcome")}</p>
-									</li>
-									<li
-										onClick={() =>
-											scrollToSection(what_I_DoRef)
-										}
-									>
-										<p>{t("navBar_My_Experience")}</p>
-									</li>
-									<li
-										onClick={() =>
-											scrollToSection(toolsRef)
-										}
-									>
-										<p>{t("navBar_Tools")}</p>
-									</li>
-									<li
-										onClick={() =>
-											scrollToSection(projectsRef)
-										}
-									>
-										<p>{t("navBar_projects")}</p>
-									</li>
-									<li
-										onClick={() =>
-											scrollToSection(profileRef)
-										}
-									>
-										<p>{t("navBar_about_me")}</p>
-									</li>
-								</ul>
-							</div>
-						)}
-					</li>
-					<li>
-						<a
-							href="https://docs.google.com/document/d/12vkzj7Zjqu1vzWEcVHD0i0UKJ1PYsvx41-QtacLm0os/edit?usp=sharing"
-							target="_blank"
-							rel="noreferrer"
-							className="resume_a"
-						>
-							{t("navBar_resume")}
-						</a>
-					</li>
-					<li className="li_logo">
-						<img
-							className="navLogo"
-							src={Logo}
-							alt="logo"
-							// onClick={showMenu}
-						/>
-						{/* <CircularMenu
+										<li
+											onClick={() =>
+												scrollToSection(welcomeRef)
+											}
+										>
+											<p>{t("navBar_welcome")}</p>
+										</li>
+										<li
+											onClick={() =>
+												scrollToSection(what_I_DoRef)
+											}
+										>
+											<p>{t("navBar_My_Experience")}</p>
+										</li>
+										<li
+											onClick={() =>
+												scrollToSection(toolsRef)
+											}
+										>
+											<p>{t("navBar_Tools")}</p>
+										</li>
+										<li
+											onClick={() =>
+												scrollToSection(projectsRef)
+											}
+										>
+											<p>{t("navBar_projects")}</p>
+										</li>
+										<li
+											onClick={() =>
+												scrollToSection(profileRef)
+											}
+										>
+											<p>{t("navBar_about_me")}</p>
+										</li>
+									</ul>
+								</div>
+							)}
+						</li>
+						<li>
+							<a
+								href="https://docs.google.com/document/d/12vkzj7Zjqu1vzWEcVHD0i0UKJ1PYsvx41-QtacLm0os/edit?usp=sharing"
+								target="_blank"
+								rel="noreferrer"
+								className="resume_a"
+							>
+								{t("navBar_resume")}
+							</a>
+						</li>
+						<li className="li_logo">
+							<img
+								className="navLogo"
+								src={Logo}
+								alt="logo"
+								// onClick={showMenu}
+							/>
+							{/* <CircularMenu
 							changeMode={changeMode}
 							setChangeMode={setChangeMode}
 							AnimationsRepetitionMode={AnimationsRepetitionMode}
@@ -169,90 +185,95 @@ const NavBar = ({
 								setAnimationsRepetitionMode
 							}
 						/> */}
-					</li>
+						</li>
 
-					<li onClick={() => setOpenLanguage((prev) => !prev)}>
-						<div className="language_div">
-							<Language />
-						</div>
-						{openLanguage && (
-							<div className="dropDownLanguage">
-								<ul
-									className={`goTo_ul ${
-										openLanguage ? "Go_to_animation" : ""
-									}`}
-								>
-									<li
-										onClick={() =>
-											i18next.changeLanguage("es")
-										}
-										className={
-											i18next.language === "es"
-												? "disabled"
-												: ""
-										}
-									>
-										<p>Español</p>
-									</li>
-									<li
-										onClick={() =>
-											i18next.changeLanguage("en")
-										}
-										className={
-											i18next.language === "en"
-												? "disabled"
-												: ""
-										}
-									>
-										<p>English</p>
-									</li>
-								</ul>
+						<li onClick={() => setOpenLanguage((prev) => !prev)}>
+							<div className="language_div">
+								<Language />
 							</div>
-						)}
-					</li>
+							{openLanguage && (
+								<div className="dropDownLanguage">
+									<ul
+										className={`goTo_ul ${
+											openLanguage
+												? "Go_to_animation"
+												: ""
+										}`}
+									>
+										<li
+											onClick={() =>
+												i18next.changeLanguage("es")
+											}
+											className={
+												i18next.language === "es"
+													? "disabled"
+													: ""
+											}
+										>
+											<p>Español</p>
+										</li>
+										<li
+											onClick={() =>
+												i18next.changeLanguage("en")
+											}
+											className={
+												i18next.language === "en"
+													? "disabled"
+													: ""
+											}
+										>
+											<p>English</p>
+										</li>
+									</ul>
+								</div>
+							)}
+						</li>
 
-					<li onClick={() => setSocials((prev) => !prev)}>
-						{t("navBar_socials")}
-						{socials && (
-							<div className="dropDownSocials">
-								<ul
-									className={`goTo_ul ${
-										socials ? "Go_to_animation" : ""
-									}`}
-								>
-									<li>
-										<a
-											href="https://github.com/Lenddy"
-											target="_blank"
-											rel="noreferrer"
-										>
-											<Github />
-										</a>
-									</li>
-									<li>
-										<a
-											href="https://www.linkedin.com/in/lenddy/"
-											target="_blank"
-											rel="noreferrer"
-										>
-											<LinkedIn />
-										</a>
-									</li>
-									<li>
-										<a
-											href="https://www.instagram.com/lenddys_web_services/"
-											target="_blank"
-											rel="noreferrer"
-										>
-											<Instagram />
-										</a>
-									</li>
-								</ul>
-							</div>
-						)}
-					</li>
-				</ul>
-			</div>
+						<li onClick={() => setSocials((prev) => !prev)}>
+							{t("navBar_socials")}
+							{socials && (
+								<div className="dropDownSocials">
+									<ul
+										className={`goTo_ul ${
+											socials ? "Go_to_animation" : ""
+										}`}
+									>
+										<li>
+											<a
+												href="https://github.com/Lenddy"
+												target="_blank"
+												rel="noreferrer"
+											>
+												<Github />
+											</a>
+										</li>
+										<li>
+											<a
+												href="https://www.linkedin.com/in/lenddy/"
+												target="_blank"
+												rel="noreferrer"
+											>
+												<LinkedIn />
+											</a>
+										</li>
+										<li>
+											<a
+												href="https://www.instagram.com/lenddys_web_services/"
+												target="_blank"
+												rel="noreferrer"
+											>
+												<Instagram />
+											</a>
+										</li>
+									</ul>
+								</div>
+							)}
+						</li>
+					</ul>
+				</div>
+			) : (
+				<Alt_navbar />
+			)}
 			<div className="components_container ">
 				<div
 					ref={welcomeRef}
