@@ -197,285 +197,170 @@ border-radius: 50%;
 
 
 /** alt navbar */
-/* hsl(299 ,100% ,50% )
-hsl(180, 100% ,50%) */
-
-
-.circular-menu {
-  position: fixed;
-  top: 1em;
-  right: 1em;
-  z-index: 3;
-  border: 3px black solid;
-  border-radius: 50%; 
+/* making variable */
+:root{
+  --bg:#242526;
+  --bg-accent:#484a4d;
+  --text-color:#dadce1;
+  --nav-size:60px;
+  --border:solid 1px #474a4d;
+  --border-radius:8px;
+  --speed:500ms;
+  /* --bg-accent:#484a4d;
+  --bg-accent:#484a4d; */
 }
 
-.floating-btn {
-  display: block;
-  width: 3.5em;
-  height: 3.5em;
-  border-radius: 50%;
-  background-color: hsl(299 ,100% ,60% ,100);
-  box-shadow: 0 2px 5px 0 hsla(0, 0%, 0%, .26);  
-  color: hsl(0, 0%, 100%);
-  text-align: center;
-  line-height: 3.9;
-  cursor: pointer;
-  outline: 0;
-}
-
-
-.circular-menu.active .floating-btn {
-  box-shadow: inset 0 0 3px hsla(0, 0%, 0%, .70);
-}
-
-.circular-menu .floating-btn:active {
-  box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, .70);
-}
-
-.circular-menu .floating-btn i {
-  font-size: 1.3em;
-  transition: transform .2s;  
-}
-
-.circular-menu.active .floating-btn i {
-  transform: rotate(-45deg);
-}
-
-.circular-menu:after {
-  display: block;
-  content: ' ';
-  width: 3.5em;
-  height: 3.5em;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: -2; 
-  background-color: hsl(299 ,100% ,30%,.60 );
-  transition: all .3s ease; 
-}
-
-
-.circular-menu.active:after {
-  transform: scale3d(5.5, 5.5, 1);
-  transition-timing-function: cubic-bezier(.68, 1.55, .265, 1);
-}
-
-.circular-menu .items-wrapper {
+/* make the back-ground  of the nav-bar */
+.side-bar{
+  height: var(--nav-size);
+  width: 100%;
+  background-color: rgb(0 0 0 / 15%) ;
   padding: 0;
-  margin: 0;
-}
-
-.menu-item {
-  position: absolute;
-  top: .2em; 
-  right: .2em;
-  z-index: -1;
-  display: block;
-  text-decoration: none;
-  font-size: 1em;
-  width: 3em;
-  height: 3em;
-  border-radius: 50%;
-  background-color: hsla(0,0%,0%,.70);
-  transition: transform .3s ease, background .2s ease;
-}
-
-.menu-item:hover {
-  background-color: hsla(0,0%,0%,.55);
-}
-
-.circular-menu.active .menu-item {
-  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.circular-menu.active .menu-item:nth-child(1) {
-  transform: translate3d(1em,7em,0);
-}
-
-.circular-menu.active .menu-item:nth-child(2) {
-  transform: translate3d(-3.5em, 6.3em, 0);
-
-}
-
-
-.circular-menu.active .menu-item:nth-child(3) {
-  transform: translate3d(-6.5em,3.2em,0);
-
-
-}
-
-.circular-menu.active .menu-item:nth-child(4) {
-  transform: translate3d(-7em, -1em, 0);
-
-}
-
-
-
-.circular-menu.circular-menu-left {
-  right: auto; 
-  left: 1em;
-}
-
-.circular-menu.circular-menu-left .floating-btn {
-  background-color: hsl(180, 100% ,50%);
-}
-
-.circular-menu.circular-menu-left:after {
-  background-color: hsl(180, 100% ,50%, .60);
-}
-
-.circular-menu.circular-menu-left.active .floating-btn i {
-  transform: rotate(90deg);
-}
-
-
-.circular-menu.circular-menu-left.active .menu-item:nth-child(1) {
-  transform: translate3d(-1em, 7em, 0);
-  
-}
-
-.circular-menu.circular-menu-left.active .menu-item:nth-child(2) {
-  transform: translate3d(3.5em,6.3em,0);
-}
-
-.circular-menu.circular-menu-left.active .menu-item:nth-child(3) {
-  transform: translate3d(6.5em,3.2em,0);
-}
-
-.circular-menu.circular-menu-left.active .menu-item:nth-child(4) {
-  transform: translate3d(7em,-1em,0);
-}
-
-/** for the secondary circle*/
-/* .inner_circular_menu {
+  border-bottom: var(--border);
+  z-index: 90000;
   position: fixed;
-  bottom:100px;
-  right: 1em;
-  z-index: 3;
-  border: 3px black solid;
-  border-radius: 50%; 
+  /* right: auto; */
+  top:0;
 
 }
-.circular-menu.circular-menu-left {
-   right: auto; 
-  left: 1em; 
-} 
 
-
-.floating-btn {
-  display: block;
-  width: 3.5em;
-  height: 3.5em;
-  border-radius: 50%;
-  background-color: hsl(299 ,100% ,60% ,100);
-  box-shadow: 0 2px 5px 0 hsla(0, 0%, 0%, .26);  
-  color: hsl(0, 0%, 100%);
-  text-align: center;
-  line-height: 3.9;
-  cursor: pointer;
-  outline: 0;
-}
-
-
-.circular-menu.active .floating-btn {
-  box-shadow: inset 0 0 3px hsla(0, 0%, 0%, .70);
-}
-
-.circular-menu .floating-btn:active {
-  box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, .70);
-}
-
-.circular-menu .floating-btn i {
-  font-size: 1.3em;
-  transition: transform .2s;  
-}
-
-.circular-menu.active .floating-btn i {
-  transform: rotate(-45deg);
-}
-
-.circular-menu:after {
-  display: block;
-  content: ' ';
-  width: 3.5em;
-  height: 3.5em;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: -2; 
-  background-color: hsl(299 ,100% ,30%,.60 );
-  transition: all .3s ease; 
-}
-
-
-.circular-menu.active:after {
-  transform: scale3d(5.5, 5.5, 1);
-  transition-timing-function: cubic-bezier(.68, 1.55, .265, 1);
-}
-
-.circular-menu .items-wrapper {
-  padding: 0;
+/* for the ul in the side_bar component */
+.side-bar-ul{
+  list-style: none;
   margin: 0;
+  padding: 0;
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  /* z-index: 90000; */
 }
 
-.menu-item {
-  position: absolute;
-  top: .2em; 
-  right: .2em;
-  z-index: -1;
-  display: block;
-  text-decoration: none;
-  font-size: 1em;
-  width: 3em;
-  height: 3em;
+/* for the  li items in the NavItem component */
+.side-bar-item{
+  width: calc(var(--nav-size) *0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* z-index: 90000; */
+}
+
+/* for the tag in the NavItem component */
+.icon-button{
+  --button-size: calc(var(--nav-size)*0.5);
+  width: var(--button-size);
+  height: var(--button-size);
+  background-color: var(--bg-accent);
   border-radius: 50%;
-  background-color: hsla(0,0%,0%,.70);
-  transition: transform .3s ease, background .2s ease;
+  border:solid #00ffff 1px;
+  color: #00ffff;
+  padding: 5px;
+  margin: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 300ms;
+  text-decoration: none;
+  /* z-index: 90000; */
 }
 
-.menu-item:hover {
-  background-color: hsla(0,0%,0%,.55);
+.icon-button:hover{
+  filter: brightness(1.5);
+  /* z-index: 90000; */
 }
 
-.circular-menu.circular-menu-left .floating-btn {
-  background-color: hsl(180, 100% ,50%);
+/* for the p tag in the dropDown component */
+.side-bar-p{
+  color:var(--text-color);
+  text-decoration: none;
+  /* color: #00ffff; */
+  /* z-index: 90000; */
+  /* background-color: red; */
 }
 
-.circular-menu.circular-menu-left:after {
-  background-color: hsl(180, 100% ,50%, .60);
+/* for the a tag in tne dropDown component */
+.dropDown_item{
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--border-radius);
+  transition: background var(--speed);
+  padding: 0.5rem;
+  z-index: 90000;
+  color: #00ffff;
+  text-decoration: none;
 }
 
-.circular-menu.circular-menu-left.active .floating-btn i {
-  transform: rotate(90deg);
+/* for the  div that holds the drop items in the dropdown component */
+
+.side-bar-dropDown{
+  position: absolute;
+  top:58px;
+  width: 300px;
+  transform: translateX(-45%);
+  background-color: var(--bg);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  overflow: hidden;
+  z-index: 90000;
+  transition: height var(--speed) ease;
 }
 
 
-.circular-menu.circular-menu-left.active .menu-item:nth-child(1) {
-  transform: translate3d(-1em, 7em, 0);
-  
+.dropDown_item:hover{
+  background-color: #525357;
+}
+.drop_down_a{
+  text-decoration: none;
+  color: #dadce1;
 }
 
-.circular-menu.circular-menu-left.active .menu-item:nth-child(2) {
-  transform: translate3d(3.5em,6.3em,0);
+.icon-right{
+margin-left:auto;
+z-index: 90000;
 }
 
-.circular-menu.circular-menu-left.active .menu-item:nth-child(3) {
-  transform: translate3d(6.5em,3.2em,0);
+
+.menu-primary-enter{
+  position: absolute;
+  transform: translateX(-110%);
+  z-index: 90000;
+}
+.menu-primary-enter-active{
+  transform: translateX(0%);
+  transition: all var(--speed) ease;
+  z-index: 90000;
+}
+.menu-primary-exit{
+  position: absolute;
+  z-index: 90000;
+}
+.menu-primary-exit-active{
+  transform: translateX(-110%);
+  transition: all var(--speed) ease;
+  z-index: 90000;
 }
 
-.circular-menu.circular-menu-left.active .menu-item:nth-child(4) {
-  transform: translate3d(7em,-1em,0);
-} */
+.menu-secondary-enter{
+  position: absolute;
+  transform: translateX(110%);
+  z-index: 90000;
+}
+.menu-secondary-enter-active{
+  transform: translateX(0%);
+  transition: all var(--speed) ease;
+  z-index: 90000;
+}
+.menu-secondary-exit{
+  /* position: absolute; */
 
-
-
-
-
-
-
+}
+.menu-secondary-exit-active{
+  transform: translateX(110%);
+  transition: all var(--speed) ease;
+  z-index: 90000;
+}
 
 
 

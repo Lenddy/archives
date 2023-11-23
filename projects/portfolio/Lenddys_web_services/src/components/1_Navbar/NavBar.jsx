@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import CircularMenu from "./2_Circular_menu/CircularMenu";
 import Welcome from "../2_welcome/Welcome";
 import Tools from "../4_Tools/Tools";
@@ -6,6 +6,7 @@ import Projects from "../5_projects/Projects";
 import What_I_Do from "../3_what_I_Do/What_I_Do";
 import Profile from "../6_profile/Profile";
 import Logo from "../../assets/LM.png";
+
 // import language from "../../assets/circular_menu_items/language-outline.svg";
 // import Test from "../ProfilePicture";
 import GsapShow from "../animations/GsapShow";
@@ -16,7 +17,11 @@ import Github from "./social_dropdown/Github";
 import LinkedIn from "./social_dropdown/LinkedIn";
 import Instagram from "./social_dropdown/Instagram";
 import Language from "./social_dropdown/Language";
-import Alt_navbar from "../2Alt_navbar/Alt_navbar";
+import Alt_navbar from "./2Alt_navbar/Alt_navbar";
+import Side_bar from "./2Alt_navbar/Side_bar";
+import NavItem from "./2Alt_navbar/NavItem";
+import DropDown from "./2Alt_navbar/DropDown";
+NavItem;
 
 const NavBar = ({
 	changeMode,
@@ -272,7 +277,13 @@ const NavBar = ({
 					</ul>
 				</div>
 			) : (
-				<Alt_navbar />
+				// <Alt_navbar />
+				<Side_bar>
+					<NavItem icon="">
+						{/* dropdown goes here  */}
+						<DropDown></DropDown>
+					</NavItem>
+				</Side_bar>
 			)}
 			<div className="components_container ">
 				<div
