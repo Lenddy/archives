@@ -1,5 +1,5 @@
 import Logo from "../../assets/LM.png";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, forwardRef } from "react";
 // import pencilTip from "../../assets/pencilTip.svg";
 import { useTranslation } from "react-i18next";
 
@@ -56,7 +56,12 @@ const Welcome = () => {
 						{t("welcome_title")}
 						{/* The Place To Turn Your Ideas Into Reality Welcome To
 						Lenddy's Web Services */}
-						<a href="" className="welcome_a_tag">
+						<a
+							href="https://www.instagram.com/lenddys_web_services/"
+							target="_blank"
+							rel="noreferrer"
+							className="welcome_a_tag"
+						>
 							Lenddy's Web Services{" "}
 						</a>
 					</h1>
@@ -95,20 +100,24 @@ const Welcome = () => {
 						</a>
 
 						{/* View Github */}
-						<button
-							className="btn_welcome"
-							onClick={() => scrollToSection(2900)}
+						<a
+							className="hidden_a_tag btn_welcome"
+							href="https://github.com/Lenddy"
+							target="_blank"
+							rel="noreferrer"
 						>
 							{t("welcome_btns.2")}
 							{/* Projects */}
-						</button>
-						<button
-							className="btn_welcome"
-							onClick={() => scrollToSection(3900)}
+						</a>
+						<a
+							className="hidden_a_tag btn_welcome"
+							href="https://github.com/Lenddy"
+							target="_blank"
+							rel="noreferrer"
 						>
 							{t("welcome_btns.3")}
 							{/* Contact Me */}
-						</button>
+						</a>
 					</div>
 				</div>
 

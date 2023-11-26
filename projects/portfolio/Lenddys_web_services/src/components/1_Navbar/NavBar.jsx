@@ -23,6 +23,8 @@ import Side_bar from "./2Alt_navbar/Side_bar";
 import NavItem from "./2Alt_navbar/NavItem";
 // import DropDown from "./2Alt_navbar/DropDown";
 
+import reload from "../../assets/circular_menu_items/reload-outline.svg";
+
 const NavBar = ({
 	changeMode,
 	setChangeMode,
@@ -161,7 +163,7 @@ const NavBar = ({
 					<div className="menu">
 						<DropDownItem
 							// leftIcon={"👋🏼"}
-							rightIcon={"👌"}
+							// rightIcon={"👌"}
 							goToMenu="go_to_dropdown"
 						>
 							{t("navBar_go_to")}
@@ -169,7 +171,7 @@ const NavBar = ({
 
 						<DropDownItem
 							// leftIcon={"👋🏼"}
-							rightIcon={"👌"}
+							// rightIcon={"👌"}
 							goToMenu="Language_dropdown"
 						>
 							language
@@ -177,16 +179,16 @@ const NavBar = ({
 
 						<DropDownItem
 							// leftIcon={"👋🏼"}
-							rightIcon={"👌"}
+							// rightIcon={"👌"}
 							goToMenu="socials_dropdown"
 						>
 							{t("navBar_socials")}
 						</DropDownItem>
 
 						<DropDownItem
-							// leftIcon={"👋🏼"}
-							rightIcon={"👌"}
-							// goToMenu="settings"
+						// leftIcon={"👋🏼"}
+						// rightIcon={"👌"}
+						// goToMenu="settings"
 						>
 							<a
 								href="https://docs.google.com/document/d/12vkzj7Zjqu1vzWEcVHD0i0UKJ1PYsvx41-QtacLm0os/edit?usp=sharing"
@@ -210,8 +212,8 @@ const NavBar = ({
 				>
 					<div className="menu">
 						<DropDownItem
-							leftIcon={"👍"}
-							rightIcon={"😂"}
+							// leftIcon={"👍"}
+							// rightIcon={"😂"}
 							goToMenu="main"
 						>
 							{t("navBar_go_back")}
@@ -219,8 +221,8 @@ const NavBar = ({
 
 						<div onClick={() => scrollToSection(welcomeRef)}>
 							<DropDownItem
-								leftIcon={"👍"}
-								rightIcon={"😂"}
+								// leftIcon={"👍"}
+								// rightIcon={"😂"}
 								goToMenu="main"
 							>
 								{t("navBar_welcome")}
@@ -229,8 +231,8 @@ const NavBar = ({
 
 						<div onClick={() => scrollToSection(what_I_DoRef)}>
 							<DropDownItem
-								leftIcon={"👍"}
-								rightIcon={"😂"}
+								// leftIcon={"👍"}
+								// rightIcon={"😂"}
 								goToMenu="main"
 							>
 								{t("navBar_My_Experience")}
@@ -239,8 +241,8 @@ const NavBar = ({
 
 						<div onClick={() => scrollToSection(toolsRef)}>
 							<DropDownItem
-								leftIcon={"👍"}
-								rightIcon={"😂"}
+								// leftIcon={"👍"}
+								// rightIcon={"😂"}
 								goToMenu="main"
 							>
 								{t("navBar_Tools")}
@@ -249,8 +251,8 @@ const NavBar = ({
 
 						<div onClick={() => scrollToSection(projectsRef)}>
 							<DropDownItem
-								leftIcon={"👍"}
-								rightIcon={"😂"}
+								// leftIcon={"👍"}
+								// rightIcon={"😂"}
 								goToMenu="main"
 							>
 								{t("navBar_projects")}
@@ -259,8 +261,8 @@ const NavBar = ({
 
 						<div onClick={() => scrollToSection(profileRef)}>
 							<DropDownItem
-								leftIcon={"👍"}
-								rightIcon={"😂"}
+								// leftIcon={"👍"}
+								// rightIcon={"😂"}
 								goToMenu="main"
 								onClick={() => scrollToSection(profileRef)}
 							>
@@ -294,8 +296,8 @@ const NavBar = ({
 							}
 						>
 							<DropDownItem
-								leftIcon={"👍"}
-								rightIcon={"😂"}
+								// leftIcon={"👍"}
+								// rightIcon={"😂"}
 								goToMenu="main"
 								// onClick={() => console.log("hello")}
 							>
@@ -310,8 +312,8 @@ const NavBar = ({
 							}
 						>
 							<DropDownItem
-								leftIcon={"👍"}
-								rightIcon={"😂"}
+								// leftIcon={"👍"}
+								// rightIcon={"😂"}
 								goToMenu="main"
 							>
 								English
@@ -342,8 +344,8 @@ const NavBar = ({
 							rel="noreferrer"
 						>
 							<DropDownItem
-								leftIcon={"👍"}
-								rightIcon={"😂"}
+								// leftIcon={"👍"}
+								// rightIcon={"😂"}
 								goToMenu="main"
 								// onClick={() => console.log("hello")}
 							>
@@ -357,8 +359,8 @@ const NavBar = ({
 							rel="noreferrer"
 						>
 							<DropDownItem
-								leftIcon={"👍"}
-								rightIcon={"😂"}
+								// leftIcon={"👍"}
+								// rightIcon={"😂"}
 								goToMenu="main"
 							>
 								link in
@@ -371,8 +373,8 @@ const NavBar = ({
 							rel="noreferrer"
 						>
 							<DropDownItem
-								leftIcon={"👍"}
-								rightIcon={"😂"}
+								// leftIcon={"👍"}
+								// rightIcon={"😂"}
 								goToMenu="main"
 							>
 								instagram
@@ -568,7 +570,7 @@ const NavBar = ({
 					className={` all_component `}
 					id="welcome"
 				>
-					<Welcome />
+					<Welcome ref={allRefs} />
 				</div>
 
 				<div
