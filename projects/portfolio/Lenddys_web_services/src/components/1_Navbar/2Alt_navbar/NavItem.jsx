@@ -6,7 +6,13 @@ function NavItem(props) {
 
 	return (
 		<li className="side-bar-item">
-			<a href="#" className="icon-button " onClick={() => setOpen(!open)}>
+			<a
+				href="#"
+				className="icon-button "
+				onClick={(e) => {
+					setOpen(!open), e.preventDefault();
+				}}
+			>
 				{props.icon ? (
 					props.icon
 				) : (

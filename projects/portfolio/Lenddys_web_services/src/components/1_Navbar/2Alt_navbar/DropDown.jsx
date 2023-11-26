@@ -1,28 +1,56 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, forwardRef } from "react";
 // import DropDownItem from "./DropDownItem";
 import { CSSTransition } from "react-transition-group";
 
 function DropDown() {
 	const [activeMenu, setActiveMenu] = useState("main");
 	const [menuHeight, setMenuHeight] = useState(null);
+	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
 	const calcHeight = (el) => {
 		const height = el.offSetHeight;
 		setMenuHeight(height);
 	};
 
-	function DropDownItem(props) {
+	const handleWindowResize = () => {
+		setWindowWidth(window.innerWidth);
+	};
+
+	useEffect(() => {
+		window.addEventListener("resize", handleWindowResize);
+		return () => {
+			window.removeEventListener("resize", handleWindowResize);
+		};
+	}, []);
+
+	// const calculate_top()
+
+	const DropDownItem = (props) => {
+		const scrollToSection = (top_section) => {
+			window.scrollTo({
+				top: top_section,
+				behavior: "smooth",
+			});
+		};
+
 		return (
-			<a
-				href="#"
-				className="dropDown_item"
-				onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
-			>
-				<span className="icon-button">{props.leftIcon}</span>
-				<p className="side-bar-p">{props.children}</p>
-				<span className="icon-right">{props.rightIcon}</span>
-			</a>
+			<>
+				<div
+					className="dropDown_item"
+					onClick={() => {
+						props.goToMenu && setActiveMenu(props.goToMenu),
+							props.section
+								? scrollToSection(props.section)
+								: null;
+					}}
+				>
+					<span className="icon-button">{props.leftIcon}</span>
+					<p className="side-bar-p">{props.children}</p>
+					<span className="icon-right">{props.rightIcon}</span>
+				</div>
+			</>
 		);
-	}
+	};
 
 	return (
 		<div className="side-bar-dropDown" style={{ height: menuHeight }}>
@@ -32,6 +60,7 @@ function DropDown() {
 				timeout={500}
 				classNames="menu-primary"
 				onEnter={calcHeight}
+				onExit={calcHeight}
 			>
 				<div className="menu">
 					<DropDownItem
@@ -76,6 +105,7 @@ function DropDown() {
 				timeout={500}
 				classNames="menu-secondary"
 				onEnter={calcHeight}
+				onExit={calcHeight}
 			>
 				<div className="menu">
 					<DropDownItem
@@ -89,6 +119,7 @@ function DropDown() {
 					<DropDownItem
 						leftIcon={"👍"}
 						rightIcon={"😂"}
+						section={110}
 						goToMenu="main"
 					>
 						Welcome
@@ -97,6 +128,8 @@ function DropDown() {
 					<DropDownItem
 						leftIcon={"👍"}
 						rightIcon={"😂"}
+						section={1420}
+						// 1480
 						goToMenu="main"
 					>
 						Expertise
@@ -105,14 +138,16 @@ function DropDown() {
 					<DropDownItem
 						leftIcon={"👍"}
 						rightIcon={"😂"}
+						section={2900}
 						goToMenu="main"
 					>
-						Tolls
+						Tools
 					</DropDownItem>
 
 					<DropDownItem
 						leftIcon={"👍"}
 						rightIcon={"😂"}
+						section={3800}
 						goToMenu="main"
 					>
 						Projects
@@ -121,6 +156,7 @@ function DropDown() {
 					<DropDownItem
 						leftIcon={"👍"}
 						rightIcon={"😂"}
+						section={windowWidth >= 1450 ? 5280 : 4700}
 						goToMenu="main"
 					>
 						profile
@@ -134,8 +170,17 @@ function DropDown() {
 				timeout={500}
 				classNames="menu-secondary"
 				onEnter={calcHeight}
+				onExit={calcHeight}
 			>
 				<div className="menu">
+					<DropDownItem
+						leftIcon={"👍"}
+						rightIcon={"😂"}
+						goToMenu="main"
+					>
+						Go Back
+					</DropDownItem>
+
 					<DropDownItem
 						leftIcon={"👍"}
 						rightIcon={"😂"}
@@ -160,8 +205,17 @@ function DropDown() {
 				timeout={500}
 				classNames="menu-secondary"
 				onEnter={calcHeight}
+				onExit={calcHeight}
 			>
 				<div className="menu">
+					<DropDownItem
+						leftIcon={"👍"}
+						rightIcon={"😂"}
+						goToMenu="main"
+					>
+						Go Back
+					</DropDownItem>
+
 					<DropDownItem
 						leftIcon={"👍"}
 						rightIcon={"😂"}

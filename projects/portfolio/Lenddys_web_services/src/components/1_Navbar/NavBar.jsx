@@ -6,6 +6,7 @@ import Projects from "../5_projects/Projects";
 import What_I_Do from "../3_what_I_Do/What_I_Do";
 import Profile from "../6_profile/Profile";
 import Logo from "../../assets/LM.png";
+import { CSSTransition } from "react-transition-group";
 
 // import language from "../../assets/circular_menu_items/language-outline.svg";
 // import Test from "../ProfilePicture";
@@ -20,8 +21,7 @@ import Language from "./social_dropdown/Language";
 import Alt_navbar from "./2Alt_navbar/Alt_navbar";
 import Side_bar from "./2Alt_navbar/Side_bar";
 import NavItem from "./2Alt_navbar/NavItem";
-import DropDown from "./2Alt_navbar/DropDown";
-NavItem;
+// import DropDown from "./2Alt_navbar/DropDown";
 
 const NavBar = ({
 	changeMode,
@@ -34,6 +34,13 @@ const NavBar = ({
 	const toolsRef = useRef(null);
 	const projectsRef = useRef(null);
 	const profileRef = useRef(null);
+	const allRefs = [
+		welcomeRef,
+		what_I_DoRef,
+		toolsRef,
+		projectsRef,
+		profileRef,
+	];
 
 	const scrollToSection = (elementRef) => {
 		window.scrollTo({
@@ -108,9 +115,278 @@ const NavBar = ({
 		};
 	}, []);
 
+	// red
+	function DropDown() {
+		const [activeMenu, setActiveMenu] = useState("main");
+		const [menuHeight, setMenuHeight] = useState(null);
+		// const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+		const calcHeight = (el) => {
+			const height = el.offSetHeight;
+			setMenuHeight(height);
+		};
+
+		// const calculate_top()
+		// red
+		const DropDownItem = (props) => {
+			return (
+				<>
+					<div
+						className="dropDown_item"
+						onClick={() => {
+							props.goToMenu && setActiveMenu(props.goToMenu),
+								props.section
+									? scrollToSection(props.section)
+									: null;
+						}}
+					>
+						<span className="icon-button">{props.leftIcon}</span>
+						<p className="side-bar-p">{props.children}</p>
+						<span className="icon-right">{props.rightIcon}</span>
+					</div>
+				</>
+			);
+		};
+
+		return (
+			<div className="side-bar-dropDown" style={{ height: menuHeight }}>
+				<CSSTransition
+					in={activeMenu === "main"}
+					unmountOnExit
+					timeout={500}
+					classNames="menu-primary"
+					onEnter={calcHeight}
+					onExit={calcHeight}
+				>
+					<div className="menu">
+						<DropDownItem
+							// leftIcon={"👋🏼"}
+							rightIcon={"👌"}
+							goToMenu="go_to_dropdown"
+						>
+							{t("navBar_go_to")}
+						</DropDownItem>
+
+						<DropDownItem
+							// leftIcon={"👋🏼"}
+							rightIcon={"👌"}
+							goToMenu="Language_dropdown"
+						>
+							language
+						</DropDownItem>
+
+						<DropDownItem
+							// leftIcon={"👋🏼"}
+							rightIcon={"👌"}
+							goToMenu="socials_dropdown"
+						>
+							{t("navBar_socials")}
+						</DropDownItem>
+
+						<DropDownItem
+							// leftIcon={"👋🏼"}
+							rightIcon={"👌"}
+							// goToMenu="settings"
+						>
+							<a
+								href="https://docs.google.com/document/d/12vkzj7Zjqu1vzWEcVHD0i0UKJ1PYsvx41-QtacLm0os/edit?usp=sharing"
+								target="_blank"
+								rel="noreferrer"
+								className="drop_down_a"
+							>
+								{t("navBar_resume")}
+							</a>
+						</DropDownItem>
+					</div>
+				</CSSTransition>
+
+				<CSSTransition
+					in={activeMenu === "go_to_dropdown"}
+					unmountOnExit
+					timeout={500}
+					classNames="menu-secondary"
+					onEnter={calcHeight}
+					onExit={calcHeight}
+				>
+					<div className="menu">
+						<DropDownItem
+							leftIcon={"👍"}
+							rightIcon={"😂"}
+							goToMenu="main"
+						>
+							{t("navBar_go_back")}
+						</DropDownItem>
+
+						<div onClick={() => scrollToSection(welcomeRef)}>
+							<DropDownItem
+								leftIcon={"👍"}
+								rightIcon={"😂"}
+								goToMenu="main"
+							>
+								{t("navBar_welcome")}
+							</DropDownItem>
+						</div>
+
+						<div onClick={() => scrollToSection(what_I_DoRef)}>
+							<DropDownItem
+								leftIcon={"👍"}
+								rightIcon={"😂"}
+								goToMenu="main"
+							>
+								{t("navBar_My_Experience")}
+							</DropDownItem>
+						</div>
+
+						<div onClick={() => scrollToSection(toolsRef)}>
+							<DropDownItem
+								leftIcon={"👍"}
+								rightIcon={"😂"}
+								goToMenu="main"
+							>
+								{t("navBar_Tools")}
+							</DropDownItem>
+						</div>
+
+						<div onClick={() => scrollToSection(projectsRef)}>
+							<DropDownItem
+								leftIcon={"👍"}
+								rightIcon={"😂"}
+								goToMenu="main"
+							>
+								{t("navBar_projects")}
+							</DropDownItem>
+						</div>
+
+						<div onClick={() => scrollToSection(profileRef)}>
+							<DropDownItem
+								leftIcon={"👍"}
+								rightIcon={"😂"}
+								goToMenu="main"
+								onClick={() => scrollToSection(profileRef)}
+							>
+								{t("navBar_about_me")}
+							</DropDownItem>
+						</div>
+					</div>
+				</CSSTransition>
+
+				<CSSTransition
+					in={activeMenu === "Language_dropdown"}
+					unmountOnExit
+					timeout={500}
+					classNames="menu-secondary"
+					onEnter={calcHeight}
+					onExit={calcHeight}
+				>
+					<div className="menu">
+						<DropDownItem
+							leftIcon={"👍"}
+							rightIcon={"😂"}
+							goToMenu="main"
+						>
+							{t("navBar_go_back")}
+						</DropDownItem>
+
+						<div
+							onClick={() => i18next.changeLanguage("es")}
+							className={
+								i18next.language === "es" ? "disabled" : ""
+							}
+						>
+							<DropDownItem
+								leftIcon={"👍"}
+								rightIcon={"😂"}
+								goToMenu="main"
+								// onClick={() => console.log("hello")}
+							>
+								Español
+							</DropDownItem>
+						</div>
+
+						<div
+							onClick={() => i18next.changeLanguage("en")}
+							className={
+								i18next.language === "en" ? "disabled" : ""
+							}
+						>
+							<DropDownItem
+								leftIcon={"👍"}
+								rightIcon={"😂"}
+								goToMenu="main"
+							>
+								English
+							</DropDownItem>
+						</div>
+					</div>
+				</CSSTransition>
+
+				<CSSTransition
+					in={activeMenu === "socials_dropdown"}
+					unmountOnExit
+					timeout={500}
+					classNames="menu-secondary"
+					onEnter={calcHeight}
+					onExit={calcHeight}
+				>
+					<div className="menu">
+						<DropDownItem
+							leftIcon={"👍"}
+							rightIcon={"😂"}
+							goToMenu="main"
+						>
+							{t("navBar_go_back")}
+						</DropDownItem>
+						<a
+							href="https://github.com/Lenddy"
+							target="_blank"
+							rel="noreferrer"
+						>
+							<DropDownItem
+								leftIcon={"👍"}
+								rightIcon={"😂"}
+								goToMenu="main"
+								// onClick={() => console.log("hello")}
+							>
+								github
+							</DropDownItem>
+						</a>
+
+						<a
+							href="https://www.linkedin.com/in/lenddy/"
+							target="_blank"
+							rel="noreferrer"
+						>
+							<DropDownItem
+								leftIcon={"👍"}
+								rightIcon={"😂"}
+								goToMenu="main"
+							>
+								link in
+							</DropDownItem>
+						</a>
+
+						<a
+							href="https://www.instagram.com/lenddys_web_services/"
+							target="_blank"
+							rel="noreferrer"
+						>
+							<DropDownItem
+								leftIcon={"👍"}
+								rightIcon={"😂"}
+								goToMenu="main"
+							>
+								instagram
+							</DropDownItem>
+						</a>
+					</div>
+				</CSSTransition>
+			</div>
+		);
+	}
+	// green
 	return (
 		<>
-			{windowWidth >= 1000 ? (
+			{windowWidth >= 1504 ? (
 				<div
 					className={`navbar ${hideNavBar}`}
 					onMouseOver={() => onHover()}
@@ -285,6 +561,7 @@ const NavBar = ({
 					</NavItem>
 				</Side_bar>
 			)}
+
 			<div className="components_container ">
 				<div
 					ref={welcomeRef}

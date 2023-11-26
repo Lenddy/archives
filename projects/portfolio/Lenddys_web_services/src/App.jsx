@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Container from "./components/Container";
+import Parent from "./components/Parent";
 
 // ?when you fell like you are done watch this video https://www.youtube.com/watch?v=ikVtaK9JmUw
 //! make a scrollbar that looks like YouTube
@@ -16,6 +17,7 @@ function App() {
 				changeMode={changeMode}
 				setChangeMode={setChangeMode}
 			></Container>
+			{/* <Parent></Parent> */}
 		</div>
 	);
 }
