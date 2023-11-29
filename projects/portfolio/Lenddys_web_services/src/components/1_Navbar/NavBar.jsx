@@ -24,6 +24,7 @@ import NavItem from "./2Alt_navbar/NavItem";
 // import DropDown from "./2Alt_navbar/DropDown";
 
 import reload from "../../assets/circular_menu_items/reload-outline.svg";
+import Test from "../5_projects/Test";
 
 const NavBar = ({
 	changeMode,
@@ -586,6 +587,7 @@ const NavBar = ({
 
 				<div ref={projectsRef} className={` all_component `}>
 					<Projects />
+					{/* <Test /> */}
 				</div>
 
 				<div

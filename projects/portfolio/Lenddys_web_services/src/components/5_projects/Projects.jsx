@@ -1,7 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import placeholder from "../../assets/placeholder.png";
 import gsap from "gsap";
-import project1 from "../../assets/Escobar_Cleaning_service.png";
+import project1 from "../../assets/IRE.png";
+import project2 from "../../assets/Escobar_Cleaning_service.png";
+import project3 from "../../assets/flappy_cube.png";
+import eye from "../../assets/circular_menu_items/eye.svg";
+import gitHub from "../../assets/tech_logos/github-color.svg";
 import { useTranslation } from "react-i18next";
 import Cookies from "js-cookie";
 
@@ -59,9 +63,14 @@ const Projects = () => {
 	}, [isTitleVisible, isContentVisible, cookieValue]);
 	const { t } = useTranslation();
 	console.log(cookieValue);
+	const [activeOption, setActiveOption] = useState(1);
 
+	const handleOptionClick = (option) => {
+		setActiveOption(option);
+	};
+
+	// fix the names and the css for the project component
 	return (
-		// hidden
 		<div className="project">
 			<div ref={titleRef}>
 				<h1 className="header">
@@ -135,95 +144,73 @@ const Projects = () => {
 						}`}
 					>
 						{/* {t("project_title.8") === undefined
-							? null
-							: t("project_title.8")} */}
+					? null
+					: t("project_title.8")} */}
 						{/* t */}
 						{/* {t("project_title.8")} */}
 						{cookieValue === "es" ? "s" : null}
 					</span>
 				</h1>
 			</div>
-
-			<div className="projects_container">
-				<div
-					className={`card_project ${
-						isContentVisible ? "card_project_animate" : ""
-					} `}
-					// ${isContentVisible} card_projectTest
-					// ref={projectItems}
-				>
-					<img
-						src={project1}
-						alt=""
-						className={`${
-							isContentVisible ? "project_image1" : ""
-						} `}
-					/>
-
-					<h1>Escobar cleaning services</h1>
-					<hr />
+			<div className="project_container">
+				<div className="options">
 					<div
-						className={`description ${
-							isContentVisible ? "description1" : ""
-						} `}
+						className={`option ${
+							activeOption === 1 ? "active" : ""
+						}`}
+						onClick={() => handleOptionClick(1)}
+						style={{ backgroundImage: `url(${project1})` }}
 					>
-						<p>
-							{" "}
-							{t("projects_left")}
-							{/* website for a small cleaning company in Little Rock
-							Arkansas using: react and MaterialUI, AWS, Amazon
-							EC2 */}
-						</p>
+						<div className="label">
+							<div className="icon">
+								<i className="fas fa-walking"></i>
+							</div>
+							<div className="info">
+								<div className="main">Ultricies</div>
+								<div className="sub">
+									Elit ut aliquam purus sit
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
-				<div
-					className={`card_project ${
-						isContentVisible ? "card_project_animate" : ""
-					} `}
-				>
-					<img
-						src={project1}
-						alt=""
-						className={`${
-							isContentVisible ? "project_image2" : ""
-						} `}
-					/>
-
-					<h1>IRS</h1>
-					<hr />
 					<div
-						className={`description ${
-							isContentVisible ? "description2" : ""
-						} `}
+						className={`option ${
+							activeOption === 2 ? "active" : ""
+						}`}
+						onClick={() => handleOptionClick(2)}
+						// style="--optionBackground: url(https://raw.githubusercontent.com/Programith/Images/main/background_02.jpg);"
+						style={{ backgroundImage: `url(${project2})` }}
 					>
-						<p>{t("projects_middle")}</p>
+						<div className="label">
+							<div className="icon">
+								<i className="fas fa-snowflake"></i>
+							</div>
+							<div className="info">
+								<div className="main">Luctus</div>
+								<div className="sub">
+									Arcu cursus vitae congue mauris
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
-				<div
-					className={`card_project ${
-						isContentVisible ? "card_project_animate" : ""
-					} `}
-				>
-					<img
-						src={project1}
-						alt=""
-						className={`${
-							isContentVisible ? "project_image3" : ""
-						} `}
-					/>
-
-					<h1>Flappy CUBE</h1>
-					<hr />
 					<div
-						className={`description  ${
-							isContentVisible ? "description3" : ""
-						} `}
+						className={`option ${
+							activeOption === 3 ? "active" : ""
+						}`}
+						onClick={() => handleOptionClick(3)}
+						style={{ backgroundImage: `url(${project3})` }}
 					>
-						<p>
-							{t("projects_right")}
-							{/* A basic flappy bird clone , instead of a bird it is
-							a cube made using unity and c#{" "} */}
-						</p>
+						<div className="label">
+							<div className="icon">
+								<i className="fas fa-tree"></i>
+							</div>
+							<div className="info">
+								<div className="main">Purus</div>
+								<div className="sub">
+									Neque vitae tempus quam pellentesque
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -232,3 +219,99 @@ const Projects = () => {
 };
 
 export default Projects;
+
+// hidden
+
+// 	<div className="projects_container">
+// 		<a
+// 			href="https://github.com/Lenddy/Escobar_cleaning_services"
+// 			target="_blank"
+// 			rel="noreferrer"
+// 			className={`card_project ${
+// 				isContentVisible ? "card_project_animate" : ""
+// 			} `}
+// 			// ${isContentVisible} card_projectTest
+// 			// ref={projectItems}
+// 		>
+// 			<img
+// 				src={project1}
+// 				alt=""
+// 				className={`${
+// 					isContentVisible ? "project_image1" : ""
+// 				} `}
+// 			/>
+
+// 			<h1>Escobar cleaning services</h1>
+// 			{/* <hr /> */}
+// 			<div
+// 				className={`description ${
+// 					isContentVisible ? "description1" : ""
+// 				} `}
+// 			>
+// 				<p>
+// 					{" "}
+// 					{t("projects_left")}
+// 					{/* website for a small cleaning company in Little Rock
+// 					Arkansas using: react and MaterialUI, AWS, Amazon
+// 					EC2 */}
+// 				</p>
+// 			</div>
+// 		</a>
+// 		<a
+// 			href="https://github.com/Lenddy/app"
+// 			target="_blank"
+// 			rel="noreferrer"
+// 			className={`card_project ${
+// 				isContentVisible ? "card_project_animate" : ""
+// 			} `}
+// 		>
+// 			<img
+// 				src={project2}
+// 				alt=""
+// 				className={`${
+// 					isContentVisible ? "project_image2" : ""
+// 				} `}
+// 			/>
+
+// 			<h1>IRS</h1>
+// 			{/* <hr /> */}
+// 			<div
+// 				className={`description ${
+// 					isContentVisible ? "description2" : ""
+// 				} `}
+// 			>
+// 				<p>{t("projects_middle")}</p>
+// 			</div>
+// 		</a>
+// 		<a
+// 			href="https://github.com/Lenddy/flappy_cube"
+// 			target="_blank"
+// 			rel="noreferrer"
+// 			className={`card_project ${
+// 				isContentVisible ? "card_project_animate" : ""
+// 			} `}
+// 		>
+// 			<img
+// 				src={project3}
+// 				alt=""
+// 				className={`${
+// 					isContentVisible ? "project_image3" : ""
+// 				} `}
+// 			/>
+
+// 			<h1>Flappy CUBE</h1>
+// 			{/* <hr /> */}
+// 			<div
+// 				className={`description  ${
+// 					isContentVisible ? "description3" : ""
+// 				} `}
+// 			>
+// 				<p>
+// 					{t("projects_right")}
+// 					{/* A basic flappy bird clone , instead of a bird it is
+// 					a cube made using unity and c#{" "} */}
+// 				</p>
+// 			</div>
+// 		</a>
+// 	</div>
+// </div>

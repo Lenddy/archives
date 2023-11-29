@@ -1,5 +1,7 @@
 /*! make use of the @media selector        go see this video to help  https://www.youtube.com/watch?v=yU7jJ3NbPdA  */
 
+
+
 #root {
   margin: 0px auto;
   text-align: center;
@@ -796,21 +798,29 @@ animation: show 2s forwards;
 /** targets the card_project container */
 .card_project {
   /* Keep your existing styles */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   height: 500px;
   width: 400px;
   margin: 0px;
   border: lightblue solid 2px ;
   opacity: 0;
+  text-decoration: none;
 }
 
 /* changes the size of the images in the project component */
 .card_project img{
   width: 100%;
-  height: 300px;
+  height: 200px;
   opacity: 0;
 }
 
-
+.eye{
+  background-color: white;
+  z-index: 3;
+  color: white;
+}
 /* target the h1 in the card project container */
 .card_project h1{
   color: #333;
@@ -867,6 +877,113 @@ animation: show 2s forwards;
 }
 .description3{
   animation: slideFromBottom 1.5s 4.5s forwards ;
+}
+
+.project_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /* height: 100vh; */
+  /* font-family: "Roboto", sans-serif; */
+  transition: 2s;
+  /* background: black; */
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: hidden;
+  min-width: 600px;
+  max-width: 900px;
+  width: calc(100% - 100px);
+  height: 400px;
+}
+
+.options .option {
+  position: relative;
+  overflow: hidden;
+  min-width: 60px;
+  margin: 10px;
+  background: var(--optionBackground, var(--defaultBackground, #e6e9ed));
+  /* border: #242424 solid 1px; */
+  background-size: auto 200%;
+  background-position: center;
+  cursor: pointer;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.option:nth-child(1) {
+  --defaultBackground: #ed5565;
+}
+.option:nth-child(2) {
+  --defaultBackground: #fc6e51;
+}
+.option:nth-child(3) {
+  --defaultBackground: #ffce54;
+}
+
+.option.active {
+  flex-grow: 10000;
+  transform: scale(1);
+  max-width: 700px;
+  margin: 0px;
+  border-radius: 40px;
+  background-size: auto 100%;
+}
+
+.option.active .label {
+  bottom: 20px;
+  left: 20px;
+}
+.option.active .label .info > div {
+  left: 0px;
+  opacity: 1;
+}
+.option:not(.active) {
+  flex-grow: 1;
+  border-radius: 30px;
+}
+
+.option:not(.active) .label {
+  bottom: 10px;
+  left: 10px;
+}
+.option:not(.active) .label .info > div {
+  left: 20px;
+  opacity: 0;
+}
+
+.label {
+  display: flex;
+  position: absolute;
+  right: 0px;
+  height: 40px;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 40px;
+  max-width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color:#242424;
+  color: var(--defaultBackground);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+  color: white;
+  font-weight: bold;
 }
 
 
@@ -2857,3 +2974,7 @@ transform: translateZ(150px);
     transform: scale(5)  translate3d(100vw,-100vw,0)  rotate(0);
   }
 }
+
+
+
+
