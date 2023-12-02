@@ -68,8 +68,13 @@ const Projects = () => {
 	const handleOptionClick = (option) => {
 		setActiveOption(option);
 	};
+	const test = (e, time) => {
+		setTimeout(() => {
+			e.target;
+		});
+	};
 
-	// fix the names and the css for the project component
+	//! make the animation for the  pictures  first start them on 0 opacity then show the last pic right pic   in full view that minimice it and repeat the same with the other pic
 	return (
 		<div className="project">
 			<div ref={titleRef}>
@@ -163,12 +168,20 @@ const Projects = () => {
 					>
 						<div className="label">
 							<div className="icon">
-								<i className="fas fa-walking"></i>
+								<a
+									href="https://github.com/Lenddy/app"
+									target="_blank"
+									rel="noreferrer"
+								>
+									<img src={gitHub} alt="" />
+								</a>
 							</div>
 							<div className="info">
-								<div className="main">Ultricies</div>
+								<div className="main">
+									<h1>IRE</h1>
+								</div>
 								<div className="sub">
-									Elit ut aliquam purus sit
+									<p>{t("projects_left")}</p>
 								</div>
 							</div>
 						</div>
@@ -183,12 +196,20 @@ const Projects = () => {
 					>
 						<div className="label">
 							<div className="icon">
-								<i className="fas fa-snowflake"></i>
+								<a
+									href="https://github.com/Lenddy/Escobar_cleaning_services"
+									target="_blank"
+									rel="noreferrer"
+								>
+									<img src={gitHub} alt="" />
+								</a>
 							</div>
 							<div className="info">
-								<div className="main">Luctus</div>
+								<div className="main">
+									<h1>Escobar cleaning services</h1>
+								</div>
 								<div className="sub">
-									Arcu cursus vitae congue mauris
+									<p>{t("projects_middle")}</p>
 								</div>
 							</div>
 						</div>
@@ -202,12 +223,20 @@ const Projects = () => {
 					>
 						<div className="label">
 							<div className="icon">
-								<i className="fas fa-tree"></i>
+								<a
+									href="https://github.com/Lenddy/flappy_cube"
+									target="_blank"
+									rel="noreferrer"
+								>
+									<img src={gitHub} alt="" />
+								</a>
 							</div>
 							<div className="info">
-								<div className="main">Purus</div>
+								<div className="main">
+									<h1>Flappy CUBE</h1>
+								</div>
 								<div className="sub">
-									Neque vitae tempus quam pellentesque
+									<p>{t("projects_right")}</p>
 								</div>
 							</div>
 						</div>

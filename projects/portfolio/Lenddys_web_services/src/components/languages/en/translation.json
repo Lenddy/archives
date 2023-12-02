@@ -29,14 +29,14 @@
     "tools":"Tools That I Use",
 
     "project_title":["P","r","o","j","e","c","t","s"],
-    "projects_left":"website for a small cleaning company in Little Rock Arkansas using: react and MaterialUI, AWS, Amazon EC2",
-    "projects_middle":"A loans management system using: React, MongoDB, MaterialUI, NodeJs, and Socket.io.",
-    "projects_right":"A basic flappy bird clone , instead of a bird it is a cube made using: unity and c#",
+    "projects_left":"A loans management system using: React, MongoDB, MaterialUI, NodeJs, and Socket.io.",
+    "projects_middle":"website for a small cleaning company in Little Rock Arkansas using: react and MaterialUI, AWS, Amazon EC2.",
+    "projects_right":"A basic flappy bird clone , instead of a bird it is a cube made using: unity and c#.",
+
     "profile_title":"About Me",
     "profile_hello":"Hello",
     "profile_there":"There",
     "profile_click":"Click Me",
-
     "card__body_title":"I AM LENDDY MORALES",
     "card__body_part1":"I'm a 19-year-old Dominican boy who can barly dance bachata I reside in the United States and some day might move to Puerto rico. I embarked on my journey into higher education at the age of 17 with a major in computer engineering. However, I soon realized that the traditional college teaching approach didn't align with my learning style.",
     "card__body_part2":"I made the bold decision to drop out and seek alternative paths to gain knowledge. Just a month later, I joined a coding bootcamp called",

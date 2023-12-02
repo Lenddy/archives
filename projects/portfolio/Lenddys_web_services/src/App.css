@@ -787,13 +787,154 @@ animation: show 2s forwards;
 }
 
 /** targets the  projects_container container */
-.projects_container{
+/* .projects_container{
   width: 100%;
   height: 90%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-color: red;
+} */
+.project_container {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  max-height: 800px;
+  /* font-family: "Roboto", sans-serif; */
+  transition:flex-direction 2s;
+  /* background: black; */
 }
+
+
+.options {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: hidden;
+  width: 70%;
+  /* max-width: 900px; */
+  /* width: calc(100% - 100px); */
+  height: 800px;
+  /* background-color: blue; */
+}
+
+.option {
+  position: relative;
+  overflow: hidden;
+  /* min-width: 30px; */
+  max-width: 80px;
+  margin: 10px;
+  background: var(--optionBackground, var(--defaultBackground, #e6e9ed));
+  border: #242424 solid 2px;
+  background-size: auto 200%;
+  background-position: center;
+  cursor: pointer;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.option:nth-child(1) {
+  --defaultBackground: #ed5565;
+}
+.option:nth-child(2) {
+  --defaultBackground: #fc6e51;
+}
+.option:nth-child(3) {
+  --defaultBackground: #ffce54;
+}
+
+.active {
+  flex-grow: 1;
+  transform: scale(1);
+  max-width: 80%;
+  margin: 0px;
+  border-radius: 40px;
+  background-size: auto 100%;
+}
+
+.option.active .label {
+  bottom: 20px;
+  left: 20px;
+}
+.option.active .label .info > div {
+  left: 0px;
+  opacity: 1;
+  color: white;
+  background-color: #242424;
+  /* -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color:white; */
+}
+.option:not(.active) {
+  flex-grow: 1;
+  border-radius: 30px;
+}
+
+.option:not(.active) .label {
+  top: 90%;
+  left: 15%;
+}
+.option:not(.active) .label .info > div {
+  left: 15%;
+  opacity: 0;
+}
+
+.label {
+  display: flex;
+  position: absolute;
+  right: 0%;
+  /* height: 40px; */
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  /* background-color: rgb(0 0 0 / 30%); */
+}
+
+.icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 50px;
+  max-width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color:#242424;
+  color: var(--defaultBackground);
+}
+.icon img{
+  background-color: white;
+  opacity: 1;
+  width: 100%;
+  border-radius:50px ;
+}
+.icon img:hover{
+  /* transform: translateY(-20px);
+  transition:transform 2s ; */
+  filter: brightness(2)
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+  color: black;
+  font-weight: bold;
+}
+
+.main  h1{
+  margin: 0px;
+  /* color: #00ffff; */
+}
+
+.sub p{
+  margin: 0px;
+  /* color: lightblue; */
+}
+
+
+
 
 /** targets the card_project container */
 .card_project {
@@ -879,112 +1020,11 @@ animation: show 2s forwards;
   animation: slideFromBottom 1.5s 4.5s forwards ;
 }
 
-.project_container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  /* height: 100vh; */
-  /* font-family: "Roboto", sans-serif; */
-  transition: 2s;
-  /* background: black; */
-}
 
-.options {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  overflow: hidden;
-  min-width: 600px;
-  max-width: 900px;
-  width: calc(100% - 100px);
-  height: 400px;
-}
 
-.options .option {
-  position: relative;
-  overflow: hidden;
-  min-width: 60px;
-  margin: 10px;
-  background: var(--optionBackground, var(--defaultBackground, #e6e9ed));
-  /* border: #242424 solid 1px; */
-  background-size: auto 200%;
-  background-position: center;
-  cursor: pointer;
-  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
-}
 
-.option:nth-child(1) {
-  --defaultBackground: #ed5565;
-}
-.option:nth-child(2) {
-  --defaultBackground: #fc6e51;
-}
-.option:nth-child(3) {
-  --defaultBackground: #ffce54;
-}
 
-.option.active {
-  flex-grow: 10000;
-  transform: scale(1);
-  max-width: 700px;
-  margin: 0px;
-  border-radius: 40px;
-  background-size: auto 100%;
-}
 
-.option.active .label {
-  bottom: 20px;
-  left: 20px;
-}
-.option.active .label .info > div {
-  left: 0px;
-  opacity: 1;
-}
-.option:not(.active) {
-  flex-grow: 1;
-  border-radius: 30px;
-}
-
-.option:not(.active) .label {
-  bottom: 10px;
-  left: 10px;
-}
-.option:not(.active) .label .info > div {
-  left: 20px;
-  opacity: 0;
-}
-
-.label {
-  display: flex;
-  position: absolute;
-  right: 0px;
-  height: 40px;
-  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
-}
-
-.icon {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  min-width: 40px;
-  max-width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  background-color:#242424;
-  color: var(--defaultBackground);
-}
-
-.info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 10px;
-  color: white;
-  font-weight: bold;
-}
 
 
 
@@ -1643,12 +1683,44 @@ animation: animate-rocket 4s 2s forwards ;
   }
 
   /*? projects */
-  .projects_container{
-    flex-wrap: wrap;
+  
+
+  .project_container {
+    flex-direction: column; 
+    /* transition:2s; */
+   
+    /* background-color: blue; */
   }
-  .card_project{
-    margin: 40px;
-  }
+
+
+.options {
+  flex-direction: column; 
+  width: 80%;
+  height: 700px;
+}
+
+.option {
+  min-width: 100%;
+  max-height:80px ;
+  margin: 10px;
+  /* background: var(--optionBackground, var(--defaultBackground, #e6e9ed)); */
+  /* border: #242424 solid 2px; */
+  background-size: 200% auto ;
+  background-position: center;
+  cursor: pointer;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.active {
+  max-height: 80%; /* Changed from 'max-width' to 'max-height' */
+  background-size: auto 100%;
+
+}
+
+.option:not(.active) .label {
+  top: 90%; /* Adjusted positioning */
+  left: 15%; /* Adjusted positioning */
+}
 
 
   /*? for the profile component */

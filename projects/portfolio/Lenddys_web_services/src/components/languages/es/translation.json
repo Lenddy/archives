@@ -28,16 +28,15 @@
     "tools":"Herramientas Que Uso",
 
     "project_title":["P","r","o","j","e","c","t","o","s"],
-    "projects_left":"sitio web para una pequeña empresa de limpieza en Little Rock Arkansas, utilizando: React, MaterialUI, AWS y Amazon EC2",
-    "projects_middle":"Un sistema de administración de préstamos, utilizando: React, MongoDB, MaterialUI, NodeJs y Socket.io.",
+    "projects_left":"Un sistema de administración de préstamos, utilizando: React, MongoDB, MaterialUI, NodeJs y Socket.io.",
+    "projects_middle":"sitio web para una pequeña empresa de limpieza en Little Rock Arkansas, utilizando: React, MaterialUI, AWS y Amazon EC2.",
     "projects_right":"Un clon básico de Flappy Bird, en lugar de un ave, es un cubo ,utilizando: Unity y C#.",
 
     "profile_title":"Sobre Mi",
     "profile_hello":"HOLA",
     "profile_there":"QUE HAY",
     "profile_click":"HAS ME Click",
-
-"card__body_title":"SOY LENDDY MORALES",    
+    "card__body_title":"SOY LENDDY MORALES",    
     "card__body_part1":"Soy un chico Dominicano de 19 años que apenas sabe bailar bachata. Resido en los Estados Unidos y algún día podría mudarme a Puerto Rico. Embarqué en mi viaje hacia la educación superior a la edad de 17 años con especialización en ingeniería informática. Sin embargo, pronto me di cuenta de que el enfoque tradicional de enseñanza universitaria no se alineaba con mi estilo de aprendizaje.",
     "card__body_part2":"Tomé la audaz decisión de abandonar la carrera y buscar caminos alternativos para adquirir conocimientos. Sólo un mes después, me uní a un campamento de programación llamado",
     "card__body_part2_2":". Este curso intensivo de programación de cuatro meses me llevó al límite mientras me esforzaba por mantenerme al día con el entorno de aprendizaje acelerado. Pase muchas noches sin dormir, a menudo acostándome a las 4 am y despertándome a las 11 am. A través de risas, lágrimas y forjando fuertes amistades, perseveré y valió la pena. Ahora estoy orgulloso de llamarme desarrollador full-stack.",
