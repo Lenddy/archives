@@ -73,6 +73,8 @@ const Tools = () => {
 	}, [isTitleVisible, isContentVisible]);
 	const { t } = useTranslation();
 
+	//!!!!!! find a way to mak the animation work  while is being click and hold for mobile and whe you stop the hold it takes you to the link
+
 	return (
 		<div className="tool_container" ref={titleRef}>
 			<GsapMagnetic>
