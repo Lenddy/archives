@@ -50,7 +50,7 @@ const NavBar = ({
 			top: elementRef.current.offsetTop,
 			behavior: "smooth",
 		});
-		console.log(elementRef);
+		// console.log(elementRef);
 	};
 
 	// ? have the 2 logos be on the nav bar and keep switching between the 2

@@ -89,8 +89,14 @@ const Projects = () => {
 	};
 
 	useEffect(() => {
+		isContentVisible ? Run_animation() : null;
+		console.log("the animation runs");
+	}, [isContentVisible]);
+
+	const Run_animation = () => {
 		const fetch_all = document.querySelectorAll(".option");
 		const activate = "active";
+
 		const timeout1 = setTimeout(() => {
 			fetch_all[2].style.opacity = 1;
 			fetch_all[2].style.transition = "1s";
@@ -126,7 +132,7 @@ const Projects = () => {
 			clearTimeout(timeout2);
 			clearTimeout(timeout3);
 		};
-	}, []);
+	};
 
 	//! make the animation for the pictures  first start them on 0 opacity then show the last pic right pic   in full view that minimice it and repeat the same with the other pic
 	return (
