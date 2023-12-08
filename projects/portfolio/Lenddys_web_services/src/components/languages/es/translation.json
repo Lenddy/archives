@@ -54,7 +54,12 @@
 
     "input_1":"Tu Nombre",
     "input_2":"Tu Email",
-    "text_area":"Inserta Tu Mensaje Aqui"
+    "text_area":"Inserta Tu Mensaje Aqui",
+
+    "name_validation":"Nombre debe de tener por lo menor 2 caracteres",
+    "message_validation":"Mensaje debe de tener por lo menos 5 caracteres",
+    "message_validation_2":"Mensaje no puede ser mas de 2000 caracteres",
+    "required":"Requerido"
 }
 
 

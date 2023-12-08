@@ -1,59 +1,96 @@
 import { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { useTranslation } from "react-i18next";
+import { Contact_Schema } from "./validations/Contact_Validation";
 
 const Contact = () => {
 	const form = useRef();
 	const buttonRef = useRef(null);
 	const [isFlipped, setIsFlipped] = useState(false);
-	const [messageSent, SetMessageSent] = useState({});
-	const [formInfo, setFormInfo] = useState({});
+	const [messageSent, setMessageSent] = useState(null);
+	// const [formInfo, setFormInfo] = useState({});
+	// const [success, setSuccess] = useState(null);
 	const [validation, setValidation] = useState(false);
-	const [secondValidation, setSecondValidation] = useState(false);
-	const [nameValidation, setNameValidation] = useState(false);
-	const [emailValidation, setEmailValidation] = useState(false);
-	const [messageValidation, setMessageValidation] = useState(false);
+	const [validation_2, setValidation_2] = useState(false);
+	const [validation_3, setValidation_3] = useState(false);
+	// const [secondValidation, setSecondValidation] = useState(false);
+	const [name, setName] = useState("");
+	const [email, setEmail] = useState("");
+	const [message, setMessage] = useState("");
 
-	const sendEmail = (e) => {
+	const sendEmail = async (e) => {
 		e.preventDefault();
-		setIsFlipped(!isFlipped);
-		emailjs
-			.sendForm(
-				"service_yxdnctm",
-				"template_alg7sf8",
-				form.current,
-				"UcLqMhHUZT4j20Td6"
-			)
-			.then(
-				(result) => {
-					SetMessageSent({
-						status: result.status,
-						text: result.text,
-					});
-					console.log(messageSent);
-					// console.log(result);
-					// console.log("message sent", result.text);
-				},
-				(error) => {
-					SetMessageSent({
-						status: error.status,
-						text: error.text,
-					});
-					console.log("error sending the message", error.text);
-				}
-			);
+		let formData = {
+			name: e.target[0].value,
+			email: e.target[1].value,
+			message: e.target[2].value,
+		};
+
+		const isValid = await Contact_Schema.isValid(formData);
+		console.log("waiting");
+
+		if (isValid === false) {
+			setValidation(true);
+			setValidation_2(true);
+			setValidation_3(true);
+			console.log(formData);
+			console.log(isValid);
+			console.log("is valid is false and the if hit ");
+		} else {
+			console.log(" else hit");
+
+			setIsFlipped(!isFlipped);
+			const formSend = await emailjs
+				.sendForm(
+					"service_yxdnctm",
+					"template_alg7sf8",
+					form.current,
+					"UcLqMhHUZT4j20Td6"
+				)
+				.then(
+					(result) => {
+						setMessageSent(true);
+						console.log({
+							status: result.status,
+							text: result.text,
+						});
+						// console.log(result);
+						// console.log("message sent", result.text);
+					},
+					(error) => {
+						setMessageSent(false);
+						console.log("error sending the message", {
+							status: error.status,
+							text: error.text,
+						});
+					}
+				);
+		}
 	};
 
 	const { t } = useTranslation();
 	const handleSubmit = (e) => {
 		e.preventDefault;
 		setIsFlipped(true);
+		setTimeout(() => setMessageSent(false), 3000);
 	};
+
+	//!  this goes on the back
+	// {success && (
+	// 	<Title>
+	// 		your message was sent, I'll contact you as soon
+	// 		as posible{" "}
+	// 	</Title>
+	// )}
+	// {success == false && (
+	// 	<Title>
+	// 		your message was not sent please try again later
+	// 	</Title>
+	// )}
 
 	return (
 		<div
 			className="c_comp2"
-
 			// onTouchStart={handleCardInteract}
 		>
 			<div className="card2">
@@ -85,11 +122,20 @@ const Contact = () => {
 										placeholder={t("input_1")}
 										className="profile_input"
 										name="name"
-										// onChange={(e) => {
-										// 	allInfo(e);
-										// 	setNameValidation(false);
-										// }}
+										onChange={(e) => {
+											setName(e.target.value);
+											setValidation(false);
+										}}
 									/>
+									{name.length > 0 && name.length < 2 ? (
+										<p className="validations">
+											{t("name_validation")}
+										</p>
+									) : validation === true ? (
+										<p className="validations">
+											{t("required")}
+										</p>
+									) : null}
 								</div>
 								<div className="span_right">
 									<input
@@ -98,11 +144,21 @@ const Contact = () => {
 										id=""
 										placeholder={t("input_2")}
 										className="profile_input"
-										// onChange={(e) => {
-										// 	allInfo(e);
-										// 	setEmailValidation(false);
-										// }}
+										onChange={(e) => {
+											setEmail(e.target.value);
+											setValidation_2(false);
+										}}
 									/>
+									{
+										// email.length > 0 && email.length < 2?
+										// <p>name must be at lest 2 characters</p>:
+										// null
+										validation_2 === true ? (
+											<p className="validations">
+												{t("required")}
+											</p>
+										) : null
+									}
 								</div>
 							</div>
 
@@ -112,11 +168,22 @@ const Contact = () => {
 								cols="75"
 								rows="20"
 								placeholder={t("text_area")}
-								// onChange={(e) => {
-								// 	allInfo(e);
-								// 	setMessageValidation(false);
-								// }}
+								onChange={(e) => {
+									setMessage(e.target.value);
+									setValidation_3(false);
+								}}
 							></textarea>
+							{message.length > 0 && message.length < 5 ? (
+								<p className="validations">
+									{t("message_validation")}
+								</p>
+							) : message.length > 2000 ? (
+								<p className="validations">
+									{t("message_validation_2")}
+								</p>
+							) : validation_3 === true ? (
+								<p className="validations">{t("required")} </p>
+							) : null}
 
 							<div className="submit_Btn">
 								<button
@@ -133,14 +200,14 @@ const Contact = () => {
 							</div>
 						</form>
 
-						<div>
+						{/* <div>
 							<button
 								className="form_btn"
 								onClick={(e) => handleSubmit(e)}
 							>
 								{t("contact_test_send")}
 							</button>
-						</div>
+						</div> */}
 					</div>
 
 					<div className="card__back2 ">
@@ -163,48 +230,86 @@ const Contact = () => {
 							className={` back_item_size cloud3 ${
 								isFlipped ? "cloud_animation3" : ""
 							}`}
-							necessary
 						>
 							☁️
 						</h1>
-						<h1
+						<div
 							className={` back_item_size cloud4 ${
 								isFlipped ? "cloud_animation4" : ""
 							}`}
 						>
-							☁️
-						</h1>
-						<h1
+							{/* dfdfdfdf     here */}
+							<div
+								className={`${
+									messageSent ? "cloud_spread" : ""
+								}`}
+							>
+								☁️
+							</div>
+						</div>
+						<div
 							className={` back_item_size cloud5 ${
 								isFlipped ? "cloud_animation5" : ""
 							}`}
 						>
-							☁️
-						</h1>
-						<h1
+							{/* dfdfdfdf     here */}
+							<div
+								className={`${
+									messageSent ? "cloud_spread" : ""
+								}`}
+							>
+								☁️
+							</div>
+						</div>
+
+						<div
 							className={` back_item_size cloud6 ${
 								isFlipped ? "cloud_animation6" : ""
 							}`}
 						>
-							☁️
-						</h1>
-						<h1
+							{/* dfdfdfdf     here */}
+							<div
+								className={`${
+									messageSent ? "cloud_spread" : ""
+								}`}
+							>
+								☁️
+							</div>
+						</div>
+						<div
 							className={` back_item_size cloud7 ${
 								isFlipped ? "cloud_animation7" : ""
 							}`}
 						>
-							☁️
-						</h1>
+							{/* dfdfdfdf     here */}
+							<div
+								className={`${
+									messageSent
+										? "cloud_spread_2"
+										: messageSent === false
+										? "cloud_spread_2"
+										: ""
+								}`}
+							>
+								☁️
+							</div>
+						</div>
 
 						<div
 							className={`back_item_size rocket ${
-								isFlipped ? "lunch" : ""
+								messageSent ? "lunch" : ""
 							}`}
 						>
 							{/* 
 							if flip is true    messagesent.status is === 200 and  if messagesent.text == ok   
 							*/}
-							🚀
+							<div
+								className={`${
+									isFlipped ? "animate bigger" : ""
+								} `}
+							>
+								🚀
+							</div>
 						</div>
 
 						<div
@@ -212,15 +317,22 @@ const Contact = () => {
 								isFlipped === true ? "fade_in" : ""
 							} `}
 						>
-							<h1>{t("contact_message_sent")}</h1>
+							<h1>
+								{messageSent
+									? t("contact_message_sent")
+									: t("contact_send_error")}
+								{/* send another message */}
+							</h1>
 							<button
 								className="back_btn"
 								onClick={() => {
 									setIsFlipped(false);
-									SetMessageSent({});
+									setMessageSent(null);
 								}}
 							>
-								{t("contact_send_back")}
+								{messageSent
+									? t("contact_send_back")
+									: t("contact_send_error")}
 								{/* send another message */}
 							</button>
 						</div>

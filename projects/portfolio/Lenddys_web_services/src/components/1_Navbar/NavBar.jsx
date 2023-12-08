@@ -185,21 +185,20 @@ const NavBar = ({
 						>
 							{t("navBar_socials")}
 						</DropDownItem>
-
-						<DropDownItem
-						// leftIcon={"👋🏼"}
-						// rightIcon={"👌"}
-						// goToMenu="settings"
+						<a
+							href="https://docs.google.com/document/d/12vkzj7Zjqu1vzWEcVHD0i0UKJ1PYsvx41-QtacLm0os/edit?usp=sharing"
+							target="_blank"
+							rel="noreferrer"
+							className="drop_down_a"
 						>
-							<a
-								href="https://docs.google.com/document/d/12vkzj7Zjqu1vzWEcVHD0i0UKJ1PYsvx41-QtacLm0os/edit?usp=sharing"
-								target="_blank"
-								rel="noreferrer"
-								className="drop_down_a"
+							<DropDownItem
+							// leftIcon={"👋🏼"}
+							// rightIcon={"👌"}
+							// goToMenu="settings"
 							>
 								{t("navBar_resume")}
-							</a>
-						</DropDownItem>
+							</DropDownItem>
+						</a>
 					</div>
 				</CSSTransition>
 
@@ -283,8 +282,8 @@ const NavBar = ({
 				>
 					<div className="menu">
 						<DropDownItem
-							leftIcon={"👍"}
-							rightIcon={"😂"}
+							// leftIcon={"👍"}
+							// rightIcon={"😂"}
 							goToMenu="main"
 						>
 							{t("navBar_go_back")}
@@ -333,8 +332,8 @@ const NavBar = ({
 				>
 					<div className="menu">
 						<DropDownItem
-							leftIcon={"👍"}
-							rightIcon={"😂"}
+							// leftIcon={"👍"}
+							// rightIcon={"😂"}
 							goToMenu="main"
 						>
 							{t("navBar_go_back")}
@@ -343,6 +342,7 @@ const NavBar = ({
 							href="https://github.com/Lenddy"
 							target="_blank"
 							rel="noreferrer"
+							className="side_bar_a"
 						>
 							<DropDownItem
 								// leftIcon={"👍"}
@@ -350,7 +350,7 @@ const NavBar = ({
 								goToMenu="main"
 								// onClick={() => console.log("hello")}
 							>
-								github
+								Github
 							</DropDownItem>
 						</a>
 
@@ -358,13 +358,14 @@ const NavBar = ({
 							href="https://www.linkedin.com/in/lenddy/"
 							target="_blank"
 							rel="noreferrer"
+							className="side_bar_a"
 						>
 							<DropDownItem
 								// leftIcon={"👍"}
 								// rightIcon={"😂"}
 								goToMenu="main"
 							>
-								link in
+								LinkIn
 							</DropDownItem>
 						</a>
 
@@ -372,13 +373,14 @@ const NavBar = ({
 							href="https://www.instagram.com/lenddys_web_services/"
 							target="_blank"
 							rel="noreferrer"
+							className="side_bar_a"
 						>
 							<DropDownItem
 								// leftIcon={"👍"}
 								// rightIcon={"😂"}
 								goToMenu="main"
 							>
-								instagram
+								Instagram
 							</DropDownItem>
 						</a>
 					</div>

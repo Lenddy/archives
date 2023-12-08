@@ -81,7 +81,7 @@ const Projects = () => {
 		};
 	}, [isTitleVisible, isContentVisible, cookieValue]);
 	const { t } = useTranslation();
-	console.log(cookieValue);
+	// console.log(cookieValue);
 	const [activeOption, setActiveOption] = useState(1);
 
 	const handleOptionClick = (option = 1) => {
@@ -90,7 +90,7 @@ const Projects = () => {
 
 	useEffect(() => {
 		isContentVisible ? Run_animation() : null;
-		console.log("the animation runs");
+		// console.log("the animation runs");
 	}, [isContentVisible]);
 
 	const Run_animation = () => {
@@ -134,7 +134,7 @@ const Projects = () => {
 		};
 	};
 
-	//! make the animation for the pictures  first start them on 0 opacity then show the last pic right pic   in full view that minimice it and repeat the same with the other pic
+	//! go check the with of the parent container for the projects and see how big is ti
 	return (
 		<div className="project">
 			<div ref={titleRef}>
@@ -208,11 +208,6 @@ const Projects = () => {
 							isTitleVisible ? "project_tittle" : ""
 						}`}
 					>
-						{/* {t("project_title.8") === undefined
-					? null
-					: t("project_title.8")} */}
-						{/* t */}
-						{/* {t("project_title.8")} */}
 						{cookieValue === "es" ? "s" : null}
 					</span>
 				</h1>

@@ -49,11 +49,16 @@
     "contact_title":"Contact Me",
     "contact_send":"Send Message",
     "contact_message_sent":"Message Sent!!!",
+    "contact_send_error":"there was an error pease try agin!!!",
     "contact_send_back":"Send Another Message",
     "input_1":"Your Name",
     "input_2":"Your Email",
-    "text_area":"Insert Your Message Here"
+    "text_area":"Insert Your Message Here",
 
+    "name_validation":"Name must be at lest 2 characters",
+    "message_validation":"Message must be at lest 5 characters",
+    "message_validation_2":"Message cant be longer than 2000 characters",
+    "required":"Required"
 }
 
 

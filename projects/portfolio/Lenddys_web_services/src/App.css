@@ -29,7 +29,7 @@ body::-webkit-scrollbar{
 
 /*? for all components */
 .components_container{
-margin-top: 100px ;
+margin-top: 20px ;
 }
 
 .all_component{
@@ -314,6 +314,7 @@ border-radius: 50%;
 
 .dropDown_item:hover{
   background-color: #525357;
+  cursor: pointer;
 }
 .drop_down_a{
   text-decoration: none;
@@ -803,6 +804,7 @@ animation: show 2s forwards;
   align-items: center;
   overflow: hidden;
   max-height: 800px;
+  max-width: 100%;
   /* font-family: "Roboto", sans-serif; */
   transition:flex-direction 2s;
   /* background: black; */
@@ -815,11 +817,12 @@ animation: show 2s forwards;
   flex-direction: row;
   align-items: stretch;
   overflow: hidden;
-  width: 70%;
-  /* max-width: 900px; */
+  width:80% ;
+  max-width: 1400px;
   /* width: calc(100% - 100px); */
   height: 800px;
   /* background-color: blue; */
+  /* padding: 0px; */
 }
 
 .option {
@@ -849,7 +852,7 @@ animation: show 2s forwards;
 .active {
   flex-grow: 1;
   transform: scale(1);
-  max-width: 80%;
+  max-width: 90%;
   margin: 0px;
   border-radius: 40px;
   background-size: auto 100%;
@@ -1472,6 +1475,10 @@ margin: 0px;
 /* font-size: 15px; */
 }
 
+.validations{
+  color: red;
+  margin: 0px;
+}
 
 .form_btn{
 height: 60px;
@@ -1487,6 +1494,7 @@ border: solid 2px #ff00ff;
 .form_btn:hover{
 border: #f43c71 solid 2px;
 background-color: #f8d3e1;
+cursor: pointer;
 }
 
 .submit_Btn{
@@ -1550,6 +1558,7 @@ margin-bottom: 10px;
 .back_btn:hover{
   border: #f43c71 solid 2px;
   background-color: #f8d3e1;
+  cursor: pointer;
 }
 
   /* show the btns that are in the back  */
@@ -1632,6 +1641,16 @@ animation: cloudAnimation1 10s forwards;
   animation: clouds 5s  forwards;
 }
 
+.cloud_spread{
+  animation: spread_cloud_left 3s 3s forwards;
+}
+.cloud_spread_2{
+  animation: spread_cloud_right 3s 2.7s forwards;
+}
+
+
+
+
 .rocket{
   position: absolute;
   top:90%;
@@ -1639,13 +1658,21 @@ animation: cloudAnimation1 10s forwards;
   transform: translateZ(150px);
 }
 
+.animate{
+  animation:   animate-rocket 2s 1s infinite ;
+  scale: 2.5;
+  /* animation:  bigger-rocket 3s 1s forwards ; */
+  transition: scale 3s 2s ;
+  }
+
+
+
+    
 .lunch{
-  animation: animate-rocket 6s 1s ;
+  animation:blast-rocket 4s 2s forwards   ;
 }
 
-.bigger{
-animation: animate-rocket 4s 2s forwards ;
-}
+
 
 
 
@@ -1695,7 +1722,7 @@ animation: animate-rocket 4s 2s forwards ;
 
 .options {
   flex-direction: column; 
-  width: 80%;
+  width: 90%;
   height: 700px;
 }
 
@@ -1709,7 +1736,7 @@ animation: animate-rocket 4s 2s forwards ;
 }
 
 .active {
-  max-height: 80%; /* Changed from 'max-width' to 'max-height' */
+  max-height: 70%; /* Changed from 'max-width' to 'max-height' */
   background-size: auto 100%;
 
 }
@@ -1718,6 +1745,7 @@ animation: animate-rocket 4s 2s forwards ;
   top:20%; 
   left:5px; 
 }
+
 
 
   /*? for the profile component */
@@ -1856,6 +1884,17 @@ animation: animate-rocket 4s 2s forwards ;
 .card_project p{
   font-size: 13px;
 }
+.main  h1{
+  margin: 0px;
+  /* color: #00ffff; */
+  font-size: 20px;
+}
+
+.sub p{
+  margin: 0px;
+  font-size: 12px;
+  /* color: lightblue; */
+}
 
 
 /*? For Main component */
@@ -1960,6 +1999,11 @@ input{
 .cloud1,.cloud2,.cloud3,.cloud4,.cloud5,.cloud6,.cloud7,.cloud8,.rocket{
   font-size:75px ;
 }
+
+.validations{
+  font-size: 13px;
+}
+
 
 }
 
@@ -2152,6 +2196,11 @@ width: 140px;
 .cloud1,.cloud2,.cloud3,.cloud4,.cloud5,.cloud6,.cloud7,.cloud8,.rocket{
 font-size:65px ;
 }
+
+.validations{
+  font-size: 11px;
+}
+
 }
 
 
@@ -2243,7 +2292,6 @@ margin:40px ;
 
 .card_project h1{
 font-size:13px;
-
 }
 
 .card_project p{
@@ -2432,6 +2480,11 @@ font-size:50px ;
   bottom:40%;
   right:15%;
   transform: translateZ(100px);
+}
+
+
+.validations{
+  font-size: 9px;
 }
 
 }
@@ -2999,51 +3052,58 @@ transform: translateZ(150px);
 
   }
 }
+@keyframes spread_cloud_left {
+  from{
+    transform:translateX(0) translateY(0) ;
+  }
+  to{
+    transform:translateX(-40px) translateY(-40px) ;
+  }
 
-
-
-@keyframes scale-rocket {
-  0%{
-    transform: scale(1);
-  }
-  5%{
-    transform: scale(1.5);
-  }
-  10%{
-    transform: scale(1.5) ;
-  }
-  15%{
-    transform: scale(1.75) ;
-  }
-  20%{
-    transform: scale(2) ;
-  }
-  100%{
-    transform:  translate3d(100vw,-100vw,0) scale(3);
-  }
 }
+
+@keyframes spread_cloud_right {
+  from{
+    transform:translateX(0) ;
+  }
+  to{
+    transform:translateX(90px) translateY(-50px) ;
+  }
+  /* translateY(50px) */
+}
+
+
 
 @keyframes animate-rocket {
-  0%{
-    transform: scale(1) rotate(10deg);
+  0% {
+    transform: rotate(10deg);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
-  5%{
-    transform: scale(1.5) rotate(-15deg);
+  25% {
+    transform: rotate(-15deg);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
-  10%{
-    transform: scale(1.5) rotate(5deg);
+  50% {
+    transform: rotate(5deg);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
-  15%{
-    transform: scale(1.75) rotate(-10deg);
+  75% {
+    transform: rotate(-10deg);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
-  20%{
-    transform: scale(2) rotate(0);
-  }
-  100%{
-    transform: scale(5)  translate3d(100vw,-100vw,0)  rotate(0);
+  100% {
+    transform: rotate(10deg);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
-
+@keyframes blast-rocket {
+  from{
+    
+  }
+  to{
+    transform:  translate3d(100vw,-100vw,0) 
+  }
+}
 
 
