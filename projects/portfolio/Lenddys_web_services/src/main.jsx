@@ -19,7 +19,8 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
 			caches: ["cookie"],
 		},
 		backend: {
-			loadPath: "./src/components/languages/{{lng}}/translation.json",
+			// components/
+			loadPath: "./src/languages/{{lng}}/translation.json",
 		},
 		react: { useSuspense: false },
 	});

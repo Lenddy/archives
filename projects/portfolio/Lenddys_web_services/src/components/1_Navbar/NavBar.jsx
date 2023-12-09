@@ -13,6 +13,7 @@ import { CSSTransition } from "react-transition-group";
 import GsapShow from "../animations/GsapShow";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
+import Cookies from "js-cookie";
 
 import Github from "./social_dropdown/Github";
 import LinkedIn from "./social_dropdown/LinkedIn";
@@ -52,6 +53,7 @@ const NavBar = ({
 		});
 		// console.log(elementRef);
 	};
+	const cookieValue = Cookies.get("i18next");
 
 	// ? have the 2 logos be on the nav bar and keep switching between the 2
 
@@ -167,7 +169,8 @@ const NavBar = ({
 							// rightIcon={"👌"}
 							goToMenu="go_to_dropdown"
 						>
-							{t("navBar_go_to")}
+							{cookieValue === "es" ? "Ir A" : "Go To"}
+							{/* {t("navBar_go_to")} */}
 						</DropDownItem>
 
 						<DropDownItem
@@ -175,7 +178,9 @@ const NavBar = ({
 							// rightIcon={"👌"}
 							goToMenu="Language_dropdown"
 						>
-							language
+							{/* Language */}
+							{cookieValue === "es" ? "Lenguaje" : "Language"}
+							{/* {t("navBar_go_to")} */}
 						</DropDownItem>
 
 						<DropDownItem
@@ -183,7 +188,10 @@ const NavBar = ({
 							// rightIcon={"👌"}
 							goToMenu="socials_dropdown"
 						>
-							{t("navBar_socials")}
+							{/* {t("navBar_socials")} */}
+							{cookieValue === "es"
+								? "Redes Sociales"
+								: "Social Media"}
 						</DropDownItem>
 						<a
 							href="https://docs.google.com/document/d/12vkzj7Zjqu1vzWEcVHD0i0UKJ1PYsvx41-QtacLm0os/edit?usp=sharing"
@@ -196,7 +204,8 @@ const NavBar = ({
 							// rightIcon={"👌"}
 							// goToMenu="settings"
 							>
-								{t("navBar_resume")}
+								{/* {t("navBar_resume")} */}
+								{cookieValue === "es" ? "Resumen" : "Resume"}
 							</DropDownItem>
 						</a>
 					</div>
@@ -216,7 +225,8 @@ const NavBar = ({
 							// rightIcon={"😂"}
 							goToMenu="main"
 						>
-							{t("navBar_go_back")}
+							{/* {t("navBar_go_back")} */}
+							{cookieValue === "es" ? "Ir Atrás" : "Go Back"}
 						</DropDownItem>
 
 						<div onClick={() => scrollToSection(welcomeRef)}>
@@ -225,7 +235,10 @@ const NavBar = ({
 								// rightIcon={"😂"}
 								goToMenu="main"
 							>
-								{t("navBar_welcome")}
+								{/* {t("navBar_welcome")} */}
+								{cookieValue === "es"
+									? "Bienvenida"
+									: "Welcome"}
 							</DropDownItem>
 						</div>
 
@@ -235,7 +248,10 @@ const NavBar = ({
 								// rightIcon={"😂"}
 								goToMenu="main"
 							>
-								{t("navBar_My_Experience")}
+								{/* {t("navBar_My_Experience")} */}
+								{cookieValue === "es"
+									? "Lo Que Hago"
+									: "What I Do"}
 							</DropDownItem>
 						</div>
 
@@ -245,7 +261,10 @@ const NavBar = ({
 								// rightIcon={"😂"}
 								goToMenu="main"
 							>
-								{t("navBar_Tools")}
+								{/* {t("navBar_Tools")} */}
+								{cookieValue === "es"
+									? "Herramientas"
+									: "My Tools"}
 							</DropDownItem>
 						</div>
 
@@ -255,7 +274,10 @@ const NavBar = ({
 								// rightIcon={"😂"}
 								goToMenu="main"
 							>
-								{t("navBar_projects")}
+								{/* {t("navBar_projects")} */}
+								{cookieValue === "es"
+									? "Projectos"
+									: "Projects"}
 							</DropDownItem>
 						</div>
 
@@ -266,7 +288,8 @@ const NavBar = ({
 								goToMenu="main"
 								onClick={() => scrollToSection(profileRef)}
 							>
-								{t("navBar_about_me")}
+								{/* {t("navBar_about_me")} */}
+								{cookieValue === "es" ? "Sobre Mi" : "About Me"}
 							</DropDownItem>
 						</div>
 					</div>
@@ -286,7 +309,8 @@ const NavBar = ({
 							// rightIcon={"😂"}
 							goToMenu="main"
 						>
-							{t("navBar_go_back")}
+							{/* {t("navBar_go_back")} */}
+							{cookieValue === "es" ? "Ir Atrás" : "Go Back"}
 						</DropDownItem>
 
 						<div
@@ -336,7 +360,8 @@ const NavBar = ({
 							// rightIcon={"😂"}
 							goToMenu="main"
 						>
-							{t("navBar_go_back")}
+							{/* {t("navBar_go_back")} */}
+							{cookieValue === "es" ? "Ir Atrás" : "Go Back"}
 						</DropDownItem>
 						<a
 							href="https://github.com/Lenddy"
@@ -399,7 +424,8 @@ const NavBar = ({
 				>
 					<ul className="">
 						<li onClick={() => setOpenGoTo((prev) => !prev)}>
-							{t("navBar_go_to")}
+							{/* {t("navBar_go_to")} */}
+							{cookieValue === "es" ? "Ir A" : "Go To"}
 							{openGoto && (
 								<div className=" dropDownGoTo ">
 									<ul
@@ -412,35 +438,60 @@ const NavBar = ({
 												scrollToSection(welcomeRef)
 											}
 										>
-											<p>{t("navBar_welcome")}</p>
+											<p>
+												{/* {t("navBar_welcome")} */}
+												{cookieValue === "es"
+													? "Bienvenida"
+													: "Welcome"}
+											</p>
 										</li>
 										<li
 											onClick={() =>
 												scrollToSection(what_I_DoRef)
 											}
 										>
-											<p>{t("navBar_My_Experience")}</p>
+											<p>
+												{/* {t("navBar_My_Experience")} */}
+												{cookieValue === "es"
+													? "Lo Que Hago"
+													: "What I Do"}
+											</p>
 										</li>
 										<li
 											onClick={() =>
 												scrollToSection(toolsRef)
 											}
 										>
-											<p>{t("navBar_Tools")}</p>
+											<p>
+												{/* {t("navBar_Tools")}*/}{" "}
+												{cookieValue === "es"
+													? "Herramientas"
+													: "My Tools"}
+											</p>
 										</li>
 										<li
 											onClick={() =>
 												scrollToSection(projectsRef)
 											}
 										>
-											<p>{t("navBar_projects")}</p>
+											<p>
+												{/* {t("navBar_projects")} */}
+												{cookieValue === "es"
+													? "Projectos"
+													: "Projects"}
+											</p>
 										</li>
 										<li
 											onClick={() =>
 												scrollToSection(profileRef)
 											}
 										>
-											<p>{t("navBar_about_me")}</p>
+											<p>
+												{/* {t("navBar_about_me")} */}
+												{cookieValue === "es"
+													? "Sobre Mi"
+													: "About Me"}
+											</p>
 										</li>
 									</ul>
 								</div>
@@ -453,7 +504,8 @@ const NavBar = ({
 								rel="noreferrer"
 								className="resume_a"
 							>
-								{t("navBar_resume")}
+								{/* {t("navBar_resume")} */}
+								{cookieValue === "es" ? "Resumen" : "Resume"}
 							</a>
 						</li>
 						<li className="li_logo">
@@ -516,7 +568,10 @@ const NavBar = ({
 						</li>
 
 						<li onClick={() => setSocials((prev) => !prev)}>
-							{t("navBar_socials")}
+							{/* {t("navBar_socials")} */}
+							{cookieValue === "es"
+								? "Redes Sociales"
+								: "Social Media"}
 							{socials && (
 								<div className="dropDownSocials">
 									<ul

@@ -1,12 +1,14 @@
 import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { useTranslation } from "react-i18next";
+import Cookies from "js-cookie";
 
 const What_I_Do = () => {
 	const titleRef = useRef(null);
 	const contentRef = useRef(null);
 	const [isTitleVisible, setIsTitleVisible] = useState(false);
 	const [isContentVisible, setIsContentVisible] = useState(false);
+	const cookieValue = Cookies.get("i18next");
 
 	useEffect(() => {
 		const title = titleRef.current;
@@ -52,47 +54,6 @@ const What_I_Do = () => {
 		};
 	}, [isTitleVisible, isContentVisible]);
 
-	// !
-	// !
-	// !
-	// !
-	// !
-	// !
-	// !this si how you get the width of the page
-	//import React, { useState, useEffect } from 'react';
-
-	// const PageWidthComponent = () => {
-	// 	const [pageWidth, setPageWidth] = useState(window.innerWidth);
-
-	// 	const updatePageWidth = () => {
-	// 	  setPageWidth(window.innerWidth);
-	// 	};
-
-	// 	useEffect(() => {
-	// 	  const handleResize = () => {
-	// 		updatePageWidth();
-	// 	  };
-
-	// 	  window.addEventListener('resize', handleResize);
-
-	// 	  // Clean up the event listener on component unmount
-	// 	  return () => {
-	// 		window.removeEventListener('resize', handleResize);
-	// 	  };
-	// 	}, []); // Empty dependency array ensures this effect runs only on mount and unmount
-
-	// 	return (
-	// 	  <div>
-	// 		<p>Width of the page is: {pageWidth}px</p>
-	// 		{/* You can use pageWidth in your component as needed */}
-	// 	  </div>
-	// 	);
-	//   };
-
-	//   export default PageWidthComponent;
-
-	//! for the animation for the left right and bottom
-	//? make them appear in a zigzag  left  title , right  p tag  , bottom title , left p tag , right title , bottom p tag
 	const { t } = useTranslation();
 	return (
 		<>
@@ -106,19 +67,16 @@ const What_I_Do = () => {
 					} `}
 					ref={titleRef}
 				>
-					{/* My Experience */}
 					<h1
 						className={`whatIDo_top_text ${
 							isTitleVisible ? "whatIDo_top_tex_animation" : ""
 						} `}
 					>
-						{t("whatIDo_title")}
+						{/* {t("whatIDo_title")} */}
+						{cookieValue === "es"
+							? "Mis Especialidades"
+							: "My Experience"}
 					</h1>
-					{/* <div
-						
-					>
-						
-					</div> */}
 				</div>
 
 				<div className="whatIDo_middle" ref={contentRef}>
@@ -127,34 +85,18 @@ const What_I_Do = () => {
 							isContentVisible ? "whatIDo_left_animation" : ""
 						} `}
 					>
-						<h1 className="blink">{t("whatIDo_left_title")}</h1>
-						{/* <p>
-							i am a full stack web developer my job is to make
-							websites the will adapt to your wants and needs
-							starting from the visual interface(front end ),
-							functionality(back-end), and how the data is
-							stored(data base)
-						</p> */}
+						<h1 className="blink">
+							{/* {t("whatIDo_left_title")} */}
+							{cookieValue === "es"
+								? "Desarrolladora Full-stack"
+								: "Full-stack Developer"}
+						</h1>
+
 						<p className="blink ">
-							{t("whatIDo_left")}{" "}
-							{/* As a full-stack developer,my role is to craft
-							websites that adapt to your preferences, starting
-							from the front-end visual interface, progressing
-							through back-end functionalities, and extending to
-							robust database management. my key responsibilities
-							involve designing visually appealing and
-							user-friendly front-end interfaces, developing the
-							back-end logic, including server-side processes and
-							APIs, and ensuring efficient and secure data storage
-							in databases. Additionally, i create and maintain
-							web services to facilitate seamless communication
-							between these components. My work extends to adding
-							new features, rigorous testing, bug fixing, and
-							collaborating with cross-functional teams on diverse
-							projects. In essence, i am the architect of digital
-							solutions, ensuring they align with clients' needs
-							and deliver top-notch user experiences while
-							maintaining functionality and data integrity. */}
+							{/* {t("whatIDo_left")} */}
+							{cookieValue === "es"
+								? "Como desarrollador full-stack, mi función es crear sitios web que se adapten a sus preferencias, comenzando desde la interfaz visual de front-end, avanzando a través de las funcionalidades de back-end y extendiéndose hasta una sólida gestión de bases de datos. Mis responsabilidades clave implican diseñar interfaces de usuario visualmente atractivas y fáciles de usar, desarrollar la lógica de back-end, incluidos los procesos del lado del servidor y las API, y garantizar el almacenamiento de datos eficiente y seguro en bases de datos. Además, creo y mantengo servicios web para facilitar la comunicación fluida entre estos componentes. Mi trabajo se extiende a agregar nuevas funciones, realizar pruebas rigurosas, corregir errores y colaborar con equipos multifuncionales en diversos proyectos. En esencia, soy el arquitecto de soluciones digitales, asegurándome de que se alineen con las necesidades de los clientes y brinden experiencias de usuario de primer nivel mientras mantengo la funcionalidad y la integridad de los datos."
+								: "As a full-stack developer, my role is to craft websites that adapt to your preferences, starting from the front-end visual interface, progressing through back-end functionalities, and extending to robust database management. my key responsibilities involve designing visually appealing and user-friendly front-end interfaces, developing the back-end logic, including server-side processes and APIs, and ensuring efficient and secure data storage in databases. Additionally, I create and maintain web services to facilitate seamless communication between these components. My work extends to adding new features, rigorous testing, bug fixing, and collaborating with cross-functional teams on diverse projects. In essence, I am the architect of digital solutions, ensuring they align with clients needs and deliver top-notch user experiences while maintaining functionality and data integrity."}
 						</p>
 					</div>
 					<div
@@ -164,25 +106,16 @@ const What_I_Do = () => {
 					>
 						<div>
 							<h1 className="blink ">
-								{t("whatIDo_right_title")}
+								{/* {t("whatIDo_right_title")} */}
+								{cookieValue === "es"
+									? "Constructor de PC"
+									: "PC Builder"}
 							</h1>
 							<p className="blink ">
-								{t("whatIDo_right")}{" "}
-								{/* As a PC builder enthusiast who makes custom
-								personal computers (PCs) tailored to you
-								specifications. my expertise spans to component
-								selection, assembly, and system optimization. PC
-								builders begin by meticulously choosing CPU,
-								GPU, motherboard, RAM, storage, and other
-								components based on performance, compatibility,
-								and budget considerations.I will install the
-								operating system and drivers, rigorously test
-								each aspect to confirm flawless functionality.
-								In addition to building new PCs, i also provide
-								upgrade and repair services, staying updated
-								with the latest hardware and software trends.
-								delivering systems optimized for gaming, content
-								creation, professional work, and more. */}
+								{/* {t("whatIDo_right")} */}
+								{cookieValue === "es"
+									? "Como entusiasta Constructor de computadoras(PC) personalizadas según sus especificaciones. Mi experiencia abarca la selección de componentes, el ensamblaje y la optimización del sistema. Los Constructo de PC comienzan eligiendo meticulosamente CPU, GPU, placa base(motherboard), RAM, almacenamiento y otros componentes según consideraciones de rendimiento, compatibilidad y presupuesto. Instalaré el sistema operativo y los controladores, probaré rigurosamente cada aspecto para confirmar una funcionalidad impecable. Además de construir nuevas PC, también ofrezco servicios de actualización y reparación, manteniéndome actualizado con las últimas tendencias de hardware y software. entregando sistemas optimizados para juegos, creación de contenido, trabajo profesional y más."
+									: "As a PC builder enthusiast who makes custom personal computers (PCs) tailored to you specifications. my expertise spans to component selection, assembly, and system optimization. PC builders begin by meticulously choosing CPU, GPU, motherboard, RAM, storage, and other components based on performance, compatibility, and budget considerations.I will install the operating system and drivers, rigorously test each aspect to confirm flawless functionality. In addition to building new PCs, i also provide upgrade and repair services, staying updated with the latest hardware and software trends. delivering systems optimized for gaming, content creation, professional work, and more."}
 							</p>
 						</div>
 					</div>
@@ -192,98 +125,22 @@ const What_I_Do = () => {
 						isContentVisible ? "whatIDo_bottom_animation" : ""
 					} `}
 				>
-					<h1 className="blink ">{t("whatIDo_bottom_title")} </h1>
+					<h1 className="blink ">
+						{/* {t("whatIDo_bottom_title")} */}
+						{cookieValue === "es" ? "Tutor" : "Tutor"}
+					</h1>
 					<div className="whatIDo_bottom_h1_tag">
-						<p className="blink ">{t("whatIDo_bottom")} </p>
+						<p className="blink ">
+							{/* {t("whatIDo_bottom")} */}
+							{cookieValue === "es"
+								? "Como tutor, mi objetivo es guiarte para que tengas una comprensión fundamental del desarrollo web. Juntos, nos embarcaremos en un viaje que le proporcionará el conocimiento y las habilidades para navegar con confianza por el mundo del desarrollo web en su esencia. A través del aprendizaje práctico, construirá una base sólida que le permitirá dominar los conceptos básicos del desarrollo web. Comenzaremos con HTML y CSS, los componentes básicos de la web, y pasaremos a JavaScript y otras tecnologías clave, lo que le brindará la competencia necesaria para crear sitios web cautivadores y aplicaciones web dinámicas. Al final de nuestro viaje, poseerá la confianza y el conocimiento para abordar proyectos de desarrollo web de forma independiente, lo que lo encaminará hacia la exploración de infinitas oportunidades de innovación y autosuficiencia en este campo."
+								: "As a tutor, my focus is to guide you to have a fundamentals understanding of web development. Together, we will embark on a journey that equips you with the knowledge and skills to confidently navigate the world of web development at its core. Through hands-on learning , you'll build a solid foundation, enabling you to master the essentials of web development. We'll start with HTML and CSS, the building blocks of the web, and them move into JavaScript and other key technologies, giving you the proficiency needed to create captivating websites and dynamic web applications. By the end of our journey, you will possess the confidence and know-how to tackle web development projects independently, setting you on a path to explore endless opportunities for innovation and self-reliance in this field."}
+						</p>
 					</div>
 				</div>
-
-				{/* <ol>
-					<li>
-						
-					</li>
-					<li>talk about what front back and dbs are </li>
-					<li>talk about building computer </li>
-					<li>
-						talk abut teaching(instructing) and researching
-						technologies that the user might be interested on
-					</li>
-				</ol> */}
 			</div>
 		</>
 	);
-
-	// useEffect(() => {
-	// 	const observer = new IntersectionObserver((entries) => {
-	// 		const entry = entries[0];
-	// 		setIntersecting_whatIDo(entry.isIntersecting);
-	// 	});
-
-	// 	observer.observe(what_i_doRef.current);
-	// 	// if (intersecting_whatIDo === false) {
-	// 	// 	setNoAnimation(true);
-	// 	// }
-	// }, []);
-
-	// useEffect(() => {
-	// 	const handleScroll = () => {
-	// 		const position = window.scrollY;
-	// 		if (position >= 300 && position <= 1000) {
-	// 			setShow(true);
-	// 		}
-	// 	};
-
-	// 	window.addEventListener("scroll", handleScroll);
-
-	// 	return () => {
-	// 		window.removeEventListener("scroll", handleScroll);
-	// 	};
-	// }, []);
 };
 
 export default What_I_Do;
-// ! i brock my mind trying to do this  with ternary operator so i ask chat gpt to help me with it i know that there is a wayyyyyy better why of doing it but this is what i got
-
-// const isLocalStorageTrue =
-// 	local_storage === true || local_storage === "true";
-// const isLocalStorageFalse =
-// 	local_storage === false || local_storage === "false";
-// const isLocalStorageNull =
-// 	local_storage === null || local_storage === "null";
-// const isIntersectingTrue =
-// 	intersecting_welcome === true || intersecting_welcome === "true";
-// const shouldRunAnimation = isLocalStorageTrue && isIntersectingTrue;
-
-// const getClassNames = (value, animationClass, noAnimationClass) => {
-// 	return {
-// 		true: shouldRunAnimation ? animationClass : "",
-// 		false: isLocalStorageFalse ? animationClass : "",
-// 		null: isLocalStorageNull ? noAnimationClass : animationClass,
-// 	}[value];
-// };
-
-// const whatIDo_top_text_animation = getClassNames(
-// 	local_storage,
-// 	"welcomeMessage_animation",
-// 	""
-// );
-// const sub_className = getClassNames(
-// 	local_storage,
-// 	"subheader_animation",
-// 	"subheader_no_animation"
-// );
-// const btn_className = getClassNames(
-// 	local_storage,
-// 	"btn_welcome",
-// 	"btn_welcome_no_animation"
-// );
-// const logo_className = getClassNames(
-// 	local_storage,
-// 	"logo",
-// 	"logo_no_animation"
-// );
-// const subtext_className = getClassNames(
-// 	local_storage,
-// 	"subtext",
-// 	"subtext_no_animation"
-// );

@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { useTranslation } from "react-i18next";
 import { Contact_Schema } from "./validations/Contact_Validation";
+import Cookies from "js-cookie";
 
 const Contact = () => {
 	const form = useRef();
@@ -17,6 +18,7 @@ const Contact = () => {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [message, setMessage] = useState("");
+	const cookieValue = Cookies.get("i18next");
 
 	const sendEmail = async (e) => {
 		e.preventDefault();
@@ -75,19 +77,6 @@ const Contact = () => {
 		setTimeout(() => setMessageSent(false), 3000);
 	};
 
-	//!  this goes on the back
-	// {success && (
-	// 	<Title>
-	// 		your message was sent, I'll contact you as soon
-	// 		as posible{" "}
-	// 	</Title>
-	// )}
-	// {success == false && (
-	// 	<Title>
-	// 		your message was not sent please try again later
-	// 	</Title>
-	// )}
-
 	return (
 		<div
 			className="c_comp2"
@@ -119,7 +108,12 @@ const Contact = () => {
 									<input
 										type="text"
 										id=""
-										placeholder={t("input_1")}
+										placeholder={
+											// t("input_1")
+											cookieValue === "es"
+												? "Tu Nombre"
+												: "Your Name"
+										}
 										className="profile_input"
 										name="name"
 										onChange={(e) => {
@@ -129,11 +123,17 @@ const Contact = () => {
 									/>
 									{name.length > 0 && name.length < 2 ? (
 										<p className="validations">
-											{t("name_validation")}
+											{/* {t("name_validation")} */}
+											{cookieValue === "es"
+												? "Nombre debe de tener por lo menor 2 caracteres"
+												: "Name must be at lest 2 characters"}
 										</p>
 									) : validation === true ? (
 										<p className="validations">
-											{t("required")}
+											{/* {t("required")} */}
+											{cookieValue === "es"
+												? "Requerido"
+												: "Required"}
 										</p>
 									) : null}
 								</div>
@@ -142,7 +142,12 @@ const Contact = () => {
 										type="email"
 										name="email"
 										id=""
-										placeholder={t("input_2")}
+										placeholder={
+											// t("input_2")
+											cookieValue === "es"
+												? "Tu Email"
+												: "Your Email"
+										}
 										className="profile_input"
 										onChange={(e) => {
 											setEmail(e.target.value);
@@ -155,7 +160,10 @@ const Contact = () => {
 										// null
 										validation_2 === true ? (
 											<p className="validations">
-												{t("required")}
+												{/* {t("required")} */}
+												{cookieValue === "es"
+													? "Requerido"
+													: "Required"}
 											</p>
 										) : null
 									}
@@ -167,7 +175,12 @@ const Contact = () => {
 								id=""
 								cols="75"
 								rows="20"
-								placeholder={t("text_area")}
+								placeholder={
+									// t("text_area")
+									cookieValue === "es"
+										? "Inserta Tu Mensaje Aqui"
+										: "Insert Your Message Here"
+								}
 								onChange={(e) => {
 									setMessage(e.target.value);
 									setValidation_3(false);
@@ -175,14 +188,25 @@ const Contact = () => {
 							></textarea>
 							{message.length > 0 && message.length < 5 ? (
 								<p className="validations">
-									{t("message_validation")}
+									{/* {t("message_validation")} */}
+									{cookieValue === "es"
+										? "Mensaje debe de tener por lo menos 5 caracteres"
+										: "Message must be at lest 5 characters"}
 								</p>
 							) : message.length > 2000 ? (
 								<p className="validations">
-									{t("message_validation_2")}
+									{/* {t("message_validation_2")} */}
+									{cookieValue === "es"
+										? "Mensaje no puede ser mas de 2000 caracteres"
+										: "Message cant be longer than 2000 characters"}
 								</p>
 							) : validation_3 === true ? (
-								<p className="validations">{t("required")} </p>
+								<p className="validations">
+									{/* {t("required")} */}
+									{cookieValue === "es"
+										? "Requerido"
+										: "Required"}
+								</p>
 							) : null}
 
 							<div className="submit_Btn">
@@ -194,8 +218,10 @@ const Contact = () => {
 									// 	sendEmail(e);
 									// }}
 								>
-									{" "}
-									{t("contact_send")}
+									{/* {t("contact_send")} */}
+									{cookieValue === "es"
+										? "Enviar Mensaje"
+										: "Send Message"}
 								</button>
 							</div>
 						</form>
@@ -319,8 +345,12 @@ const Contact = () => {
 						>
 							<h1>
 								{messageSent
-									? t("contact_message_sent")
-									: t("contact_send_error")}
+									? cookieValue === "es"
+										? "Mensaje Enviado!!!"
+										: "Message Sent!!!"
+									: cookieValue === "es"
+									? "hubo un error porfavor intente denuedo"
+									: "there was an error please try again!!!"}
 								{/* send another message */}
 							</h1>
 							<button
@@ -331,8 +361,12 @@ const Contact = () => {
 								}}
 							>
 								{messageSent
-									? t("contact_send_back")
-									: t("contact_send_error")}
+									? cookieValue === "es"
+										? "Enviar Otro Mensaje"
+										: "Send Another Message"
+									: cookieValue === "es"
+									? "Intentar denuevo"
+									: "Try again"}
 								{/* send another message */}
 							</button>
 						</div>

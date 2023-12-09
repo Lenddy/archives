@@ -2,7 +2,8 @@
     "Welcome_to_React": "Welcome to React and react-i18next",
 
     "navBar_go_to":"Go To",
-    "navBar_welcome":"welcome",
+    "navBar_language":"Language",
+    "navBar_welcome":"Welcome",
     "navBar_My_Experience":"What I Do",
     "navBar_Tools":"My Tools",
     "navBar_projects":"Projects",
@@ -11,11 +12,9 @@
     "navBar_socials":"Social Media",
     "navBar_go_back":"Go Back",
 
-
-
     "welcome_title": "The Place To Turn Your Ideas Into Reality Welcome To ",
     "welcome_sub_title": "Hello the name is Lenddy I like making web sites and apps that will sut your needs using the best technologies , so what is your next big idea and when do you want to make it happen ?",
-    "welcome_btns":["View Resume","View Github","view LinkIn","View Instagram"],
+    "welcome_btns":["View Resume","View Github","View LinkIn","View Instagram"],
     "welcome_a_tag":["Like the logo","click here","to see who made it"],
 
     "whatIDo_title":"My Experience",

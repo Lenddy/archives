@@ -4,11 +4,15 @@ import gsap from "gsap";
 import ProfilePicture from "../ProfilePicture";
 import Contact from "./Contact";
 import { useTranslation } from "react-i18next";
+import Cookies from "js-cookie";
+
 const Profile = () => {
 	const titleRef = useRef(null);
 	const contentRef = useRef(null);
 	const [isTitleVisible, setIsTitleVisible] = useState(false);
 	const [isContentVisible, setIsContentVisible] = useState(false);
+	const cookieValue = Cookies.get("i18next");
+
 	useEffect(() => {
 		const title = titleRef.current;
 		const content = contentRef.current;
@@ -53,44 +57,11 @@ const Profile = () => {
 		};
 	}, [isTitleVisible, isContentVisible]);
 
-	// const [showMore, setShowMore] = useState(false);
-
-	// const fullParagraphStyles = {
-	// 	WebkitLineClamp: 12,
-	// 	WebkitBoxOrient: "vertical",
-	// 	overflow: "hidden",
-	// 	display: "-webkit-box",
-	// };
-
 	const [isFlipped, setIsFlipped] = useState(false);
 
 	const handleCardInteract = () => {
 		setIsFlipped(!isFlipped);
 	};
-
-	// const [lift, setLift] = useState(false);
-
-	// const lift_oof = () => {
-	// 	setLift(true);
-	// };
-
-	// const cancel_lift_oof = () => {
-	// 	setLift(false);
-	// };
-
-	// !make use of this video https://www.youtube.com/watch?v=FeJEEE3zc4U
-
-	//todo make the aniamtion come in like a page turning
-
-	// todo and when the user click on send message   trn the component like the card and have the rock animation  make it say message aquarerd sending the rocket
-
-	//todo Make the a tags  #ff00ff
-	// todo make the p tas have different translateZ()
-
-	// make the title have fade in (0 opacity to 1)  make the title be flip meaning that i am seeing the back side of the title them flip it to make it  in the right way
-
-	//todo initialy they will be in the middle but wen they are click the card
-	// *todo  make them appear out side of the card(not fully in the card (half way))  and when the card is click us the transform and bring them to the middle  */
 
 	const handleSubmit = (e) => {
 		e.preventDefault;
@@ -108,7 +79,10 @@ const Profile = () => {
 				}`}
 				ref={titleRef}
 			>
-				<h1>{t("profile_title")}</h1>
+				<h1>
+					{/* {t("profile_title")} */}
+					{cookieValue === "es" ? "Sobre Mi" : "About Me"}
+				</h1>
 			</div>
 			{/* ${isContentVisible ? "show_content" : ""} */}
 			<div className={`profileContainer `}>
@@ -146,11 +120,17 @@ const Profile = () => {
 													: ""
 											}`}
 										>
-											{t("profile_hello")}
+											{/* {t("profile_hello")} */}
+											{cookieValue === "es"
+												? "HOLA"
+												: "Hello"}
 											{/* Hello */}
 										</h2>
 										<h4 className="card__title2">
-											{t("profile_there")}
+											{/* {t("profile_there")} */}
+											{cookieValue === "es"
+												? "QUE HAY"
+												: "There"}
 											{/* There */}
 										</h4>
 										<h4
@@ -163,115 +143,68 @@ const Profile = () => {
 											👋🏼
 										</h4>
 										<h4 className="card__title4">
-											{t("profile_click")}
-
+											{/* {t("profile_click")} */}
+											{cookieValue === "es"
+												? "HAS ME CLICK"
+												: "Click Me"}
 											{/* click me */}
 										</h4>
 									</div>
 
 									<div className="card__back">
-										{/* initialy they will be in the middle but wen they are click the acrd  */}
-										{/*todo  make them appear out side of the card(not fully in the card (half way))  and when the card is click us the transform and bring them to the middle  */}
 										<h1 className="card__back_title">
-											{/* i am Lenddy Morales */}
-											{t("card__body_title")}
+											{/* {t("card__body_title")} */}
+											{cookieValue === "es"
+												? "SOY LENDDY MORALES"
+												: "I AM LENDDY MORALES"}
 										</h1>
-										{/* style={showMore? null: fullParagraphStyles} */}
-										{/* <div className="card__body"> */}
 										<p className="card__body_part1">
-											{t("card__body_part1")}
-											{/* I'm a 19-year-old Dominican boy who
-											can barly dance bachata I reside in
-											the United States and some day might
-											move to Puerto rico. I embarked on
-											my journey into higher education at
-											the age of 17 with a major in
-											computer engineering. However, I
-											soon realized that the traditional
-											college teaching approach didn't
-											align with my learning style. */}
+											{/* {t("card__body_part1")} */}
+											{cookieValue === "es"
+												? "Soy un chico Dominicano de 20 años que apenas sabe bailar bachata. Resido en los Estados Unidos y algún día podría mudarme a Puerto Rico. Embarqué en mi viaje hacia la educación superior a la edad de 17 años con especialización en ingeniería informática. Sin embargo, pronto me di cuenta de que el enfoque tradicional de enseñanza universitaria no se alineaba con mi estilo de aprendizaje."
+												: "I'm a 20-year-old Dominican boy who can barly dance bachata I reside in the United States and some day might move to Puerto rico. I embarked on my journey into higher education at the age of 17 with a major in computer engineering. However, I soon realized that the traditional college teaching approach didn't align with my learning style."}
 										</p>{" "}
 										<p className="card__body_part2">
-											{t("card__body_part2")}{" "}
-											{/* {" "}
-											I made the bold decision to drop out
-											and seek alternative paths to gain
-											knowledge. Just a month later, I
-											joined a coding bootcamp called */}
+											{/* {t("card__body_part2")} */}
+											{cookieValue === "es"
+												? "Tomé la audaz decisión de abandonar la carrera y buscar caminos alternativos para adquirir conocimientos. Sólo un mes después, me uní a un campamento de programación llamado"
+												: "I made the bold decision to drop out and seek alternative paths to gain knowledge. Just a month later, I joined a coding bootcamp called"}
 											<a href="https://www.codingdojo.com/">
-												{/* Coding Dojo */}
-												{t("card_a_tag")}
+												Coding Dojo
+												{/* {t("card_a_tag")} */}
 											</a>{" "}
-											{t("card__body_part2_2")}
-											{/* {""}. This intensive four-month
-											programming course pushed me to my
-											limits as I strived to keep up with
-											the fast-paced learning environment.
-											Many nights were spent burning the
-											midnight oil, often going to bed at
-											4 am and waking up at 11 am. Through
-											laughter, tears, and forming strong
-											friendships, I persevered, and it
-											has paid off. I am now proud to call
-											myself a full-stack developer. */}
+											{/* {t("card__body_part2_2")} */}
+											{cookieValue === "es"
+												? ". Este curso intensivo de programación de cuatro meses me llevó al límite mientras me esforzaba por mantenerme al día con el entorno de aprendizaje acelerado. Pase muchas noches sin dormir, a menudo acostándome a las 4 am y despertándome a las 11 am. A través de risas, lágrimas y forjando fuertes amistades, perseveré y valió la pena. Ahora estoy orgulloso de llamarme desarrollador full-stack."
+												: ". This intensive four-month programming course pushed me to my limits as I strived to keep up with the fast-paced learning environment. Many nights were spent burning the midnight oil, often going to bed at 4 am and waking up at 11 am. Through laughter, tears, and forming strong friendships, I persevered, and it has paid off. I am now proud to call myself a full-stack developer."}
 										</p>
 										<p className="card__body_part3">
 											<a href="https://www.codingdojo.com/">
-												{/* Coding Dojo */}
-												{t("card_a_tag")}
+												Coding Dojo
+												{/* {t("card_a_tag")} */}
 											</a>{" "}
-											{t("card__body_part3")}
-											{/* taught me invaluable skills,
-											including thriving in high-pressure
-											situations, both individually and as
-											part of a cohort. I learned the
-											importance of seeking help when
-											needed and offering assistance to
-											others. It ingrained in me the habit
-											of learning from my mistakes and
-											continually expanding my knowledge. */}
+											{/* {t("card__body_part3")} */}
+											{cookieValue === "es"
+												? "Me enseñó habilidades invaluables, incluido prosperar en situaciones de alto estrés, tanto individualmente como parte de un grupo. Aprendí la importancia de buscar ayuda cuando la necesito y ofrecer asistencia a los demás. Me inculcó el hábito de aprender de mis errores y ampliar continuamente mis conocimientos."
+												: "taught me invaluable skills, including thriving in high-pressure situations, both individually and as part of a cohort. I learned the importance of seeking help when needed and offering assistance to others. It ingrained in me the habit of learning from my mistakes and continually expanding my knowledge."}
 										</p>
 										<p className="card__body_part4">
-											{t("card__body_part4")}
-
-											{/* My ultimate goal is to return to
-											college one day and resume my
-											computer engineering studies, with a
-											possible focus on also becoming a
-											game developer or even exploring
-											carpentry. */}
+											{/* {t("card__body_part4")} */}
+											{cookieValue === "es"
+												? "Mi objetivo final es regresar a la universidad algún día y reanudar mis estudios de ingeniería informática, con un posible enfoque en convertirme también en desarrollador de juegos o incluso explorar la carpintería."
+												: "My ultimate goal is to return to college one day and resume my computer engineering studies, with a possible focus on also becoming a game developer or even exploring carpentry."}
 										</p>
 										<p className="card__body_part5">
-											{t("card__body_part5")}
-
-											{/* In my free time, I indulge in my
-											passion for video Games, Basketball,
-											Baseball, Anime, Manga listening to
-											Rock ,Pop and Salsa . If any of this
-											resonates with you or piques your
-											interest, feel free to send me a
-											message. Don't hesitate. */}
+											{/* {t("card__body_part5")} */}
+											{cookieValue === "es"
+												? " En mi tiempo libre, me entrego a mi pasión por los videojuegos, el baloncesto, el béisbol, el anime, el manga escuchando Rock, Pop y Salsa. Si algo de esto le resuena o despierta su interés, no dude en enviarme un mensaje."
+												: "In my free time, I indulge in my passion for video Games, Basketball, Baseball, Anime, Manga listening to Rock ,Pop and Salsa . If any of this resonates with you or piques your interest, feel free to send me a message. Don't hesitate"}
 										</p>
-										{/* </div> */}
-										{/* <button
-											className="profile_btn"
-											onClick={() =>
-												setShowMore(!showMore)
-											}
-										>
-											{showMore
-												? "Show Less"
-												: "Show More"}
-										</button> */}
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					{/*make use of the resize attribute in css to be able to make the picture smaller or bigger*/}
-					{/* finith the flip and fin a way to send messages to the email */}
-
-					{/* and make the site all device friendly */}
 					<div className="profile_right">
 						<Contact />
 					</div>
@@ -280,10 +213,5 @@ const Profile = () => {
 		</div>
 	);
 };
-// const Profile = React.forwardRef(Profile_container);
 
 export default Profile;
-
-{
-	/*  */
-}

@@ -13,20 +13,14 @@ import { useState, useEffect, useRef } from "react";
 import GsapMagnetic from "../animations/GsapMagnetic";
 import gsap from "gsap";
 import { useTranslation } from "react-i18next";
+import Cookies from "js-cookie";
 
 const Tools = () => {
-	// ? figure out if you want to add sound effects
-	// ? this are rubber stretching sound effect    https://www.zapsplat.com/sound-effect-category/rubber/page/2/     go to  rubber stretch at the bottom of the page
-	//! make use of this video https://www.youtube.com/watch?v=q9tpBtvTTz8&list=PLFsfg2xP7cbL-kmqydheUCbhkHeNq-zZ_&index=11
-
-	//! also use this effect https://www.youtube.com/watch?v=Sb00VR5N-fw
-
 	const titleRef = useRef(null);
 	const contentRef = useRef(null);
 	const [isTitleVisible, setIsTitleVisible] = useState(false);
 	const [isContentVisible, setIsContentVisible] = useState(false);
-
-	// todo make the elastic effect take place after the animation ends
+	const cookieValue = Cookies.get("i18next");
 
 	useEffect(() => {
 		const title = titleRef.current;
@@ -84,7 +78,10 @@ const Tools = () => {
 							isTitleVisible ? "title_animation" : ""
 						}`}
 					>
-						{t("tools")}{" "}
+						{/* {t("tools")} */}
+						{cookieValue === "es"
+							? "Herramientas Que Uso"
+							: "Tools That I Use"}
 					</h1>
 				</div>
 			</GsapMagnetic>

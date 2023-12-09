@@ -49,22 +49,6 @@ const Projects = () => {
 			}
 		};
 
-		// const activate = () => {
-		// 	// Calculate the scroll position to determine when to make the element visible
-		// 	const scrollY = window.scrollY;
-		// 	const scrollThreshold = 2750; // Adjust the threshold as needed
-
-		// 	if (!isTitleVisible && scrollY >= scrollThreshold) {
-		// 		// Trigger your GSAP animation here
-		// 		gsap.to(title, { opacity: 1, y: 0, duration: 1 });
-		// 		console.log("project show");
-
-		// 		setIsTitleVisible(true); // Update the state to prevent repeated animations
-		// 	}
-		// };
-
-		// handleOptionClick(3);
-
 		// Add a scroll event listener
 		window.addEventListener("scroll", onScroll);
 		window.addEventListener("scroll", onScroll2);
@@ -144,71 +128,66 @@ const Projects = () => {
 							isTitleVisible ? "project_tittle" : ""
 						}`}
 					>
-						{t("project_title.0")}
-						{/* P */}
+						{/* {t("project_title.0")} */}P
 					</span>
 					<span
 						className={`project_tittle_hide   ${
 							isTitleVisible ? "project_tittle" : ""
 						}`}
 					>
-						{t("project_title.1")}
-						{/* r */}
+						{/* {t("project_title.1")} */}r
 					</span>
 					<span
 						className={`project_tittle_hide   ${
 							isTitleVisible ? "project_tittle" : ""
 						}`}
 					>
-						{t("project_title.2")}
-						{/* o */}
+						{/* {t("project_title.2")} */}o
 					</span>
 					<span
 						className={`project_tittle_hide   ${
 							isTitleVisible ? "project_tittle" : ""
 						}`}
 					>
-						{t("project_title.3")}
-						{/* j */}
+						{/* {t("project_title.3")} */}j
 					</span>
 					<span
 						className={`project_tittle_hide   ${
 							isTitleVisible ? "project_tittle" : ""
 						}`}
 					>
-						{t("project_title.4")}
-						{/* e */}
+						{/* {t("project_title.4")} */}e
 					</span>
 					<span
 						className={`project_tittle_hide   ${
 							isTitleVisible ? "project_tittle" : ""
 						}`}
 					>
-						{t("project_title.5")}
-						{/* c */}
+						{/* {t("project_title.5")} */}c
 					</span>
 					<span
 						className={`project_tittle_hide   ${
 							isTitleVisible ? "project_tittle" : ""
 						}`}
 					>
-						{t("project_title.6")}
-						{/* t */}
+						{/* {t("project_title.6")} */}t
 					</span>
-					<span
-						className={`project_tittle_hide   ${
-							isTitleVisible ? "project_tittle" : ""
-						}`}
-					>
-						{t("project_title.7")}
-						{/* t */}
-					</span>
+					{cookieValue === "es" ? (
+						<span
+							className={`project_tittle_hide   ${
+								isTitleVisible ? "project_tittle" : ""
+							}`}
+						>
+							{/* {t("project_title.7")} */}o
+						</span>
+					) : null}
+
 					<span
 						className={`project_tittle_hide ${
 							isTitleVisible ? "project_tittle" : ""
 						}`}
 					>
-						{cookieValue === "es" ? "s" : null}
+						{/* {cookieValue === "es" ? "s" : null} */}s
 					</span>
 				</h1>
 			</div>
@@ -239,7 +218,12 @@ const Projects = () => {
 									<h1>IRE</h1>
 								</div>
 								<div className="sub">
-									<p>{t("projects_left")}</p>
+									<p>
+										{/* {t("projects_left")} */}
+										{cookieValue === "es"
+											? "Un sistema de administración de préstamos, utilizando: React, MongoDB, MaterialUI, NodeJs y Socket.io."
+											: "A loans management system using: React, MongoDB, MaterialUI, NodeJs, and Socket.io."}
+									</p>
 								</div>
 							</div>
 						</div>
@@ -270,7 +254,12 @@ const Projects = () => {
 									<h1>Escobar cleaning services</h1>
 								</div>
 								<div className="sub">
-									<p>{t("projects_middle")}</p>
+									<p>
+										{/* {t("projects_middle")} */}
+										{cookieValue === "es"
+											? "Sitio web para una pequeña empresa de limpieza en Little Rock Arkansas, utilizando: React, MaterialUI, AWS y Amazon EC2."
+											: "Website for a small cleaning company in Little Rock Arkansas using: react and MaterialUI, AWS, Amazon EC2."}
+									</p>
 								</div>
 							</div>
 						</div>
@@ -300,7 +289,12 @@ const Projects = () => {
 									<h1>Flappy CUBE</h1>
 								</div>
 								<div className="sub">
-									<p>{t("projects_right")}</p>
+									<p>
+										{/* {t("projects_right")} */}
+										{cookieValue === "es"
+											? "Un clon básico de Flappy Bird, en lugar de un ave, es un cubo ,utilizando: Unity y C#."
+											: "A basic flappy bird clone , instead of a bird it is a cube made using: unity and c#."}
+									</p>
 								</div>
 							</div>
 						</div>
