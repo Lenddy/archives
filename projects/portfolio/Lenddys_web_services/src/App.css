@@ -9,10 +9,10 @@
 }
 /*! fix the site for small screens using medias queréis "*/
 html{
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  /* justify-content: center; */
   /* flex-direction: column; */
-  max-width: 100%;
+  /* max-width: 100%; */
 }
 
 

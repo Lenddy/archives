@@ -89,7 +89,10 @@ const Contact = () => {
 					}`}
 				>
 					<div className="card__front2">
-						<h2 className="front_title_c2">{t("contact_title")}</h2>
+						<h2 className="front_title_c2">
+							{/* {t("contact_title")} */}
+							{cookieValue === "es" ? "Contáctame" : "Contact Me"}
+						</h2>
 						<div className="contact_info">
 							<h3 className="front_title2_c2">(347)964-3348</h3>
 							<h3 className="front_title2_c2">
