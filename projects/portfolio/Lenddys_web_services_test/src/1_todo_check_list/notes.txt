@@ -1,0 +1,114 @@
+================================================================
+================================================================
+purple MVC 
+
+have a nav bar 
+
+have some contend display in the page 
+have color that math the them darkgray red and lightblue 
+
+================================================================
+================================================================
+
+purple for the navbar
+the color scheme is darkgray red and lightblue 
+
+
+5 Make the navbar in to a burger menu that is on the right side of the page 
+
+6 make the log have 2 back ground dark and light 
+
+
+make the scroll bar be thin and hover over the content like in this video https://www.youtube.com/watch?v=r1auJEf9ISo&list=PLOXm45pdpHlVRk8WQjKT1wpg_BkVqyBzP&index=3
+================================================================
+================================================================
+
+
+thinks if you want to give it an animation that change the color of the back ground from red ,blue grey
+
+================================================================
+================================================================
+purple for the welcome component
+
+"welcomeLeft"
+make animations
+1 the header will come from the left  
+the subheader will come form the bottom
+the btn will come from the left and they will have a delay animation like in this video https://www.youtube.com/watch?v=T33NN_pPeNI&list=PLOXm45pdpHlVRk8WQjKT1wpg_BkVqyBzP&index=1&t=19s
+
+"welcomeRight"
+logo (make the it a circle and add box shadow or a
+blur effect(make it have the tree color in a loop
+that will change between the tree) )
+Like what you see (click here(this will be a btn
+that the use will be able to click one make an on
+hover event that changes the color of the btn )) to
+find out who made it
+
+================================================================
+================================================================
+purple for the what i do component
+
+make this have a banner on top that changes from What do i do -- {">"} full-stack engineer --{">"} pc building --{">"} instructor (have a blur effect that follow the words and make the word appear from the left go past the middle of the screen then come back the blur effect should also do the same but delayed ) i an a full stack web developer my job is to make the most perfect websites starting from you view,functionality and how the data is store in a db (keep adding to this later one ) talk about what front back and dbs are  talk about building computer talk abut teaching(instructing) and researching technologies that the user might be interested on
+
+================================================================
+================================================================
+purple for the Tools component
+
+ animation that will make the picture items appear in random order
+ 
+   make a like to tell the use what every technology is so you might want to make a link to their home page
+
+================================================================
+================================================================
+purple for the projects component
+
+put an image that will be at the center and a box at the bottom offset to the left (or right) depending if the item came from the left or the right th e item will have an animation will bring the picture from one ende and the description from another end and the whole item will have an animation that will move the items(the image and description ) depending on where the courser is and add a box shadow you can see something similar in this sitehttps://elvito.netlify.app/ add a btn that will link to the live site and another one that will link to the code on GitHub
+
+================================================================
+================================================================
+
+
+
+================================================================
+================================================================
+purple for the main content
+
+
+================================================================
+================================================================
+purple for the profile component
+
+Make that animation on the main top to first appear center left then center( or at the same time ) the top
+
+make the middle of main top be overlap by the main_left and right
+and that on hover make the that item be the main center of attention and put the other 2 to the side of fade in 
+
+and make them be able to be drag so the use can arrange the position of where the items are exclude main top_top
+
+
+if you want to make the user able to draw on your face
+
+and also have a like system that let the other users like the picture of other users 
+a comment section too maybe
+
+================================================================
+================================================================
+purple subsections
+
+
+i know this wont be really necessary but make a 3d figure that follows you around as you scroll and gives of emojis  showing its emotions like the impress emoji the anger emoji and the happy emoji 
+
+what i have in min i dont know why is an elf(santas elfs ) riding a sea horse 
+
+
+make at the bigging that tell the use to pres a letter to start (enter) and the make it look like is compiling the code like in hakerTyper.net
+
+================================================================
+================================================================
+
+
+
+
+
+this is for Dominicans that are base on dajabon they can take the money if they decide to hire me to inversiones ruben y estevez  or they can transfer it to my  can account  //and also make a link to inversiones ruben y estevez
