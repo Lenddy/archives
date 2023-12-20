@@ -1,0 +1,18 @@
+1 initialize a node application running (npm init)
+
+2 install  apollo and express running (npm i apollo-server-express express mongoose)
+
+3 create a server.js file and import {ApolloServer} from apollo-server-express and  import express
+
+4 create your apollo server using (ApolloServer)
+
+5 create your graphQL folder and add a schema and resolver sub folders
+
+6 import your schemas(typeDefs) and resolvers files into your server.js
+
+
+7 import {gql} apollo-server-express from to your schemas and resolver files 
+
+8 define your types in your schemas(typeDefs) files
+
+8 define your resolvers in your resolvers files
