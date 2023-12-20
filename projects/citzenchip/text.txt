@@ -1,0 +1,1 @@
+make it with python as a back end and react as the front end  see if you can use ai 
