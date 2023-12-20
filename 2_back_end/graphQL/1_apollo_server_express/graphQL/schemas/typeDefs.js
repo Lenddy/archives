@@ -23,6 +23,13 @@ const typeDefs = gql`
 	#this is a mutation type it allows you to modify or manipulate data on the server-side (crud)
 	type Mutation {
 		createPerson(name: String!, age: Int!, married: Boolean!): Person! #mutation to create a person
+		deletePerson(name: String!): Boolean! # mutation to delete a person
+		updatePerson(
+			name: String!
+			newName: String
+			age: Int
+			married: Boolean
+		): Person! # mutation to update a person
 	}
 `;
 

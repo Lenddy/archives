@@ -21,4 +21,8 @@ async function startApolloServer() {
 startApolloServer();
 
 //alerts your if the express server is running
-app.listen(port, () => console.log(`listening on port ${port}`));
+app.listen(port, () =>
+	console.log(
+		`listening on port ${port}\ngo to http://localhost:8000/graphql`
+	)
+);
