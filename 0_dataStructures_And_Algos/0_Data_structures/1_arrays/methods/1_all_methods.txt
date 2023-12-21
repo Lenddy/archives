@@ -1,0 +1,52 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                            pop push and length
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+1 Array.length  ////////////// gets the length of that array
+
+2 Array.pop()//////// The pop() method removes the last element from an array: and it can returns the value that was "popped out"
+
+3 Array.push() ///////////The push() method adds a new element at the end: and it can returns the new array length
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                            shift and  unshift
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+4 Array.shift() ////////The shift() method removes the first element in the array and "shifts" all other elements to a lower index.   : it can returns the value that was "shifted out(deleted)
+
+5 Array.unshift() ///////The unshift() method adds a new element to the beginning of the array, and "unshifts" older elements: it can returns the new array length:
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                            splice and  slice
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+6 Array.splice()  ///////// The splice() method can be used to add or delete items anywhere to an array: it can returns an array with the deleted items:
+
+7 Array.slice() ////////The slice() method slices out a piece of an array into a new array : The slice() method can take two arguments like slice(1, 3).or 1 = beginning and 3 = end
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                        toString , concat and join
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+8 Array.toString() ///////// the toString() method  converts an array to a string  of (comma separated) array values.
+
+9 Array.concat() ///// The concat() method creates a new array by merging (concatenating) existing arrays: it  can also take strings as arguments:
+
+9 Array.join()    ///////the join() method creates and returns a new string by concatenating all of the elements in this array, separated by commas or a specified separator string
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                delete and flat
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+10 Array.delete() /////// the delete() method deletes an item in the array and sets it to undefine.
+
+11 Array.flat() ///////  The flat() method creates a new array with sub-array elements concatenated to a specified depth : Flattening an array is the process of reducing the dimensionality of an array.
