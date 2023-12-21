@@ -35,7 +35,7 @@ const startServer = async () => {
 			)
 		);
 
-	app.listen(8000, () =>
+	app.listen(8001, () =>
 		console.log(`listening on port 8000\nhttp://localhost:8000/graphql`)
 	);
 };
