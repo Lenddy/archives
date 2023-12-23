@@ -12,9 +12,10 @@ const resolvers = {
 	Mutation: {
 		createOneList: async (_, args) => {
 			const { title, description, isDone } = args.list;
-			const createdAt = new Date().toISOString(); // Format date to ISO string
-			const updatedAt = new Date().toISOString(); // Format date to ISO string
-
+			// const createdAt = new Date().toISOString();
+			// const updatedAt = new Date().toISOString();
+			//
+			Date;
 			return await List.create({
 				title,
 				description,
