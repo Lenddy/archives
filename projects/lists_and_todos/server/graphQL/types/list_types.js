@@ -1,5 +1,7 @@
 const { gql } = require("apollo-server-express");
 
+// use this video to fix the dates https://www.youtube.com/watch?v=XkJVYrZaZ9c
+
 const typeDefs = gql`
 	#Object
 	type List {
