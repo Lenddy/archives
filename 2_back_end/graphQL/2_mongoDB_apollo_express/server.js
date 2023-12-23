@@ -2,7 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
-const { ApolloServer, gql } = require("apollo-server-express");
+const { ApolloServer } = require("apollo-server-express");
 const { typeDefs } = require("./graphQL/schemas/postType");
 const { resolvers } = require("./graphQL/resolvers/postResolver");
 
@@ -36,7 +36,7 @@ const startServer = async () => {
 		);
 
 	app.listen(8001, () =>
-		console.log(`listening on port 8000\nhttp://localhost:8000/graphql`)
+		console.log(`listening on port 8001\nhttp://localhost:8001/graphql`)
 	);
 };
 
