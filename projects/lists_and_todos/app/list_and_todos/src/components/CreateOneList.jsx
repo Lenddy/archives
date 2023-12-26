@@ -1,79 +1,94 @@
-import { useState } from "react";
-import { createOneList } from "../GraphQL/Mutations";
+import { useState, useEffect } from "react";
+import { create_One_List } from "../GraphQL/Mutations";
 import { useMutation } from "@apollo/client";
 
 const CreateOneList = () => {
-	const [info, setInfo] = useState({ isDone: false });
-	const [createOneList, { error }] = useMutation(createOneList);
+	// State to manage form data
+	// Dependencies for the useEffect hook
+	const [info, setInfo] = useState({
+		title: "",
+		description: "",
+		isDone: false,
+	});
 
-	const submit = () => {
-		createOneList({
-			variables: {},
-		});
-	};
+	const [reload, setReload] = useState(false);
 
-	// const [isCheck, setIsCheck] = useState(true);
-	// const [isCheck2, setIsCheck2] = useState(false);
+	useEffect(() => {}, [reload]);
+
+	// Apollo Client mutation hook for creating a single list item
+	const [createOneList, { error }] = useMutation(create_One_List);
+
+	// Function to handle input changes and update state accordingly
 	const infoToBeSubmitted = (e) => {
+		const value =
+			e.target.type === "checkbox" ? e.target.checked : e.target.value;
+
 		setInfo({
 			...info,
-			[e.target.name]: e.target.value,
-			// isDone: isCheck || isCheck2,
+			[e.target.name]: value,
 		});
 	};
 
+	// Function to handle form submission
+	const submit = (e) => {
+		e.preventDefault(); // Prevent default form submission behavior
+
+		createOneList({
+			variables: {
+				title: info.title,
+				description: info.description,
+				isDone: info.isDone,
+			},
+		})
+			.then(() => {
+				// Reset the form fields after successful submission
+				setInfo({
+					title: "",
+					description: "",
+					isDone: false,
+				});
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
+
+	// Component rendering
 	return (
 		<div>
 			<form onSubmit={submit}>
 				<div>
-					<label htmlFor="">Title</label>
+					<label htmlFor="title">Title:</label>
 					<input
 						type="text"
 						name="title"
-						onChange={(e) => infoToBeSubmitted(e)}
+						onChange={infoToBeSubmitted}
+						value={info.title}
 					/>
 				</div>
 				<div>
-					<label htmlFor="">Description</label>
-					<input
-						type="text"
+					<label htmlFor="description">Description:</label>
+					<textarea
 						name="description"
-						onChange={(e) => infoToBeSubmitted(e)}
-					/>
+						onChange={infoToBeSubmitted}
+						value={info.description}
+						cols="30"
+						rows="10"
+					></textarea>
 				</div>
 				<div>
-					<label htmlFor="">Is Done</label>
+					<label htmlFor="isDone">Mark as Done:</label>
 					<input
-						type="radio"
+						type="checkbox"
 						name="isDone"
-						defaultChecked={true}
-						value="false"
-						// checked={isCheck}
-						onChange={(e) => infoToBeSubmitted(e)}
-					/>{" "}
-					<label
-					// onClick={() => {
-					// 	setIsCheck(true), setIsCheck2(false);
-					// }}
-					>
-						no
-					</label>
-					<input
-						type="radio"
-						name="isDone"
-						value="true"
-						// checked={isCheck2}
-						onChange={(e) => infoToBeSubmitted(e)}
+						onChange={infoToBeSubmitted}
+						checked={info.isDone}
 					/>
-					<label
-					// onClick={() => {
-					// 	setIsCheck(false), setIsCheck2(true);
-					// }}
-					>
-						yes
-					</label>
+					<label>Yes</label>
 				</div>
-				<button></button>
+				<button type="submit" onClick={() => setReload(!reload)}>
+					Add a new list
+				</button>
 			</form>
 		</div>
 	);

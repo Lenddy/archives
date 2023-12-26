@@ -21,15 +21,15 @@ const typeDefs = gql`
 		getAllLists: [List!]!
 	}
 
-	input ListInput {
-
-	}
+	#input ListInput {}
 
 	#mutations
 	type Mutation {
-		createOneList(title: String!
-		description: String!
-		isDone: Boolean!): List!
+		createOneList(
+			title: String!
+			description: String!
+			isDone: Boolean!
+		): List!
 	}
 `;
 

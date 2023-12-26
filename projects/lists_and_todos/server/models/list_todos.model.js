@@ -17,7 +17,7 @@ const ListSchema = new Schema(
 		},
 		isDone: {
 			type: Boolean,
-			default: false,
+			// default: false,
 			required: true,
 		},
 	},

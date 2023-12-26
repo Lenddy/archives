@@ -1,13 +1,22 @@
-import { gql } from "apollo-server-express";
+import { gql } from "@apollo/client";
 
-import(gql);
+// import(gql);
 
-export const createOneList = gql`
-    mutation createOneList($list:{$title:String! $description:String! $isDone:Boolean!}){
-        createOneList(list:{{title:$title description:$description isDone:$isDone}) {
-        id
-
-        title
-        }
-    }
+export const create_One_List = gql`
+	mutation createOneList(
+		$title: String!
+		$description: String!
+		$isDone: Boolean!
+	) {
+		createOneList(
+			title: $title
+			description: $description
+			isDone: $isDone
+		) {
+			id
+			title
+			description
+			isDone
+		}
+	}
 `;

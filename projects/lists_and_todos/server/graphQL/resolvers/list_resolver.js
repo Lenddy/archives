@@ -6,16 +6,31 @@ const resolvers = {
 			return "hello world";
 		},
 		getAllLists: async () => {
-			return await List.find(); //gets all the list(items) in the data base
+			return await List.find()
+				.then((lists) => {
+					console.log(
+						"all the list",
+						lists,
+						"\n____________________"
+					);
+					return lists;
+				})
+				.catch((err) => {
+					console.log(
+						"there was an error fetching all the lists",
+						err,
+						"\n____________________"
+					);
+					throw err;
+				}); //gets all the list(items) in the data base
 		},
 	},
 	Mutation: {
 		createOneList: async (_, args) => {
-			const { title, description, isDone } = args.list;
+			const { title, description, isDone } = args;
 			const createdAt = new Date().toISOString();
 			const updatedAt = new Date().toISOString();
-			//
-			Date;
+			//Date;
 			return await List.create({
 				title,
 				description,
@@ -24,11 +39,19 @@ const resolvers = {
 				updatedAt,
 			})
 				.then((newList) => {
-					console.log("new list created", newList);
+					console.log(
+						"new list created",
+						newList,
+						"\n____________________"
+					);
 					return newList;
 				})
 				.catch((err) => {
-					console.log("there was an error creating a new list", err);
+					console.log(
+						"there was an error creating a new list",
+						err,
+						"\n____________________"
+					);
 					throw err;
 				});
 		},
