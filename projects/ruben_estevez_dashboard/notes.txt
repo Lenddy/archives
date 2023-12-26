@@ -1,0 +1,27 @@
+make the apis in c# with graphQL and react in the front end 
+
+
+
+
+the site should be able to handle lonas, rental have a admin system where the admin can make admin loans and can allw othere uses to be in diferent tiers depending on the tier others users can make and manage admin loans    also make a conter par for the client where they can custumise they dashbord board how ever they want  and they can see their info about their loans and their rentals   and also customise  for the needs of every one 
+
+cashier needs to  be able to leave message and also have a calculation on the sistem for them  and also print info and add it to exel
+
+acountatnt needs to send the information to exel and it also needs it change over time 
+
+collector needs to make messages  
+
+manager needs to have all of the above 
+
+
+
+
+
+
+1 make the dashbord cutumiseble 
+allow to drag and drop
+make things bigger 
+hide things
+search for things and allow the cliesnt and the user to get the specific filds that they want  (id , amount ,etc)
+allow the user to make thing in line-blocks or block elements 
+add pictures of the clients and the employs

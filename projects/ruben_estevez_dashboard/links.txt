@@ -4,33 +4,7 @@
 2 https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.behance.net%2Fgallery%2F90065553%2FBanking-Dashboard-UI&psig=AOvVaw2r9FxS_p9OA1w2d1tyKM2Y&ust=1694318996267000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCPCOsKHUnIEDFQAAAAAdAAAAABAJ
 
 
-make the apis in c# with graphQL and react in the front end 
 
-
-
-
-the site should be able to handle lonas, rental have a admin system where the admin can make admin loans and can allw othere uses to be in diferent tiers depending on the tier others users can make and manage admin loans    also make a conter par for the client where they can custumise they dashbord board how ever they want  and they can see their info about their loans and their rentals   and also customise  for the needs of every one 
-
-cashier needs to  be able to leave message and also have a calculation on the sistem for them  and also print info and add it to exel
-
-acountatnt needs to send the information to exel and it also needs it change over time 
-
-collector needs to make messages  
-
-manager needs to have all of the above 
-
-
-
-
-
-
-1 make the dashbord cutumiseble 
-allow to drag and drop
-make things bigger 
-hide things
-search for things
-allow the user to make thing in line-blocks or block elements 
-add pictures of the clients and the employs
 
 
 

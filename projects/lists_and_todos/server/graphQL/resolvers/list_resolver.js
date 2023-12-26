@@ -12,8 +12,8 @@ const resolvers = {
 	Mutation: {
 		createOneList: async (_, args) => {
 			const { title, description, isDone } = args.list;
-			// const createdAt = new Date().toISOString();
-			// const updatedAt = new Date().toISOString();
+			const createdAt = new Date().toISOString();
+			const updatedAt = new Date().toISOString();
 			//
 			Date;
 			return await List.create({
@@ -32,6 +32,7 @@ const resolvers = {
 					throw err;
 				});
 		},
+
 		// createOneList: async (_, { list }) => {
 		// 	try {
 		// 		const { title, description, isDone } = list;

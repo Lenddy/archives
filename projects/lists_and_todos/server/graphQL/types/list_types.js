@@ -3,6 +3,8 @@ const { gql } = require("apollo-server-express");
 // use this video to fix the dates https://www.youtube.com/watch?v=XkJVYrZaZ9c
 
 const typeDefs = gql`
+	#scalar Date
+
 	#Object
 	type List {
 		id: ID!
@@ -20,14 +22,14 @@ const typeDefs = gql`
 	}
 
 	input ListInput {
-		title: String!
-		description: String!
-		isDone: Boolean!
+
 	}
 
 	#mutations
 	type Mutation {
-		createOneList(list: ListInput!): List!
+		createOneList(title: String!
+		description: String!
+		isDone: Boolean!): List!
 	}
 `;
 
