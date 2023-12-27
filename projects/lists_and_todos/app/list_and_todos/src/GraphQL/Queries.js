@@ -12,3 +12,15 @@ export const get_all_list = gql`
 		}
 	}
 `;
+export const get_one_list = gql`
+	query getOneList($id: ID!) {
+		getOneList(id: $id) {
+			id
+			title
+			description
+			isDone
+			createdAt
+			updatedAt
+		}
+	}
+`;

@@ -18,6 +18,7 @@ const typeDefs = gql`
 	#Queries
 	type Query {
 		hello: String
+		getOneList(id: ID!): List!
 		getAllLists: [List!]!
 	}
 
@@ -30,6 +31,15 @@ const typeDefs = gql`
 			description: String!
 			isDone: Boolean!
 		): List!
+
+		updateOneList(
+			id: ID
+			title: String
+			description: String
+			isDone: Boolean
+		): List!
+
+		deleteOneList(id: ID): List!
 	}
 `;
 
