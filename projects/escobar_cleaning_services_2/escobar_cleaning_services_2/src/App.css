@@ -1,0 +1,27 @@
+#root {
+  max-width: 1280px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+
+
+.sections{
+  margin-top: 60px;
+}
+
+
+.navbar{
+  padding: 0px;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+}
+
+
+@media (max-width:500px) {
+  .navbar{
+    flex-direction: column;
+  }
+}
