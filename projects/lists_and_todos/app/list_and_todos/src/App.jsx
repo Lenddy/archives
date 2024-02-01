@@ -56,7 +56,7 @@ function App() {
 					<Route
 						exact
 						path="/createOneList"
-						element={<CreateOneList />}
+						element={<CreateOneList/>}
 					/>
 
 					<Route exact path="/:id" element={<GetOneList />} />
