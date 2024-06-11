@@ -9,6 +9,8 @@ const startServer = async () => {
 	//making a promise function
 	const app = express(); // initializing express
 
+	app.disable("x-powered-by");
+
 	const apolloServer = new ApolloServer({
 		// creating a new apollo server instance
 		typeDefs,

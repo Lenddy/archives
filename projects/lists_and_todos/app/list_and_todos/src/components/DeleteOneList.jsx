@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { create_One_List } from "../GraphQL/Mutations";
 import { useMutation } from "@apollo/client";
-import { useNavigate } from "react-router-dom";
 
-const CreateOneList = ({ reload, setReload }) => {
+const DeleteOneList = () => {
 	// State to manage form data
 	// Dependencies for the useEffect hook
 	const [info, setInfo] = useState({
@@ -12,7 +11,7 @@ const CreateOneList = ({ reload, setReload }) => {
 		isDone: false,
 	});
 
-	const navigate = useNavigate();
+	const [reload, setReload] = useState(false);
 
 	useEffect(() => {}, [reload]);
 
@@ -48,7 +47,6 @@ const CreateOneList = ({ reload, setReload }) => {
 					description: "",
 					isDone: false,
 				});
-				navigate("/dashboard");
 			})
 			.catch((error) => {
 				console.log(error);
@@ -96,4 +94,4 @@ const CreateOneList = ({ reload, setReload }) => {
 	);
 };
 
-export default CreateOneList;
+export default DeleteOneList;

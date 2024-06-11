@@ -6,16 +6,46 @@ const resolvers = {
 			return "hello world";
 		},
 		getAllLists: async () => {
-			return await List.find(); //gets all the list(items) in the data base
+			return await List.find()
+				.then((lists) => {
+					console.log(
+						"all the list",
+						lists,
+						"\n____________________"
+					);
+					return lists;
+				})
+				.catch((err) => {
+					console.log(
+						"there was an error fetching all the lists",
+						err,
+						"\n____________________"
+					);
+					throw err;
+				}); //gets all the list(items) in the data base
+		},
+		getOneList: async (_, { id }) => {
+			return await List.findById(id)
+				.then((list) => {
+					console.log("all the list", list, "\n____________________");
+					return list;
+				})
+				.catch((err) => {
+					console.log(
+						"there was an error fetching all the lists",
+						err,
+						"\n____________________"
+					);
+					throw err;
+				}); //gets all the list(items) in the data base
 		},
 	},
 	Mutation: {
 		createOneList: async (_, args) => {
-			const { title, description, isDone } = args.list;
+			const { title, description, isDone } = args;
 			const createdAt = new Date().toISOString();
 			const updatedAt = new Date().toISOString();
-			//
-			Date;
+			//Date;
 			return await List.create({
 				title,
 				description,
@@ -24,36 +54,78 @@ const resolvers = {
 				updatedAt,
 			})
 				.then((newList) => {
-					console.log("new list created", newList);
+					console.log(
+						"new list created",
+						newList,
+						"\n____________________"
+					);
 					return newList;
 				})
 				.catch((err) => {
-					console.log("there was an error creating a new list", err);
+					console.log(
+						"there was an error creating a new list",
+						err,
+						"\n____________________"
+					);
 					throw err;
 				});
 		},
 
-		// createOneList: async (_, { list }) => {
-		// 	try {
-		// 		const { title, description, isDone } = list;
-		// 		const createdAt = new Date().toISOString();
-		// 		const updatedAt = new Date().toISOString();
+		updateOneList: async (parent, args, context, info) => {
+			const { id, title, description, isDone } = args;
+			const update = { updatedAt: new Date().toISOString() };
+			// title,description
 
-		// 		const newList = await List.create({
-		// 			title,
-		// 			description,
-		// 			isDone,
-		// 			createdAt,
-		// 			updatedAt,
-		// 		});
+			if (title !== undefined) {
+				update.title = title;
+			}
+			if (description !== undefined) {
+				update.description = description;
+			}
+			if (isDone !== undefined) {
+				update.isDone = isDone;
+			}
 
-		// 		console.log("New list created", newList);
-		// 		return newList;
-		// 	} catch (err) {
-		// 		console.log("There was an error creating a new list", err);
-		// 		throw err; // Throw the error to be handled by Apollo Server
-		// 	}
-		// },
+			return await List.findByIdAndUpdate(id, update, {
+				new: true,
+			})
+				.then((updatedList) => {
+					console.log(
+						"list updated",
+						updatedList,
+						"\n____________________"
+					);
+					return updatedList;
+				})
+				.catch((err) => {
+					console.log(
+						"there was an error updating a list",
+						err,
+						"\n____________________"
+					);
+					throw err;
+				});
+		},
+
+		deleteOneList: async (_, { id }) => {
+			return await List.findByIdAndDelete(id)
+				.then((deletedList) => {
+					console.log(
+						" a list was deleted",
+						deletedList,
+						"\n____________________"
+					);
+					return deletedList;
+				})
+				.catch((err) => {
+					console.log(
+						"there was an error deleting a list a list",
+						err,
+						"\n____________________"
+					);
+					throw err;
+				});
+		},
 	},
 };
 
