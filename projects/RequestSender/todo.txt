@@ -1,0 +1,24 @@
+add the description field to allow users to be able to describe why the item is need
+    there  should have two btns 
+    one btn should cicles between create / delete description
+    one btn should cicle between show / hide description
+    description is optional
+
+
+Add the btn to allow to keep adding rows
+    if there is only one add the btn 
+    if not add the btn to the last row
+
+
+
+add the btn to allow to delete rows 
+    if there is only one item dont show 
+    if now show for all
+
+
+add the btn to submit
+    it should be hidden if
+        if the name field is empty
+        if there is not info field out 
+        if there are multiple rows and one is not field out 
+        the date, name , amount and item are required
